@@ -1,5 +1,5 @@
 ---
-id: Gove
+id: Grove
 title: App Logging
 sidebar_label: App Logging
 ---
