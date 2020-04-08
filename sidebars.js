@@ -9,7 +9,7 @@
 
 module.exports = {
   someSidebar: {
-    Android: ['ODKFormManagementPackage'],
+    Android: ['ODKFormManagementPackage', 'AndroidProfileManagementModule'],
     Databases: ['PSQLReplication'],
     GUIDES: ['GettingStarted'],
     Architecture: ['GettingStarted'],
