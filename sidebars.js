@@ -12,6 +12,6 @@ module.exports = {
     Android: ['ODKFormManagementPackage', 'AndroidProfileManagementModule'],
     Databases: ['PSQLReplication'],
     GUIDES: ['GettingStarted'],
-    Architecture: ['GettingStarted'],
+    Architecture: ['ArchitectureSamwad'],
   },
 };
