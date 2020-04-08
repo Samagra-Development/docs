@@ -24,7 +24,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/doc1',
+          to: 'docs/ODKFormManagementPackage',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
