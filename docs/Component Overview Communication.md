@@ -1,5 +1,5 @@
 ---
-id: Component Overview Communication
+id: COCommunication
 title: Component Overview (Communication)
 sidebar_label: Component Overview
 ---
