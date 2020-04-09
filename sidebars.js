@@ -10,24 +10,42 @@
 module.exports = {
   someSidebar: {
     Guides: ['GettingStarted'],
-    'Component Summary': ['ComponentsOverview'],
-    'Mobile Application': [
-      'COMobileApplication',
-      'FormManagementPackage',
-      'AndroidProfileManagementModule',
-      'Grove',
+    Components: [
+      'ComponentsOverview',
+      {
+        'Mobile Application': [
+          'COMobileApplication',
+          'FormManagementPackage',
+          'AndroidProfileManagementModule',
+          'Grove',
+        ],
+      },
+      {'App Metadata Management': ['COAppMetadata']},
+      {'PDF Generator': ['COPDFGenerator']},
+      {'Communication & Alerts': ['COCommunication']},
+      {'Data Analytics': ['CODataAnalytics']},
+      {'Security & Optimization': ['COSecurity']},
+      {'Application Logging': ['COApplicationLogging']},
+      {'Database Management': ['CODatabaseManagement', 'PSQLReplication']},
+      {'Real Time Data Distribution': ['CORTDataDistribution']},
     ],
-    'App Metadata Management': ['COAppMetadata'],
-    'PDF Generator': ['COPDFGenerator'],
-    'Communication & Alerts': ['COCommunication'],
-    'Data Analytics': ['CODataAnalytics'],
-    'Security & Optimization': ['COSecurity'],
-    'Application Logging': ['COApplicationLogging'],
-    'Database Management': ['CODatabaseManagement', 'PSQLReplication'],
-    'Real Time Data Distribution': ['CORTDataDistribution'],
-    'Products Summary': ['ProductsOverview'],
-    Samiksha: ['SamikshaFuncSpecs', 'ArchitectureSamiksha', 'SetupSamiksha'],
-    Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad', 'SetupSamwad'],
-    Pariksha: ['ParikshaFuncSpecs', 'ArchitecturePariksha', 'SetupPariksha'],
+    Products: [
+      'ProductsOverview',
+      {
+        Samiksha: [
+          'SamikshaFuncSpecs',
+          'ArchitectureSamiksha',
+          'SetupSamiksha',
+        ],
+      },
+      {Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad', 'SetupSamwad']},
+      {
+        Pariksha: [
+          'ParikshaFuncSpecs',
+          'ArchitecturePariksha',
+          'SetupPariksha',
+        ],
+      },
+    ],
   },
 };
