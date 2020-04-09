@@ -9,13 +9,22 @@
 
 module.exports = {
   someSidebar: {
-    Android: [
+    Guides: ['GettingStarted'],
+    'Getting Started': [],
+    'Component Summary': [],
+    'Mobile Application': [
       'ODKFormManagementPackage',
       'AndroidProfileManagementModule',
       'Grove',
     ],
-    Databases: ['PSQLReplication'],
-    GUIDES: ['GettingStarted'],
-    Architecture: ['ArchitectureSamwad'],
+    'App Metadata Management': [],
+    'PDF Generator': [],
+    'Communication & Alerts': [],
+    'Data Analytics': [],
+    'Secuirty & Optimization': [],
+    'Application Logging': [],
+    'Database Management': ['PSQL Replication'],
+    'Real Time Data Distribution': [],
+    Architecture: ['Architecture Samwad'],
   },
 };
