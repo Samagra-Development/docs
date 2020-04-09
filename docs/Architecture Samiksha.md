@@ -1,6 +1,6 @@
 ---
-id: ArchitectureSamwad
-title: Application Architecture (Samwad)
+id: ArchitectureSamiksha
+title: Application Architecture (Samiksha)
 sidebar_label: Application Architecture
 ---
 
