@@ -1,5 +1,5 @@
 ---
-id: Component Overview Application Logging
+id: COApplicationLogging
 title: Component Overview (Application Logging)
 sidebar_label: Component Overview
 ---
