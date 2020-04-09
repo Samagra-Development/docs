@@ -1,5 +1,5 @@
 ---
-id: Component Overview Mobile Application
+id: COMobileApplication
 title: Component Overview (Mobile Application)
 sidebar_label: Component Overview
 ---
