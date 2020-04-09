@@ -23,8 +23,8 @@ module.exports = {
     'Data Analytics': [],
     'Secuirty & Optimization': [],
     'Application Logging': [],
-    'Database Management': ['PSQL Replication'],
+    'Database Management': ['PSQLReplication'],
     'Real Time Data Distribution': [],
-    Architecture: ['Architecture Samwad'],
+    Architecture: ['ArchitectureSamwad'],
   },
 };
