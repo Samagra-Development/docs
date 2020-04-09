@@ -1,5 +1,5 @@
 ---
-id: Component Overview Security
+id: COSecurity
 title: Component Overview (Security)
 sidebar_label: Component Overview
 ---
