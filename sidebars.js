@@ -30,13 +30,16 @@ module.exports = {
     'Real Time Data Distribution': ['CORTDataDistribution'],
     'Products Summary': ['ProductsOverview'],
     'Samiksha': ['SamikshaFuncSpecs', 
-    'ArchitectureSamiksha'
+    'ArchitectureSamiksha',
+    'SetupSamiksha'
     ],
     'Samwad': ['SamwadFuncSpecs',
-    'ArchitectureSamwad'
+    'ArchitectureSamwad',
+    'SetupSamwad'
     ],
     'Pariksha': ['ParikshaFuncSpecs',
-    'ArchitecturePariksha'
+    'ArchitecturePariksha'.
+    'SetupPariksha'
     ],
   },
 };
