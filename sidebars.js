@@ -10,7 +10,7 @@
 module.exports = {
   someSidebar: {
     Guides: ['GettingStarted'],
-    'Component Summary': ['ComponentsOverview']
+    'Component Summary': ['ComponentsOverview'],
     'Mobile Application': [
       'COMobileApplication',
       'FormManagementPackage',
@@ -23,23 +23,11 @@ module.exports = {
     'Data Analytics': ['CODataAnalytics'],
     'Security & Optimization': ['COSecurity'],
     'Application Logging': ['COApplicationLogging'],
-    'Database Management': [
-      'CODatabaseManagement', 
-      'PSQLReplication'
-    ],
+    'Database Management': ['CODatabaseManagement', 'PSQLReplication'],
     'Real Time Data Distribution': ['CORTDataDistribution'],
     'Products Summary': ['ProductsOverview'],
-    'Samiksha': ['SamikshaFuncSpecs', 
-    'ArchitectureSamiksha',
-    'SetupSamiksha'
-    ],
-    'Samwad': ['SamwadFuncSpecs',
-    'ArchitectureSamwad',
-    'SetupSamwad'
-    ],
-    'Pariksha': ['ParikshaFuncSpecs',
-    'ArchitecturePariksha'.
-    'SetupPariksha'
-    ],
+    Samiksha: ['SamikshaFuncSpecs', 'ArchitectureSamiksha', 'SetupSamiksha'],
+    Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad', 'SetupSamwad'],
+    Pariksha: ['ParikshaFuncSpecs', 'ArchitecturePariksha', 'SetupPariksha'],
   },
 };
