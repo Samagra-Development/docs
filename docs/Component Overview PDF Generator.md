@@ -1,5 +1,5 @@
 ---
-id: Component Overview PDF Generator
+id: COPDFGenerator
 title: Component Overview (PDF Generator)
 sidebar_label: Component Overview
 ---
