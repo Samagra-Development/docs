@@ -13,7 +13,7 @@ module.exports = {
     'Component Summary': ['ComponentsOverview']
     'Mobile Application': [
       'COMobileApplication',
-      'ODKFormManagementPackage',
+      'FormManagementPackage',
       'AndroidProfileManagementModule',
       'Grove',
     ],
