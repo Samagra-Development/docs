@@ -1,5 +1,5 @@
 ---
-id: Component Overview Database Management
+id: CODatabaseManagement
 title: Component Overview (Databases)
 sidebar_label: Component Overview
 ---
