@@ -1,10 +1,10 @@
 ---
-id: ODKFormManagementPackage
-title: ODK Form Management Package
-sidebar_label: ODK Form Management Package
+id: FormManagementPackage
+title: Form Management Package
+sidebar_label: Form Management Package
 ---
 
-# ODK Form Management Package
+# Form Management Package
 
 We at Samagra believe in empowering the governance via technology, with maximum emphasis on leveraging Open Source Technology, with an intent not to reinvent the wheel and also to provide a contribution in terms that other developers from the community can leverage our code for solving problems in same or different realms. While working in the Government frame, one of the most prominent use cases needed for various tech products is a better surveying technique that should be easily integrated, both at client and back end, in terms of retrieval and further processing of data. For that, we pinned to use [ODK Collect](https://docs.opendatakit.org/ 'https://docs.opendatakit.org/'). ODK Collect is an **open-source** Android app that replaces paper forms used in survey-based data gathering. It supports a wide range of question and answer types, and is designed to work well without **network connectivity**.
 
