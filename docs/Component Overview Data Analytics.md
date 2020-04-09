@@ -1,5 +1,5 @@
 ---
-id: Component Overview Data Analytics
+id: CODataAnalytics
 title: Component Overview (Data Analytics)
 sidebar_label: Component Overview
 ---
