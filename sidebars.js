@@ -9,7 +9,10 @@
 
 module.exports = {
   someSidebar: {
-    Guides: ['GettingStarted'],
+    Guides: ['deploysamiksha', 
+             'deploysamwad', 
+             'deploypariksha', 
+             'GettingStarted'],
     Components: [
       'ComponentsOverview',
       {
@@ -34,16 +37,14 @@ module.exports = {
       {
         Samiksha: [
           'SamikshaFuncSpecs',
-          'ArchitectureSamiksha',
-          'SetupSamiksha',
+          'ArchitectureSamiksha'
         ],
       },
-      {Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad', 'SetupSamwad']},
+      {Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad']},
       {
         Pariksha: [
           'ParikshaFuncSpecs',
-          'ArchitecturePariksha',
-          'SetupPariksha',
+          'ArchitecturePariksha'
         ],
       },
     ],
