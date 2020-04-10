@@ -1,5 +1,5 @@
 ---
-id: Deploy Pariksha
+id: deploypariksha
 title: Deploy Your Own Pariksha
 sidebar_label: Deploy Pariksha
 ---
