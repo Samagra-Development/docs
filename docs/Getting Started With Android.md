@@ -1,7 +1,7 @@
 ---
 id: GettingStarted
-title: Getting Started with Samagra Android App
-sidebar_label: Android Starter
+title: Build Your Own App Using Samagra Components
+sidebar_label: Build Your App
 ---
 
 # Intro into the Samagra Android App
