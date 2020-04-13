@@ -1,6 +1,6 @@
 ---
 id: SamikshaFuncSpecs
-title: Functional Specifications (Samiksha)
+title: Functional Specifications - Samiksha
 sidebar_label: Functional Specifications (Samiksha)
 ---
 
