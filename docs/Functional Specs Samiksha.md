@@ -14,6 +14,12 @@ The objective of Samiksha is to transform school monitoring by providing an appl
 
 ## Governance Use Cases of Samiksha
 
+The Samiksha product can be used for managing the following activities of the State Education Department:
+1. Primary School Monitoring by DEO, BEOs
+2. Secondary School Monitoring by DEO, BEOs
+3. Mentoring Visits by BRCCs
+4. State Initiative Tracking Visits (such as SAT visits) by any State Department Officials
+
 
 ## Core Features
 
