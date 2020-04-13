@@ -21,8 +21,6 @@ module.exports = {
           'FormManagementPackage',
           'AndroidProfileManagementModule',
           'AncillaryScreensModule',
-          'CascadingSearchModule',
-          'OfflineHandlingModule',
           'NotificationModule',
           'Grove'
         ],
