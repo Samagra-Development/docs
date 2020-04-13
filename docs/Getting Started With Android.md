@@ -455,7 +455,7 @@ The module that we have developed, contains a functionality to generate notifica
           ```
   4.  You need to have Internet Permissions to interact with the FCM Server.
 ```
- <uses-permission android:name="android.permission.INTERNET" />
+ android:name="android.permission.INTERNET" 
   ```
   5. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
   6. Register the notification channel in your Application level class as follows:
