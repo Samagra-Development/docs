@@ -1,7 +1,7 @@
 ---
 id: AncillaryScreensModule
-title: Ancillary Screens Module
-sidebar_label: Ancillary Screens Module
+title: Ancillary Screens Package
+sidebar_label: Ancillary Screens Package
 ---
 
 # User Profile Package
