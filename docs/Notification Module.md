@@ -4,9 +4,6 @@ title: Push Notifications Module
 sidebar_label: Push Notifications Module
 ---
 
-
-# Notification Module
-
 ## Overview
 
 Push notifications are an important part of the mobile experience. Users have grown accustomed to having push notifications be a part of virtually every app that they use. 
