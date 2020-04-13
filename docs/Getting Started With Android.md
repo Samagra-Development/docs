@@ -391,7 +391,7 @@ The method signature of the invocation is shown below:
 
 The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.
 ```
- compositeDisposable.add(this.
+compositeDisposable.add(this.
     getEventBus().
     toObservable().
     subscribeOn(Schedulers.io()).
@@ -425,8 +425,8 @@ The result is send back to the main app module by the CascadingModuleDriver, via
             }
         }
     },Timber::e));
-
 ```
+
 The result object contains in form of object, the values of all the levels from selected options in the module.
 
 
