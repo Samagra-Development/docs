@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Samagra-Development/docs.svg?branch=master)](https://travis-ci.com/Samagra-Development/docs)
+
 # Website
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.

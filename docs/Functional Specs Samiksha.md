@@ -14,6 +14,9 @@ State Education Departments across India have been driving reforms in school mon
 
 The objective of Samiksha is to transform school monitoring by providing an application with a highly configurable set of features for data collection and visualization. Samiksha is designed for this specific governance use case and is built on OpenSource in a modular, reusable and scalable manner. The application design is created with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
 
+Through Samiksha the State Education Department can have a mobile application with configurable monitoring and mentoring forms. This application can be used by the department officials while conducting school visits. Management of users of this application, configuration of forms, visualization of the data collected and tracking of the application performance can all be managed within this application by non-technical functional owners within the State Education Department. 
+
+
 ### Governance Use Cases
 
 The Samiksha product can be used for managing the following activities of the State Education Department:
@@ -34,25 +37,33 @@ Total usage of the Samiksha product as on 12 April 2020 is summarized below:
 1. Total active users >35,000
 2. Total visit data submissions > 1,10,000 
 
-## Key Benefits of Samiksha
+### Key Benefits of Samiksha
 
 We have observed the following key benefits that the states using Samiksha have experienced.
 
-### 1. Improved compliance
+**1. Improved compliance**
 
 Compliance of school visits has increased significantly with structured processes for data collection, reporting and reviews.
 
-### 2. Structured reviews
+**2. Structured reviews**
 
 Problem solving and decision making in reviews conducted at a state, district and block levels have been increasingly supported by the timely and structured data collected through these monitoring and mentoring visits.
 
-### 3. Increased monitoring coverage
+**3. Increased monitoring coverage**
 
 In Haryana mentoring and monitoring exercises were limited to primary schools and after continued use of Samiksha for primary school monitoring, the State Education Department expanded these visits for secondary schools as well.
 
-### 4. Improved teacher feedback quality
+**4. Improved teacher feedback quality**
 
 With consistent feedback being provided by mentors through the class observation visits teachers have been able to receive timely and regular feedback from mentors.
+
+### Alternative Process
+
+There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
+
+**1. Pen & Paper based data collection**
+
+**2. OMR based data collection*
 
 ## Core Features
 
@@ -64,7 +75,7 @@ Core features of the Samiksha product have been listed below:
 
 2. Geo Location Capture	- Add custom pages within the application to share information with the users about the purpose of the application, tutorial videos, helpline numbers, and instructions 
 
-3. Offline Enabled	Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately 
+3. Offline Enabled	- Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately 
 
 4. Bilingual Forms	Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity
 
@@ -76,7 +87,7 @@ Core features of the Samiksha product have been listed below:
 
 3. Jurisdiction Data - Update	Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately.
 
-4. Notifications	Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
+4. Notifications -	Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
 
 ### User Authentication & Management	
 
