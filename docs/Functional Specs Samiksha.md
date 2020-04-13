@@ -62,10 +62,10 @@ With consistent feedback being provided by mentors through the class observation
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
 **1. Pen & Paper based data collection**
-<Pros cons to be added>
+- Pros cons to be added
 
 **2. OMR based data collection**
-<Pros cons to be added>
+- Pros cons to be added
   
 ## Core Features
 
