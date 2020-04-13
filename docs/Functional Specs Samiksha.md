@@ -4,8 +4,6 @@ title: Functional Specifications (Samiksha)
 sidebar_label: Functional Specifications (Samiksha)
 ---
 
-# Functional Specifications (Samiksha)
-
 ## Samiksha Overview
 
 ### Objective
