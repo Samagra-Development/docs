@@ -69,8 +69,6 @@ There are existing alternative processes that can be used for conducting these m
   
 ## Core Features
 
-Core features of the Samiksha product have been listed below:
-
 ### Configurable Data Collection Forms	
 
 1. Simple Configuration Interface	- Configure highly complex data collection forms in a few minutes though a simple Google Form like interface or by using an excel sheet. The forms have an extensive set of capabilities to enable different types of data points to be collected.
