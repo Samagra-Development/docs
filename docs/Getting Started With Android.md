@@ -389,10 +389,4 @@ The method signature of the invocation is shown below:
  ```
 ## Receiving back the Result of the Cascading Module
 
-The result is send back to the main app module by the CascadingModuleDriver, via the RxBus as follows:
-
-```
- ExchangeObject.DataExchangeObject dataExchangeObject = new ExchangeObject.DataExchangeObject<>(Modules.MAIN_APP, Modules.CASCADING_SEARCH,selectedHospitalData);
-        application.getEventBus().send(dataExchangeObject);
-```
-You can intercept the result of the event bus as shown in the Application level of the downloaded project. The result object contains in form of object, the values of all the levels from selected options in the module.
+The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.
