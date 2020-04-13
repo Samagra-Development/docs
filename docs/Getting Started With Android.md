@@ -425,6 +425,8 @@ compositeDisposable.add(this.getEventBus()
                     }
                 }, Timber::e));
 ```
+
+
 ## Push Notifications Module
 
 ### Overview
@@ -450,25 +452,25 @@ The module that we have developed, contains a functionality to generate notifica
 1. You must have firebase set up for your project. Set up Firebase and the FCM SDK. If you haven't already, [add Firebase to your Android project](https://firebase.google.com/docs/android/setup).
 2. In your project-level build.gradle file, make sure to include Google's Maven repository in both your buildscript and allprojects sections.
 3. Add the dependency for the Cloud Messaging Android library to your module (app-level) Gradle file (usually app/build.gradle)
-    ```
-          implementation 'com.google.firebase:firebase-messaging:20.1.5'
-          ```
+ ```
+implementation 'com.google.firebase:firebase-messaging:20.1.5'
+```
   4.  You need to have Internet Permissions to interact with the FCM Server.
 ```
  android:name="android.permission.INTERNET" 
-  ```
+ ```
   5. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
   6. Register the notification channel in your Application level class as follows:
-  ```
+```
   NotificationUtils.createNotificationChannel(this);
   //this is the instance of the Application level class of your project.
-  ```
+```
   7. **Access the device registration token** : On initial startup of your app, the FCM SDK generates a registration token for the client app instance. If you want to target single devices or create device groups, you'll need to access this token by extending  [`FirebaseMessagingService`](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)  and overriding  `onNewToken`. This has already been taken care of by the module you integrated. You will just have to invoke the FirebaseMessagingService child class.
-  ``` 
+``` 
 new PushMessagingService().
 		setContext(context, API_URL, API_KEY).	
 							getCurrentToken(context);
- ``` //Base API Url and API Key are for Fusion Auth API Integration related,
+ //Base API Url and API Key are for Fusion Auth API Integration related,
  if in case you are using Fusion auth for managing and authenticating user data.
 ```
 8.  You are set to go, if you would send a notification from Firebase, you should receive a notification on your device. 
