@@ -256,6 +256,6 @@ The package provides the following capabilities to the user:
 
 4. Edit Profile
 
-- The user is only able to edit the editable fields.
+- The user is only able to edit the editable fields. 
 
 - Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
