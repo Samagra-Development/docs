@@ -427,7 +427,7 @@ The result is send back to the main app module by the CascadingModuleDriver, via
     },Timber::e));
 
 ```
-
+The result object contains in form of object, the values of all the levels from selected options in the module.
 
 
 ## Push Notifications Module
