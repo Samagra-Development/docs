@@ -642,17 +642,20 @@ The method signature of the invocation is shown below:
  5. You can launch the cascading view using the following method invocation.
  ```
  CascadingModuleDriver.launchSearchView(activityContext, FILE_PATH);
-```
+ ```
+
 The method signature of the invocation is shown below:
 ```
-    /**
-     * 
-     * @param activityContext - Instance of Context.
-     * @param FILE_PATH - File path where you have unzipped your * file.
-     */
-     void init( @NonNull Context activityContext, @NonNull String FILE_PATH);
- ```
-## Receiving back the Result of the Cascading Module
+/**
+* 
+* @param activityContext - Instance of Context.
+* @param FILE_PATH - File path where you have unzipped your * file.
+*/
+void init( @NonNull Context activityContext, @NonNull String FILE_PATH);
+```
+ Here FILE_PATH refers to the path where json file is to be stored.
+ 
+### Receiving back the Result of the Cascading Module
 
 The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.
 The result object contains in form of object, the values of all the levels from selected options in the module.
