@@ -106,14 +106,8 @@ The result is send back to the main app module by the CascadingModuleDriver, via
 ```
 You can intercept the result of the event bus as follows:
 ```
- compositeDisposable.add(this.getEventBus()
-                .toObservable().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(exchangeObject -> {
-                    if(exchangeObject instanceof ExchangeObject.DataExchangeObject) {
-                            Timber.d("Data Received" + ((ExchangeObject.DataExchangeObject) exchangeObject).data.toString());
-                        }
-                    }
-                }, Timber::e));
+ compositeDisposable.add(this.getEventBus().toObservable().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(exchangeObject -> {
+ if(exchangeObject instanceof ExchangeObject.DataExchangeObject) {
+ Timber.d("Data Received" + ((ExchangeObject.DataExchangeObject)exchangeObject).data.toString()); } }}, Timber::e));
 ```
 The result object contains in form of object, the values of all the levels from selected options in the module.
