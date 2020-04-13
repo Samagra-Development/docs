@@ -98,7 +98,7 @@ The method signature of the invocation is shown below:
 The result is send back to the main app module by the CascadingModuleDriver, via the RxBus as follows:
 
 ```
- ExchangeObject.DataExchangeObject dataExchangeObject = new ExchangeObject.DataExchangeObject<>(Modules.MAIN_APP, Modules.CASCADING_SEARCH,selectedHospitalData);
+ ExchangeObject.DataExchangeObject dataExchangeObject = new ExchangeObject.DataExchangeObject(Modules.MAIN_APP, Modules.CASCADING_SEARCH,selectedHospitalData);
         application.getEventBus().send(dataExchangeObject);
 ```
 You can intercept the result of the event bus as follows:
