@@ -22,6 +22,7 @@ module.exports = {
           'AndroidProfileManagementModule',
           'CascadingSearchModule',
           'NotificationModule',
+          'OfflineHandlingModule',
           'Grove'
         ],
       },
