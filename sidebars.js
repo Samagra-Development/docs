@@ -22,9 +22,9 @@ module.exports = {
           'AndroidProfileManagementModule',
           'AncillaryScreensModule'
           'CascadingSearchModule',
-          'OfflineHandlingModule'
-          'NotificationModule'
-          'Grove',
+          'OfflineHandlingModule',
+          'NotificationModule',
+          'Grove'
         ],
       },
       {'App Metadata Management': ['COAppMetadata']},
