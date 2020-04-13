@@ -6,7 +6,7 @@ sidebar_label: Functional Specifications (Samiksha)
 
 ## Samiksha Overview
 
-### Objective
+### Introduction
 
 State Education Departments across India have been driving reforms in school monitoring processes. Over the years, the different State Education Departments have introduced technology to collect data for assessment, for monitoring visits and also for visualizing data on online dashboards for conducting effective department reviews. The focus of these reforms has been to improve the quality of data collection exercises conducted by different levels of officials within the department and to enable precise decision making at the state level. 
 
@@ -14,6 +14,7 @@ The objective of Samiksha is to transform school monitoring by providing an appl
 
 Through Samiksha the State Education Department can have a mobile application with configurable monitoring and mentoring forms. This application can be used by the department officials while conducting school visits. Management of users of this application, configuration of forms, visualization of the data collected and tracking of the application performance can all be managed within this application by non-technical functional owners within the State Education Department. 
 
+## Samiksha
 
 ### Governance Use Cases
 
@@ -47,7 +48,7 @@ We have observed the following key benefits that the states using Samiksha have 
 
 **4. Improved teacher feedback quality** - With consistent feedback being provided by mentors through the class observation visits teachers have been able to receive timely and regular feedback from mentors.
 
-### Alternative Process
+### Alternatives
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
@@ -55,7 +56,7 @@ There are existing alternative processes that can be used for conducting these m
 
 **2. OMR based data collection** - Pros cons to be added
   
-## Core Samiksha Features
+### Core Samiksha Features
 
 **1. For State Department Monitoring & Mentoring Staff**
 - Ability to view forms based on their designation
@@ -74,6 +75,10 @@ There are existing alternative processes that can be used for conducting these m
 - Ability to update designation to form mapping (for designation based access to forms)
 - Ability to create visualizations of the visit submissions
 - Ability to view application performane statistics
+
+### Technical Architecture
+
+Technical architecture diagram to be added (ongoing)
 
 ## High Level Specifications
 
@@ -126,3 +131,19 @@ There are existing alternative processes that can be used for conducting these m
 **3. Setup Monitoring Alerts** - Setup email alerts for different monitoring objectives such as new type of crash event observed, CPU usage >75%, disk space >80% and more
 
 **4. Visualize Monitoring Data** - Visualize all application events to understand trends of usage behaviour of your application through a single view
+
+## For Administrators
+
+### 1. Configure School Visit Forms
+
+### 2. Manage Application Users
+
+### 3. Update User Designation to Form Mapping
+
+### 4. Create Visualizations of Submissio Data
+
+### 5. View Application Performance Data
+
+## Frequently Asked Questions
+
+To be added based on comments recieved
