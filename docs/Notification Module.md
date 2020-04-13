@@ -45,7 +45,6 @@ The module that we have developed, contains a functionality to generate notifica
 new PushMessagingService().
 		setContext(context, API_URL, API_KEY).	
 							getCurrentToken(context);
-```
  ``` //Base API Url and API Key are for Fusion Auth API Integration related,
  if in case you are using Fusion auth for managing and authenticating user data.
 ```
@@ -55,11 +54,9 @@ new PushMessagingService().
 
 ```
 Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);  
-```notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
-```
+notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
 notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");  
-notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message");  
-```  
+notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message");   
 PendingIntent pendingNotify = PendingIntent.getActivity(getActivityContext(), REQUEST_CODE,  
         notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);  
 AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notification Title", "Test Notification");
