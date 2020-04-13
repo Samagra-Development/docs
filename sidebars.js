@@ -20,6 +20,7 @@ module.exports = {
           'COMobileApplication',
           'FormManagementPackage',
           'AndroidProfileManagementModule',
+          'CascadingSearchModule',
           'NotificationModule',
           'Grove'
         ],
