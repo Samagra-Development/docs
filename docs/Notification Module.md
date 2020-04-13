@@ -45,26 +45,28 @@ The module that we have developed, contains a functionality to generate notifica
 new PushMessagingService().
 		setContext(context, API_URL, API_KEY).	
 							getCurrentToken(context);
-
-//Base API Url and API Key are for Fusion Auth API Integration related,
+```
+ ``` //Base API Url and API Key are for Fusion Auth API Integration related,
  if in case you are using Fusion auth for managing and authenticating user data.
 ```
 8.  You are set to go, if you would send a notification from Firebase, you should receive a notification on your device. 
  9. ** Sending the notification from within the app - ** 
  - Call the following method wherever you want to send the notification
- ```
-Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);  
-notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
 
+```
+Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);  
+```notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+```
 notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");  
 notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message");  
-  
+```  
 PendingIntent pendingNotify = PendingIntent.getActivity(getActivityContext(), REQUEST_CODE,  
         notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);  
 AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notification Title", "Test Notification");
 ```
 
 After this integration, you should be able to receive FCM Notifications on your device, as well also generate notifications from within your app. 
+
 **Note** - In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
 *Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.*
 
