@@ -390,3 +390,39 @@ The method signature of the invocation is shown below:
 ## Receiving back the Result of the Cascading Module
 
 The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.
+
+```
+compositeDisposable.add(this.getEventBus()
+                .toObservable().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer() {
+                    @Override
+                    public void accept(Object exchangeObject) throws Exception {
+                        if (exchangeObject instanceof ExchangeObject) {
+                            if (((ExchangeObject) exchangeObject).to == Modules.MAIN_APP
+                                    && ((ExchangeObject) exchangeObject).from == Modules.ANCILLARY_SCREENS
+                                    && ((ExchangeObject) exchangeObject).type == ExchangeObject.ExchangeObjectTypes.SIGNAL) {
+                                ExchangeObject.SignalExchangeObject signalExchangeObject = (ExchangeObject.SignalExchangeObject) exchangeObject;
+                                if (signalExchangeObject.shouldStartAsNewTask) {
+                                    if (currentActivity != null) {
+                                        CommonUtilities.startActivityAsNewTask(signalExchangeObject.intentToLaunch, currentActivity);
+                                    }
+                                } else
+                                    MyApplication.this.startActivity(signalExchangeObject.intentToLaunch);
+                            } else if (exchangeObject instanceof ExchangeObject.EventExchangeObject) {
+                                // TODO : Remove this just for test
+                                ExchangeObject.EventExchangeObject eventExchangeObject = (ExchangeObject.EventExchangeObject) exchangeObject;
+                                Timber.d("Event Received %s ", eventExchangeObject.customEvents);
+                                if (eventExchangeObject.to == Modules.MAIN_APP || eventExchangeObject.to == Modules.PROJECT) {
+                                    Timber.d("Event Received %s ", eventExchangeObject.customEvents);
+                                }
+                            } else if (exchangeObject instanceof ExchangeObject.DataExchangeObject) {
+                                Timber.d("Data Received" + ((ExchangeObject.DataExchangeObject) exchangeObject).data.toString());
+                            } else {
+                                Timber.e("Received but not intended");
+                            }
+                        }
+                    }
+                }, Timber::e));
+```
+
