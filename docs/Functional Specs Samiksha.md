@@ -36,6 +36,8 @@ Samiksha is being used by the State Education Departments of the following state
 1. Himachal Pradesh
 2. Haryana
 
+![](https://media.giphy.com/media/ZXkrpTYTDImobjnHTA/giphy.gif)
+
 Total usage of the Samiksha product as on 12 April 2020 is summarized below:
 
 1. Total active users >35,000
@@ -104,6 +106,8 @@ Technical architecture diagram to be added (ongoing)
 
 ### 3.1 Configurable Data Collection Forms
 
+![](https://media.giphy.com/media/RlwAosXmZR77K8aKtC/giphy.gif)
+
 ***3.1.1 Simple Configuration Interface***
 
 Configure highly complex data collection forms in a few minutes though a simple Google Form like interface or by using an excel sheet. The forms have an extensive set of capabilities to enable different types of data points to be collected.
@@ -122,107 +126,83 @@ Define and serve in-app trigger based notifications to users to guide them throu
 
 ### 3.2 Configurable Mobile Application	
 
+![](https://media.giphy.com/media/H1SXR8BXc5cj6XFsxZ/giphy.gif)
+
 ***3.2.1 Whitelabel UI***
 
 Whitelabel the mobile application by adding the theme colors, splash screens, login screens, logos, about us information based on your department branding.
-
-*images to be added as GIFs*
 
 ***3.2.2 Add / Remove Pages***
 
 Add custom pages within the application to share information with the users about the purpose of the application, tutorial videos, helpline numbers, and instructions.
 
-*images to be added as GIFs*
-
 ***3.2.3 Jurisdiction Data***
 
 Update	Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately.
-
-*images to be added as GIFs*
 
 ***3.2.4 Notifications***
 
 Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
 
-*images to be added as GIFs*
-
 ### 3.3 User Authentication & Management	
+
+*admin console images to be added as GIFs*
 
 ***3.3.1 User Mangement***
 
 Create and manage users through a pre-designed admin panel and add variables for each user such as role (Teacher, BEO, DEO, Mentors), jurisdiction (District, Block, School)
 
-*images to be added as GIFs*
-
 ***3.3.2 Role Based Form Access***
 
 Enable or disable access to data collection forms on the application based on the role of the application users
-
-*images to be added as GIFs*
 
 ***3.3.3 View Profile Details (in App)***
 
 Allow users to view or edit specific variables of their profile information through the mobile application itself 
 
-*images to be added as GIFs*
-
 ***3.3.4 OTP Based Password Reset***
 
 Users can reset their passwords though an SMS based password reset functionality in the application 
 
-*images to be added as GIFs*
+### 3.4 Visualize Form Information
 
-### 3.4 Visualize Form Information	
+*Images to be added as a GIF*
 
 ***3.4.1 Easy to Configure Graphs***
 
 Create visualizations with a few clicks using Metabase, a configurable visualization tool with detailed documentation
 
-*images to be added as GIFs*
-
 ***3.4.2 Filtered Views***
 
 Add filters to graphs to show data grouped by any variable in your dataset. Typically used for grouping by school, cluster, block, district, academic year.
-
-*images to be added as GIFs*
 
 ***3.4.3 Add Images & Logos***
 
 Insert government state education department logos and local on-ground images across dashboards to make them look consistent to the state department branding.
 
-*images to be added as GIFs*
-
 ***3.4.4 Generate PDF Views***
 
 Configure PDFs for dashboard views to enable users to download and print different views of the dashboard. This is typically used by block officers to put up monthly dashboard based report on notice boards in their offices or by teachers in schools.
 
-*images to be added as GIFs*
-
 ### 3.5 Monitor Application Performance
+
+*images to be added as GIFs*
 
 ***3.5.1 Track User Engagement***
 
 Track user engagement at a per minute, per 30 minutes, per 24 hours to understand peak engagement period of the application
 
-*images to be added as GIFs*
-
 ***3.5.2 Track Crash Events***
 
 Track any crash events with a detailed log of the user activity to debug any issue that the user is facing on the ground
-
-*images to be added as GIFs*
 
 ***3.5.3 Setup Monitoring Alerts***
 
 Setup email alerts for different monitoring objectives such as new type of crash event observed, CPU usage >75%, disk space >80% and more
 
-*images to be added as GIFs*
-
 ***3.5.4 Visualize Monitoring Data***
 
 Visualize all application events to understand trends of usage behaviour of your application through a single view
-
-*images to be added as GIFs*
 
 ## 4. For Administrators (How-To-Configure Guides)
 
@@ -330,8 +310,6 @@ View the details of the different form operators [here](https://docs.opendatakit
 
 Once the excel sheet is created and finalized convert it to XML using the [XLS to XML converter](https://opendatakit.org/xlsform/).
 
-
-
 ***4.1.4 Upload the XML to the ODK Aggregate server***
 
 Once the XML is generated then you are ready to upload the form to your ODK Aggregate Server. Follow these steps mentioned below to update the form and view it in your mobile application:
@@ -399,6 +377,8 @@ All the data collected through the Samiksha application can be linked to Metabas
 
 Metabase dahsboards are simple to use and highly configurable. You can view this [Metabase documentation](https://www.metabase.com/docs/latest/users-guide/start.html) for how to setup basic graphs. A few key sections from this page that we typically refer to while building Metabase dashboards are listed below. 
 
+![](https://media.giphy.com/media/WOla6gFeitQoNM0eI1/giphy.gif)
+
 - [Overview of Metabase](https://www.metabase.com/docs/latest/users-guide/01-what-is-metabase.html)
 - [Basics of Databases](https://www.metabase.com/docs/latest/users-guide/02-database-basics.html)
 - [Basic Exploration in Metabase](https://www.metabase.com/docs/latest/users-guide/03-basic-exploration.html)
@@ -413,10 +393,6 @@ To view existing Metabase dashboards being used by different State Education Dep
 
 - [Saksham SAT Dashboards](https://sites.google.com/samagragovernance.in/sakshamhry/elementary/sat-student-assessment-tests?authuser=0), Haryana
 - [Samarth Assessment Dashboards](https://hp-samarth.herokuapp.com), Himachal Pradesh
-
-### 4.5 View Application Performance Data
-
-Application performance
 
 ## 5. Frequently Asked Questions
 
