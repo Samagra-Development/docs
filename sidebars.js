@@ -31,10 +31,7 @@ module.exports = {
       {'PDF Generator': ['COPDFGenerator']},
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
-      {'Security & Optimization': ['COSecurity']},
       {'Application Logging': ['COApplicationLogging']},
-      {'Database Management': ['CODatabaseManagement', 'PSQLReplication']},
-      {'Real Time Data Distribution': ['CORTDataDistribution']},
     ],
     Products: [
       'ProductsOverview',
