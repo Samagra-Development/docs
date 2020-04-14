@@ -6,6 +6,7 @@ sidebar_label: Functional Specifications (Samiksha)
 
 ## 1. Introduction
 
+
 State Education Departments across India have been driving reforms in school monitoring processes. Over the years, the different State Education Departments have introduced technology to collect data for assessment, for monitoring visits and also for visualizing data on online dashboards for conducting effective department reviews. The focus of these reforms has been to improve the quality of data collection exercises conducted by different levels of officials within the department and to enable precise decision making at the state level. 
 
 The objective of Samiksha is to transform school monitoring by providing an application with a highly configurable set of features for data collection and visualization. Samiksha is designed for this specific governance use case and is built on OpenSource in a modular, reusable and scalable manner. The application design is created with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
@@ -17,10 +18,16 @@ Through Samiksha the State Education Department can have a mobile application wi
 ### 2.1 Governance Use Cases
 
 The Samiksha product can be used for managing the following activities of the State Education Department:
-1. Primary School Monitoring by DEO, BEOs
-2. Secondary School Monitoring by DEO, BEOs
-3. Mentoring Visits by BRCCs
-4. State Initiative Tracking Visits (such as SAT visits) by any State Department Officials
+1. Record observations on monthly school visits 
+2. Record feedback during classroom observations
+3. Report status of material delivery to the schools
+4. Monitor the usage of supplementary material provided to schools
+5. Monitor the implementation of interventions at the school level
+6. Record progress of civil work projects at the school-level
+7. Report fund utilization status of the schools
+8. Record meeting minutes after conducting review meetings every month
+9. Monitor training conducted at the district, block or cluster level
+10. Collect training/workshop feedback 
 
 ### 2.2 Usage Status Across India
 
@@ -133,6 +140,8 @@ Technical architecture diagram to be added (ongoing)
 ## 4. For Administrators
 
 ### 4.1 Configure School Visit Forms
+
+Samiksha forms are based on the 
 
 ### 4.2 Manage Application Users
 
