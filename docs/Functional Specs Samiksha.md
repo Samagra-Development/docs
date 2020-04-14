@@ -283,9 +283,9 @@ While creating an XLS there are several types of functions that you can enable i
 
 *Question Types*
 
-ODK has a wide variety of [question types](https://docs.opendatakit.org/form-question-types/).
+ODK has a wide variety of [question types](https://docs.opendatakit.org/form-question-types/)
 
-![](https://drive.google.com/file/d/13OIgcmYvRuokkTsrTEwRh2BKkelL-U5J/view?usp=sharing)
+![](https://media.giphy.com/media/KZMI2mT0jCRy86m9NB/giphy.gif)
 
 We have observed that the following question widgets are used extensively in Samiksha by the State Education Departments, which have been currently using this.
 
@@ -316,7 +316,7 @@ Form styling can be used to add media to the questions to change the fonts and c
 
 You can also add Emojis to questions!
 
-![](https://drive.google.com/file/d/13OIgcmYvRuokkTsrTEwRh2BKkelL-U5J/view?usp=sharing)
+![](https://media.giphy.com/media/Md4fzbVz75H9L1DrEX/giphy.gif)
 
 *Form Operators & Functions*
 
