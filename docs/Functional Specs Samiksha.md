@@ -126,17 +126,25 @@ Define and serve in-app trigger based notifications to users to guide them throu
 
 Whitelabel the mobile application by adding the theme colors, splash screens, login screens, logos, about us information based on your department branding.
 
+*images to be added as GIFs*
+
 ***3.2.2 Add / Remove Pages***
 
 Add custom pages within the application to share information with the users about the purpose of the application, tutorial videos, helpline numbers, and instructions.
 
-***3.2.3 Jurisdiction Datav***
+*images to be added as GIFs*
+
+***3.2.3 Jurisdiction Data***
 
 Update	Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately.
+
+*images to be added as GIFs*
 
 ***3.2.4 Notifications***
 
 Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
+
+*images to be added as GIFs*
 
 ### 3.3 User Authentication & Management	
 
@@ -144,17 +152,25 @@ Define and serve in-app trigger based notifications to users to guide them throu
 
 Create and manage users through a pre-designed admin panel and add variables for each user such as role (Teacher, BEO, DEO, Mentors), jurisdiction (District, Block, School)
 
+*images to be added as GIFs*
+
 ***3.3.2 Role Based Form Access***
 
 Enable or disable access to data collection forms on the application based on the role of the application users
+
+*images to be added as GIFs*
 
 ***3.3.3 View Profile Details (in App)***
 
 Allow users to view or edit specific variables of their profile information through the mobile application itself 
 
+*images to be added as GIFs*
+
 ***3.3.4 OTP Based Password Reset***
 
 Users can reset their passwords though an SMS based password reset functionality in the application 
+
+*images to be added as GIFs*
 
 ### 3.4 Visualize Form Information	
 
@@ -162,17 +178,25 @@ Users can reset their passwords though an SMS based password reset functionality
 
 Create visualizations with a few clicks using Metabase, a configurable visualization tool with detailed documentation
 
+*images to be added as GIFs*
+
 ***3.4.2 Filtered Views***
 
 Add filters to graphs to show data grouped by any variable in your dataset. Typically used for grouping by school, cluster, block, district, academic year.
+
+*images to be added as GIFs*
 
 ***3.4.3 Add Images & Logos***
 
 Insert government state education department logos and local on-ground images across dashboards to make them look consistent to the state department branding.
 
+*images to be added as GIFs*
+
 ***3.4.4 Generate PDF Views***
 
 Configure PDFs for dashboard views to enable users to download and print different views of the dashboard. This is typically used by block officers to put up monthly dashboard based report on notice boards in their offices or by teachers in schools.
+
+*images to be added as GIFs*
 
 ### 3.5 Monitor Application Performance
 
@@ -180,25 +204,31 @@ Configure PDFs for dashboard views to enable users to download and print differe
 
 Track user engagement at a per minute, per 30 minutes, per 24 hours to understand peak engagement period of the application
 
+*images to be added as GIFs*
+
 ***3.5.2 Track Crash Events***
 
 Track any crash events with a detailed log of the user activity to debug any issue that the user is facing on the ground
+
+*images to be added as GIFs*
 
 ***3.5.3 Setup Monitoring Alerts***
 
 Setup email alerts for different monitoring objectives such as new type of crash event observed, CPU usage >75%, disk space >80% and more
 
+*images to be added as GIFs*
+
 ***3.5.4 Visualize Monitoring Data***
 
 Visualize all application events to understand trends of usage behaviour of your application through a single view
 
-## 4. For Administrators
+*images to be added as GIFs*
+
+## 4. For Administrators (How-To-Configure Guides)
 
 ### 4.1 Configure School Visit Forms
 
 Samiksha forms are configured using [Open Data Kit](https://opendatakit.org). The Open Data Kit software is an open source software that allows for collecting, managing, and using data in resource-constrained environments. It allows for the collection of data offline and submission of the data when internet connectivity is available. It allows users to aggregate data with full control over the collected data and the servers where this data is stored.
-
-![](https://drive.google.com/file/d/13OIgcmYvRuokkTsrTEwRh2BKkelL-U5J/view?usp=sharing)
 
 A summary of the steps to create a data collection form using ODK has been provided below. 
 
@@ -253,7 +283,11 @@ While creating an XLS there are several types of functions that you can enable i
 
 *Question Types*
 
-ODK has a wide variety of [question types](https://docs.opendatakit.org/form-question-types/) of which we have observed that the following question widgets are used extensively in Samiksha by the State Education Departments, which have been currently using this.
+ODK has a wide variety of [question types](https://docs.opendatakit.org/form-question-types/).
+
+![](https://drive.google.com/file/d/13OIgcmYvRuokkTsrTEwRh2BKkelL-U5J/view?usp=sharing)
+
+We have observed that the following question widgets are used extensively in Samiksha by the State Education Departments, which have been currently using this.
 
 - [Text widgets](https://docs.opendatakit.org/form-question-types/#text-widgetsv)
 - [Number widgets](https://docs.opendatakit.org/form-question-types/#number-widgets)
@@ -282,6 +316,8 @@ Form styling can be used to add media to the questions to change the fonts and c
 
 You can also add Emojis to questions!
 
+![](https://drive.google.com/file/d/13OIgcmYvRuokkTsrTEwRh2BKkelL-U5J/view?usp=sharing)
+
 *Form Operators & Functions*
 
 Form operators and functions allow users to setup calculations, constraints and validations for questions in the data collection forms. For example if you want to create questions based on the type of school then you can apply a 'Relevant' function that allows the monitor to view different questions based on the type of school (Primary, Secondary) the monitor is monitoring. 
@@ -293,6 +329,8 @@ View the details of the different form operators [here](https://docs.opendatakit
 ***4.1.3 Convert this XLS Form to XML***
 
 Once the excel sheet is created and finalized convert it to XML using the [XLS to XML converter](https://opendatakit.org/xlsform/).
+
+
 
 ***4.1.4 Upload the XML to the ODK Aggregate server***
 
