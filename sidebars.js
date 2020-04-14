@@ -33,21 +33,10 @@ module.exports = {
       {'Data Analytics': ['CODataAnalytics']},
       {'Application Logging': ['COApplicationLogging']},
     ],
-    Products: [
-      'ProductsOverview',
-      {
-        Samiksha: [
-          'SamikshaFuncSpecs',
-          'ArchitectureSamiksha'
-        ],
-      },
-      {Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad']},
-      {
-        Pariksha: [
-          'ParikshaFuncSpecs',
-          'ArchitecturePariksha'
-        ],
-      },
-    ],
+    Product Specs: [
+      'SamikshaFuncSpecs',
+      'SamwadFuncSpecs', 
+      'ParikshaFuncSpecs',
+      ],
   },
 };
