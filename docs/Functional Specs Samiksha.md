@@ -198,6 +198,8 @@ Visualize all application events to understand trends of usage behaviour of your
 
 Samiksha forms are configured using [Open Data Kit](https://opendatakit.org). The Open Data Kit software is an open source software that allows for collecting, managing, and using data in resource-constrained environments. It allows for the collection of data offline and submission of the data when internet connectivity is available. It allows users to aggregate data with full control over the collected data and the servers where this data is stored.
 
+![](https://drive.google.com/file/d/13OIgcmYvRuokkTsrTEwRh2BKkelL-U5J/view?usp=sharing)
+
 A summary of the steps to create a data collection form using ODK has been provided below. 
 
 ***4.1.1 Create a form using ODK Build***
