@@ -323,7 +323,9 @@ Certain changes which don't involve adding or removing a question can be made wi
 
 Please view the [documentation](https://docs.opendatakit.org/form-update/) for updating existing forms as this will have an implication on how the database for this form is managed. 
 
-### 4.2 Manage Application Users & Metadata
+### 4.2 Manage Application Metadata
+
+***4.2.1 User Management***
 
 In Samiksha, there is an admin console that can be enabled to allows administrators of the application at the state or district level to manage user authentication for the application. The typical feature set that is enabled through this admin console has been listed below.
 
@@ -333,36 +335,44 @@ In Samiksha, there is an admin console that can be enabled to allows administrat
 - Delete users
 - Reset password of existing users
 
-The entire admin console is configurable. You can select what you want to see, how you want to see it (graph, table etc) and what you want to edit. In addition you can also update ***metadata*** of the application in this console. This application metadata would typically include the following details.
+The entire admin console is configurable. You can select what you want to see, how you want to see it (graph, table etc) and what you want to edit. 
+
+***4.2.1 Metadata Management***
+
+In addition you can also update ***metadata*** of the application in this console. This application metadata would typically include the following details.
 
 - School Details (School Name, UDISE, Type of School, Total Enrolment, GPS Coordinates etc)
 - Administrative Location Mapping (District, Block, Cluster, GP etc)
 - Monitor Designation Wise Visit Targets
 
-### 4.3 Update User Designation to Form Mapping
+***4.2.3 User Designation to Form Mapping***
 
+By managing the configuration of the access control for forms you can give different users access to different set of forms. The following steps will enable users to define the DESIGNATION to ROLE mapping and ROLE to FORM mapping. 
 
+- Define roles (according to different combination of designations for which forms are to be made visible)
+- Update the roles to form mapping (in the Role Based Form Access section in the admin console)
+- View updated forms based on the role mapping
 
-### 4.4 Create Visualizations of Submission Data
+### 4.3 Create Visualizations of Submission Data
 
-The data collected on the application can be linked to Metabase to analyse data in the form of dashboards. In case there are datasets that are required to create the dashboards, but are not collected directly via the application for e.g, UDISE mapping, User database, etc, then, it can be linked separately to Metabase using google cron. 
+All the data collected through the Samiksha application can be linked to Metabase to analyse data in the form of dashboards. [Metabase](https://metabase.com) is an Open Source tool for data visualization. It can be used to display any data in different formats like bar graphs, pie charts, tables etc. All dashboards in the Samarth program (Assessment dashboard, School Visit Dashboard, Pre-board dashboard) have all been created on Metabase.
 
-Following steps to be followed to add data to Metabase-
+Metabase dahsboards are simple to use and highly configurable. You can view this [Metabase documentation](https://www.metabase.com/docs/latest/users-guide/start.html) for how to setup basic graphs. A few key sections from this page that we typically refer to while building Metabase dashboards are listed below. 
 
-In case, data is collected through the ODK application: <we can screenshots for every steps>
-Go to settings > admin 
-Got to databases  and then select “Add Database”
-Add the details of the database and save
-	
-The tables in the database can now be accessed and dashboards can be created
+- [Overview of Metabase](https://www.metabase.com/docs/latest/users-guide/01-what-is-metabase.html)
+- [Basics of Databases](https://www.metabase.com/docs/latest/users-guide/02-database-basics.html)
+- [Basic Exploration in Metabase](https://www.metabase.com/docs/latest/users-guide/03-basic-exploration.html)
+- [Asking questions in Metabase](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html)
+- [Asking custom questions in Metabase](https://www.metabase.com/docs/latest/users-guide/start.html)
+- [Using Metabase Visualizations](https://www.metabase.com/docs/latest/users-guide/05-visualizing-results.html
+- [Sharing and organizing your saved questions](https://www.metabase.com/docs/latest/users-guide/06-sharing-answers.html)
+- [Creating dashboards](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html)
+- [Adding filters to dashboards](https://www.metabase.com/docs/latest/users-guide/08-dashboard-filters.html)
 
-In case, data is not collected through the ODK application, but is required to create some visualizations in the dashboard:
-Add the database by following the same steps as described in case 1
-Copy data to added to the database on a google sheet
-Get the link to this data range
-Add the range on this sheet <we need to link the automation sheet here>
-The data will be added to the database in an hour <not sure of the time taken>
+To view existing Metabase dashboards being used by different State Education Departments using Samiksha are available below:
 
+- [Saksham SAT Dashboards](https://sites.google.com/samagragovernance.in/sakshamhry/elementary/sat-student-assessment-tests?authuser=0), Haryana
+- [Samarth Assessment Dashboards](https://hp-samarth.herokuapp.com), Himachal Pradesh
 
 ### 4.5 View Application Performance Data
 
