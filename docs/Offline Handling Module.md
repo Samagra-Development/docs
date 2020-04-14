@@ -28,5 +28,5 @@ You can enqueue the tasks into the offline module's to be executed tasks list, u
 ScheduledOneTimeWork.from(ApiWorker.class, new Data(hashMap)).enqueueTask(getMvpView().getActivityContext());
 //ApiWorker is the worker class to execute the task when the constraints are met. hashMap refers to the data to be sent wrt. //to the task enqueued.
 ```
-
+<div style="width:500px;max-width:100%;"><div style="height:0;padding-bottom:34.2%;position:relative;"><iframe width="500" height="171" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/3wl0v6"></iframe></div><p><a href="https://imgflip.com/gif/3wl0v6">via Imgflip</a></p></div>
 
