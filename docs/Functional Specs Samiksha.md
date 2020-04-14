@@ -18,15 +18,24 @@ Through Samiksha the State Education Department can have a mobile application wi
 ### 2.1 Governance Use Cases
 
 The Samiksha product can be used for managing the following activities of the State Education Department:
-1. Record observations on monthly school visits 
+1. Record observations on monthly school visits
+
 2. Record feedback during classroom observations
+
 3. Report status of material delivery to the schools
+
 4. Monitor the usage of supplementary material provided to schools
+
 5. Monitor the implementation of interventions at the school level
+
 6. Record progress of civil work projects at the school-level
+
 7. Report fund utilization status of the schools
+
 8. Record meeting minutes after conducting review meetings every month
+
 9. Monitor training conducted at the district, block or cluster level
+
 10. Collect training/workshop feedback 
 
 ### 2.2 Usage Status Across India
