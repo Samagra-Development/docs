@@ -174,7 +174,7 @@ Insert government state education department logos and local on-ground images ac
 
 Configure PDFs for dashboard views to enable users to download and print different views of the dashboard. This is typically used by block officers to put up monthly dashboard based report on notice boards in their offices or by teachers in schools.
 
-### 3.5 Monitor Application Performance	
+### 3.5 Monitor Application Performance
 
 ***3.5.1 Track User Engagement***
 
@@ -310,7 +310,7 @@ Once the XML is generated then you are ready to upload the form to your ODK Aggr
 - By removing a form from the Form Management page all submission data for that form will be DELETED
 - As a thumb rule DO NOT DELETE any form from the Form Management page
 
-***4.1.5 Updating existing form***
+***4.1.6 Updating existing form***
 
 Certain changes which don't involve adding or removing a question can be made without needing to replace the existing forms. The kind of changes are:
 
@@ -323,43 +323,21 @@ Certain changes which don't involve adding or removing a question can be made wi
 
 Please view the [documentation](https://docs.opendatakit.org/form-update/) for updating existing forms as this will have an implication on how the database for this form is managed. 
 
-### 4.2 Manage Application Users
+### 4.2 Manage Application Users & Metadata
 
-Bulk addition of users (bulk add will require the CSV file to be in a specific format)
-Addition of single users (using the bulk addition method)
-Bulk delete users (maximum users that can be deleted at one time is 500 users - based on the total number of users that can be viewed on a single admin panel view)
-Single delete users
-Password reset feature to reset the password of the users
-View user information
-The list of all users of the application will be available on the dashboard
-Any columns that you wish for the user details can be displayed in any form. (This is fully customizable)
-The sort will not work on nested fields like block, cluster, and district for now. The alternative is to use a search for selecting a particular district. (Since these are not getting indexed at Fusionauth’s end, we have no choice to build our own over top of it or modify Fusionauth if there really is a need for such a feature)
-Edit user details
-Certain columns will have a pre-fill while editing users such as district, block, school, the role of the user
-Currently, there is a bug in the edit panel. You might have to select the district which the user already has to render the block and cluster. We will be fixing this soon.
-All the data that is there on the cascaded dropdown comes from a UDISE list. With certain values like Block-level Officers' Visit added to the clusters and Cluster-level Officers' Visit added to the blocks for all users. If you find any of the combinations missing, please add a Gitlab issue.
-This is a lazy save. So users will get saved after a delay of 5 seconds. On a successful save, you get feedback. If the feedback is negative for 2 continuous submissions please let us know.
-Search users
-Searches use wildcards
-It will search as you type
-There is no fuzzy/partial search with wrong spellings
-All filters/searches are in combination with the other ones
-Update base data of the application
-UDISE/block/district mapping
-Ability to have cascading dropdowns when editing user details.
+In Samiksha, there is an admin console that can be enabled to allows administrators of the application at the state or district level to manage user authentication for the application. The typical feature set that is enabled through this admin console has been listed below.
 
-Note before using the admin panel
-Before using the admin panel always click on the refresh button on the top right corner. This is required to ensure that you have the latest user data. The refresh button only refreshes user data and not the webpage.
+- Addition of users
+- View user information
+- Edit details of existing users
+- Delete users
+- Reset password of existing users
 
-Features planned for version 2
-Update base data of the application
-Compliance target data (to be updated in the next version)
-UDISE table to be editable similar to the User table shown.
-The functions outside the admin panel will be brought within this admin panel
-Creation of roles (currently available through FusionAuth panel)
-Role to form mapping (currently available through Firebase panel)
-Update form version on mobile device (currently available through Firebase panel)
+The entire admin console is configurable. You can select what you want to see, how you want to see it (graph, table etc) and what you want to edit. In addition you can also update ***metadata*** of the application in this console. This application metadata would typically include the following details.
 
+- School Details (School Name, UDISE, Type of School, Total Enrolment, GPS Coordinates etc)
+- Administrative Location Mapping (District, Block, Cluster, GP etc)
+- Monitor Designation Wise Visit Targets
 
 ### 4.3 Update User Designation to Form Mapping
 
