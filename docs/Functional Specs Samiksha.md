@@ -198,13 +198,117 @@ Visualize all application events to understand trends of usage behaviour of your
 
 Samiksha forms are based on the 
 
+Create an excel sheet with all questions
+Since we use OpenSource tools, there is a common global standard that is used to create this sheet
+Current set of excel sheets that are being used to create forms in the application are available here <Samarth to link>
+OpenDataKit, the OpenSource tool that is used for this application has clearly defined how different types of questions can be added in the GoogleSheet. You can view the documentation Question types, Form Logic, Form Styling, Form Operators
+Some commonly used questions in the forms are listed below.
+Text widgets
+Number widgets
+Date and time widgets
+Select widgets
+Location widgets
+Image widgets
+Note widget
+Hidden questions
+Grouping multiple widgets on the same screen
+Commonly used form logics in our forms are listed below
+Form logic building blocks
+Requiring responses
+Setting default responses
+Validating and restricting responses
+Conditionally showing questions
+Groups of questions
+Convert this excel sheet to XML
+Once the excel sheet is created and finalized convert it to XML using this converter 
+
+Upload the XML to the ODK Aggregate server
+Sign with your designated credentials
+Add New Form through the Form Management Section
+Note - Forms with the same Form ID can only be uploaded if there no addition or deletion of questions
+
+Manage existing forms
+Form data can be viewed in the Submissions tab by filtering on the desired form
+All the form submission can be downloaded in a csv using the EXPORT function
+Entries in the submission data can be deleted by clicking on the cross button added on each row of the submission data
+You can view documentation about what more you can do on Aggregate here
+By removing a form from the Form Management page all submission data for that form will be DELETED
+As a thumb rule DO NOT DELETE any form from the Form Management page
+
+Updating existing form
+How do we update the form in case of any changes?
+In what all scenarios, the form can be updated by just increasing the version number?
+In what all scenarios, the form cannot be updated and will be treated as a new form with an updated database?
+Will the application save a half-filled form?
+
+
 ### 4.2 Manage Application Users
+
+
+Bulk addition of users (bulk add will require the CSV file to be in a specific format)
+Addition of single users (using the bulk addition method)
+Bulk delete users (maximum users that can be deleted at one time is 500 users - based on the total number of users that can be viewed on a single admin panel view)
+Single delete users
+Password reset feature to reset the password of the users
+View user information
+The list of all users of the application will be available on the dashboard
+Any columns that you wish for the user details can be displayed in any form. (This is fully customizable)
+The sort will not work on nested fields like block, cluster, and district for now. The alternative is to use a search for selecting a particular district. (Since these are not getting indexed at Fusionauth’s end, we have no choice to build our own over top of it or modify Fusionauth if there really is a need for such a feature)
+Edit user details
+Certain columns will have a pre-fill while editing users such as district, block, school, the role of the user
+Currently, there is a bug in the edit panel. You might have to select the district which the user already has to render the block and cluster. We will be fixing this soon.
+All the data that is there on the cascaded dropdown comes from a UDISE list. With certain values like Block-level Officers' Visit added to the clusters and Cluster-level Officers' Visit added to the blocks for all users. If you find any of the combinations missing, please add a Gitlab issue.
+This is a lazy save. So users will get saved after a delay of 5 seconds. On a successful save, you get feedback. If the feedback is negative for 2 continuous submissions please let us know.
+Search users
+Searches use wildcards
+It will search as you type
+There is no fuzzy/partial search with wrong spellings
+All filters/searches are in combination with the other ones
+Update base data of the application
+UDISE/block/district mapping
+Ability to have cascading dropdowns when editing user details.
+
+Note before using the admin panel
+Before using the admin panel always click on the refresh button on the top right corner. This is required to ensure that you have the latest user data. The refresh button only refreshes user data and not the webpage.
+
+Features planned for version 2
+Update base data of the application
+Compliance target data (to be updated in the next version)
+UDISE table to be editable similar to the User table shown.
+The functions outside the admin panel will be brought within this admin panel
+Creation of roles (currently available through FusionAuth panel)
+Role to form mapping (currently available through Firebase panel)
+Update form version on mobile device (currently available through Firebase panel)
+
 
 ### 4.3 Update User Designation to Form Mapping
 
-### 4.4 Create Visualizations of Submissio Data
+
+
+### 4.4 Create Visualizations of Submission Data
+
+The data collected on the application can be linked to Metabase to analyse data in the form of dashboards. In case there are datasets that are required to create the dashboards, but are not collected directly via the application for e.g, UDISE mapping, User database, etc, then, it can be linked separately to Metabase using google cron. 
+
+Following steps to be followed to add data to Metabase-
+
+In case, data is collected through the ODK application: <we can screenshots for every steps>
+Go to settings > admin 
+Got to databases  and then select “Add Database”
+Add the details of the database and save
+	
+The tables in the database can now be accessed and dashboards can be created
+
+In case, data is not collected through the ODK application, but is required to create some visualizations in the dashboard:
+Add the database by following the same steps as described in case 1
+Copy data to added to the database on a google sheet
+Get the link to this data range
+Add the range on this sheet <we need to link the automation sheet here>
+The data will be added to the database in an hour <not sure of the time taken>
+
 
 ### 4.5 View Application Performance Data
+
+Application performance
 
 ## 5. Frequently Asked Questions
 
