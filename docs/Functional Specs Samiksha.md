@@ -384,7 +384,7 @@ Metabase dahsboards are simple to use and highly configurable. You can view this
 - [Basic Exploration in Metabase](https://www.metabase.com/docs/latest/users-guide/03-basic-exploration.html)
 - [Asking questions in Metabase](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html)
 - [Asking custom questions in Metabase](https://www.metabase.com/docs/latest/users-guide/start.html)
-- [Using Metabase Visualizations](https://www.metabase.com/docs/latest/users-guide/05-visualizing-results.html
+- [Using Metabase Visualizations](https://www.metabase.com/docs/latest/users-guide/05-visualizing-results.html)
 - [Sharing and organizing your saved questions](https://www.metabase.com/docs/latest/users-guide/06-sharing-answers.html)
 - [Creating dashboards](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html)
 - [Adding filters to dashboards](https://www.metabase.com/docs/latest/users-guide/08-dashboard-filters.html)
