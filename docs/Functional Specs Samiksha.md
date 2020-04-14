@@ -196,51 +196,132 @@ Visualize all application events to understand trends of usage behaviour of your
 
 ### 4.1 Configure School Visit Forms
 
-Samiksha forms are based on the 
+Samiksha forms are configured using [Open Data Kit](https://opendatakit.org). The Open Data Kit software is an open source software that allows for collecting, managing, and using data in resource-constrained environments. It allows for the collection of data offline and submission of the data when internet connectivity is available. It allows users to aggregate data with full control over the collected data and the servers where this data is stored.
 
-Create an excel sheet with all questions
-Since we use OpenSource tools, there is a common global standard that is used to create this sheet
-Current set of excel sheets that are being used to create forms in the application are available here <Samarth to link>
-OpenDataKit, the OpenSource tool that is used for this application has clearly defined how different types of questions can be added in the GoogleSheet. You can view the documentation Question types, Form Logic, Form Styling, Form Operators
-Some commonly used questions in the forms are listed below.
-Text widgets
-Number widgets
-Date and time widgets
-Select widgets
-Location widgets
-Image widgets
-Note widget
-Hidden questions
-Grouping multiple widgets on the same screen
-Commonly used form logics in our forms are listed below
-Form logic building blocks
-Requiring responses
-Setting default responses
-Validating and restricting responses
-Conditionally showing questions
-Groups of questions
-Convert this excel sheet to XML
-Once the excel sheet is created and finalized convert it to XML using this converter 
+A summary of the steps to create a data collection form using ODK has been provided below. 
 
-Upload the XML to the ODK Aggregate server
-Sign with your designated credentials
-Add New Form through the Form Management Section
-Note - Forms with the same Form ID can only be uploaded if there no addition or deletion of questions
+***4.1.1 Create a form using ODK Build***
 
-Manage existing forms
-Form data can be viewed in the Submissions tab by filtering on the desired form
-All the form submission can be downloaded in a csv using the EXPORT function
-Entries in the submission data can be deleted by clicking on the cross button added on each row of the submission data
-You can view documentation about what more you can do on Aggregate here
-By removing a form from the Form Management page all submission data for that form will be DELETED
-As a thumb rule DO NOT DELETE any form from the Form Management page
+To start, you can create a form using  ODK Build. ODK Build is a form designer with a drag-and-drop user interface that has been provided by ODK. View the documentation of how to use ODK Build to create a form [here](https://docs.opendatakit.org/build-intro/).
 
-Updating existing form
-How do we update the form in case of any changes?
-In what all scenarios, the form can be updated by just increasing the version number?
-In what all scenarios, the form cannot be updated and will be treated as a new form with an updated database?
-Will the application save a half-filled form?
+***4.1.2 Alternatively, create an ODK XLS form***
 
+In case you plan to create a data collection form which has multiple logics, expressions, validations and so on, then we would recommend you use the ODK XLS Form method to create this form. XLSForm is a form standard created to help simplify the authoring of forms in Excel. To get an overview of XLS Forms view the documentation [here](https://docs.opendatakit.org/xlsform/).
+
+There are 3 mandatory sheets that need to be created in every excel form and each sheet as certain mandatory columns that need to be created within each sheet. The three mandatory sheets along with mandatory columns are as follows:
+
+**Survey:** the three mandatory columns under this sheet are type, name and label
+**Choices:** the three mandatory columns under this sheet are list name, name and label
+**Settings:** the two mandatory columns under this sheet are form_title and form_id
+
+Some important rules:
+- The name of every sheet and column should be in lower case
+- Name of the excel file cannot start with a number
+- The name of the excel file cannot contain spaces
+
+**Basic structure of the survey sheet**
+
+This is the sheet which will contain most of the content of the form such as the questions, the question type, the appearance of the questions, the constraints etc.
+
+**Type column:** enter the question type in this column
+**Name column:** give a unique name to each question, use lower case only and _ (underscore) as a separator
+**Label column:** enter your question in this column
+
+Some additional useful columns are as follows:
+**Hint:** Enter instructions related to the question in this column
+**Required:** If the question is mandatory, enter "yes" in this column
+**Appearance:** commands related to appearance of the question appear in this column
+
+**Basic structure of the choices sheet** 
+
+This sheet contains the choices of multiple choice questions
+
+**List name:** Enter each of the list names that was created in the “survey” sheet
+**Name:** Give a unique name to each of your choices in the list
+**Label:** Enter each choice that will be visible to the user in this column
+
+**Basic Structure of the settings sheet:**
+
+This sheet has variables that allow users to define the name of the form that will be shown to mobile application users
+
+**Form_title:** Enter the title of the form that will be displayed to the user
+**Form_id:** Specifies the table name
+
+While creating an XLS there are several types of functions that you can enable in the data collection ranging from defining question types, setting up a form logics, defining form styling, and creating form operators. We have listed some of the commonly used features for each of these. 
+
+*Question Types*
+
+ODK has a wide variety of [question types](https://docs.opendatakit.org/form-question-types/) of which we have observed that the following question widgets are used extensively in Samiksha by the State Education Departments, which have been currently using this.
+
+- [Text widgets](https://docs.opendatakit.org/form-question-types/#text-widgetsv)
+- [Number widgets](https://docs.opendatakit.org/form-question-types/#number-widgets)
+- [Date and time widgets](https://docs.opendatakit.org/form-question-types/#date-and-time-widgets)
+- [Select widgets](https://docs.opendatakit.org/form-question-types/#select-widgets)
+- [Location widgets](https://docs.opendatakit.org/form-question-types/#location-widgets)
+- [Image widgets](https://docs.opendatakit.org/form-question-types/#image-widgets)
+- [Note widget](https://docs.opendatakit.org/form-question-types/#note-widget)
+- [Hidden questions](https://docs.opendatakit.org/form-question-types/#hidden-questions)
+- [Grouping multiple widgets on same screen](https://docs.opendatakit.org/form-question-types/#grouping-multiple-widgets-on-the-same-screen)
+
+*Form Logics*
+
+ODK offers a mechanism of enabling dynamic behaviour in the data collection forms. The commonly used form logics that we have observed are indicated below.
+
+- [Form logic building blocks](https://docs.opendatakit.org/form-logic/#form-logic-building-blocks)
+- [Requiring responses](https://docs.opendatakit.org/form-logic/#requiring-responses)
+- [Setting default responses](https://docs.opendatakit.org/form-logic/#setting-default-responses)
+- [Validating and restricting responses](https://docs.opendatakit.org/form-logic/#validating-and-restricting-responses)
+- [Conditionally showing questions](https://docs.opendatakit.org/form-logic/#conditionally-showing-questions)
+- [Groups of questions](https://docs.opendatakit.org/form-logic/#groups-of-questions)
+
+*Form Styling*
+
+Form styling can be used to add media to the questions to change the fonts and colors of the questions in the data collection forms. This is a great way to add some color and make the data collection form UI more engaging for the end user. Read more about all the interesting updates that you can do the form styling [here](https://docs.opendatakit.org/form-styling/#markdown-in-forms)
+
+You can also add Emojis to questions!
+
+*Form Operators & Functions*
+
+Form operators and functions allow users to setup calculations, constraints and validations for questions in the data collection forms. For example if you want to create questions based on the type of school then you can apply a 'Relevant' function that allows the monitor to view different questions based on the type of school (Primary, Secondary) the monitor is monitoring. 
+
+Form Operators are also important as they allow you to set up validations in the forms.
+
+View the details of the different form operators [here](https://docs.opendatakit.org/form-operators-functions/#math-operators).
+
+***4.1.3 Convert this XLS Form to XML***
+
+Once the excel sheet is created and finalized convert it to XML using the [XLS to XML converter](https://opendatakit.org/xlsform/).
+
+***4.1.4 Upload the XML to the ODK Aggregate server***
+
+Once the XML is generated then you are ready to upload the form to your ODK Aggregate Server. Follow these steps mentioned below to update the form and view it in your mobile application:
+
+- Sign with your designated credentials
+- Add New Form through the Form Management Section
+
+*Note - Forms with the same Form ID can only be uploaded if there no addition or deletion of questions*
+
+***4.1.5 Manage existing forms***
+
+- Form data can be viewed in the Submissions tab by filtering on the desired form
+- All the form submission can be downloaded in a csv using the EXPORT function
+- Entries in the submission data can be deleted by clicking on the cross button added on each row of the submission data
+- You can view documentation about what more you can do on Aggregate [here](https://docs.opendatakit.org/aggregate-forms/)
+- By removing a form from the Form Management page all submission data for that form will be DELETED
+- As a thumb rule DO NOT DELETE any form from the Form Management page
+
+***4.1.5 Updating existing form***
+
+Certain changes which don't involve adding or removing a question can be made without needing to replace the existing forms. The kind of changes are:
+
+- Changing the text or translation of a label
+- Changing validations, calculations, relevants
+- Changing options for a select_one or select_multiple
+- Changing the order of questions
+- Adding translations
+- Updating media including CSVs for your form
+
+Please view the [documentation](https://docs.opendatakit.org/form-update/) for updating existing forms as this will have an implication on how the database for this form is managed. 
 
 ### 4.2 Manage Application Users
 
