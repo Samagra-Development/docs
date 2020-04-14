@@ -210,9 +210,9 @@ In case you plan to create a data collection form which has multiple logics, exp
 
 There are 3 mandatory sheets that need to be created in every excel form and each sheet as certain mandatory columns that need to be created within each sheet. The three mandatory sheets along with mandatory columns are as follows:
 
-*Survey:* three mandatory columns under this sheet are type, name and label.
-*Choices:* three mandatory columns under this sheet are list name, name and label.
-*Settings:* two mandatory columns under this sheet are form_title and form_id.
+- *Survey:* three mandatory columns under this sheet are type, name and label.
+- *Choices:* three mandatory columns under this sheet are list name, name and label.
+- *Settings:* two mandatory columns under this sheet are form_title and form_id.
 
 *Some important rules:*
 - The name of every sheet and column should be in lower case
@@ -223,29 +223,29 @@ There are 3 mandatory sheets that need to be created in every excel form and eac
 
 This is the sheet which will contain most of the content of the form such as the questions, the question type, the appearance of the questions, the constraints etc.
 
-*Type column:* enter the question type in this column.
-*Name column:* give a unique name to each question, use lower case only and _ (underscore) as a separator.
-*Label column:* enter your question in this column.
+- *Type column:* enter the question type in this column.
+- *Name column:* give a unique name to each question, use lower case only and _ (underscore) as a separator.
+- *Label column:* enter your question in this column.
 
 Some additional useful columns are as follows:
-*Hint:* Enter instructions related to the question in this column.
-*Required:* If the question is mandatory, enter "yes" in this column.
-*Appearance:* commands related to appearance of the question appear in this column.
+- *Hint:* Enter instructions related to the question in this column.
+- *Required:* If the question is mandatory, enter "yes" in this column.
+- *Appearance:* commands related to appearance of the question appear in this column.
 
 **Basic structure of the choices sheet** 
 
 This sheet contains the choices of multiple choice questions
 
-*List name:* Enter each of the list names that was created in the “survey” sheet.
-*Name:* Give a unique name to each of your choices in the list.
-*Label:* Enter each choice that will be visible to the user in this column.
+- *List name:* Enter each of the list names that was created in the “survey” sheet.
+- *Name:* Give a unique name to each of your choices in the list.
+- *Label:* Enter each choice that will be visible to the user in this column.
 
 **Basic Structure of the settings sheet:**
 
 This sheet has variables that allow users to define the name of the form that will be shown to mobile application users
 
-*Form_title:* Enter the title of the form that will be displayed to the user.
-*Form_id:* Specifies the table name.
+- *Form_title:* Enter the title of the form that will be displayed to the user.
+- *Form_id:* Specifies the table name.
 
 While creating an XLS there are several types of functions that you can enable in the data collection ranging from defining question types, setting up a form logics, defining form styling, and creating form operators. We have listed some of the commonly used features for each of these. 
 
@@ -299,7 +299,7 @@ Once the XML is generated then you are ready to upload the form to your ODK Aggr
 - Sign with your designated credentials
 - Add New Form through the Form Management Section
 
-*Note - Forms with the same Form ID can only be uploaded if there no addition or deletion of questions*
+*Note: Forms with the same Form ID can only be uploaded if there no addition or deletion of questions*
 
 ***4.1.5 Manage existing forms***
 
@@ -324,7 +324,6 @@ Certain changes which don't involve adding or removing a question can be made wi
 Please view the [documentation](https://docs.opendatakit.org/form-update/) for updating existing forms as this will have an implication on how the database for this form is managed. 
 
 ### 4.2 Manage Application Users
-
 
 Bulk addition of users (bulk add will require the CSV file to be in a specific format)
 Addition of single users (using the bulk addition method)
