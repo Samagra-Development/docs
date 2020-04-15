@@ -63,13 +63,13 @@ In Haryana mentoring and monitoring exercises were limited to primary schools an
 
 With consistent feedback being provided by mentors through the class observation visits teachers have been able to receive timely and regular feedback from mentors.
 
-### 2.4 Alternatives
+### 2.4 Typical Existing Alternatives
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
 ***2.4.1 Pen & Paper based data collection***
 
-Pros cons to be added
+Traditionally, information has always been captured using a pen and paper format....
 
 ***2.4.2 OMR based data collection***
 
@@ -186,7 +186,7 @@ Configure PDFs for dashboard views to enable users to download and print differe
 
 ### 3.5 Monitor Application Performance
 
-*images to be added as GIFs*
+![](https://media.giphy.com/media/ehU21iWSH540I7clAl/giphy.gif)
 
 ***3.5.1 Track User Engagement***
 
@@ -218,7 +218,7 @@ To start, you can create a form using  ODK Build. ODK Build is a form designer w
 
 ***4.1.2 Alternatively, create an ODK XLS form***
 
-In case you plan to create a data collection form which has multiple logics, expressions, validations and so on, then we would recommend you use the ODK XLS Form method to create this form. XLSForm is a form standard created to help simplify the authoring of forms in Excel. To get an overview of XLS Forms view the documentation [here](https://docs.opendatakit.org/xlsform/).
+In case you plan to create a data collection form which has inclusions of multiple form logic, expressions, validations and so on, then we would recommend you use the ODK XLS Form method to create this form. XLSForm is a form standard created to help simplify the authoring of forms in Excel. To get an overview of XLS Forms view the documentation [here](https://docs.opendatakit.org/xlsform/).
 
 There are 3 mandatory sheets that need to be created in every excel form and each sheet as certain mandatory columns that need to be created within each sheet. The three mandatory sheets along with mandatory columns are as follows:
 
@@ -259,7 +259,7 @@ This sheet has variables that allow users to define the name of the form that wi
 - *Form_title:* Enter the title of the form that will be displayed to the user.
 - *Form_id:* Specifies the table name.
 
-While creating an XLS there are several types of functions that you can enable in the data collection ranging from defining question types, setting up a form logics, defining form styling, and creating form operators. We have listed some of the commonly used features for each of these. 
+While creating an XLS there are several types of functions that you can enable in the data collection ranging from defining question types, setting up a form logic, defining form styling, and creating form operators. We have listed some of the commonly used features for each of these. 
 
 *Question Types*
 
@@ -279,9 +279,9 @@ We have observed that the following question widgets are used extensively in Sam
 - [Hidden questions](https://docs.opendatakit.org/form-question-types/#hidden-questions)
 - [Grouping multiple widgets on same screen](https://docs.opendatakit.org/form-question-types/#grouping-multiple-widgets-on-the-same-screen)
 
-*Form Logics*
+*Form Logic*
 
-ODK offers a mechanism of enabling dynamic behaviour in the data collection forms. The commonly used form logics that we have observed are indicated below.
+ODK offers a mechanism of enabling dynamic behaviour in the data collection forms. The commonly used form logic that we have observed are indicated below.
 
 - [Form logic building blocks](https://docs.opendatakit.org/form-logic/#form-logic-building-blocks)
 - [Requiring responses](https://docs.opendatakit.org/form-logic/#requiring-responses)
