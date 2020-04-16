@@ -5,7 +5,6 @@ sidebar_label: Functional Specifications (Samiksha)
 ---
 
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
-
 ## 1. Introduction
 
 State Education Departments across India have been driving reforms in school monitoring processes. Over the years, the different State Education Departments have introduced technology to collect data from school visits and to visualize this data on real-time dashboards for conducting effective department reviews. The focus of these reforms has been to improve the quality of data collection exercises conducted by different levels of officials within the department and to enable precise decision making at the state level.
@@ -104,7 +103,7 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 ![alt-text](../img/SamikshaArchitecture.png)
 
-Samiksha is wired together using the [Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com) and the [Application Logging Component](www.google.com).
+Samiksha is wired together using the _[Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com) & [Application Logging Component](www.google.com)_.
 
 ## 3. High Level Specifications
 
