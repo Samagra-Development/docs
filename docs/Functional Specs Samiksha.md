@@ -6,6 +6,8 @@ sidebar_label: Functional Specifications (Samiksha)
 
 ## 1. Introduction
 
+![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
+
 State Education Departments across India have been driving reforms in school monitoring processes. Over the years, the different State Education Departments have introduced technology to collect data from school visits and to visualize this data on real-time dashboards for conducting effective department reviews. The focus of these reforms has been to improve the quality of data collection exercises conducted by different levels of officials within the department and to enable precise decision making at the state level.
 
 The objective of Samiksha is to transform school monitoring by providing an application with a highly configurable set of features for data collection and visualization. Samiksha is designed for this specific governance use case and is built on OpenSource in a modular, reusable and scalable manner. The application design is created with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
@@ -102,7 +104,9 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 Technical architecture diagram to be added (ongoing)
 
+
 ## 3. High Level Specifications
+
 
 ### 3.1 Configurable Data Collection Forms
 
@@ -124,6 +128,10 @@ Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools 
 
 Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity
 
+
+*To design configurable data collections forms yourself refer to the [4.1 Configure School Visit Forms](#41-configure-school-visit-forms) section in this documentation.*
+
+
 ### 3.2 Configurable Mobile Application	
 
 ![](https://media.giphy.com/media/H1SXR8BXc5cj6XFsxZ/giphy.gif)
@@ -143,6 +151,10 @@ Update	Update jurisdiction data consisting of districts, blocks, cluster, GPs, s
 ***3.2.4 Notifications***
 
 Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
+
+
+*A configurable mobile application can be setup by deploying the Samiksha application. Refer to this [Section](deploysamiksha.md) to deploy the application yourself. Once the applicaton is installed you can further read about how to customize [Ancillary Screens] (AncillaryScreensModule.md), update [Jurisdiction Data]CascadingSearchModule.md) and setup [Notifications](NotificationModule.md).*
+
 
 ### 3.3 User Authentication & Management	
 
@@ -164,6 +176,10 @@ Allow users to view or edit specific variables of their profile information thro
 
 Users can reset their passwords though an SMS based password reset functionality in the application 
 
+
+*A details for setting up the User Authentication & Management Console are available [here](deploysamiksha.md).*
+
+
 ### 3.4 Visualize Form Information
 
 ![](https://media.giphy.com/media/Wp0eqM753Js4OtcW6U/giphy.gif)
@@ -183,6 +199,7 @@ Insert government state education department logos and local on-ground images ac
 ***3.4.4 Generate PDF Views***
 
 Configure PDFs for dashboard views to enable users to download and print different views of the dashboard. This is typically used by block officers to put up monthly dashboard based report on notice boards in their offices or by teachers in schools.
+
 
 ### 3.5 Monitor Application Performance
 
@@ -204,11 +221,14 @@ Setup email alerts for different monitoring objectives such as new type of crash
 
 Visualize all application events to understand trends of usage behaviour of your application through a single view
 
+
 ## 4. For Administrators (How-To-Configure Guides)
 
 ### 4.1 Configure School Visit Forms
 
 Samiksha forms are configured using [Open Data Kit](https://opendatakit.org). The Open Data Kit software is an open source software that allows for collecting, managing, and using data in resource-constrained environments. It allows for the collection of data offline and submission of the data when internet connectivity is available. It allows users to aggregate data with full control over the collected data and the servers where this data is stored.
+
+A pre-requisite for configuring and updating the forms in your application is to [setup](deploysamiksha.md) the Samiksha application.
 
 A summary of the steps to create a data collection form using ODK has been provided below. 
 
