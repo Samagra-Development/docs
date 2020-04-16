@@ -124,6 +124,6 @@ MyApplication.getInstance().component().rxBus().send(new EventTypeExhangeObject(
         
 ```
 
-This way, you have the EventBus pattern with RxJava, RxBus. But if there is some error, it will terminate, so to avoid that check RxRelay.
+This way, you have the EventBus pattern with RxJava, RxBus. But if there is some error, it will terminate, so to avoid that check [RxRelay](https://github.com/JakeWharton/RxRelay).
 
 RxRelay: A Subject except without the ability to call onComplete or onError.
