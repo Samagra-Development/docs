@@ -69,11 +69,11 @@ There are existing alternative processes that can be used for conducting these m
 
 ***2.4.1 Pen & Paper based data collection***
 
-Traditionally, information has always been captured using a pen and paper format....
+Traditionally, information has always been captured by the visiting officials using pen and paper formats. This process requires significant time and cost investment as these pen and paper formats are printed, collected, compiled, aggregated and then used for reviews. Often triangulation of data, visit data incompleteness or inconsistencies and the delay in the data aggregation makes is inviable for department reviews. 
 
 ***2.4.2 OMR based data collection***
 
-Pros cons to be added
+Recently, different State Education Departments have pivoted towards an OMR based data collection method. In this method OMR sheets are designed at the state level and printed either at the state or in different districts, then used by the visiting officials, then compiled and finally scanned. This is once again a logistics heavy process. While the OMR brings in some improvement in the consistency of data collection, it still suffers from similar challenges as the pen & paper data collection process. In addition, a key aspect about OMR data collection is the limited flexibility in updating the forms once they have been designed and rolled out. 
   
 ### 2.5 Core Features
 
