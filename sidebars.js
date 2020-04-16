@@ -19,9 +19,11 @@ module.exports = {
         'Mobile Application': [
           'COMobileApplication',
           'FormManagementPackage',
+          'AncillaryScreensModule',
           'AndroidProfileManagementModule',
           'CascadingSearchModule',
           'NotificationModule',
+          'OfflineHandlingModule',
           'Grove'
         ],
       },
@@ -29,26 +31,12 @@ module.exports = {
       {'PDF Generator': ['COPDFGenerator']},
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
-      {'Security & Optimization': ['COSecurity']},
       {'Application Logging': ['COApplicationLogging']},
-      {'Database Management': ['CODatabaseManagement', 'PSQLReplication']},
-      {'Real Time Data Distribution': ['CORTDataDistribution']},
     ],
     Products: [
-      'ProductsOverview',
-      {
-        Samiksha: [
-          'SamikshaFuncSpecs',
-          'ArchitectureSamiksha'
-        ],
-      },
-      {Samwad: ['SamwadFuncSpecs', 'ArchitectureSamwad']},
-      {
-        Pariksha: [
-          'ParikshaFuncSpecs',
-          'ArchitecturePariksha'
-        ],
-      },
-    ],
+      'SamikshaFuncSpecs',
+      'SamwadFuncSpecs', 
+      'ParikshaFuncSpecs',
+      ],
   },
 };

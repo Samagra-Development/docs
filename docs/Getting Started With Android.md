@@ -217,3 +217,550 @@ String tagValue);
 ```
 
 Here, getIFormManagementContract() returns the value of the contract object for the Form Module. formIdentifier is to be replaced by the name of the specific form you want to be filled by the user. tag refers to the tag whose value you want to override/pre-fill and the tagValue is the desired value
+
+
+## Ancillary Screen Module
+
+For any android app, it becomes imperative, as the usage increases and the features enhance, it is needed to provide an access control to the app. Hence, we developed a module, with certain UI modules which can be easily integrated with your app, to provide basic features which are to be generally present in almost every android application, which are Splash scree, Login Screen, Forgot Password and Reset password via OTP.
+
+### Screens Included in the Ancillary Screens Module
+
+1. Splash Screen  - User sees this activity in the fist time when app is launched.
+2. Login Screen - User can login via user id and password, we are using FusionAuth for the management and authentication of users.
+3. About Us Screen - Ability to confiure the title, icon and the description text of the About Us Screen
+4. Reset Password - User can reset the app password from the Login screen via OTP sent to his registered Mobile number
+5. Tutorials Screen - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in  your Youtube API Key and Video ID. You can also remotely configure the video IDs.
+
+### Integrating Module into your Project
+
+1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
+3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
+4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+5.  Please follow the same steps for the integration of ancillaryscreens module.
+6. In the settings.gradle, Add **':ancillaryscreens'** to the end of already added modules.
+
+### Initialization and Usage of Ancillary Screens Module
+
+Inside  `onCreate`  of Application class or Launcher Activity, in the manner as follows
+```
+AncillaryScreensDriver.init(this,
+                BASE_API_URL,
+                SEND_OTP_API_ENDPOINT,
+                RESET_PASSWORD_API_ENDPOINT,
+                APPLICATIO_ID);
+        
+```
+The method signature of the initialisation invocation is as follows:
+```
+/**
+* 
+* @param mainApplication - Instance of Application Class (Main Application, as you will see is an Interface implemented by
+Application class)
+* @param BASE_API_URL - String (Base API URL for the Fusion Auth, to be later used for user authentication and user data related tasks.)
+* @param SEND_OTP_API_ENDPOINT - String (API Endpoint to send OTP to the mobile number for resetting app password.)
+* @param RESET_PASSWORD_API_ENDPOINT - String (API Endpoint to post user data to reset App Password.)
+* @param APPLICATION_ID - String (Application ID sent for this app in Fusion Auth Backend.)
+*/
+public static void init(@NonNull MainApplication mainApplication, 
+@NonNull String BASE_API_URL, 
+@NonNull String SEND_OTP_API_ENDPOINT, 
+@NonNull String RESET_PASSWORD_API_ENDPOINT,
+@NonNull String APPLICATION_ID);
+
+```
+
+### Using this module
+
+1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
+```
+<activity
+android:name="com.samagra.ancillaryscreens.screens.splash.SplashActivity"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+          <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+                </activity>
+```
+2. The module comes in such a way that you won't need to do any config changes with respect to Login flow for the user. Same goes for the Change Password flow of the user.
+3. To launch the About Us Screen from the module, use the following code:
+```
+AncillaryScreensDriver.launchAboutActivity(context, aboutBundle);
+```
+Here, context is the Context Instance used to launch the About Us screen, AboutBundle is bundle object containing the information transferred to the Activity to render the UI.
+4. To launch the About Us Screen from the module, use the following code:
+```
+AncillaryScreensDriver.launchTutorialsActivity(context, tutorialBundle);
+```
+Here, context is the Context Instance used to launch the Tutorials screen, tutorialBundle is bundle object containing the information transferred to the Activity to render the UI. It contains the video id and Youtube API Key
+5. We are using RxBus to communicate back and forth with the main app module. Please refer to the SplashPresenter class of the downloaded project where we communicate back with the main app module to notify Login success and launching of home screen.
+## User Profile Package
+
+For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
+
+### Overview
+
+The module is developed to provide the following functionalities:
+
+1. Option to display the user’s profile, to display the user's basic role details, contact details, as well as information pertaining to the app, depending on the user.
+
+2. The details for the user can be configured from the backend, via Firebase, as in, the whole profile section has been designed to be dynamically generated. Details of this are discussed in the further part of the document.
+
+3. Users have the option to edit certain profile information, depending on the app contract, meaning dependent on the back end configuration.
+
+4. Users can reset the password for the application via OTP that will be sent to the user’s registered number.
+
+### Integrating the module into the Mobile Application
+
+Download the latest version or grab via Gradle.
+
+```
+The library is available on [`mavenCentral()`]([https://dl.bintray.com/piyushgupta27/maven/com/hypertrack/hyperlog/](https://dl.bintray.com/piyushgupta27/maven/com/hypertrack/hyperlog/)) and [`jcenter()`]([http://jcenter.bintray.com/com/hypertrack/hyperlog/](http://jcenter.bintray.com/com/hypertrack/hyperlog/)).
+```
+In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.
+```
+dependencies {
+
+...
+
+compile 'com.hypertrack:hyperlog:0.0.10'
+
+//This will change once the module will be pushed to the Bintray
+
+…
+
+}
+
+```
+
+### Initialization
+
+1. Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows
+
+```
+ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), this, AppConstants.BASE_API_URL, applicationID);
+
+```
+
+The method signature of this Module Contract Initialisation is as follows:
+
+```
+/**
+     * @param profileContractImpl - {IProfileContract} Implementation Class of the Interface which will be further used to launch the Profile Section further.
+     * @param application         - {Application} Instance of the Application class, which will be used to validate for IllegalState checks.
+     * @param baseURL             - {String} Base URL for Fusion Auth APIs used when editing user profile
+     * @param applicationID       - {String} Application Identifier for this project, from Fusion Auth, used further as parameter for API interactions.
+     */
+
+    public static void registerProfilePackage(IProfileContract profileContractImpl, Application application,
+                                              String baseURL, String applicationID);
+```
+This method invocation will also initialize the ProfileScreenDriver class, which will be further used to launch the Profile Screen.
+
+2. Wherever you want to launch the Profile Section, use the following code piece.
+
+
+```
+ IProfileContract initializer = ComponentManager.iProfileContract;
+
+if(initializer!=null){
+
+        initializer.launchProfileActivity(context,profileConfig,fusionauthAPIKey,sendOTPUrl,updateAppPasswordURL);
+
+        }
+
+```
+
+The method signature of the above method is mentioned below.
+```
+/**
+     * *@param context-{Context}Context Instance used to further launch Profile Screen.
+     *
+     * @param profileConfig-{ArrayList<UserProfileElement>}List of Profile Screen Elements which will be received via Firebase Remote Config,
+     *
+     *                                                          Attributes would be discussed ahead while discussing on how to set up Firebase for project.
+     * @param fusionAuthApiKey-{String}Fusion                   API Auth Key for the Application,used to authenticate the API Requests.
+     * @param sendOTPUrl-{String}API                            End Point to receive OTP for resetting App Password.
+     * @param updatePasswordURL-{String}API                     End-point to update the User Password for the App,after receiving the OTP of registered Mobile Number
+     * @param profileContentValues-{HashMap<String,             String>}Map of the various content fields to be populated,(received via Firebase Remote Config)with their values.
+     */
+
+    void launchProfileActivity(@NonNull Context context, ArrayList<UserProfileElement> profileConfig, String fusionAuthApiKey, 
+                               String sendOTPUrl, String updatePasswordURL, HashMap<String, String> profileContentValues);
+```
+
+
+### Setting Up Firebase for Android Project and Consuming it on Client End
+
+1. First of all, for setting up Remote Config for Firebase, you need to setup Firebase for your Android Application Project. The tutorial for setting up Firebase for Android can be accessed via the link, [Adding Firebase to your Android Project](https://firebase.google.com/docs/android/setup).
+
+2. Configure Remote Config for your Android App after the above step is successfully completed, accessible via the link, [Getting started with Firebase Remote Config on Android](https://firebase.google.com/docs/remote-config/use-config-android).
+
+3. Go to [Google Firebase Console](https://www.console.firebase.google.com/), navigate to your project view. In your project view, launch the Remote Config View by clicking on the Remote Config tab.
+
+4. In the Remote Config window, Click on Add Parameter option. Add the profile config parameters as mentioned ahead.
+
+5. Add the key and value in the format mentioned below.
+
+```
+key : "profile_config"
+
+default value :
+
+[
+
+{
+
+"base64Icon": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gLS0", // String - Base64 String of the Label Icon
+
+"title": "Contact Number - Please note this number will be used for sending OTP for password reset.", // String - Title for the Profile Screen Item
+
+"content": "user.mobilePhone", // String - Type of the Profile Item. (Possible types could be mobilePhone, email, username, Date Of Joining or Date of Birth)
+
+"isEditable": true, //Boolean - determines if the value of this Profile Item could be edited by user or not.
+
+"section": 0, //Integer - This identifier is section out the Profile Items while displaying.
+
+"type": "PHONE_NUMBER", // String - Type of the Profile Item, based on which different type of Layout will be inflated, types yet configured are TEXT/PHONE_NUMBER/DATE/SPINNER
+
+"spinnerExtra": null
+
+},
+
+{
+
+"base64Icon": "iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAA7UlEQVR4Ae3UIQwBcRTHceGioE/Qk6gXQRT0JIiCqE8URFEQBX2CKOgT9Anihedbbru97c/bf3dvwvtun8h+zqMTORdFBda4Q1p2wgRfm0OcLZDsBnF2QzKp2aGHpuvjAKlJJsoT0wbvc4EXJGeQPsABchviCgHyBs3Vp3ljiQLWutigVE99ljOo+r6P0Ec4wq8meNReV2Jb3WXGIOObq4wfIn+Q4fFP1dFav+b8QYYDPeNq+CG0MEg9DcNfhcMgdS+Ju3IdpBvro/UfZC8GxaAY9NeD3hBnFyTbQ5zNkKyLFR4OQ17YoIBbURR9AFTnXP/wlPyjAAAAAElFTkSuQmCC",
+
+"title": "Official Email",
+
+"content": "user.email",
+
+"isEditable": true,
+
+"section": 0,
+
+"type": "TEXT",
+
+"spinnerExtra": null
+
+},
+
+{
+
+"base64Icon": "iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAA7UlEQVR4Ae3UIQwBcRTHceGioE/Qk6gXQRT0JIiCqE8URFEQBX2CKOgT9Anihedbbru97c/bf3dvwvtun8h+zqMTORdFBda4Q1p2wgRfm0OcLZDsBnF2QzKp2aGHpuvjAKlJJsoT0wbvc4EXJGeQPsABchviCgHyBs3Vp3ljiQLWutigVE99ljOo+r6P0Ec4wq8meNReV2Jb3WXGIOObq4wfIn+Q4fFP1dFav+b8QYYDPeNq+CG0MEg9DcNfhcMgdS+Ju3IdpBvro/UfZC8GxaAY9NeD3hBnFyTbQ5zNkKyLFR4OQ17YoIBbURR9AFTnXP/wlPyjAAAAAElFTkSuQmCC",
+
+"title": "Official Email",
+
+"content": "user.state",
+
+"isEditable": true,
+
+"section": 0,
+
+"type": "SPINNER",
+
+"spinnerExtra": [{"Andhra Pradesh", "Delhi", "Punjab", "Odisha", "Haryana", "Himachal Pradesh",......}] //ArrayList<String> - Possible values of the Spinner Items.
+
+}
+
+},.......
+
+]
+```
+
+
+
+6. You can retrieve the above set values at the client end using the following code snippet.
+
+
+```
+public ArrayList<UserProfileElement> getProfileConfig() {
+
+String configString = mFirebaseRemoteConfig.getString("profile_config"); // mFirebaseRemoteConfig is an instance of FirebaseRemoteConfig initialised in the Application level class of the Application.
+
+ArrayList<UserProfileElement> userProfileElements = new ArrayList<>();
+
+try {
+
+JSONArray config = new JSONArray(configString);
+
+for (int i = 0; i < config.length(); i++) {
+
+JSONArray spinnerExtra = config.getJSONObject(i).optJSONArray("spinnerExtra");
+
+ArrayList<String> spinnerValues = null;
+
+if (spinnerExtra != null) {
+
+spinnerValues = new ArrayList<>();
+
+for (int j = 0; j < spinnerExtra.length(); j++) {
+
+spinnerValues.add(spinnerExtra.get(j).toString());
+
+}
+
+}
+
+userProfileElements.add(new UserProfileElement(config.getJSONObject(i).get("base64Icon").toString(),
+
+config.getJSONObject(i).get("title").toString(),
+
+config.getJSONObject(i).get("content").toString(),
+
+(Boolean) config.getJSONObject(i).get("isEditable"),
+
+(int) config.getJSONObject(i).get("section"),
+
+UserProfileElement.ProfileElementContentType.valueOf(config.getJSONObject(i).get("type").toString()),
+
+spinnerValues));
+
+}
+
+} catch (JSONException e) {
+
+e.printStackTrace();
+
+}
+
+return userProfileElements;
+
+}
+```
+
+7. Map the values corresponding to these content fields, as per your app’s scenario. You could fetch and store these values in the SharedPreerences or in local DB, after receiving User Info from App Login Response or from particular User Data API.
+
+  
+
+### UI Capabilities for the User
+
+The package provides the following capabilities to the user:
+
+1. Render the User Profile Screen based on Firebase Remote Config’s returned User Profile Configurations and its values correspondingly received from User Data stored locally.
+
+2. On the Profile Screen, the user has 2 actions available to him/her,
+
+- Ability to reset App Password.
+
+- Edit the user Profile, available only for the editable fields in the user profile.
+
+3. Reset Password
+
+- The user must have a mobile number registered in the profile section, to be able to receive the OTP. In this case, edit the profile prior to resetting the password.
+
+- The user will be redirected to Reset Password Screen, only if API to trigger OTP (whose endpoint has been sent while initialization of module, as discussed above), returns a successful response. In the other scenario, the user will be shown a Snakbar notifying of the type of Exception message returned by the API.
+
+- In the Reset Password Screen, user has to enter the OTP, new password, confirm the same password. And then trigger the submit button. On successful update of password (API endpoint has been sent while initialization of module, as discussed above), the user will be shown a message and then redirected to the Profile Screen. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
+
+4. Edit Profile
+
+- The user is only able to edit the editable fields.
+
+- Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
+
+
+## Cascading Search Module
+
+One of the most recurring cases, that we came across while developing apps, was sets vs subsets of data, which refers to that the data collection is based on certain user fields which go on dividing into subsets, for instance - District -> Tehsil -> Block -> Town -> Post Office. Sometimes the list, of the super set or rather consider the heaviness of list for Post offices under a state like Uttar Pradesh. So in order to provide a better user experience, we decided to use fuzzy search to filter out the data as the user keeps going from a higher level to lower level of demarcation. You can, as a developer modify this module as per your requirement, and extend it to n number of levels, if you would require so. 
+
+### Overview
+
+In order to understand the functioning of the module, we will help you set up a sample module that you can use to integrate into your app. We use Firebase Remote Storage to get the required mapping file, which is required by the user to fill forms etc. The file is stored in the res/raw folder in a gzip format, to occupy less space.
+In order to remotely change this file, we have also included a provision via FirebaseRemoteConfig to download this file and then replace the pre existing gzip file.
+We also have a module included in our commons module to unzip the mentioned file in local device storage which can be further read and filtered out as per the user's requirements. You can receive the results of the Cascading Module and then use further.
+
+### Setting up Module into your Project
+
+1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
+3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the cascading module later, using the following steps.
+4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+5.  Please follow the same steps for the integration of Cascading Module
+
+
+### Using the functionalities to run the Module
+
+1. You need to have Storage Permissions to unzip the file and store it in local storage. For this add to the AndroidManifest.xml
+```
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+```
+2. Add the following code snippet to get user's consent to storage permission
+
+```PermissionsHelper permissionUtils = new PermissionsHelper();
+        if (!PermissionsHelper.areStoragePermissionsGranted(activityContext)) {
+            permissionUtils.requestStoragePermissions(activityContext, new AppPermissionUserActionListener() {
+                @Override
+                public void granted() {
+                //User grants storage permissions.
+                }
+                @Override
+                public void denied() {
+                //User grants denies permissions.
+                }
+            });
+        } else {
+            //User has already granted Storage permissions.
+        }
+```
+        
+3. In order to unzip the locally stored file, we will use this following function:
+
+```FileUnzipper fileUnzipper = new FileUnzipper(getMvpView().getActivityContext(), pathJSONFile, Resource_ID_GZIP_FILE, new UnzipTaskListener() {
+                        @Override
+            public void unZipSuccess() {
+              //If Unzipping operation is successful
+            }
+
+            @Override
+            public void unZipFailure(Exception exception) {
+            //If Unzipping operation is failed, exception is returned.
+
+            }
+        });
+        fileUnzipper.unzipFile();
+```
+4. In order to use this module, attact the module from the Main app module using the following code snippet.
+```
+CascadingModuleDriver.init(getMainApplication(),FILE_PATH);
+```
+The method signature of the invocation is shown below:
+```
+    /**
+     * 
+     * @param mainApplication - Instance of Main Application,
+     * instance of Interface implemented by Application class to
+     * communicate back with main app project.
+     * @param FILE_PATH - File path where you have unzipped your * file.
+     */
+     void init( @NonNull MainApplication mainApplication, @NonNull String FILE_PATH);
+ ```
+ 5. You can launch the cascading view using the following method invocation.
+ ```
+ CascadingModuleDriver.launchSearchView(activityContext, FILE_PATH);
+ ```
+
+The method signature of the invocation is shown below:
+```
+/**
+* 
+* @param activityContext - Instance of Context.
+* @param FILE_PATH - File path where you have unzipped your * file.
+*/
+void init( @NonNull Context activityContext, @NonNull String FILE_PATH);
+```
+ Here FILE_PATH refers to the path where json file is to be stored.
+ 
+### Receiving back the Result of the Cascading Module
+
+The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.
+The result object contains in form of object, the values of all the levels from selected options in the module.
+
+
+## Push Notifications Module
+
+### Overview
+
+Push notifications are an important part of the mobile experience. Users have grown accustomed to having push notifications be a part of virtually every app that they use. 
+
+For an app, the most effective way to receive push notifications is via Firebase Cloud Messaging Service. Firebase Cloud Messaging (FCM) is a cross-platform messaging solution that lets you reliably send messages at no cost. Using FCM, you can notify a client app that new email or other data is available to sync. You can send notification messages to drive user re-engagement and retention.
+
+The module that we have developed, contains a functionality to generate notifications received via FCM and also generate push notifications from within the app.
+
+
+### Setting up Module into your Project
+
+1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
+3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.
+4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+5.  Please follow the same steps for the integration of notifications_module.
+
+
+### Using the functionalities to run the Module
+
+1. You must have firebase set up for your project. Set up Firebase and the FCM SDK. If you haven't already, [add Firebase to your Android project](https://firebase.google.com/docs/android/setup).
+2. In your project-level build.gradle file, make sure to include Google's Maven repository in both your buildscript and allprojects sections.
+3. Add the dependency for the Cloud Messaging Android library to your module (app-level) Gradle file (usually app/build.gradle)
+ ```
+implementation 'com.google.firebase:firebase-messaging:20.1.5'
+```
+  4.  You need to have Internet Permissions to interact with the FCM Server.
+```
+ android:name="android.permission.INTERNET" 
+ ```
+  5. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
+  6. Register the notification channel in your Application level class as follows:
+```
+  NotificationUtils.createNotificationChannel(this);
+  //this is the instance of the Application level class of your project.
+```
+  7. **Access the device registration token** : On initial startup of your app, the FCM SDK generates a registration token for the client app instance. If you want to target single devices or create device groups, you'll need to access this token by extending  [`FirebaseMessagingService`](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)  and overriding  `onNewToken`. This has already been taken care of by the module you integrated. You will just have to invoke the FirebaseMessagingService child class.
+``` 
+new PushMessagingService().
+		setContext(context, API_URL, API_KEY).	
+							getCurrentToken(context);
+ //Base API Url and API Key are for Fusion Auth API Integration related,
+ if in case you are using Fusion auth for managing and authenticating user data.
+```
+8.  You are set to go, if you would send a notification from Firebase, you should receive a notification on your device. 
+ 9. ** Sending the notification from within the app - ** 
+ - Call the following method wherever you want to send the notification
+
+```
+Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);  
+notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");  
+notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message");   
+PendingIntent pendingNotify = PendingIntent.getActivity(getActivityContext(), REQUEST_CODE,  
+        notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);  
+AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notification Title", "Test Notification");
+```
+
+After this integration, you should be able to receive FCM Notifications on your device, as well also generate notifications from within your app. 
+
+**Note** - In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
+Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.
+
+
+## App Logging Module
+
+This module involves a supreme use case for the developers, as it includes the facility to send app loga remotely to server, include crashlytics into your app and receive email updates for the same.
+
+### Integration and Usage of the Logging Module
+
+In order to integrate the module into your mobile ap project, please refer to [this] (https://samagra-development.github.io/docs/docs/Grove) detailed step-by-step tutorial on integratng crashlyitcs and error recording facility in your app.
+
+
+## Offline Loading Module
+
+In order to make app to mitigate various network related scenarios, it is always better to tackle with defence case scenarios. Hence, in order to provide the user with seamless app performance and avoid breakage of user data being sent to the backend, we developed a module leveraging the usage of Work Manager's Work Requests to tackle the user actions which couldn't be completed due to certain constraints.
+
+
+### Setting up Module into your Project
+
+1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
+3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
+4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+5.  Please follow the same steps for the integration of offline_module.
+
+### Integrating Offline Module
+
+In the onCreate() of your Application Level class please add the following methos call.
+
+```
+        Manager.init(this); //this is the Application class Instance
+
+```
+You can enqueue the tasks into the offline module's to be executed tasks list, using the following invocation.
+```
+ScheduledOneTimeWork.from(ApiWorker.class, new Data(hashMap)).enqueueTask(getMvpView().getActivityContext());
+//ApiWorker is the worker class to execute the task when the constraints are met. hashMap refers to the data to be sent wrt. //to the task enqueued.
+```
+
+
