@@ -679,6 +679,10 @@ The result is send back to the main app module by the CascadingModuleDriver, via
 The result object contains in form of object, the values of all the levels from selected options in the module.
 
 
+Please see the following clip to see how this module is expected to work.
+
+<a href="https://imgflip.com/gif/3wx8c3"><img src="https://i.imgflip.com/3wx8c3.gif" title="made at imgflip.com"/></a>
+
 ## Push Notifications Module
 
 ### Overview
