@@ -101,7 +101,9 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 ### 2.6 Technical Architecture
 
-![alt-text](assets/Samiksha TechArchitecture.png)
+![alt-text](assets/SamikshaArchitecture.png)
+
+Samiksha is wired together using the [Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com) and the [Application Logging Component](www.google.com).
 
 ## 3. High Level Specifications
 
@@ -150,7 +152,7 @@ Update	Update jurisdiction data consisting of districts, blocks, cluster, GPs, s
 Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
 
 
-*A configurable mobile application can be setup by deploying the Samiksha application. Refer to this [Section](/docs/deploysamiksha.md) to deploy the application yourself. Once the applicaton is installed you can further read about how to customize [Ancillary Screens] (/docs/AncillaryScreensModule.md), update [Jurisdiction Data](/docs/CascadingSearchModule.md) and setup [Notifications](/docs/NotificationModule.md).*
+*A configurable mobile application can be setup by deploying the Samiksha application. Refer to this [Section](www.google.com) to deploy the application yourself. Once the applicaton is installed you can further read about how to customize [Ancillary Screens](www.google.com), update [Jurisdiction Data](www.google.com) and setup [Notifications](www.google.com).*
 
 
 ### 3.3 User Authentication & Management	
