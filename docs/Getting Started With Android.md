@@ -50,7 +50,10 @@ We’ll assume that you have some familiarity with Android App development, but 
 
 3.  Choose the specific project you want to import and then click Next->Finish. It will build the Gradle automatically and'll be ready for you to use.
 
-4.  The starter app, basically provides a skeleton app to integrate with modules mentioned ahead. The skeleton app UI looks like the screenshot attached on the right side. ![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM) '
+4.  The starter app, basically provides a skeleton app to integrate with modules mentioned ahead. The skeleton app UI looks like the screenshot attached on the right side. 
+
+
+![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM) '
 
 ## Configuring Home Screen
 
@@ -218,6 +221,9 @@ String tagValue);
 
 Here, getIFormManagementContract() returns the value of the contract object for the Form Module. formIdentifier is to be replaced by the name of the specific form you want to be filled by the user. tag refers to the tag whose value you want to override/pre-fill and the tagValue is the desired value
 
+Once you have achieved this milestone, the UI should look like this.
+
+<a href="https://imgflip.com/gif/3wwv9l"><img src="https://i.imgflip.com/3wwv9l.gif" title="made at imgflip.com"/></a>
 
 ## Ancillary Screen Module
 
@@ -295,6 +301,13 @@ AncillaryScreensDriver.launchTutorialsActivity(context, tutorialBundle);
 ```
 Here, context is the Context Instance used to launch the Tutorials screen, tutorialBundle is bundle object containing the information transferred to the Activity to render the UI. It contains the video id and Youtube API Key
 5. We are using RxBus to communicate back and forth with the main app module. Please refer to the SplashPresenter class of the downloaded project where we communicate back with the main app module to notify Login success and launching of home screen.
+
+
+After you have integerated this module into your application, your application should look something like as follows:
+
+<a href="https://imgflip.com/gif/3wwonh"><img src="https://i.imgflip.com/3wwonh.gif" title="made at imgflip.com"/></a>
+
+
 ## User Profile Package
 
 For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
@@ -558,12 +571,8 @@ The package provides the following capabilities to the user:
 
 - The user is only able to edit the editable fields.
 
-- Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
+- Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API
 
-
-After you have integerated this module into your application, your application should look something like as follows:
-
-<a href="https://imgflip.com/gif/3wwonh"><img src="https://i.imgflip.com/3wwonh.gif" title="made at imgflip.com"/></a>
 
 ## Cascading Search Module
 
