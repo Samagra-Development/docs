@@ -101,8 +101,7 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 ### 2.6 Technical Architecture
 
-Technical architecture diagram to be added (ongoing)
-
+![](https://drive.google.com/uc?export=download&id=158P0O7vQYr5rVObyHByEFns6lOwBkKK5)
 
 ## 3. High Level Specifications
 
