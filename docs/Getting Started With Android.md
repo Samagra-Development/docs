@@ -739,10 +739,9 @@ new PushMessagingService().
  **Note** - In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
  
  Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.
- 
- 
- 
- ## App Logging Module
+
+
+## App Logging Module
 
 This module involves a supreme use case for the developers, as it includes the facility to send app loga remotely to server, include crashlytics into your app and receive email updates for the same.
 
