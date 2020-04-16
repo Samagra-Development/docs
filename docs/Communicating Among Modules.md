@@ -9,7 +9,7 @@ sidebar_label: Communicating Among Modules
 To get the context of the section, please refer [this section](https://samagra-development.github.io/docs/docs/GettingStarted#event-configuring).
 
 
-<div style="width:500px;max-width:100%;"><div style="height:0;padding-bottom:40%;position:relative;"><iframe width="500" height="200" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/3wxi92"></iframe></div><p><a href="https://imgflip.com/gif/3wxi92">via Imgflip</a></p></div>
+<a href="https://imgflip.com/gif/3wxi92"><img src="https://i.imgflip.com/3wxi92.gif" title="made at imgflip.com"/></a>
 
 
 ## Usage tips
@@ -21,9 +21,35 @@ Bus bus = BusProvider.getInstance();
 Or You could provide a getter at your application level class to get the instance of the RxBus. (like we have used).
 
 
-By default, the Bus enforces that all interactions occur on the main thread. To subscribe to an event, you can declare and annotate a method with @Subscribe. 
+By default, the Bus enforces that all interactions occur on the main thread. 
 
-For any activity to receive the event triggered, this class would have to add a code as follows:
+You can create RxBus like below.
+
+```
+public class RxBus {
+
+    public RxBus() {
+    }
+
+    private PublishSubject<Object> bus = PublishSubject.create();
+
+    public void send(Object o) {
+        bus.onNext(o);
+    }
+
+    public Observable<Object> toObservable() {
+        return bus;
+    }
+
+}
+```
+
+Now, we will create the Singleton(single instance) of RxBus in our application class or at any other place as below:
+
+How to access the RxBus has been mentioned above already.
+
+
+You can subscribe for an event in any class like below:
 
 ```
 compositeDisposable.add(this.getEventBus()
@@ -90,4 +116,14 @@ Timber.d("Received but not intended");
 
 ```
 
-Please refer to the RxBus and EventObject class of the commons module for more clarity on the same. Please note that the further sections will discuss the different modules developed for the application.
+
+You can send an event from any other class or from the same class like below:
+
+```
+MyApplication.getInstance().component().rxBus().send(new EventTypeExhangeObject());
+        
+```
+
+This way, you have the EventBus pattern with RxJava, RxBus. But if there is some error, it will terminate, so to avoid that check RxRelay.
+
+RxRelay: A Subject except without the ability to call onComplete or onError.
