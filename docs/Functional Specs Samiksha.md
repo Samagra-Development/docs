@@ -101,10 +101,9 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 ### 2.6 Technical Architecture
 
-![](https://drive.google.com/uc?export=download&id=158P0O7vQYr5rVObyHByEFns6lOwBkKK5)
+![](![alt-text](assets/samiksha-techarchitecture.png))
 
 ## 3. High Level Specifications
-
 
 ### 3.1 Configurable Data Collection Forms
 
