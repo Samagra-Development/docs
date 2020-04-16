@@ -574,6 +574,11 @@ The package provides the following capabilities to the user:
 - Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API
 
 
+After you have integerated this module into your application, your application should look something like as follows:
+
+<a href="https://imgflip.com/gif/3wx5vk"><img src="https://i.imgflip.com/3wx5vk.gif" title="made at imgflip.com"/></a>
+
+
 ## Cascading Search Module
 
 One of the most recurring cases, that we came across while developing apps, was sets vs subsets of data, which refers to that the data collection is based on certain user fields which go on dividing into subsets, for instance - District -> Tehsil -> Block -> Town -> Post Office. Sometimes the list, of the super set or rather consider the heaviness of list for Post offices under a state like Uttar Pradesh. So in order to provide a better user experience, we decided to use fuzzy search to filter out the data as the user keeps going from a higher level to lower level of demarcation. You can, as a developer modify this module as per your requirement, and extend it to n number of levels, if you would require so. 
