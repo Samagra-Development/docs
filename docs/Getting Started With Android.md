@@ -63,11 +63,13 @@ We’ll assume that you have some familiarity with Android App development, but 
 
 3.  You can configure the home screen to redirect the user to the modules which will be discussed ahead. The steps would also be discussed in the further part of the document.
 
-## Event Configuring
+## Event Configuring - What it’s all about
 
-As mentioned above, the app would consist of multiple modules, hence, in order to communicate back and forth with the main module, we have used RxBus, for the purpose of communication among modules/components.
+Event bus is a great solution that allows objects with different lifecycles and located in different layers of hierarchy to communicate. We suggest that if you have an event bus in your Android application, most likely you use libraries like Otto or EventBus.
 
-Since this is a common functionality for all the components, we have added its base contracts and classes in the Commons package.
+As we already use RxJava and RxAndroid in the development, we decided to try out the Rx approach to implementation of event bus.Since, the app would consist of multiple modules, hence, in order to communicate back and forth with the main module, we have used RxBus, for the purpose of communication among modules/components.
+
+Since this is a common functionality for all the components, we have added its base contracts and classes in the Commons package. The RxBus enables usto communicate among the modules via the **ExchangeObjects** defined as per our requirements, you can also define more ExhangeObjects as per your use cases.
 
 In order to send an event, use the following syntax:
 
@@ -79,78 +81,14 @@ AncillaryScreensDriver.mainApplication.getEventBus().send(signalExchangeObject);
 
 ```
 
+You would see more of the use of this syntax further down the tutorial.
+
 The above code will trigger an indication to redirect an event from MAIN_APP module to ANCILLARY_SCREENS module, with an intent object, needed for redirection.
 
 This will ensure that the activities communicate with one another via Main module only, helping in maintaining the activity stack.
 
-For any activity to receive the event triggered, this class would have to add a code as follows:
+Please refer to the MyApplication class to see how you can consume such objects being triggered. For more details on how to set up your own RxBus, and how to use it further, please refer to the [detailed section](https://samagra-development.github.io/docs/docs/CommunicatingAmongModules) on it.
 
-```
-compositeDisposable.add(this.getEventBus()
-
-.toObservable().subscribeOn(Schedulers.io())
-
-.observeOn(AndroidSchedulers.mainThread())
-
-.subscribe(exchangeObject -> {
-
-if (exchangeObject instanceof ExchangeObject) {
-
-if (((ExchangeObject) exchangeObject).to == Modules.MAIN_APP
-
-&& ((ExchangeObject) exchangeObject).from == Modules.ANCILLARY_SCREENS
-
-&& ((ExchangeObject) exchangeObject).type == ExchangeObject.ExchangeObjectTypes.SIGNAL) {
-
-ExchangeObject.SignalExchangeObject signalExchangeObject = (ExchangeObject.SignalExchangeObject) exchangeObject;
-
-if (signalExchangeObject.shouldStartAsNewTask ){
-
-if(currentActivity != null){
-
-CommonUtilities.startActivityAsNewTask(signalExchangeObject.intentToLaunch, currentActivity);
-
-}}
-
-else
-
-startActivity(signalExchangeObject.intentToLaunch);
-
-} else if (exchangeObject instanceof ExchangeObject.EventExchangeObject) {  ExchangeObject.EventExchangeObject eventExchangeObject = (ExchangeObject.EventExchangeObject) exchangeObject;
-
-Timber.d("Event Received %s ", eventExchangeObject.customEvents);
-
-if (eventExchangeObject.to == Modules.MAIN_APP || eventExchangeObject.to == Modules.PROJECT) {
-
-Timber.d("Event Received %s ", eventExchangeObject.customEvents);
-
-}
-
-} else if(exchangeObject instanceof ExchangeObject.NotificationExchangeObject){
-
-PendingIntent pendingIntent = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getIntent();
-
-int notificationID = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getNotificationID();
-
-int title = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getTitle();
-
-String body = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getBody();
-
-Timber.d("Event Received for Push Notification %s ", title);
-
-}else {
-
-Timber.d("Received but not intended");
-
-}
-
-}
-
-}, Timber::e));
-
-```
-
-Please refer to the RxBus and EventObject class of the commons module for more clarity on the same. Please note that the further sections will discuss the different modules developed for the application.
 
 ## Form Downloading and Management Module
 
