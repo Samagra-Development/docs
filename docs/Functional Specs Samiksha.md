@@ -166,7 +166,7 @@ Users can reset their passwords though an SMS based password reset functionality
 
 ### 3.4 Visualize Form Information
 
-*Images to be added as a GIF*
+![](https://media.giphy.com/media/Wp0eqM753Js4OtcW6U/giphy.gif)
 
 ***3.4.1 Easy to Configure Graphs***
 
