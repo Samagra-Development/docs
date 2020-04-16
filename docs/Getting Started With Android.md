@@ -699,7 +699,7 @@ The module that we have developed, contains a functionality to generate notifica
 1. You must have firebase set up for your project. Set up Firebase and the FCM SDK. If you haven't already, [add Firebase to your Android project](https://firebase.google.com/docs/android/setup).
 2. In your project-level build.gradle file, make sure to include Google's Maven repository in both your buildscript and allprojects sections.
 3. Add the dependency for the Cloud Messaging Android library to your module (app-level) Gradle file (usually app/build.gradle)
- ```
+```
 implementation 'com.google.firebase:firebase-messaging:20.1.5'
 ```
 4.  You need to have Internet Permissions to interact with the FCM Server.
