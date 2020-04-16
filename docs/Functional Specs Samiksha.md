@@ -101,9 +101,9 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 ### 2.6 Technical Architecture
 
-Samiksha is wired together using the _[Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com) & [Application Logging Component](www.google.com)_. The following diagram illustrates the technical architecture of the Samiksha product.
+Samwad is wired together using the _[Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com), [Application Logging Component](www.google.com) & [Communication & Alerts Component](www.google.com)_. The following diagram illustrates the technical architecture of the Samwad product.
 
-![alt-text](../img/SamikshaArchitecture.png)
+![alt-text](../img/SamwadArchitecture.png)
 
 
 ## 3. High Level Specifications
