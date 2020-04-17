@@ -21,7 +21,7 @@ module.exports = {
         'Mobile Application': [
           'COMobileApplication',
           'CommunicatingAmongModules',
-          'FormManagementPackage',
+          'FormManagementModule',
           'AncillaryScreensModule',
           'AndroidProfileManagementModule',
           'CascadingSearchModule',
