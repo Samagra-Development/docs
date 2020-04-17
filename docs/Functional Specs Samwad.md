@@ -8,97 +8,88 @@ sidebar_label: Functional Specifications (Samwad)
 
 ## 1. Introduction
 
-State Education Departments across India have been driving reforms in school monitoring processes. Over the years, the different State Education Departments have introduced technology to collect data from school visits and to visualize this data on real-time dashboards for conducting effective department reviews. The focus of these reforms has been to improve the quality of data collection exercises conducted by different levels of officials within the department and to enable precise decision making at the state level.
+Improving the quality and timeliness of engagement between teachers and parents of students has been a priority for school management systems across the globe. While private schools continue to invest capital into this process by creating school focussed mobile and web applications, there remains a large scope of improving this within the government ecosystem. However, given the economic background of parents of majority of the government school children, who have older versions of Android mobile phones with limited connectivity and therefore have limited engagement with their mobile devices.
 
-The objective of Samiksha is to transform school monitoring by providing an application with a highly configurable set of features for data collection and visualization. Samiksha is designed for this specific governance use case and is built on OpenSource in a modular, reusable and scalable manner. The application design is created with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
+With this backdrop, a simple SMS based communication product was envisioned for the State Education Department in Himachal Pradesh. It was named Samwad and it is engineered in a manner that it can be leveraged by any State Education Department to decentralize SMS based communication between teachers and parents in a structured manner.
 
-Through Samiksha the State Education Department can have a mobile application with configurable monitoring and mentoring forms. This application can be used by the department officials while conducting school visits. Management of users of this application, configuration of forms, visualization of the data collected and tracking of the application performance can all be managed within this application by non-technical functional owners within the State Education Department.
+The objective of Samwad is to transform the process of communication with parents. Samwad has been technically designed with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
 
-## 2. Samiksha Overview
+Through Samwad the State Education Department can have a mobile application with configurable SMS templates. This application can be used by all government school teachers in primary and secondary schools to send personalized template based SMS to parents. Management of users of this application, configuration of SMS templates, visualization of the data collected and tracking of the application performance can all be managed within this application by non-technical functional owners within the State Education Department.
+
+## 2. Samwad Overview
 
 ### 2.1 Governance Use Cases
 
-The Samiksha product can be used for managing the following activities of the State Education Department:
+The Samwad product can be used for sharing the following updates by the State Education Department to the parents of the children enrolled in government schools:
 
-1. Record observations on monthly school visits
-2. Record feedback during classroom observations
-3. Report status of material delivery to the schools
-4. Monitor the usage of supplementary material provided to schools
-5. Monitor the implementation of interventions at the school level
-6. Record progress of civil work projects at the school-level
-7. Report fund utilization status of the schools
-8. Record meeting minutes after conducting review meetings every month
-9. Monitor training conducted at the district, block or cluster level
-10. Collect training/workshop feedback
+1. Send daily attendance information
+2. Send upcoming school holiday start and end date notification
+3. Send upcoming parent teacher meeting
+4. Send homework completion status about a child 
+5. Send notification of an upcoming School Management Committee meeting 
+6. Send assessment information of any summative or formative assessments
+7. Send subjectwise and gradewise practice questions daily or weekly to parents
+8. Send guidance or alerts during natural disasters (floods, cyclones, medical emergency such as Covid-19)
+9. Send school infrastructure upgrade updates
+10. Share mid-day meal information
 
 ### 2.2 Usage Status Across India
 
-Samiksha is being used by the State Education Departments of the following states:
+Samiksha is being used by the State Education Departments in Himachal Pradesh.
 
-1. Himachal Pradesh
-2. Haryana
+![](https://media.giphy.com/media/Me8EZToelaTrEJKKmM/giphy.gif)
 
-![](https://media.giphy.com/media/ZXkrpTYTDImobjnHTA/giphy.gif)
+Total usage of the Samwad product as on 12 April 2020 is summarized below:
 
-Total usage of the Samiksha product as on 12 April 2020 is summarized below:
-
-1. Total active users >35,000
-2. Total visit data submissions > 1,10,000
+1. Total active users >20,400
+2. Total SMSes sent > 1,25,000
 
 ### 2.3 Key Benefits
 
-We have observed the following key benefits that the states using Samiksha have experienced.
+We have observed the following key benefits that the states using Samwad have experienced.
 
-**_2.3.1 Improved compliance_**
+**_2.3.1 Improved timeliness of communication_**
 
-Compliance of school visits has increased significantly with structured processes for data collection, reporting and reviews.
+Parents are updated about school activities in a timely manner thereby increasing accountability within the entire ecosystem of parents, teachers and school management for student focussed outcomes. 
 
-**_2.3.2 Structured reviews_**
+**_2.3.2 Improved precision of communication_**
 
-Problem solving and decision making in reviews conducted at a state, district and block levels have been increasingly supported by the timely and structured data collected through these monitoring and mentoring visits.
+Personalized messages using structured SMS templates has allowed the school management system to send precise communication to parents, thereby increasing the consistentcy and clarity of communication with parents.
 
 **_2.3.3 Increased monitoring coverage_**
 
 In Haryana mentoring and monitoring exercises were limited to primary schools and after continued use of Samiksha for primary school monitoring, the State Education Department expanded these visits for secondary schools as well.
 
-**_2.3.4 Improved teacher feedback quality_**
+**_2.3.4 Higher coverage of parents_**
 
-With consistent feedback being provided by mentors through the class observation visits teachers have been able to receive timely and regular feedback from mentors.
+Through this mechanism all parents who may be busy with farming activities or do not have smartphones can be reached and updated about the student's school related activities. 
+
 
 ### 2.4 Typical Existing Alternatives
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
-**_2.4.1 Pen & Paper based data collection_**
+**_2.4.1 Lorem ipsum_**
 
-Traditionally, information has always been captured by the visiting officials using pen and paper formats. This process requires significant time and cost investment as these pen and paper formats are printed, collected, compiled, aggregated and then used for reviews. Often triangulation of data, visit data incompleteness or inconsistencies and the delay in the data aggregation makes is inviable for department reviews.
+Lorem ipsum
 
-**_2.4.2 OMR based data collection_**
+**_2.4.2 Lorem ipsum_**
 
-Recently, different State Education Departments have pivoted towards an OMR based data collection method. In this method OMR sheets are designed at the state level and printed either at the state or in different districts, then used by the visiting officials, then compiled and finally scanned. This is once again a logistics heavy process. While the OMR brings in some improvement in the consistency of data collection, it still suffers from similar challenges as the pen & paper data collection process. In addition, a key aspect about OMR data collection is the limited flexibility in updating the forms once they have been designed and rolled out.
+Lorem ipsum
 
 ### 2.5 Core Features
 
-**_2.5.1 For State Department Monitoring & Mentoring Staff_**
+**_2.5.1 For State Government School Teachers_**
 
-- Ability to view forms based on their designation
-- Ability to fill and submit school visit forms
-- Ability to view past school visit submission data
-- Ability to update profile information
+- Lorem ipsum
 
-**_2.5.2 For State Department Reviewers_**
+**_2.5.2 For State Department Officials_**
 
-- Ability to view, in real time, complete details of the school visit submissions
-- Ability to view, in real time, summarized views of the school visit submissions
-- Ability to download dashboard views as PDFs
+- Lorem ipsum
 
 **_2.5.3 For Process Administrators_**
 
-- Ability to create and manage school visit forms
-- Ability to create and manage user profiles
-- Ability to update designation to form mapping (for designation based access to forms)
-- Ability to create visualizations of the visit submissions
-- Ability to view application performane statistics
+- Lorem ipsum
 
 ### 2.6 Technical Architecture
 
