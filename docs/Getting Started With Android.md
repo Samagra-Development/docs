@@ -50,7 +50,10 @@ We’ll assume that you have some familiarity with Android App development, but 
 
 3.  Choose the specific project you want to import and then click Next->Finish. It will build the Gradle automatically and'll be ready for you to use.
 
-4.  The starter app, basically provides a skeleton app to integrate with modules mentioned ahead. The skeleton app UI looks like the screenshot attached on the right side. ![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM) '
+4.  The starter app, basically provides a skeleton app to integrate with modules mentioned ahead. The skeleton app UI looks like the screenshot attached on the right side. 
+
+
+![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM) '
 
 ## Configuring Home Screen
 
@@ -60,11 +63,13 @@ We’ll assume that you have some familiarity with Android App development, but 
 
 3.  You can configure the home screen to redirect the user to the modules which will be discussed ahead. The steps would also be discussed in the further part of the document.
 
-## Event Configuring
+## Event Configuring - What it’s all about
 
-As mentioned above, the app would consist of multiple modules, hence, in order to communicate back and forth with the main module, we have used RxBus, for the purpose of communication among modules/components.
+Event bus is a great solution that allows objects with different lifecycles and located in different layers of hierarchy to communicate. We suggest that if you have an event bus in your Android application, most likely you use libraries like Otto or EventBus.
 
-Since this is a common functionality for all the components, we have added its base contracts and classes in the Commons package.
+As we already use RxJava and RxAndroid in the development, we decided to try out the Rx approach to implementation of event bus.Since, the app would consist of multiple modules, hence, in order to communicate back and forth with the main module, we have used RxBus, for the purpose of communication among modules/components.
+
+Since this is a common functionality for all the components, we have added its base contracts and classes in the Commons package. The RxBus enables usto communicate among the modules via the **ExchangeObjects** defined as per our requirements, you can also define more ExhangeObjects as per your use cases.
 
 In order to send an event, use the following syntax:
 
@@ -76,78 +81,14 @@ AncillaryScreensDriver.mainApplication.getEventBus().send(signalExchangeObject);
 
 ```
 
+You would see more of the use of this syntax further down the tutorial.
+
 The above code will trigger an indication to redirect an event from MAIN_APP module to ANCILLARY_SCREENS module, with an intent object, needed for redirection.
 
 This will ensure that the activities communicate with one another via Main module only, helping in maintaining the activity stack.
 
-For any activity to receive the event triggered, this class would have to add a code as follows:
+Please refer to the MyApplication class to see how you can consume such objects being triggered. For more details on how to set up your own RxBus, and how to use it further, please refer to the [detailed section](https://samagra-development.github.io/docs/docs/CommunicatingAmongModules) on it.
 
-```
-compositeDisposable.add(this.getEventBus()
-
-.toObservable().subscribeOn(Schedulers.io())
-
-.observeOn(AndroidSchedulers.mainThread())
-
-.subscribe(exchangeObject -> {
-
-if (exchangeObject instanceof ExchangeObject) {
-
-if (((ExchangeObject) exchangeObject).to == Modules.MAIN_APP
-
-&& ((ExchangeObject) exchangeObject).from == Modules.ANCILLARY_SCREENS
-
-&& ((ExchangeObject) exchangeObject).type == ExchangeObject.ExchangeObjectTypes.SIGNAL) {
-
-ExchangeObject.SignalExchangeObject signalExchangeObject = (ExchangeObject.SignalExchangeObject) exchangeObject;
-
-if (signalExchangeObject.shouldStartAsNewTask ){
-
-if(currentActivity != null){
-
-CommonUtilities.startActivityAsNewTask(signalExchangeObject.intentToLaunch, currentActivity);
-
-}}
-
-else
-
-startActivity(signalExchangeObject.intentToLaunch);
-
-} else if (exchangeObject instanceof ExchangeObject.EventExchangeObject) {  ExchangeObject.EventExchangeObject eventExchangeObject = (ExchangeObject.EventExchangeObject) exchangeObject;
-
-Timber.d("Event Received %s ", eventExchangeObject.customEvents);
-
-if (eventExchangeObject.to == Modules.MAIN_APP || eventExchangeObject.to == Modules.PROJECT) {
-
-Timber.d("Event Received %s ", eventExchangeObject.customEvents);
-
-}
-
-} else if(exchangeObject instanceof ExchangeObject.NotificationExchangeObject){
-
-PendingIntent pendingIntent = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getIntent();
-
-int notificationID = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getNotificationID();
-
-int title = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getTitle();
-
-String body = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getBody();
-
-Timber.d("Event Received for Push Notification %s ", title);
-
-}else {
-
-Timber.d("Received but not intended");
-
-}
-
-}
-
-}, Timber::e));
-
-```
-
-Please refer to the RxBus and EventObject class of the commons module for more clarity on the same. Please note that the further sections will discuss the different modules developed for the application.
 
 ## Form Downloading and Management Module
 
@@ -218,6 +159,9 @@ String tagValue);
 
 Here, getIFormManagementContract() returns the value of the contract object for the Form Module. formIdentifier is to be replaced by the name of the specific form you want to be filled by the user. tag refers to the tag whose value you want to override/pre-fill and the tagValue is the desired value
 
+Once you have achieved this milestone, the UI should look like this.
+
+<a href="https://imgflip.com/gif/3wwv9l"><img src="https://i.imgflip.com/3wwv9l.gif" title="made at imgflip.com"/></a>
 
 ## Ancillary Screen Module
 
@@ -295,6 +239,13 @@ AncillaryScreensDriver.launchTutorialsActivity(context, tutorialBundle);
 ```
 Here, context is the Context Instance used to launch the Tutorials screen, tutorialBundle is bundle object containing the information transferred to the Activity to render the UI. It contains the video id and Youtube API Key
 5. We are using RxBus to communicate back and forth with the main app module. Please refer to the SplashPresenter class of the downloaded project where we communicate back with the main app module to notify Login success and launching of home screen.
+
+
+After you have integerated this module into your application, your application should look something like as follows:
+
+<a href="https://imgflip.com/gif/3wwonh"><img src="https://i.imgflip.com/3wwonh.gif" title="made at imgflip.com"/></a>
+
+
 ## User Profile Package
 
 For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
@@ -558,7 +509,12 @@ The package provides the following capabilities to the user:
 
 - The user is only able to edit the editable fields.
 
-- Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
+- Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API
+
+
+After you have integerated this module into your application, your application should look something like as follows:
+
+<a href="https://imgflip.com/gif/3wx5vk"><img src="https://i.imgflip.com/3wx5vk.gif" title="made at imgflip.com"/></a>
 
 
 ## Cascading Search Module
@@ -661,6 +617,10 @@ The result is send back to the main app module by the CascadingModuleDriver, via
 The result object contains in form of object, the values of all the levels from selected options in the module.
 
 
+Please see the following clip to see how this module is expected to work.
+
+<a href="https://imgflip.com/gif/3wx8c3"><img src="https://i.imgflip.com/3wx8c3.gif" title="made at imgflip.com"/></a>
+
 ## Push Notifications Module
 
 ### Overview
@@ -686,45 +646,46 @@ The module that we have developed, contains a functionality to generate notifica
 1. You must have firebase set up for your project. Set up Firebase and the FCM SDK. If you haven't already, [add Firebase to your Android project](https://firebase.google.com/docs/android/setup).
 2. In your project-level build.gradle file, make sure to include Google's Maven repository in both your buildscript and allprojects sections.
 3. Add the dependency for the Cloud Messaging Android library to your module (app-level) Gradle file (usually app/build.gradle)
- ```
+```
 implementation 'com.google.firebase:firebase-messaging:20.1.5'
 ```
-  4.  You need to have Internet Permissions to interact with the FCM Server.
+
+4.  You need to have Internet Permissions to interact with the FCM Server.
 ```
- android:name="android.permission.INTERNET" 
- ```
-  5. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
-  6. Register the notification channel in your Application level class as follows:
+android:name="android.permission.INTERNET" 
 ```
-  NotificationUtils.createNotificationChannel(this);
-  //this is the instance of the Application level class of your project.
+
+5. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
+6. Register the notification channel in your Application level class as follows:
 ```
-  7. **Access the device registration token** : On initial startup of your app, the FCM SDK generates a registration token for the client app instance. If you want to target single devices or create device groups, you'll need to access this token by extending  [`FirebaseMessagingService`](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)  and overriding  `onNewToken`. This has already been taken care of by the module you integrated. You will just have to invoke the FirebaseMessagingService child class.
+NotificationUtils.createNotificationChannel(this);
+//this is the instance of the Application level class of your project.
+```
+7. **Access the device registration token** : On initial startup of your app, the FCM SDK generates a registration token for the client app instance. If you want to target single devices or create device groups, you'll need to access this token by extending  [`FirebaseMessagingService`](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)  and overriding **onNewToken** . This has already been taken care of by the module you integrated. You will just have to invoke the FirebaseMessagingService child class.
 ``` 
 new PushMessagingService().
 		setContext(context, API_URL, API_KEY).	
 							getCurrentToken(context);
  //Base API Url and API Key are for Fusion Auth API Integration related,
  if in case you are using Fusion auth for managing and authenticating user data.
-```
-8.  You are set to go, if you would send a notification from Firebase, you should receive a notification on your device. 
+ ```
+ 8.  You are set to go, if you would send a notification from Firebase, you should receive a notification on your device. 
  9. ** Sending the notification from within the app - ** 
  - Call the following method wherever you want to send the notification
-
-```
-Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);  
-notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
-notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");  
-notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message");   
-PendingIntent pendingNotify = PendingIntent.getActivity(getActivityContext(), REQUEST_CODE,  
-        notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);  
-AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notification Title", "Test Notification");
-```
-
-After this integration, you should be able to receive FCM Notifications on your device, as well also generate notifications from within your app. 
-
-**Note** - In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
-Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.
+ ```
+ Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);
+ notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+ notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");
+ notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message"); 
+ PendingIntent pendingNotify = PendingIntent.getActivity(getActivityContext(), REQUEST_CODE,  
+ notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);  
+ AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notification Title", "Test Notification");
+ ```
+ After this integration, you should be able to receive FCM Notifications on your device, as well also generate  notifications from within your app. 
+ 
+ **Note** - In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
+ 
+ Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.
 
 
 ## App Logging Module
@@ -734,7 +695,6 @@ This module involves a supreme use case for the developers, as it includes the f
 ### Integration and Usage of the Logging Module
 
 In order to integrate the module into your mobile ap project, please refer to [this] (https://samagra-development.github.io/docs/docs/Grove) detailed step-by-step tutorial on integratng crashlyitcs and error recording facility in your app.
-
 
 ## Offline Loading Module
 
