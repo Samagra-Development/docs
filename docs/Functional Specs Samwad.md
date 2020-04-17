@@ -97,7 +97,6 @@ Samwad is wired together using the _[Mobile Application Component](www.google.co
 
 ![alt-text](../img/SamwadArchitecture.png)
 
-
 ## 3. High Level Specifications
 
 ### 3.1 Simple User Flow For Sending SMS
