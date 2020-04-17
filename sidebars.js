@@ -34,6 +34,7 @@ module.exports = {
         'App Metadata Management': [
           'AdminGettingStarted',
           'AdminAddingExternalData',
+          'AdminAddingCustomRoutes',
           'AdminAuthenticationAndAuthorisation',
           'AdminArchitectureAndDesign',
           'AdminTheming',
