@@ -9,10 +9,12 @@
 
 module.exports = {
   someSidebar: {
-    Guides: ['deploysamiksha', 
-             'deploysamwad', 
-             'deploypariksha', 
-             'GettingStarted'],
+    Guides: [
+      'deploysamiksha',
+      'deploysamwad',
+      'deploypariksha',
+      'GettingStarted',
+    ],
     Components: [
       'ComponentsOverview',
       {
@@ -24,19 +26,25 @@ module.exports = {
           'CascadingSearchModule',
           'NotificationModule',
           'OfflineHandlingModule',
-          'Grove'
+          'Grove',
         ],
       },
-      {'App Metadata Management': ['COAppMetadata']},
-      {'PDF Generator': ['COPDFGenerator']},
+      {
+        'App Metadata Management': [
+          'AdminGettingStarted',
+          'AdminAddingExternalData',
+          'AdminAuthenticationAndAuthorisation',
+          'AdminArchitectureAndDesign',
+          'AdminTheming',
+        ],
+      },
+      {
+        'PDF Generator': ['CODataAnalytics'],
+      },
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
       {'Application Logging': ['COApplicationLogging']},
     ],
-    Products: [
-      'SamikshaFuncSpecs',
-      'SamwadFuncSpecs', 
-      'ParikshaFuncSpecs',
-      ],
+    Products: ['SamikshaFuncSpecs', 'SamwadFuncSpecs', 'ParikshaFuncSpecs'],
   },
 };
