@@ -35,7 +35,7 @@ The Samwad product can be used for sharing the following updates by the State Ed
 
 ### 2.2 Usage Status Across India
 
-Samiksha is being used by the State Education Departments in Himachal Pradesh.
+Samwad is being used by the State Education Departments in Himachal Pradesh.
 
 ![](https://media.giphy.com/media/Me8EZToelaTrEJKKmM/giphy.gif)
 
