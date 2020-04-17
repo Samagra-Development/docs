@@ -32,11 +32,10 @@ Of the various products, we offer as a part of transforming ways of service deli
 3. In addition, cascading dropdown as pre-fill based on the profile of the users (Program Mission Director only sees cascading dropdown for 6/10 districts where the mission is ongoing) |
 | Push Notification Module          | 1. Integrating FCM firebase token to send push notifications
 2. Ability to generate push notifications
-3. Generate in-app notifications                                                                                                                                                                                                                                                                                                                                                                      |
+3. Generate in-app notifications    
+|
 | Mobile Application Logging Module | 1. Generate Logs for Application
 2. Receive Crash Notifications via Email
 3. Remote crash logging
-4. Push User App logs for further debugging                                                                                                                                                                                                                                                                                                                                                             |
-
-
+4. Push User App logs for further debugging                                                                                    |
 ![alt-text](../img/android-arch.jpg)
