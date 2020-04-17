@@ -19,6 +19,7 @@ module.exports = {
       'ComponentsOverview',
       {
         'Mobile Application': [
+          'GettingStarted',
           'COMobileApplication',
           'CommunicatingAmongModules',
           'FormManagementModule',
