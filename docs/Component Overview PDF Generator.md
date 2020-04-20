@@ -14,3 +14,6 @@ sidebar_label: Component Overview
 
 
 ## 3. Component Design
+
+
+![alt-text](../img/pdfgenerator.png)
