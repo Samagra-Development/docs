@@ -4,8 +4,6 @@ title: Form Management Module
 sidebar_label: Form Management Module
 ---
 
-# Form Management Module
-
 We at Samagra believe in empowering the governance via technology, with maximum emphasis on leveraging Open Source Technology, with an intent not to reinvent the wheel and also to provide a contribution in terms that other developers from the community can leverage our code for solving problems in same or different realms. While working in the Government frame, one of the most prominent use cases needed for various tech products is a better surveying technique that should be easily integrated, both at client and back end, in terms of retrieval and further processing of data. For that, we pinned to use [ODK Collect](https://docs.opendatakit.org/ 'https://docs.opendatakit.org/'). ODK Collect is an **open-source** Android app that replaces paper forms used in survey-based data gathering. It supports a wide range of question and answer types, and is designed to work well without **network connectivity**.
 
 One of the most prominent problems with respect to this though is scattered documentation in terms of integration of this functionality in your own app, rather than using ODK’s provided sample app, and just using it for the required purpose. Hence, we abstracted out the app provided and configured it to an Android Library format, which can be configured from your main app via a communicating Interface. This helps you to achieve a better level of abstraction, and also the helper methods provided help you achieve the maximum utilization of the Collect App features, in terms of form download, storage, management, and processing.
@@ -27,14 +25,14 @@ This section lists down all the possible configuration related steps to integrat
 1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
 2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
 3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
-4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+4.  Click on your app module. Select New Module Option -> Select Import Library -> Go to the downloaded project directory -> Select the module, sync your gradle. **In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.** 
 5.  Please follow the same steps for the integration of offline_module.
 6. In the project's build.gradle, add Gradle dependency and It's Done!
 
 ```
 api project(':samagra-form-management');`
 ```
-7. In the settings.gradle, add ':samagra-form-management', to the end of existing modules.
+7. In the settings.gradle, add **':samagra-form-management'**, to the end of existing modules.
 8. Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
 ### Giving Storage Permissions
@@ -267,3 +265,34 @@ getIFormManagementContract().launchFormChooserView(context, toolbarModificationO
 *  title - String (Title of toolbar) goBackOnNavIconPress - * Boolean (enables or disables back icon)
 */
 ```
+
+## FAQs
+
+**Q1: My app crashes, due to permission exceptions. What should I do?**
+Please note that, storage permissions though have been asked from user at the launch of app, but when launching the form view, you will have to provide, microphone/location permissions, if your forms contain questions containing media/geo-location. Please refer the table below.
+
+| Permission | Reason                                                                                                          |
+|------------|-----------------------------------------------------------------------------------------------------------------|
+| Storage    | required for Collect to be able to access and save form data                                                    |
+| Camera     | required by image and video questions to capture new media                                                      |
+| Contacts   | required to configure a Google account for Google Drive, Google Sheets submissions                              |
+| Location   | required for location questions                                                                                 |
+| Microphone | required by audio and video questions to capture new media                                                      |
+| Phone      | optional on form send to include deviceID in the submission and required for forms that capture device metadata |
+
+
+**Q2: My build is failing, What should I do to debug?**
+Here are the approaches you could follow;
+a) Please sync your gradle and clean your project.
+b) Check for dependency resolution errors, check the downloaded roject to see the type and version of libraries imported.
+c) Check your google-services.jsn, it should be compatible with the applicationId mentioned in your project build.gradle
+
+**Q3: My forms don't seem to behave in the way they are supposed to be. What should I do?**
+Please check the same forms that you have configured on XLS, on the ODK Collect app, if the form doesn't work there, please check your form structure, you will have to debug to check as this means there has been some issue with your form.
+
+**Q4: How can I configure auto-sending the forms on internet connectivity issue?**
+ODK is a robust tool developed to handle offline scenarios. Auto send When enabled in setings.json (Add "autosend": "on"), forms are sent immediately when they are finalized, if the device can connect to the internet. If an internet connection is not available at the time of finalization, your finalized forms will be queued to send as soon as connectivity
+is established. You can specify whether to send over WiFi, cellular data, or both.
+
+
+## Coming Soon
