@@ -12,9 +12,13 @@ One of the most prominent problems with respect to this though is scattered docu
 
 The package and its features can be broken up into 2 main components:
 
-1.1  **Form Downloading**:- This involves downloading the ODK Forms to be rendered to the user. This may depend on the User’s role and the level of access, varying from user to user. It also includes a basic level of configurations needed to get the ODK Collect Module to be preset.
+1.1  Form Downloading
 
-1.2  **Form Rendering and Management**:- This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
+This involves downloading the ODK Forms to be rendered to the user. This may depend on the User’s role and the level of access, varying from user to user. It also includes a basic level of configurations needed to get the ODK Collect Module to be preset.
+
+1.2  Form Rendering and Management
+
+This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
 
 ## 2. Setting Up ODK
 
@@ -23,15 +27,21 @@ This section lists down all the possible configuration related steps to integrat
 ### 2.1 Retrieving the Code
 
 2.1.1  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+
 2.1.2  Launch Android Studio. Open the main project where you are to integrate these modules. 
+
 2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
+
 2.1.4  Click on your app module. 
 -> Select New Module Option 
 -> Select Import Library 
 -> Go to the downloaded project directory 
 -> Select the module, sync your gradle. 
-**In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.** 
+
+*In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.*
+
 2.1.5  Please follow the same steps for the integration of offline_module.
+
 2.1.6  In the project's build.gradle, add Gradle dependency and It's Done!
 
 ```
@@ -43,9 +53,10 @@ api project(':samagra-form-management');`
 
 ### 2.2 Setting up ODK Aggregate
 
-**ODK Aggregate** is an open source Java application that stores, analyzes, and presents XForm survey data collected using ODK Collect. It supports a wide range of data types, and is designed to work well in any hosting environment.
+[ODK Aggregate](https://docs.getodk.org/aggregate-intro/) is an open source Java application that stores, analyzes, and presents XForm survey data collected using ODK Collect. It supports a wide range of data types, and is designed to work well in any hosting environment.
 
 With Aggregate, your team can:
+
 - Host blank XForms used by ODK Collect or other OpenRosa clients
 - Store and manage XForm submission data
 - Visualize collected data using maps and simple graphs
@@ -59,14 +70,14 @@ Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-us
 
 ### 2.3 Giving Storage Permissions
 
-2.3.1  Add the following snippet in your AndroidManifest.xml
+2.3.1	Add the following snippet in your AndroidManifest.xml
 
     ```
     `<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     ```
 
-2.3.2  In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
+2.3.2	In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
 
 ```
 /** Request the storage permissions which is
@@ -194,19 +205,23 @@ getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
 
 Note: In all the usages mentioned below
 
-2.5.1  Deleting all the previous ODK related data, getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
+2.5.1  Deleting all the previous ODK related data
+
+getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
 
 ```
 getIFormManagementContract().resetEverythingODK();
 ```
 
-2.5.2 If in case if you just want to delete already filled/submitted forms for the user, use the following method
+2.5.2 Delete current users' form submissions
+
+If in case if you just want to delete already filled/submitted forms for the user, use the following method
 
 ```
 getIFormManagementContract().resetODKForms(context);
 ```
 
-2.5.3  **Downloading the forms**
+2.5.3  Downloading data collection forms
 
 - Generally, the forms are downloaded for a user based on User access/role. You could use own APIs to fetch which forms to be downloaded for a user or you could use FirebaseRemoteConfig to get the name and ID of forms to be downloaded for a user.
 
@@ -256,27 +271,35 @@ public void formsDownloadingFailure() {
    }}
 ```
 
-2.5.4  You can fetch a form’s ID if you know the form name. This is useful in case you want to open a specific form.
+2.5.4  Retreive Form IDs
+
+You can fetch a form’s ID if you know the form name. This is useful in case you want to open a specific form.
 
 ```
 getIFormManagementContract().fetchSpecificFormID(formIdentifier)
 // Form Identifier is the Form's name
 ```
 
-2.5.5  You can prefill certain details into a form if you know the tag to be prefilled and the form’s name, in the manner mentioned ahead.
+2.5.5  Pre-fill information in forms
+
+You can prefill certain details into a form if you know the tag to be prefilled and the form’s name, in the manner mentioned ahead.
 
 ```
 getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 `String tag, String tagValue);
 ```
 
-2.5.6  You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
+2.5.6  Launch specific forms
+
+You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
 
 ```
 getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
 ```
 
-2.5.7  You can launch a view showing all the downloaded forms using the following invocation, where the user himself can select whichever form to fill and send.
+2.5.7  View all downloaded forms
+
+You can launch a view showing all the downloaded forms using the following invocation, where the user himself can select whichever form to fill and send.
 
 ```
 getIFormManagementContract().launchFormChooserView(context, toolbarModificationObject);
