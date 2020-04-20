@@ -1,7 +1,7 @@
 ---
 id: AndroidProfileManagementModule
-title: User Profile Management Module
-sidebar_label: User Profile Management Module
+title: Profile Screens Module
+sidebar_label: Profile Screens Module
 ---
 
 ## 1. Overview
