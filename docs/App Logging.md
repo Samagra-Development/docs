@@ -4,23 +4,21 @@ title: App Logging
 sidebar_label: App Logging
 ---
 
-# App Logging and Crash Reporting Module
+## 1. Overview
 
-For any app developer, being able to monitor the deplyed app's statibility is of paramount importnace. There is nothing important than keepng the app crash count to its bare minimum. As app crashes not only end up creating a bad user experience but also contribute in a colossal way to a bad app reputation, implying that enough attention isn't being paid to what is being rolled out in production environment. Other than that, for a product based app development, it is always helpful to have access to user's app activities to debug certain issues being faced by the end users.
+For any app developer, being able to monitor the application statibility is of paramount importnace. There is nothing more important than keepng the app crash count to its bare minimum. As, Mobile developers we are usually familiar with tools such as Google Analytics or Fabric.io but they are analytics or crashlytics systems, and not full-fledged application logging solutions. To enable remote logging, we have built an application logging and crash reporting functionality using opensource tools and libraries, which can be easily integerated into your starter app. This will enable you to identify and respond to common crashes in a timely manner. 
 
-As, Mobile developers we are usually familiar with tools such as Google Analytics or Fabric.io but they are analytics or crashlytics systems, and not full-fledged logging solutions. Remote logging debugging a much simpler and smoother process.
+The module also would include the option to retrieve the app logs and also then further segregate them ad push them to back-end server. Also, included in this, are certain more modifications which are listed ahead in the document. Think of this tool as alert guard dog, always ready to let you know if something goes wrong so you can identify the culprit and contain it. It also offers critical data about the crashes, including which devices were affected most, the stack trace, ways to debug them and so on. The module has two key features:
 
-Fortunately, for this particular scenario, we have built on a app logging and app crash reporting functionality, which has been built on widely available open-soruce tools and libraries and can be easily integerated into your android app, with minimal developer effort. This will help you as developers identify and respond to common crashes in a timely manner. The module also would include the option to retrieve the app logs and also then further segregate them ad push them to back-end server. Also, included in this, are certain more modifications which are listed ahead in the document.
+### 1.1 Logger Library
 
-Think of this tool as alert guard dog, always ready to let you know if something goes wrong so you can identify the culprit and contain it. It also offers critical data about the crashes, including which devices were affected most, the stack trace, ways to debug them and so on.
+This has been written on top of Android's native **Log** for debugging purpose. Android-Logger and Timber which are natively provided print logs message on logcat in Android Studio that doesn't help to get the behavior of app in production, which means that these logs message aren't accessible to the developers. Remote logging is the solution that helps debug the problem. Hence our module allows the users to store the logs into the database, which can be pulled anytime whenever you want to. As a developer, you can also push the fetched app logs to your remote server for debugging purposes as a file.
 
-# Overview
+### 1.2 Remote Crash/Error Reporting
 
-The module developed is a dual faceted feature. First, facet is essentially a **Logger Library** which has been written on top of Android's native **Log** for debugging purpose. Android-Logger and Timber which are natively provided print logs message on logcat in Android Studio that doesn't help to get the behavior of app in production, which means that these logs message aren't accessible to the developers. Remote logging is the solution that helps debug the problem. Hence our module allows the users to store the logs into the database, which can be pulled anytime whenever you want to. As a developer, you can also push the fetched app logs to your remote server for debugging purposes as a file.
+This has been written on the top of **[Sentry]**(https://sentry.io/). Once the app encounters any Uncaught exception or any un-considered scenarios leading to sudden closing of application, then the corresponding stack-trace at the point of time, would be shared to Sentry Server. The feature also includes an option for the user to configure sending the reported crash to email as well. So whenever the app encounters a crash, the corresponding error related data will be sent both to the Sentry Server as well as to the email configured.
 
-The second facet of the feature is **remote crash/error reporting**, which has been written on the top of **[Sentry]**(https://sentry.io/). Once the app encounters any Uncaught exception or any un-considered scenarios leading to sudden closing of application, then the corresponding stack-trace at the point of time, would be shared to Sentry Server. The feature also includes an option for the user to configure sending the reported crash to email as well. So whenever the app encounters a crash, the corresponding error related data will be sent both to the Sentry Server as well as to the email configured.
-
-## Integrating the Module into the Application
+## 2. Setup Module In Starter App
 
 Download the latest version or grab via Gradle.
 
@@ -34,7 +32,7 @@ dependencies {
 }
 ```
 
-## Initialization
+### 2.1 Start Module
 
 Inside `onCreate` of Application class or Launcher Activity, in the manner as follows
 
@@ -79,7 +77,7 @@ Parameters:
 
 `isHyperlogEnabled` - Flag to control the initialisation of Hyperlog to store App logs in local device - [`Boolean`](https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true 'class or interface in java.lang') You can enable or disable it as per your wish. This flag will allow the user to store the app logs in the local database as a file, and also push them to remote server whenever triggered.
 
-## Pushing the App logs to the Remote Server
+### 2.2 Push App Logs to Remote Server
 
 As mentioned ahead, you would be able to do so, if you would have enabled that feature. If that is the case. Whenever you would want to push the logs to the server, invoke the following method in the way mentioned ahead.
 
@@ -92,12 +90,14 @@ if(initializer != null) {
 
 Set the API Endpoint URL in place of `API_ENDPOINT_URL` and send the API's authorisation token in place of `AUTHORIZATION_TOKEN`.
 
-## Configuring Remote Error/Crash Reporting Functionality
+### 2.3 Configure Remote Error/Crash Reporting
 
 Follow the steps mentioned ahead to configure the Error reporting within your app project.
 
 1. Create an Account on [Sentry](https://sentry.io/signup/). Fill in all your details as required. This link redirects you the free developer version of Sentry. As per your increased demand and load, you can also buy premium plans for the same.
-2. After you successfully create an user account, Select the platform for which you need error reporting. In this case, please select **Android**. Your project will be created after selecting the **Create Project** button.
+
+2. After you successfully create an user account, Select the platform for which you need error reporting.In this case, please select **Android**. Your project will be created after selecting the **Create Project** button.
+
 3. Update your build.gradle files as below
 
 ```
@@ -219,4 +219,5 @@ io.sentry.jul.SentryHandler.level=WARNING
 ```
 
 7. When initialising the component, replace the domainID variable with, **_BuildConfig.dsn_**.
+
 8. You are now set to go, build the project and manually trigger a crash, could it be a NullPointerException for example, you should be able to see the App logs on the Sentry Panel.
