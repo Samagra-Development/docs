@@ -16,7 +16,7 @@ For any app, at a user’s level, it is essential to provide the user with an op
 
 4. Users can reset the password for the application via OTP that will be sent to the user’s registered number.
 
-## 2. Set Up Module In Main Application
+## 2. Setup Module In Starter App
 
 ### 2.1 Integrate Module
 
@@ -103,7 +103,7 @@ The method signature of the above method is mentioned below.
                                String sendOTPUrl, String updatePasswordURL, HashMap<String, String> profileContentValues);
 ```
 
-### 2.3 Set Up Firebase (for Android Project & Client End Consumption)
+### 2.3 Setup Firebase (for Android Project & Client End Consumption)
 
 2.3.1 First of all, for setting up Remote Config for Firebase, you need to setup Firebase for your Android Application Project. The tutorial for setting up Firebase for Android can be accessed via the link, [Adding Firebase to your Android Project](https://firebase.google.com/docs/android/setup).
 
