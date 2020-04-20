@@ -286,7 +286,7 @@ getIFormManagementContract().launchFormChooserView(context, toolbarModificationO
 
 ## FAQs
 
-**Q1 hat version of ODK Collect we are using?**<br/>
+**Q1 What version of ODK Collect we are using?**<br/>
 We are using v1.26.1.
 
 **Q2 How can I upgrade the ODK Collect verion?**<br/>
@@ -305,7 +305,7 @@ Please note that, storage permissions though have been asked from user at the la
 | Phone      | optional on form send to include deviceID in the submission and required for forms that capture device metadata |
 
 
-**Q3My build is failing, What should I do to debug?**<br/>
+**Q3 My build is failing, What should I do to debug?**<br/>
 Here are the approaches you could follow;
 a) Please sync your gradle and clean your project.
 b) Check for dependency resolution errors, check the downloaded roject to see the type and version of libraries imported.
@@ -314,7 +314,7 @@ c) Check your google-services.jsn, it should be compatible with the applicationI
 **Q4 My forms don't seem to behave in the way they are supposed to be. What should I do?**<br/>
 Please check the same forms that you have configured on XLS, on the ODK Collect app, if the form doesn't work there, please check your form structure, you will have to debug to check as this means there has been some issue with your form.
 
-**Q5How can I configure auto-sending the forms on internet connectivity issue?**<br/>
+**Q5 How can I configure auto-sending the forms on internet connectivity issue?**<br/>
 ODK is a robust tool developed to handle offline scenarios. Auto send When enabled in setings.json (Add "autosend": "on"), forms are sent immediately when they are finalized, if the device can connect to the internet. If an internet connection is not available at the time of finalization, your finalized forms will be queued to send as soon as connectivity
 is established. You can specify whether to send over WiFi, cellular data, or both.
 
