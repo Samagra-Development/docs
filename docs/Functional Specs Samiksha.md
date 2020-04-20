@@ -97,7 +97,7 @@ Recently, different State Education Departments have pivoted towards an OMR base
 - Ability to create and manage user profiles
 - Ability to update designation to form mapping (for designation based access to forms)
 - Ability to create visualizations of the visit submissions
-- Ability to view application performane statistics
+- Ability to view application performance statistics
 
 ### 2.6 Technical Architecture
 
