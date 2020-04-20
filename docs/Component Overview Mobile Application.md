@@ -6,9 +6,25 @@ sidebar_label: Component Overview
 
 # Component Overview (Mobile Application)
 
-Of the various products, we offer as a part of transforming ways of service delivery, mobile applications are an intrinsic part We have built the different mobile apps for Android platform leveraging various open source technologies. The mobile applications are developed using **multi-modular architecture**. The app is divided into various **independently functioning modules**. The sections, following will give you a deep dive into the various modules on what they offer, how you can incorporate these, and how you can customise these.
+![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
+## 1. Introduction
 
-## App Modules
+On-ground data collection activities conducted by different departments of the state and central governments have been increasingly conducted using mobile devices or tablets. To facilitate this upward trend of digital first data collection methods in the government, we have envisioned a opensource based modular design for a mobile application that can be scaled and reused efficiently for different governance use cases. After working closely with different state governments we have identified and abstracted common governance use cases that are typically required for on-ground data collection activities. These use cases have informed our architectural design for creating mobile applications for data collection. 
+
+This documentation of mobile application will give you an overview of what are the different use cases that inform the design of the component, how would you get started to deploy this component, what are the different modules within this component and additional reference information in case you want to dive deeper into the implementation of this component. 
+
+## 2. Use cases
+
+The following list includes a set of use cases abstracted from different on-ground state department functions.
+
+
+## Use Cases
+
+
+
+The mobile applications are developed using **multi-modular architecture**. The app is divided into various **independently functioning modules**. The sections, following will give you a deep dive into the various modules on what they offer, how you can incorporate these, and how you can customise these.
+
+App Modules
 
 The various modules used by us, with their respective features offered are mentioned below:
 
