@@ -387,7 +387,9 @@ By managing the configuration of the access control for forms you can give diffe
 
 ### 4.3 Create Visualizations of Submission Data
 
-All the data collected through the Samiksha application can be linked to Metabase to analyse data in the form of dashboards. [Metabase](https://metabase.com) is an Open Source tool for data visualization. It can be used to display any data in different formats like bar graphs, pie charts, tables etc. Metabase dashboards are simple to use and highly configurable. You can view this [Metabase documentation](https://www.metabase.com/docs/latest/users-guide/start.html) for how to setup basic graphs. A few key sections from this page that we typically refer to while building Metabase dashboards are listed below.
+All the data collected through the Samiksha application can be linked to Metabase to analyse data in the form of dashboards. [Metabase](https://metabase.com) is an Open Source tool for data visualization. It can be used to display any data in different formats like bar graphs, pie charts, tables etc. 
+
+Metabase dashboards are simple to use and highly configurable. You can view this [Metabase documentation](https://www.metabase.com/docs/latest/users-guide/start.html) for how to setup basic graphs. A few key sections from this page that we typically refer to while building Metabase dashboards are listed below.
 
 ![](https://media.giphy.com/media/WOla6gFeitQoNM0eI1/giphy.gif)
 
