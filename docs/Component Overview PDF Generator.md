@@ -1,9 +1,16 @@
 ---
 id: COPDFGenerator
-title: Component Overview (PDF Generator)
+title: PDF Generator
 sidebar_label: Component Overview
 ---
 
-# Component Overview (PDF Generator)
+![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
+# Component Overview
 
-## Coming Soon
+## 1. Introduction
+
+
+## 2. Use Cases
+
+
+## 3. Component Design
