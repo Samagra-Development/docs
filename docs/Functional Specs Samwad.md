@@ -69,11 +69,11 @@ Through this mechanism all parents who may be busy with farming activities or do
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
-**_2.4.1 Updates during Parent Teacher meetings**
+**_2.4.1 Updates during Parent Teacher meetings_**
 
 Majority of the feedback given to parents is given during the parent teacher meetings in the school. These meetings are used to share abstracted feedback for the session with the parents of the children. However, given the low frequnecy of these meetings regular high freuquency updates such as attendance or homework status cannot be shared precisely through this channel in a pro-active manner.
 
-**_2.4.2 Visit or call parents of the children**
+**_2.4.2 Visit or call parents of the children_**
 
 Often teachers may resort to visiting the parents of the children to provide feedback. However, given the daily schedule of the teachers, it becomes hard and often not feasible for teachers to visit parents to give them regular feedback about the children, especially for sharing attendance information. This method is typically used only when the issue is extremely serious.
 
