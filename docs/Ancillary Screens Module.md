@@ -20,7 +20,7 @@ The screens included in the Ancillary Screens Module are:
 
 **1.5 Tutorials Screen** - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
 
-## 2. Set Up Module
+## 2. Setup Module In Starter App
 
 ### 2.1 Integrate Module
 
