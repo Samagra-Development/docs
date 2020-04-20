@@ -1,7 +1,7 @@
 ---
 id: NotificationModule
-title: Push Notifications Module
-sidebar_label: Push Notifications Module
+title: Notifications Module
+sidebar_label: Notifications Module
 ---
 
 ## 1. Overview
