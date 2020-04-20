@@ -6,13 +6,11 @@ sidebar_label: Form Management Module
 
 ## 1. Overview
 
-The form management module has two key features:
-
-### 1.1  Form Downloading
+**1.1  Download Data Collection Forms**
 
 This involves downloading the ODK Forms to be rendered to the user. This may depend on the User’s role and the level of access, varying from user to user. It also includes a basic level of configurations needed to get the ODK Collect Module to be preset.
 
-### 1.2  Form Rendering & Management
+**1.2  Render & Manage Data Collection Forms**
 
 This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
 
