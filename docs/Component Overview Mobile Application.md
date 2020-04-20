@@ -17,8 +17,15 @@ This documentation of mobile application will give you an overview of what are t
 
 The following list includes a set of use cases abstracted from different on-ground state department functions.
 
+1. Configure data collection forms
+2. View submission data
+3. Manage user profiles of on-ground officials
+4. Configure additional information in the application (support content, helpline numbers)
+5. Seamless in-application information update (for addition of administrative information such as schools, blocks, GPs, etc)
+6. Offline application functioning for remote or low connectivity areas
 
-## Use Cases
+
+><><><><
 
 
 
