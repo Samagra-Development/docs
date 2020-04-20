@@ -33,6 +33,7 @@ module.exports = {
       },
       {
         'App Metadata Management': [
+          'COAppMetadata',
           'AdminGettingStarted',
           'AdminAddingExternalData',
           'AdminAddingCustomRoutes',
