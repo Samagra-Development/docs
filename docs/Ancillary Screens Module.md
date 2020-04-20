@@ -10,15 +10,25 @@ For any android app, it becomes imperative, as the usage increases and the featu
 
 The screens included in the Ancillary Screens Module are:
 
-**1.1 Splash Screen** - User sees this activity in the fist time when app is launched.
+**1.1 Splash Screen**
 
-**1.2 Login Screen** - User can login via user id and password, we are using FusionAuth for the management and authentication of users.
+User sees this activity in the fist time when app is launched.
 
-**1.3 About Us Screen** - Ability to confiure the title, icon and the description text of the About Us Screen
+**1.2 Login Screen**
 
-**1.4 Reset Password** - User can reset the app password from the Login screen via OTP sent to his registered Mobile number
+User can login via user id and password, we are using FusionAuth for the management and authentication of users.
 
-**1.5 Tutorials Screen** - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
+**1.3 About Us Screen**
+
+Ability to confiure the title, icon and the description text of the About Us Screen
+
+**1.4 Reset Password**
+
+User can reset the app password from the Login screen via OTP sent to his registered Mobile number
+
+**1.5 Tutorials Screen**
+
+In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
 
 ## 2. Setup Module In Starter App
 
