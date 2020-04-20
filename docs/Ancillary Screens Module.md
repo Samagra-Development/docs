@@ -4,258 +4,79 @@ title: Ancillary Screens Package
 sidebar_label: Ancillary Screens Package
 ---
 
-# User Profile Package
+## 1. Overview
 
-For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
 
-## Overview
+For any android app, it becomes imperative, as the usage increases and the features enhance, it is needed to provide an access control to the app. Hence, we developed a module, with certain UI modules which can be easily integrated with your app, to provide basic features which are to be generally present in almost every android application, which are Splash scree, Login Screen, Forgot Password and Reset password via OTP.
 
-The module is developed to provide the following functionalities:
+The screens included in the Ancillary Screens Module are:
 
-1. Option to display the user’s profile, to display the user's basic role details, contact details, as well as information pertaining to the app, depending on the user.
+(i) **Splash Screen** - User sees this activity in the fist time when app is launched.
+(ii) **Login Screen** - User can login via user id and password, we are using FusionAuth for the management and authentication of users.
+(iii) **About Us Screen** - Ability to confiure the title, icon and the description text of the About Us Screen
+(iv) **Reset Password** - User can reset the app password from the Login screen via OTP sent to his registered Mobile number
+(v) **Tutorials Screen** - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
 
-2. The details for the user can be configured from the backend, via Firebase, as in, the whole profile section has been designed to be dynamically generated. Details of this are discussed in the further part of the document.
+## 2. Setting up Module in Main Application
 
-3. Users have the option to edit certain profile information, depending on the app contract, meaning dependent on the back end configuration.
+### 2.1 Integrating Module into your Project
+2.1.1 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.<br/>2.1.2 Launch Android Studio. Open the main project where you are to integrate these modules.<br/>
+2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.<br/>
+2.1.4 Click on your app module. Select New Module Option -> Select Import Android Library -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.<br/>
+2.1.5 Please follow the same steps for the integration of ancillaryscreens module.<br/>
+2.1.6 In the settings.gradle, Add ':ancillaryscreens' to the end of already added modules.<br/>
 
-4. Users can reset the password for the application via OTP that will be sent to the user’s registered number.
+### 2.2 Initialization and Usage of Ancillary Screens Module
 
-## Integrating the module into the Mobile Application
-
-1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
-2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
-3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the user profile module later, using the following steps.
-4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
-5.  Please follow the same steps for the integration of Profile Module
-6. Add the snippet to the project level build.gradle
+Inside onCreate of Application class or Launcher Activity, in the manner as follows
 ```
-implementation project(':user_profile');`
-
+AncillaryScreensDriver.init(this,
+                BASE_API_URL,
+                SEND_OTP_API_ENDPOINT,
+                RESET_PASSWORD_API_ENDPOINT,
+                APPLICATIO_ID);
 ```
-7. In the settings.gradle, add ':user_profile', to the end of existing modules.
-
-### Initialization
-
-1. Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows
-
-```
-ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), this, AppConstants.BASE_API_URL, applicationID);
-
-```
-
-The method signature of this Module Contract Initialisation is as follows:
-
+The method signature of the initialisation invocation is as follows:
 ```
 /**
-     * @param profileContractImpl - {IProfileContract} Implementation Class of the Interface which will be further used to launch the Profile Section further.
-     * @param application         - {Application} Instance of the Application class, which will be used to validate for IllegalState checks.
-     * @param baseURL             - {String} Base URL for Fusion Auth APIs used when editing user profile
-     * @param applicationID       - {String} Application Identifier for this project, from Fusion Auth, used further as parameter for API interactions.
-     */
-
-    public static void registerProfilePackage(IProfileContract profileContractImpl, Application application,
-                                              String baseURL, String applicationID);
-```
-This method invocation will also initialize the ProfileScreenDriver class, which will be further used to launch the Profile Screen.
-
-2. Wherever you want to launch the Profile Section, use the following code piece.
-
-
-```
- IProfileContract initializer = ComponentManager.iProfileContract;
-
-if(initializer!=null){
-
-        initializer.launchProfileActivity(context,profileConfig,fusionauthAPIKey,sendOTPUrl,updateAppPasswordURL);
-
-        }
-
+* 
+* @param mainApplication - Instance of Application Class (Main Application, as you will see is an Interface implemented by
+Application class)
+* @param BASE_API_URL - String (Base API URL for the Fusion Auth, to be later used for user authentication and user data related tasks.)
+* @param SEND_OTP_API_ENDPOINT - String (API Endpoint to send OTP to the mobile number for resetting app password.)
+* @param RESET_PASSWORD_API_ENDPOINT - String (API Endpoint to post user data to reset App Password.)
+* @param APPLICATION_ID - String (Application ID sent for this app in Fusion Auth Backend.)
+*/
+public static void init(@NonNull MainApplication mainApplication, 
+@NonNull String BASE_API_URL, 
+@NonNull String SEND_OTP_API_ENDPOINT, 
+@NonNull String RESET_PASSWORD_API_ENDPOINT,
+@NonNull String APPLICATION_ID);
 ```
 
-The method signature of the above method is mentioned below.
-```
-/**
-     * *@param context-{Context}Context Instance used to further launch Profile Screen.
-     *
-     * @param profileConfig-{ArrayList<UserProfileElement>}List of Profile Screen Elements which will be received via Firebase Remote Config,
-     *
-     *                                                          Attributes would be discussed ahead while discussing on how to set up Firebase for project.
-     * @param fusionAuthApiKey-{String}Fusion                   API Auth Key for the Application,used to authenticate the API Requests.
-     * @param sendOTPUrl-{String}API                            End Point to receive OTP for resetting App Password.
-     * @param updatePasswordURL-{String}API                     End-point to update the User Password for the App,after receiving the OTP of registered Mobile Number
-     * @param profileContentValues-{HashMap<String,             String>}Map of the various content fields to be populated,(received via Firebase Remote Config)with their values.
-     */
-
-    void launchProfileActivity(@NonNull Context context, ArrayList<UserProfileElement> profileConfig, String fusionAuthApiKey, 
-                               String sendOTPUrl, String updatePasswordURL, HashMap<String, String> profileContentValues);
-```
-
-
-### Setting Up Firebase for Android Project and Consuming it on Client End
-
-1. First of all, for setting up Remote Config for Firebase, you need to setup Firebase for your Android Application Project. The tutorial for setting up Firebase for Android can be accessed via the link, [Adding Firebase to your Android Project](https://firebase.google.com/docs/android/setup).
-
-2. Configure Remote Config for your Android App after the above step is successfully completed, accessible via the link, [Getting started with Firebase Remote Config on Android](https://firebase.google.com/docs/remote-config/use-config-android).
-
-3. Go to [Google Firebase Console](https://www.console.firebase.google.com/), navigate to your project view. In your project view, launch the Remote Config View by clicking on the Remote Config tab.
-
-4. In the Remote Config window, Click on Add Parameter option. Add the profile config parameters as mentioned ahead.
-
-5. Add the key and value in the format mentioned below.
+### 2.3 Using Ancillary Screens Module
+2.3.1 In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
 
 ```
-key : "profile_config"
-
-default value :
-
-[
-
-{
-
-"base64Icon": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gLS0", // String - Base64 String of the Label Icon
-
-"title": "Contact Number - Please note this number will be used for sending OTP for password reset.", // String - Title for the Profile Screen Item
-
-"content": "user.mobilePhone", // String - Type of the Profile Item. (Possible types could be mobilePhone, email, username, Date Of Joining or Date of Birth)
-
-"isEditable": true, //Boolean - determines if the value of this Profile Item could be edited by user or not.
-
-"section": 0, //Integer - This identifier is section out the Profile Items while displaying.
-
-"type": "PHONE_NUMBER", // String - Type of the Profile Item, based on which different type of Layout will be inflated, types yet configured are TEXT/PHONE_NUMBER/DATE/SPINNER
-
-"spinnerExtra": null
-
-},
-
-{
-
-"base64Icon": "iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAA7UlEQVR4Ae3UIQwBcRTHceGioE/Qk6gXQRT0JIiCqE8URFEQBX2CKOgT9Anihedbbru97c/bf3dvwvtun8h+zqMTORdFBda4Q1p2wgRfm0OcLZDsBnF2QzKp2aGHpuvjAKlJJsoT0wbvc4EXJGeQPsABchviCgHyBs3Vp3ljiQLWutigVE99ljOo+r6P0Ec4wq8meNReV2Jb3WXGIOObq4wfIn+Q4fFP1dFav+b8QYYDPeNq+CG0MEg9DcNfhcMgdS+Ju3IdpBvro/UfZC8GxaAY9NeD3hBnFyTbQ5zNkKyLFR4OQ17YoIBbURR9AFTnXP/wlPyjAAAAAElFTkSuQmCC",
-
-"title": "Official Email",
-
-"content": "user.email",
-
-"isEditable": true,
-
-"section": 0,
-
-"type": "TEXT",
-
-"spinnerExtra": null
-
-},
-
-{
-
-"base64Icon": "iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAA7UlEQVR4Ae3UIQwBcRTHceGioE/Qk6gXQRT0JIiCqE8URFEQBX2CKOgT9Anihedbbru97c/bf3dvwvtun8h+zqMTORdFBda4Q1p2wgRfm0OcLZDsBnF2QzKp2aGHpuvjAKlJJsoT0wbvc4EXJGeQPsABchviCgHyBs3Vp3ljiQLWutigVE99ljOo+r6P0Ec4wq8meNReV2Jb3WXGIOObq4wfIn+Q4fFP1dFav+b8QYYDPeNq+CG0MEg9DcNfhcMgdS+Ju3IdpBvro/UfZC8GxaAY9NeD3hBnFyTbQ5zNkKyLFR4OQ17YoIBbURR9AFTnXP/wlPyjAAAAAElFTkSuQmCC",
-
-"title": "Official Email",
-
-"content": "user.state",
-
-"isEditable": true,
-
-"section": 0,
-
-"type": "SPINNER",
-
-"spinnerExtra": [{"Andhra Pradesh", "Delhi", "Punjab", "Odisha", "Haryana", "Himachal Pradesh",......}] //ArrayList<String> - Possible values of the Spinner Items.
-
-}
-
-},.......
-
-]
+<activity
+android:name="com.samagra.ancillaryscreens.screens.splash.SplashActivity"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+          <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+                </activity>
+ ```
+ 
+2.3.2 The module comes in such a way that you won't need to do any config changes with respect to Login flow for the user. Same goes for the Change Password flow of the user.
+2.3.3 To launch the About Us Screen from the module, use the following code:
 ```
-
-
-
-6. You can retrieve the above set values at the client end using the following code snippet.
-
-
+AncillaryScreensDriver.launchAboutActivity(context, aboutBundle);
 ```
-public ArrayList<UserProfileElement> getProfileConfig() {
-
-String configString = mFirebaseRemoteConfig.getString("profile_config"); // mFirebaseRemoteConfig is an instance of FirebaseRemoteConfig initialised in the Application level class of the Application.
-
-ArrayList<UserProfileElement> userProfileElements = new ArrayList<>();
-
-try {
-
-JSONArray config = new JSONArray(configString);
-
-for (int i = 0; i < config.length(); i++) {
-
-JSONArray spinnerExtra = config.getJSONObject(i).optJSONArray("spinnerExtra");
-
-ArrayList<String> spinnerValues = null;
-
-if (spinnerExtra != null) {
-
-spinnerValues = new ArrayList<>();
-
-for (int j = 0; j < spinnerExtra.length(); j++) {
-
-spinnerValues.add(spinnerExtra.get(j).toString());
-
-}
-
-}
-
-userProfileElements.add(new UserProfileElement(config.getJSONObject(i).get("base64Icon").toString(),
-
-config.getJSONObject(i).get("title").toString(),
-
-config.getJSONObject(i).get("content").toString(),
-
-(Boolean) config.getJSONObject(i).get("isEditable"),
-
-(int) config.getJSONObject(i).get("section"),
-
-UserProfileElement.ProfileElementContentType.valueOf(config.getJSONObject(i).get("type").toString()),
-
-spinnerValues));
-
-}
-
-} catch (JSONException e) {
-
-e.printStackTrace();
-
-}
-
-return userProfileElements;
-
-}
+Here, context is the Context Instance used to launch the About Us screen, AboutBundle is bundle object containing the information transferred to the Activity to render the UI. 
+2.3.4 To launch the About Us Screen from the module, use the following code:
 ```
-
-7. Map the values corresponding to these content fields, as per your app’s scenario. You could fetch and store these values in the SharedPreerences or in local DB, after receiving User Info from App Login Response or from particular User Data API.
-
-  
-
-## UI Capabilities for the User
-
-The package provides the following capabilities to the user:
-
-1. Render the User Profile Screen based on Firebase Remote Config’s returned User Profile Configurations and its values correspondingly received from User Data stored locally.
-
-2. On the Profile Screen, the user has 2 actions available to him/her,
-
-- Ability to reset App Password.
-
-- Edit the user Profile, available only for the editable fields in the user profile.
-
-3. Reset Password
-
-- The user must have a mobile number registered in the profile section, to be able to receive the OTP. In this case, edit the profile prior to resetting the password.
-
-- The user will be redirected to Reset Password Screen, only if API to trigger OTP (whose endpoint has been sent while initialization of module, as discussed above), returns a successful response. In the other scenario, the user will be shown a Snakbar notifying of the type of Exception message returned by the API.
-
-- In the Reset Password Screen, user has to enter the OTP, new password, confirm the same password. And then trigger the submit button. On successful update of password (API endpoint has been sent while initialization of module, as discussed above), the user will be shown a message and then redirected to the Profile Screen. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
-
-4. Edit Profile
-
-- The user is only able to edit the editable fields. 
-
-- Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
+AncillaryScreensDriver.launchTutorialsActivity(context, tutorialBundle);
+```
+Here, context is the Context Instance used to launch the Tutorials screen, tutorialBundle is bundle object containing the information transferred to the Activity to render the UI. It contains the video id and Youtube API Key 
+2.3.5  We are using RxBus to communicate back and forth with the main app module. Please refer to the SplashPresenter class of the downloaded project where we communicate back with the main app module to notify Login success and launching of home screen.
