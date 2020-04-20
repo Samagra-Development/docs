@@ -6,9 +6,7 @@ sidebar_label: Ancillary Screens Module
 
 ## 1. Overview
 
-For any android app, it becomes imperative, as the usage increases and the features enhance, it is needed to provide an access control to the app. Hence, we developed a module, with certain UI modules which can be easily integrated with your app, to provide basic features which are to be generally present in almost every android application, which are Splash scree, Login Screen, Forgot Password and Reset password via OTP.
-
-The screens included in the Ancillary Screens Module are:
+For any android app, it becomes imperative, as the usage increases and the features enhance, it is needed to provide an access control to the app. Hence, we developed a module, with certain UI modules which can be easily integrated with your app, to provide basic features which are to be generally present in almost every android application, which are Splash scree, Login Screen, Forgot Password and Reset password via OTP. The screens included in the Ancillary Screens Module are:
 
 **1.1 Splash Screen**
 
