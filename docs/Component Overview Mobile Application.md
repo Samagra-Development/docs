@@ -11,7 +11,7 @@ sidebar_label: Component Overview
 
 On-ground data collection activities conducted by different departments of the state and central governments have been increasingly conducted using mobile devices or tablets. To facilitate this upward trend of digital first data collection methods in the government, we have envisioned a opensource based modular design for a mobile application that can be scaled and reused efficiently for different governance use cases. After working closely with different state governments we have identified and abstracted common governance use cases that are typically required for on-ground data collection activities. These use cases have informed our architectural design for creating mobile applications for data collection. 
 
-This documentation of mobile application will give you an overview of what are the different use cases that inform the design of the component, how would you get started to deploy this component, what are the different modules within this component and additional reference information in case you want to dive deeper into the implementation of this component. 
+This documentation of the Mobile Application component will give you an overview of the different use cases that inform the design of the component, how you can get started to deploy this component, how you can setup different modules within this component and additional reference information in case you want to dive deeper into the implementation of this component. 
 
 ## 2. Use cases
 
