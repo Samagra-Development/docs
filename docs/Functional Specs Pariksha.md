@@ -1,7 +1,7 @@
 ---
 id: ParikshaFuncSpecs
-title: Functional Specifications (Pariksha)
-sidebar_label: Functional Specifications (Pariksha)
+title: Pariksha - Functional Specifications
+sidebar_label: Pariksha
 ---
 
 # Functional Specifications (Pariksha)
