@@ -14,11 +14,11 @@ This involves downloading the ODK Forms to be rendered to the user. This may dep
 
 This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
 
-## 2. Set Up ODK
+## 2. Setup Module In Starter App
 
-This section lists down all the possible configuration related steps to integrate ODK into your app.
+This section lists down all the possible configuration related steps to integrate ODK, the core opensource library being used for data collection, into your starter application.
 
-### 2.1 Retrieve Code
+### 2.1 Retrieve ODK Code
 
 2.1.1  Setup Github project
 
@@ -62,7 +62,7 @@ In the settings.gradle, add **':samagra-form-management'**, to the end of existi
 Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
 
-### 2.2 Set up ODK Aggregate
+### 2.2 Setup ODK Aggregate
 
 [ODK Aggregate](https://docs.getodk.org/aggregate-intro/) is an open source Java application that stores, analyzes, and presents XForm survey data collected using ODK Collect. It supports a wide range of data types, and is designed to work well in any hosting environment.
 
