@@ -1,7 +1,7 @@
 --- 
 id: CascadingSearchModule 
-title: Cascading Search Module 
-sidebar_label: Cascading Search Module
+title: Cascading Dropdowns Module 
+sidebar_label: Cascading Dropdowns Module
 ---
 
 ## 1. Overview
