@@ -1,6 +1,6 @@
 ---
 id: COMobileApplication
-title: Component Overview (Mobile Application)
+title: Mobile Application Component
 sidebar_label: Component Overview
 ---
 
