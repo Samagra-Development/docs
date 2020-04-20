@@ -20,7 +20,7 @@ module.exports = {
       {
         'Mobile Application': [
           'COMobileApplication',
-          'GettingStarted',
+          'GettingStartedMobileComponent',
           'FormManagementModule',
           'AncillaryScreensModule',
           'AndroidProfileManagementModule',
