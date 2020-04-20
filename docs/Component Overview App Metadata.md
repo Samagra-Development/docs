@@ -7,10 +7,11 @@ sidebar_label: Component Overview
 
 # Component Overview
 
+
 ## 1. Introduction
 
 ## 2. Use Cases
 
 ## 3. Component Design
 
-![alt-text](../img/appmetadata.png)
+![alt-text](../img/appmetada.png)
