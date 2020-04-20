@@ -1,9 +1,20 @@
 ---
 id: COApplicationLogging
-title: Component Overview (Application Logging)
+title: Application Logging
 sidebar_label: Component Overview
 ---
 
-# Component Overview (Application Logging)
+![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
 
-## Coming Soon
+# Component Overview
+
+## 1. Introduction
+
+
+## 2. Use Cases
+
+
+## 3. Component Design
+
+
+![alt-text](../img/applogging.png)
