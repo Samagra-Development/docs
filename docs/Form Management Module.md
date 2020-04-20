@@ -30,11 +30,11 @@ Unzip the github project to a folder. You can find the github repository at this
 
 Open the main project on Android Studio where you are to integrate these modules. 
 
-2.1.3 <heading>
+2.1.3 heading
 
 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
 
-2.1.4  <heading>
+2.1.4  heading
 
 Click on your app module. 
 -> Select New Module Option 
@@ -44,22 +44,22 @@ Click on your app module.
 
 *In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.*
 
-2.1.5  <heading>
+2.1.5  heading
 
 Please follow the same steps for the integration of offline_module.
 
-2.1.6  <heading>
+2.1.6  heading
 
 In the project's build.gradle, add Gradle dependency and It's Done!
 
 ```
 api project(':samagra-form-management');`
 ```
-2.1.7  <heading>
+2.1.7  heading
 
 In the settings.gradle, add **':samagra-form-management'**, to the end of existing modules.
 
-2.1.8  <heading>
+2.1.8  heading
 
 Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
@@ -83,7 +83,7 @@ Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-us
 
 ### 2.3 Giving Storage Permissions
 
-2.3.1	<heading>
+2.3.1	heading
 
 Integrating the ODK Module in your app project, would reqire to add certain user permissions. Add the following snippet in your AndroidManifest.xml
 
@@ -92,7 +92,7 @@ Integrating the ODK Module in your app project, would reqire to add certain user
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     ```
 
-2.3.2	<heading>
+2.3.2	heading
 
 In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
 
@@ -125,7 +125,7 @@ public void requestStoragePermissions() {
 
 ### 2.4 Initializing the Module Contract
 
-2.4.1  <heading>
+2.4.1  heading
 
 Add settings.json, in the **res/raw** folder of your main app module. This file contains all the configurations wit reference to the integration of ODK features in your application. You will have to configure the ODK first by downloading ODK App from Play store and configuring as per the steps mentioned in this [link](https://docs.opendatakit.org/collect-import-export/ 'https://docs.opendatakit.org/collect-import-export/'). Please replace **server_url, username, password** fields in the settings.json file with your own credentials configured from the ODK app.
 
@@ -183,7 +183,7 @@ Add settings.json, in the **res/raw** folder of your main app module. This file 
     }
     ```
 
-2.4.2  <heading>
+2.4.2  heading
 
 In the onCreate() of your Application-level class, please add the following method invocation
 
@@ -215,7 +215,7 @@ The method signature of setODKModuleStyle() is mentioned below
 void setODKModuleStyle(MainApplication mainApplication, int splashScreenDrawableID, int baseAppThemeStyleID, int formActivityThemeID, int customThemeId_Settings, long toolbarIconResId);`
 ```
 
-2.4.3  <heading>
+2.4.3  heading
 
 Apply the settings file configured above using the following snippet
 
