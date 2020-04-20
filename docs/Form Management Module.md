@@ -16,11 +16,11 @@ This involves downloading the ODK Forms to be rendered to the user. This may dep
 
 This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
 
-## 2. Setting Up ODK
+## 2. Set Up ODK
 
 This section lists down all the possible configuration related steps to integrate ODK into your app.
 
-### 2.1 Retrieving the Code
+### 2.1 Retrieve Code
 
 2.1.1  Setup Github project
 
@@ -64,7 +64,7 @@ In the settings.gradle, add **':samagra-form-management'**, to the end of existi
 Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
 
-### 2.2 Setting up ODK Aggregate
+### 2.2 Set up ODK Aggregate
 
 [ODK Aggregate](https://docs.getodk.org/aggregate-intro/) is an open source Java application that stores, analyzes, and presents XForm survey data collected using ODK Collect. It supports a wide range of data types, and is designed to work well in any hosting environment.
 
@@ -81,7 +81,7 @@ Please check this link to find [how to set up ODK Aggregate?](https://docs.getod
 
 Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-use/)
 
-### 2.3 Giving Storage Permissions
+### 2.3 Give Storage Permissions
 
 2.3.1	heading
 
@@ -123,7 +123,7 @@ public void requestStoragePermissions() {
 	 // Permissions have already been granted.  } }
 ```
 
-### 2.4 Initializing the Module Contract
+### 2.4 Initiate Module Contract
 
 2.4.1  heading
 
@@ -224,11 +224,11 @@ getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
  //R.raw.settings is the resource ID for the Settings file and context is an instance of Context //class
 ```
 
-### 2.5 Using the helper methods
+### 2.5 Use Module Helper Methods
 
 Please refer the sub-sections to find out the various functionalities, this module wrapper provides.
 
-#### 2.5.1  Deleting all the previous ODK related data
+#### 2.5.1  Delete all the previous ODK related data
 
 getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
 
@@ -244,7 +244,7 @@ If in case if you just want to delete already filled/submitted forms for the use
 getIFormManagementContract().resetODKForms(context);
 ```
 
-#### 2.5.3  Downloading data collection forms
+#### 2.5.3  Download data collection forms
 
 - Generally, the forms are downloaded for a user based on User access/role. You could use own APIs to fetch which forms to be downloaded for a user or you could use FirebaseRemoteConfig to get the name and ID of forms to be downloaded for a user.
 
@@ -312,7 +312,7 @@ getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 `String tag, String tagValue);
 ```
 
-#### 2.5.6  Launching specific forms
+#### 2.5.6  Launch specific forms
 
 You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
 
@@ -320,7 +320,7 @@ You can launch a specific form to edit and further send using the following invo
 getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
 ```
 
-#### 2.5.7  Viewing all downloaded forms
+#### 2.5.7  View all downloaded forms
 
 You can launch a view showing all the downloaded forms using the following invocation, where the user himself can select whichever form to fill and send.
 
@@ -344,7 +344,7 @@ We are using v1.26.1.
 
 Please check this [link.](https://github.com/getodk/collect/releases). Download the latest version. Check the changes made in the latest release. Override the changes made in the latest versions.
 
-### 3.3  My app crashes, due to permission exceptions. What should I do?
+### 3.3  My application crashes due to permission exceptions. What can I do?
 
 Please note that, storage permissions though have been asked from user at the launch of app, but when launching the form view, you will have to provide, microphone/location permissions, if your forms contain questions containing media/geo-location. 
 
@@ -360,7 +360,7 @@ Please refer the table below.
 | Phone      | optional on form send to include deviceID in the submission and required for forms that capture device metadata |
 
 
-### 3.4  My build is failing, What should I do to debug?
+### 3.4  My build is failing. What should I do to debug?
 
 Here are the approaches you could follow;
 a) Please sync your gradle and clean your project.
