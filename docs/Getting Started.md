@@ -1,6 +1,6 @@
 ---
 id: GettingStartedMobileComponent
-title: Getting Started with Samargra Mobile App Package
+title: Getting Started
 sidebar_label: Getting Started
 ---
 
