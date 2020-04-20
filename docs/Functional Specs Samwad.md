@@ -69,27 +69,37 @@ Through this mechanism all parents who may be busy with farming activities or do
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
-**_2.4.1 Lorem ipsum_**
+**_2.4.1 Updates during Parent Teacher meetings**
 
-Lorem ipsum
+Majority of the feedback given to parents is given during the parent teacher meetings in the school. These meetings are used to share abstracted feedback for the session with the parents of the children. However, given the low frequnecy of these meetings regular high freuquency updates such as attendance or homework status cannot be shared precisely through this channel in a pro-active manner.
 
-**_2.4.2 Lorem ipsum_**
+**_2.4.2 Visit or call parents of the children**
 
-Lorem ipsum
+Often teachers may resort to visiting the parents of the children to provide feedback. However, given the daily schedule of the teachers, it becomes hard and often not feasible for teachers to visit parents to give them regular feedback about the children, especially for sharing attendance information. This method is typically used only when the issue is extremely serious.
+
 
 ### 2.5 Core Features
 
 **_2.5.1 For State Government School Teachers_**
 
-- Lorem ipsum
+- Manage student addressbook (with basic details of the students)
+- Ability to view all SMS templates that can be sent to parents
+- Ability to send personalized SMS to parents based on pre-existing SMS templates
+- Ability to view the state of SMS sent
+- Ability to update their own profile information
 
 **_2.5.2 For State Department Officials_**
 
-- Lorem ipsum
+- Ability to view, in real time, complete details or summarized views of the different types of SMS sent by school teachers
+- Ability to view, in real time, complete details or summarized views of the status of the SMS sent by school teachers
+- Ability to view, in real time, details of the student addressbook
 
 **_2.5.3 For Process Administrators_**
 
-- Lorem ipsum
+- Ability to create and manage SMS templates
+- Ability to create and manage school teacher profiles
+- Ability to create visualizations of the visit submissions
+- Ability to view application performance statistics
 
 ### 2.6 Technical Architecture
 
@@ -100,7 +110,6 @@ Samwad is wired together using the _[Mobile Application Component](www.google.co
 ## 3. High Level Specifications
 
 ### 3.1 Simple User Flow For Sending SMS
-
 
 **_3.1.1 Configurable SMS templates_**
 
@@ -207,9 +216,17 @@ Visualize all application events to understand trends of usage behaviour of your
 
 ### 4.1 Configure SMS Templates
 
-Samwad SMS - forms are configured using [Open Data Kit](https://opendatakit.org). The Open Data Kit software is an open source software that allows for collecting, managing, and using data in resource-constrained environments. It allows for the collection of data offline and submission of the data when internet connectivity is available. It allows users to aggregate data with full control over the collected data and the servers where this data is stored.
+Samwad SMS - For school teachers to send an SMS the teachers will have to fill a form to indicate the details for which an SMS has to be sent. For example, 
 
-A pre-requisite for configuring and updating the forms in your application is to [setup](deploysamiksha.md) the Samiksha application.
+1. If the teacher wants to send an SMS for updating parents about the upcoming holidays, then the teacher would have to fill a basic form to update the start date, end date and the number of days of the holidays. This information will be combined together as an SMS and then sent forward to the respective parents. 
+
+2. If a teacher wants to send a SMS to indicate the children who were absent in the class today then the teacher would select the children using a form and then the same is submitted and converted into single SMSes.
+
+![](https://media.giphy.com/media/jmr1YWciVFhIaldm7g/giphy.gif)
+
+These basic forms can are configured using [Open Data Kit](https://opendatakit.org). The Open Data Kit software is an open source software that allows for collecting, managing, and using data in resource-constrained environments. It allows for the collection of data offline and submission of the data when internet connectivity is available. It allows users to aggregate data with full control over the collected data and the servers where this data is stored.
+
+A pre-requisite for configuring and updating the forms in your application is to [setup](deploysamwad.md) the Samwad application.
 
 A summary of the steps to create a data collection form using ODK has been provided below.
 
@@ -270,15 +287,12 @@ ODK has a wide variety of [question types](https://docs.opendatakit.org/form-que
 
 ![](https://media.giphy.com/media/KZMI2mT0jCRy86m9NB/giphy.gif)
 
-We have observed that the following question widgets are used extensively in Samiksha by the State Education Departments, which have been currently using this.
+We have observed that the following question widgets are used extensively in Samwad.
 
 - [Text widgets](https://docs.opendatakit.org/form-question-types/#text-widgetsv)
 - [Number widgets](https://docs.opendatakit.org/form-question-types/#number-widgets)
 - [Date and time widgets](https://docs.opendatakit.org/form-question-types/#date-and-time-widgets)
 - [Select widgets](https://docs.opendatakit.org/form-question-types/#select-widgets)
-- [Location widgets](https://docs.opendatakit.org/form-question-types/#location-widgets)
-- [Image widgets](https://docs.opendatakit.org/form-question-types/#image-widgets)
-- [Note widget](https://docs.opendatakit.org/form-question-types/#note-widget)
 - [Hidden questions](https://docs.opendatakit.org/form-question-types/#hidden-questions)
 - [Grouping multiple widgets on same screen](https://docs.opendatakit.org/form-question-types/#grouping-multiple-widgets-on-the-same-screen)
 
@@ -348,7 +362,7 @@ Please view the [documentation](https://docs.opendatakit.org/form-update/) for u
 
 **_4.2.1 User Management_**
 
-In Samiksha, there is an admin console that can be enabled to allows administrators of the application at the state or district level to manage user authentication for the application. The typical feature set that is enabled through this admin console has been listed below.
+In Samwad, there is an admin console that can be enabled to allows administrators of the application at the state or district level to manage user authentication for the application. The typical feature set that is enabled through this admin console has been listed below.
 
 - Addition of users
 - View user information
@@ -364,21 +378,11 @@ In addition you can also update **_metadata_** of the application in this consol
 
 - School Details (School Name, UDISE, Type of School, Total Enrolment, GPS Coordinates etc)
 - Administrative Location Mapping (District, Block, Cluster, GP etc)
-- Monitor Designation Wise Visit Targets
 
-**_4.2.3 User Designation to Form Mapping_**
 
-By managing the configuration of the access control for forms you can give different users access to different set of forms. The following steps will enable users to define the DESIGNATION to ROLE mapping and ROLE to FORM mapping.
+### 4.3 Create Visualizations of SMS Summary Data
 
-- Define roles (according to different combination of designations for which forms are to be made visible)
-- Update the roles to form mapping (in the Role Based Form Access section in the admin console)
-- View updated forms based on the role mapping
-
-### 4.3 Create Visualizations of Submission Data
-
-All the data collected through the Samiksha application can be linked to Metabase to analyse data in the form of dashboards. [Metabase](https://metabase.com) is an Open Source tool for data visualization. It can be used to display any data in different formats like bar graphs, pie charts, tables etc. All dashboards in the Samarth program (Assessment dashboard, School Visit Dashboard, Pre-board dashboard) have all been created on Metabase.
-
-Metabase dahsboards are simple to use and highly configurable. You can view this [Metabase documentation](https://www.metabase.com/docs/latest/users-guide/start.html) for how to setup basic graphs. A few key sections from this page that we typically refer to while building Metabase dashboards are listed below.
+All the data collected through the Samwad application can be linked to Metabase to analyse data in the form of dashboards. [Metabase](https://metabase.com) is an Open Source tool for data visualization. It can be used to display any data in different formats like bar graphs, pie charts, tables etc. Metabase dashboards are simple to use and highly configurable. You can view this [Metabase documentation](https://www.metabase.com/docs/latest/users-guide/start.html) for how to setup basic graphs. A few key sections from this page that we typically refer to while building Metabase dashboards are listed below.
 
 ![](https://media.giphy.com/media/WOla6gFeitQoNM0eI1/giphy.gif)
 
@@ -394,8 +398,7 @@ Metabase dahsboards are simple to use and highly configurable. You can view this
 
 To view existing Metabase dashboards being used by different State Education Departments using Samiksha are available below:
 
-- [Saksham SAT Dashboards](https://sites.google.com/samagragovernance.in/sakshamhry/elementary/sat-student-assessment-tests?authuser=0), Haryana
-- [Samarth Assessment Dashboards](https://hp-samarth.herokuapp.com), Himachal Pradesh
+- [Samarth ESamwad Dashboards](http://165.22.209.213:3000/public/dashboard/4a46427e-9d4d-4a3d-b33c-e7e14db0b5c1), Himachal Pradesh
 
 ## 5. Frequently Asked Questions
 
