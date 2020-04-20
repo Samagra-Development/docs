@@ -102,10 +102,11 @@ Here, context is the Context Instance used to launch the Tutorials screen, tutor
 
 2.3.5  Communication<br/><br/>
 
-We are using RxBus to communicate back and forth with the main app module. Please refer to the SplashPresenter class of the downloaded project where we communicate back with the main app module to notify Login success and launching of home screen.
+We are using RxBus to communicate back and forth with the main app module. Please refer to the SplashPresenter class of the downloaded project where we communicate back with the main app module to notify Login success and launching of home screen.<br/><br/>
 
 
-### FAQs
+
+## FAQs
 
 **Q1. How to manage User Authentication?**<br/><br/>
 We are using Fusion Auth for the authentication of users at the time of Login. Invoking to reset the app password is also done via. Fusion Auth. You can override the backend using any other Authentication service.
