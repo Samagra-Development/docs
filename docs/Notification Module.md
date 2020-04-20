@@ -4,7 +4,7 @@ title: Push Notifications Module
 sidebar_label: Push Notifications Module
 ---
 
-## 1. Overview
+## 1. Overview<br/>
 
 Push notifications are an important part of the mobile experience. Users have grown accustomed to having push notifications be a part of virtually every app that they use. 
 
@@ -13,19 +13,18 @@ For an app, the most effective way to receive push notifications is via Firebase
 The module that we have developed, contains a functionality to generate notifications received via FCM and also generate push notifications from within the app.
 
 
-## Setting up Module into your Project
+## 2. Setting up Push Notifications Module into your Project<br/>
+
+### 2.1.1 Downoading and integrating into main app project <br/><br/>
 
 1.  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
 2.  Launch Android Studio. Open the main project where you are to integrate these modules. 
 3.  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.
 4.  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
 5.  Please follow the same steps for the integration of notifications_module.
+6. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
 
-## 2. Setting up Push Notifications Module
-
-### 2.1 Using the functionalities to run the Module
-
-2.1.1 Setting up Firebase in your project <br/><br/>
+### 2.1.2 Setting up Firebase in your project <br/><br/>
 
 1. You must have firebase set up for your project. Set up Firebase and the FCM SDK. If you haven't already, [add Firebase to your Android project](https://firebase.google.com/docs/android/setup).
 2. In your project-level build.gradle file, make sure to include Google's Maven repository in both your buildscript and allprojects sections.
@@ -37,11 +36,10 @@ implementation 'com.google.firebase:firebase-messaging:20.1.5'
 ```
  <uses-permission android:name="android.permission.INTERNET" />
 ```
-5. Now, Download the zip file. Unzip the folder. Import the library into your project.
-6. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
+5. Voila, firebasee has been integrated into your project. Please clean and rebuild your project.
 
 
-### 2.1.2 Using the Module
+### 2.1.3 Using the Module <br/><br/>
 
 1. Register the notification channel in your Application level class as follows:
 ```
