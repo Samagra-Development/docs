@@ -12,9 +12,9 @@ For an app, the most effective way to receive push notifications is via Firebase
 
 The module that we have developed, contains a functionality to generate notifications received via FCM and also generate push notifications from within the app.
 
-## 2. Setup Push Notifications Module into your Project
+## 2. Setup Module In Samagra App
 
-### 2.1 Download & Integrate Module In Starter App
+### 2.1 Download & Integrate Module
 
 2.1.1  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
 
@@ -96,6 +96,9 @@ FCM token is user specific, hence we suggest to store the FCM token for the user
 ## 4. Coming Soon
 
 The following features will be added to this module by 30 June 2020.
+
 4.1 Notification Center in the app.
+
 4.2 Ability to read, delete and unread the app notifications.
+
 4.3 Including deep-link in the notifications to redirect user to specific app sections.
