@@ -4,8 +4,6 @@ title: Component Overview (Mobile Application)
 sidebar_label: Component Overview
 ---
 
-# Component Overview (Mobile Application)
-
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
 ## 1. Introduction
 
@@ -26,9 +24,11 @@ The following list includes a set of use cases abstracted from different on-grou
 
 ## 3. Component Design
 
-The mobile application component is developed using **multi-modular architecture** with **independently functioning modules**. The following table provides an overview of the different modules within the mobile applicaton component, the opensource libraries used for each and the additions we have done to the opensource libraries to have them architecturally and functionally aligned to our component design.
+The mobile application component is developed using **multi-modular architecture** with **independently functioning modules**. 
 
-><><><><><
+![alt-text](../img/component1v2.png)
+
+The following table provides an overview of the different modules within the mobile applicaton component, the opensource libraries used for each and the additions we have done to the opensource libraries to have them architecturally and functionally aligned to our component design. 
 
 | Module Name                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
