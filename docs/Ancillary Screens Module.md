@@ -106,7 +106,7 @@ We are using RxBus to communicate back and forth with the main app module. Pleas
 
 
 
-## FAQs
+## 3. FAQs
 
 **Q1. How to manage User Authentication?**<br/><br/>
 We are using Fusion Auth for the authentication of users at the time of Login. Invoking to reset the app password is also done via. Fusion Auth. You can override the backend using any other Authentication service.
