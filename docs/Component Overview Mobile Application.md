@@ -24,16 +24,11 @@ The following list includes a set of use cases abstracted from different on-grou
 5. Seamless in-application information update (for addition of administrative information such as schools, blocks, GPs, etc)
 6. Offline application functioning for remote or low connectivity areas
 
+## 3. Component Design
 
-><><><><
+The mobile application component is developed using **multi-modular architecture** with **independently functioning modules**. The following table provides an overview of the different modules within the mobile applicaton component, the opensource libraries used for each and the additions we have done to the opensource libraries to have them architecturally and functionally aligned to our component design.
 
-
-
-The mobile applications are developed using **multi-modular architecture**. The app is divided into various **independently functioning modules**. The sections, following will give you a deep dive into the various modules on what they offer, how you can incorporate these, and how you can customise these.
-
-App Modules
-
-The various modules used by us, with their respective features offered are mentioned below:
+><><><><><
 
 | Module Name                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
