@@ -22,17 +22,21 @@ This section lists down all the possible configuration related steps to integrat
 
 ### 2.1 Retrieving the Code
 
-#### 2.1.1  Setup Github project
+2.1.1  Setup Github project
 
 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
 
-#### 2.1.2  Integrating with Main App Project
+2.1.2  Integrating with Main App Project
 
 Open the main project on Android Studio where you are to integrate these modules. 
 
-2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
+2.1.3 <heading>
 
-2.1.4  Click on your app module. 
+If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
+
+2.1.4  <heading>
+
+Click on your app module. 
 -> Select New Module Option 
 -> Select Import Library 
 -> Go to the downloaded project directory 
@@ -40,15 +44,24 @@ Open the main project on Android Studio where you are to integrate these modules
 
 *In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.*
 
-2.1.5  Please follow the same steps for the integration of offline_module.
+2.1.5  <heading>
 
-2.1.6  In the project's build.gradle, add Gradle dependency and It's Done!
+Please follow the same steps for the integration of offline_module.
+
+2.1.6  <heading>
+
+In the project's build.gradle, add Gradle dependency and It's Done!
 
 ```
 api project(':samagra-form-management');`
 ```
-2.1.7  In the settings.gradle, add **':samagra-form-management'**, to the end of existing modules.
-2.1.8  Copy the config folder from the downloaded project and add to the root of your to be implemented project.
+2.1.7  <heading>
+
+In the settings.gradle, add **':samagra-form-management'**, to the end of existing modules.
+
+2.1.8  <heading>
+
+Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
 
 ### 2.2 Setting up ODK Aggregate
@@ -70,14 +83,18 @@ Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-us
 
 ### 2.3 Giving Storage Permissions
 
-2.3.1	Integrating the ODK Module in your app project, would reqire to add certain user permissions. Add the following snippet in your AndroidManifest.xml
+2.3.1	<heading>
+
+Integrating the ODK Module in your app project, would reqire to add certain user permissions. Add the following snippet in your AndroidManifest.xml
 
     ```
     `<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     ```
 
-2.3.2	In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
+2.3.2	<heading>
+
+In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
 
 ```
 /** Request the storage permissions which is
@@ -108,7 +125,9 @@ public void requestStoragePermissions() {
 
 ### 2.4 Initializing the Module Contract
 
-2.4.1  Add settings.json, in the **res/raw** folder of your main app module. This file contains all the configurations wit reference to the integration of ODK features in your application. You will have to configure the ODK first by downloading ODK App from Play store and configuring as per the steps mentioned in this [link](https://docs.opendatakit.org/collect-import-export/ 'https://docs.opendatakit.org/collect-import-export/'). Please replace **server_url, username, password** fields in the settings.json file with your own credentials configured from the ODK app.
+2.4.1  <heading>
+
+Add settings.json, in the **res/raw** folder of your main app module. This file contains all the configurations wit reference to the integration of ODK features in your application. You will have to configure the ODK first by downloading ODK App from Play store and configuring as per the steps mentioned in this [link](https://docs.opendatakit.org/collect-import-export/ 'https://docs.opendatakit.org/collect-import-export/'). Please replace **server_url, username, password** fields in the settings.json file with your own credentials configured from the ODK app.
 
     ```
     {
@@ -164,7 +183,9 @@ public void requestStoragePermissions() {
     }
     ```
 
-2.4.2  In the onCreate() of your Application-level class, please add the following method invocation
+2.4.2  <heading>
+
+In the onCreate() of your Application-level class, please add the following method invocation
 
 ```
 ComponentManager.registerFormManagementPackage(this, AppConstants.BASE_API_URL, new FormManagementSectionInteractor()); FormManagementCommunicator.setContract(ComponentManager.iFormManagementContract); ComponentManager.iFormManagementContract.setODKModuleStyle(this, R.drawable.login_bg, R.style.BaseAppTheme, R.style.FormEntryActivityTheme, R.style.BaseAppTheme_SettingsTheme_Dark, Long.MAX_VALUE);`
@@ -194,7 +215,9 @@ The method signature of setODKModuleStyle() is mentioned below
 void setODKModuleStyle(MainApplication mainApplication, int splashScreenDrawableID, int baseAppThemeStyleID, int formActivityThemeID, int customThemeId_Settings, long toolbarIconResId);`
 ```
 
-2.4.3  Apply the settings file configured above using the following snippet
+2.4.3  <heading>
+
+Apply the settings file configured above using the following snippet
 
 ```
 getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
@@ -205,7 +228,7 @@ getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
 
 Please refer the sub-sections to find out the various functionalities, this module wrapper provides.
 
-2.5.1  **Deleting all the previous ODK related data**
+#### 2.5.1  Deleting all the previous ODK related data
 
 getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
 
@@ -213,7 +236,7 @@ getIFormManagementContract() is the object of IFormManagementContract registered
 getIFormManagementContract().resetEverythingODK();
 ```
 
-2.5.2 **Delete current users' form submissions**
+#### 2.5.2 Delete current users' form submissions
 
 If in case if you just want to delete already filled/submitted forms for the user, use the following method
 
@@ -221,7 +244,7 @@ If in case if you just want to delete already filled/submitted forms for the use
 getIFormManagementContract().resetODKForms(context);
 ```
 
-2.5.3  **Downloading data collection forms**
+#### 2.5.3  Downloading data collection forms
 
 - Generally, the forms are downloaded for a user based on User access/role. You could use own APIs to fetch which forms to be downloaded for a user or you could use FirebaseRemoteConfig to get the name and ID of forms to be downloaded for a user.
 
@@ -271,7 +294,7 @@ public void formsDownloadingFailure() {
    }}
 ```
 
-2.5.4  **Retreive Form IDs**
+#### 2.5.4  Retreive Form IDs
 
 You can fetch a form’s ID if you know the form name. This is useful in case you want to open a specific form.
 
@@ -280,7 +303,7 @@ getIFormManagementContract().fetchSpecificFormID(formIdentifier)
 // Form Identifier is the Form's name
 ```
 
-2.5.5  **Pre-fill information in forms**
+#### 2.5.5  Pre-fill information in forms
 
 You can prefill certain details into a form if you know the tag to be prefilled and the form’s name, in the manner mentioned ahead.
 
@@ -289,7 +312,7 @@ getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 `String tag, String tagValue);
 ```
 
-2.5.6  **Launching specific forms**
+#### 2.5.6  Launching specific forms
 
 You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
 
@@ -297,7 +320,7 @@ You can launch a specific form to edit and further send using the following invo
 getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
 ```
 
-2.5.7  **Viewing all downloaded forms**
+#### 2.5.7  Viewing all downloaded forms
 
 You can launch a view showing all the downloaded forms using the following invocation, where the user himself can select whichever form to fill and send.
 
@@ -313,15 +336,15 @@ getIFormManagementContract().launchFormChooserView(context, toolbarModificationO
 
 ## 3. FAQs
 
-**3.1  What version of ODK Collect we are using?**
+### 3.1  What version of ODK Collect we are using?
 
 We are using v1.26.1.
 
-**3.2  How can I upgrade the ODK Collect verion?**
+### 3.2  How can I upgrade the ODK Collect verion?
 
 Please check this [link.](https://github.com/getodk/collect/releases). Download the latest version. Check the changes made in the latest release. Override the changes made in the latest versions.
 
-**3.3  My app crashes, due to permission exceptions. What should I do?**
+### 3.3  My app crashes, due to permission exceptions. What should I do?
 
 Please note that, storage permissions though have been asked from user at the launch of app, but when launching the form view, you will have to provide, microphone/location permissions, if your forms contain questions containing media/geo-location. 
 
@@ -337,18 +360,18 @@ Please refer the table below.
 | Phone      | optional on form send to include deviceID in the submission and required for forms that capture device metadata |
 
 
-**3.4  My build is failing, What should I do to debug?**
+### 3.4  My build is failing, What should I do to debug?
 
 Here are the approaches you could follow;
 a) Please sync your gradle and clean your project.
 b) Check for dependency resolution errors, check the downloaded roject to see the type and version of libraries imported.
 c) Check your google-services.jsn, it should be compatible with the applicationId mentioned in your project build.gradle
 
-**3.5  My forms don't seem to behave in the way they are supposed to be. What should I do?**
+### 3.5  My forms don't seem to behave in the way they are supposed to be. What should I do?
 
 Please check the same forms that you have configured on XLS, on the ODK Collect app, if the form doesn't work there, please check your form structure, you will have to debug to check as this means there has been some issue with your form.
 
-**3.6  How can I configure auto-sending the forms on internet connectivity issue?**
+### 3.6  How can I configure auto-sending the forms on internet connectivity issue?
 
 ODK is a robust tool developed to handle offline scenarios. Auto send When enabled in setings.json (Add "autosend": "on"), forms are sent immediately when they are finalized, if the device can connect to the internet. If an internet connection is not available at the time of finalization, your finalized forms will be queued to send as soon as connectivity
 is established. You can specify whether to send over WiFi, cellular data, or both.
