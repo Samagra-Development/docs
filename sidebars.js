@@ -19,9 +19,8 @@ module.exports = {
       'ComponentsOverview',
       {
         'Mobile Application': [
-          'GettingStarted',
           'COMobileApplication',
-          'CommunicatingAmongModules',
+          'GettingStarted',
           'FormManagementModule',
           'AncillaryScreensModule',
           'AndroidProfileManagementModule',
@@ -29,6 +28,7 @@ module.exports = {
           'NotificationModule',
           'OfflineHandlingModule',
           'Grove',
+          'CommunicatingAmongModules'
         ],
       },
       {
