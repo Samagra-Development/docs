@@ -35,6 +35,24 @@ api project(':samagra-form-management');`
 7. In the settings.gradle, add **':samagra-form-management'**, to the end of existing modules.
 8. Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
+
+### Setting up ODK Aggregate
+
+**ODK Aggregate** is an open source Java application that stores, analyzes, and presents XForm survey data collected using ODK Collect. It supports a wide range of data types, and is designed to work well in any hosting environment.
+
+With Aggregate, your team can:
+
+1. Host blank XForms used by ODK Collect or other OpenRosa clients
+2. Store and manage XForm submission data
+3. Visualize collected data using maps and simple graphs
+4. Export and publish data in a variety of formats
+
+Aggregate can be hosted on cloud providers such as DigitalOcean, and Amazon Web Services, or your own local or cloud server. There's also a pre-configured virtual machine image that is ready to deploy on any computer.
+
+Please check this link to find [how to set up ODK Aggregate?](https://docs.getodk.org/aggregate-setup/
+
+Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-use/)
+
 ### Giving Storage Permissions
 
 1.  Add the following snippet in your AndroidManifest.xml
@@ -268,7 +286,13 @@ getIFormManagementContract().launchFormChooserView(context, toolbarModificationO
 
 ## FAQs
 
-**Q1: My app crashes, due to permission exceptions. What should I do?**
+**Q1 hat version of ODK Collect we are using?**<br/>
+We are using v1.26.1.
+
+**Q2 How can I upgrade the ODK Collect verion?**<br/>
+Please check this [link.](https://github.com/getodk/collect/releases). Download the latest version. Check the changes made in the latest release. Override the changes made in the latest versions.
+
+**Q2 My app crashes, due to permission exceptions. What should I do?**<br/>
 Please note that, storage permissions though have been asked from user at the launch of app, but when launching the form view, you will have to provide, microphone/location permissions, if your forms contain questions containing media/geo-location. Please refer the table below.
 
 | Permission | Reason                                                                                                          |
@@ -281,18 +305,20 @@ Please note that, storage permissions though have been asked from user at the la
 | Phone      | optional on form send to include deviceID in the submission and required for forms that capture device metadata |
 
 
-**Q2: My build is failing, What should I do to debug?**
+**Q3My build is failing, What should I do to debug?**<br/>
 Here are the approaches you could follow;
 a) Please sync your gradle and clean your project.
 b) Check for dependency resolution errors, check the downloaded roject to see the type and version of libraries imported.
 c) Check your google-services.jsn, it should be compatible with the applicationId mentioned in your project build.gradle
 
-**Q3: My forms don't seem to behave in the way they are supposed to be. What should I do?**
+**Q4 My forms don't seem to behave in the way they are supposed to be. What should I do?**<br/>
 Please check the same forms that you have configured on XLS, on the ODK Collect app, if the form doesn't work there, please check your form structure, you will have to debug to check as this means there has been some issue with your form.
 
-**Q4: How can I configure auto-sending the forms on internet connectivity issue?**
+**Q5How can I configure auto-sending the forms on internet connectivity issue?**<br/>
 ODK is a robust tool developed to handle offline scenarios. Auto send When enabled in setings.json (Add "autosend": "on"), forms are sent immediately when they are finalized, if the device can connect to the internet. If an internet connection is not available at the time of finalization, your finalized forms will be queued to send as soon as connectivity
 is established. You can specify whether to send over WiFi, cellular data, or both.
 
 
 ## Coming Soon
+
+Please keep following this section to follow latest upcoming updates.
