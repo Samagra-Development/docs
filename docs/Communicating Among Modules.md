@@ -4,7 +4,7 @@ title: Communicating Among Modules
 sidebar_label: Communicating Among Modules
 ---
 
-# How to communicate among different app modules
+## 1. Overview - How to communicate among different app modules?
 
 To get the context of the section, please refer [this section](https://samagra-development.github.io/docs/docs/GettingStarted#event-configuring).
 
@@ -12,7 +12,7 @@ To get the context of the section, please refer [this section](https://samagra-d
 <a href="https://imgflip.com/gif/3wxi92"><img src="https://i.imgflip.com/3wxi92.gif" title="made at imgflip.com"/></a>
 
 
-## Usage tips
+## 2. Usage tips
 We recommend obtaining a single instance of bus through injection or another appropriate mechanism. Alternatively, you may get a singleton like the following:
 ```
 Bus bus = BusProvider.getInstance();
