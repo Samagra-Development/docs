@@ -99,7 +99,5 @@ FCM token is user specific, hence we suggest to store the FCM token for the user
 The following features will be added to this module by 30 June 2020.
 
 4.1 Notification Center in the app.
-
 4.2 Ability to read, delete and unread the app notifications.
-
 4.3 Including deep-link in the notifications to redirect user to specific app sections.
