@@ -1,7 +1,7 @@
 ---
 id: AncillaryScreensModule
-title: Ancillary Screens Package
-sidebar_label: Ancillary Screens Package
+title: Ancillary Screens Module
+sidebar_label: Ancillary Screens Module
 ---
 
 ## 1. Overview
