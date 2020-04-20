@@ -12,7 +12,7 @@ For an app, the most effective way to receive push notifications is via Firebase
 
 The module that we have developed, contains a functionality to generate notifications received via FCM and also generate push notifications from within the app.
 
-## 2. Setup Module In Samagra App
+## 2. Setup Module In Starter App
 
 ### 2.1 Download & Integrate Module
 
