@@ -1,9 +1,16 @@
 ---
 id: COAppMetadata
-title: Component Overview (App Metadata Management)
+title: App Metadata Management
 sidebar_label: Component Overview
 ---
+![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
 
-# Component Overview (App Metadata Management)
+# Component Overview
 
-## Coming Soon
+## 1. Introduction
+
+## 2. Use Cases
+
+## 3. Component Design
+
+![alt-text](../img/appmetadata.png)
