@@ -42,7 +42,7 @@ module.exports = {
         ],
       },
       {
-        'PDF Generator': ['CODataAnalytics'],
+        'PDF Generator': ['COPDFGenerator'],
       },
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
