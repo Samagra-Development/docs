@@ -6,9 +6,7 @@ sidebar_label: User Profile Management Module
 
 ## 1. Overview
 
-For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
-
-The module is developed to provide the following functionalities:
+For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password. The module provides the following functionalities:
 
 1. Option to display the user’s profile, to display the user's basic role details, contact details, as well as information pertaining to the app, depending on the user.
 
@@ -18,16 +16,21 @@ The module is developed to provide the following functionalities:
 
 4. Users can reset the password for the application via OTP that will be sent to the user’s registered number.
 
-## 2. Setting up Profile Module into your Application
+## 2. Set Up Module In Main Application
 
-### 2.1 Integrating the module into the Mobile Application
+### 2.1 Integrate Module
 
-2.1.1 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.<br/><br/>
-2.1.2 Launch Android Studio. Open the main project where you are to integrate these modules.<br/><br/>
-2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.<br/><br/>
-2.1.4 Click on your app module. Select New Module Option -> Select Import Android Library -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.<br/><br/>
-2.1.5 Please follow the same steps for the integration of **user_profile** module.Sync your gradle.<br/><br/>
-2.1.6 In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.<br/><br/>
+2.1.1 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+
+2.1.2 Launch Android Studio. Open the main project where you are to integrate these modules.
+
+2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.
+
+2.1.4 Click on your app module. Select New Module Option -> Select Import Android Library -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+
+2.1.5 Please follow the same steps for the integration of **user_profile** module.Sync your gradle.
+
+2.1.6 In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.
 
 ```
 dependencies {
@@ -43,7 +46,7 @@ implementation project(':user_profile');
 ```
 2.1.7 In the settings.gradle file, please add ':user_profile' to the included modules file.<br/><br/>
 
-### 2.2 Initialization of the Module
+### 2.2 Start The Module
 
 2.2.1 Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows
 
@@ -100,7 +103,7 @@ The method signature of the above method is mentioned below.
                                String sendOTPUrl, String updatePasswordURL, HashMap<String, String> profileContentValues);
 ```
 
-### 2.3 Setting Up Firebase for Android Project and Consuming it on Client End
+### 2.3 Set Up Firebase (for Android Project & Client End Consumption)
 
 2.3.1 First of all, for setting up Remote Config for Firebase, you need to setup Firebase for your Android Application Project. The tutorial for setting up Firebase for Android can be accessed via the link, [Adding Firebase to your Android Project](https://firebase.google.com/docs/android/setup).
 
@@ -238,19 +241,17 @@ return userProfileElements;
 
 2.3.7 Map the values corresponding to these content fields, as per your app’s scenario. You could fetch and store these values in the SharedPreerences or in local DB, after receiving User Info from App Login Response or from particular User Data API.
 
-### 2.4 UI Capabilities for the User
+### 2.4 UI Capabilities For Application Administrators
 
-2.4.1 ** Capabilities provided to the user by the Module:-**
+2.4.1  Render the User Profile Screen based on Firebase Remote Config’s returned User Profile Configurations and its values correspondingly received from User Data stored locally.
 
-1. Render the User Profile Screen based on Firebase Remote Config’s returned User Profile Configurations and its values correspondingly received from User Data stored locally.
-
-2. On the Profile Screen, the user has 2 actions available to him/her,
+2.4.2  On the Profile Screen, the user has 2 actions available to him/her,
 
 - Ability to reset App Password.
 
 - Edit the user Profile, available only for the editable fields in the user profile.
 
-3. Reset Password
+2.4.3  Reset Password
 
 - The user must have a mobile number registered in the profile section, to be able to receive the OTP. In this case, edit the profile prior to resetting the password.
 
@@ -258,7 +259,7 @@ return userProfileElements;
 
 - In the Reset Password Screen, user has to enter the OTP, new password, confirm the same password. And then trigger the submit button. On successful update of password (API endpoint has been sent while initialization of module, as discussed above), the user will be shown a message and then redirected to the Profile Screen. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
 
-4. Edit Profile
+2.4.4  Edit Profile
 
 - The user is only able to edit the editable fields.
 
@@ -267,6 +268,6 @@ return userProfileElements;
 
 ## 3. FAQs
 
-**Q1. How to set remotely configured data?**
+**3.1. How to set remotely configured data?**
 
 We generally use Firebase Remote Config for controlling remote data, but you can are free to use your own custom APIs to get the remote data.
