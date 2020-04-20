@@ -13,7 +13,7 @@ sidebar_label: Getting Started
 1.3   Link to the code repository containing (codes for different modules, a coupled together app and a starter app)
 
 
-## 2. Getting Familiar With Basics
+## 2. Get Familiar With Basics
 
 2.1   The Android app to be developed along the lines of this document is a modular app, developed with different modules, with a main module and different child modules attached to it.
 
@@ -22,7 +22,7 @@ sidebar_label: Getting Started
 2.3   Note: In all the modules, you would come across a commons module. This module contains common functionalities that can be used by all the modules rather than duplicating the code along the modules.
 
 
-## 3. Setting Up Starter App
+## 3. Set Up Starter App
 
 3.1   Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
 
@@ -35,7 +35,7 @@ sidebar_label: Getting Started
 ![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM) '
 
 
-## 4. Configuring Home Screen
+## 4. Configure Home Screen
 
 4.1   As you will install and run the app, you will see that the home screen icons, when clicked just show a snackbar.
 
