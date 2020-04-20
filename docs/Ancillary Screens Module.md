@@ -20,15 +20,15 @@ The screens included in the Ancillary Screens Module are:
 
 **1.5 Tutorials Screen** - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
 
-## 2. Set Up Module in Main Application
+## 2. Set Up Module
 
-### 2.1 Integrate Module into Project
+### 2.1 Integrate Module
 
 2.1.1 Unzip and Pre-set up
 
 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory. Launch Android Studio. Open the main project where you are to integrate these modules.
 
-2.1.2 Add the Module/Android Library<br/>
+2.1.2 Add the Module/Android Library
 
 1. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
 
