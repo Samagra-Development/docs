@@ -1,7 +1,7 @@
 ---
 id: SamikshaFuncSpecs
-title: Functional Specifications - Samiksha
-sidebar_label: Functional Specifications (Samiksha)
+title: Samiksha - Functional Specifications
+sidebar_label: Samiksha
 ---
 
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
