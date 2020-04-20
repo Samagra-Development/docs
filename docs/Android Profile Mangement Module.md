@@ -1,14 +1,12 @@
 ---
 id: AndroidProfileManagementModule
-title: User Profile Package
-sidebar_label: User Profile Package
+title: User Profile Management Module
+sidebar_label: User Profile Management Module
 ---
 
-# User Profile Package
+## 1. Overview
 
 For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
-
-## Overview
 
 The module is developed to provide the following functionalities:
 
@@ -20,34 +18,34 @@ The module is developed to provide the following functionalities:
 
 4. Users can reset the password for the application via OTP that will be sent to the user’s registered number.
 
-## Integrating the module into the Mobile Application
+## 2. Setting up Profile Module into your Application
 
-Download the latest version or grab via Gradle.
+### 2.1 Integrating the module into the Mobile Application
 
-```
-The library is available on [`mavenCentral()`]([https://dl.bintray.com/piyushgupta27/maven/com/hypertrack/hyperlog/](https://dl.bintray.com/piyushgupta27/maven/com/hypertrack/hyperlog/)) and [`jcenter()`]([http://jcenter.bintray.com/com/hypertrack/hyperlog/](http://jcenter.bintray.com/com/hypertrack/hyperlog/)).
-```
-
-In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.
+2.1.1 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.<br/><br/>
+2.1.2 Launch Android Studio. Open the main project where you are to integrate these modules.<br/><br/>
+2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.<br/><br/>
+2.1.4 Click on your app module. Select New Module Option -> Select Import Android Library -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.<br/><br/>
+2.1.5 Please follow the same steps for the integration of **user_profile** module.Sync your gradle.<br/><br/>
+2.1.6 In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.<br/><br/>
 
 ```
 dependencies {
 
 ...
 
-compile 'com.hypertrack:hyperlog:0.0.10'
-
-//This will change once the module will be pushed to the Bintray
+implementation project(':user_profile');
 
 …
 
 }
 
 ```
+2.1.7 In the settings.gradle file, please add ':user_profile' to the included modules file.<br/><br/>
 
-### Initialization
+### 2.2 Initialization of the Module
 
-1. Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows
+2.2.1 Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows
 
 ```
 ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), this, AppConstants.BASE_API_URL, applicationID);
@@ -70,7 +68,7 @@ The method signature of this Module Contract Initialisation is as follows:
 
 This method invocation will also initialize the ProfileScreenDriver class, which will be further used to launch the Profile Screen.
 
-2. Wherever you want to launch the Profile Section, use the following code piece.
+2.2.2 Wherever you want to launch the Profile Section, use the following code piece.
 
 ```
  IProfileContract initializer = ComponentManager.iProfileContract;
@@ -102,17 +100,17 @@ The method signature of the above method is mentioned below.
                                String sendOTPUrl, String updatePasswordURL, HashMap<String, String> profileContentValues);
 ```
 
-### Setting Up Firebase for Android Project and Consuming it on Client End
+### 2.3 Setting Up Firebase for Android Project and Consuming it on Client End
 
-1. First of all, for setting up Remote Config for Firebase, you need to setup Firebase for your Android Application Project. The tutorial for setting up Firebase for Android can be accessed via the link, [Adding Firebase to your Android Project](https://firebase.google.com/docs/android/setup).
+2.3.1 First of all, for setting up Remote Config for Firebase, you need to setup Firebase for your Android Application Project. The tutorial for setting up Firebase for Android can be accessed via the link, [Adding Firebase to your Android Project](https://firebase.google.com/docs/android/setup).
 
-2. Configure Remote Config for your Android App after the above step is successfully completed, accessible via the link, [Getting started with Firebase Remote Config on Android](https://firebase.google.com/docs/remote-config/use-config-android).
+2.3.2 Configure Remote Config for your Android App after the above step is successfully completed, accessible via the link, [Getting started with Firebase Remote Config on Android](https://firebase.google.com/docs/remote-config/use-config-android).
 
-3. Go to [Google Firebase Console](https://www.console.firebase.google.com/), navigate to your project view. In your project view, launch the Remote Config View by clicking on the Remote Config tab.
+2.3.3 Go to [Google Firebase Console](https://www.console.firebase.google.com/), navigate to your project view. In your project view, launch the Remote Config View by clicking on the Remote Config tab.
 
-4. In the Remote Config window, Click on Add Parameter option. Add the profile config parameters as mentioned ahead.
+2.3.4 In the Remote Config window, Click on Add Parameter option. Add the profile config parameters as mentioned ahead.
 
-5. Add the key and value in the format mentioned below.
+2.3.5 Add the key and value in the format mentioned below.
 
 ```
 key : "profile_config"
@@ -180,7 +178,7 @@ default value :
 ]
 ```
 
-6. You can retrieve the above set values at the client end using the following code snippet.
+2.3.6 You can retrieve the above set values at the client end using the following code snippet.
 
 ```
 public ArrayList<UserProfileElement> getProfileConfig() {
@@ -238,11 +236,11 @@ return userProfileElements;
 }
 ```
 
-7. Map the values corresponding to these content fields, as per your app’s scenario. You could fetch and store these values in the SharedPreerences or in local DB, after receiving User Info from App Login Response or from particular User Data API.
+2.3.7 Map the values corresponding to these content fields, as per your app’s scenario. You could fetch and store these values in the SharedPreerences or in local DB, after receiving User Info from App Login Response or from particular User Data API.
 
-## UI Capabilities for the User
+### 2.4 UI Capabilities for the User
 
-The package provides the following capabilities to the user:
+2.4.1 ** Capabilities provided to the user by the Module:-**
 
 1. Render the User Profile Screen based on Firebase Remote Config’s returned User Profile Configurations and its values correspondingly received from User Data stored locally.
 
@@ -265,3 +263,10 @@ The package provides the following capabilities to the user:
 - The user is only able to edit the editable fields.
 
 - Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.
+
+
+## 3. FAQs
+
+**Q1. How to set remotely configured data?**
+
+We generally use Firebase Remote Config for controlling remote data, but you can are free to use your own custom APIs to get the remote data.
