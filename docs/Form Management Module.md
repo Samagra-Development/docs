@@ -26,7 +26,7 @@ This section lists down all the possible configuration related steps to integrat
 
 Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
 
-#### 2.1.2  Launch Android Studio 
+#### 2.1.2  Integrating with Main App Project
 
 Open the main project on Android Studio where you are to integrate these modules. 
 
@@ -70,7 +70,7 @@ Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-us
 
 ### 2.3 Giving Storage Permissions
 
-2.3.1	Add the following snippet in your AndroidManifest.xml
+2.3.1	Integrating the ODK Module in your app project, would reqire to add certain user permissions. Add the following snippet in your AndroidManifest.xml
 
     ```
     `<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -203,9 +203,9 @@ getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
 
 ### 2.5 Using the helper methods
 
-Note: In all the usages mentioned below
+Please refer the sub-sections to find out the various functionalities, this module wrapper provides.
 
-2.5.1  Deleting all the previous ODK related data
+2.5.1  **Deleting all the previous ODK related data**
 
 getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
 
@@ -213,7 +213,7 @@ getIFormManagementContract() is the object of IFormManagementContract registered
 getIFormManagementContract().resetEverythingODK();
 ```
 
-2.5.2 Delete current users' form submissions
+2.5.2 **Delete current users' form submissions**
 
 If in case if you just want to delete already filled/submitted forms for the user, use the following method
 
@@ -221,7 +221,7 @@ If in case if you just want to delete already filled/submitted forms for the use
 getIFormManagementContract().resetODKForms(context);
 ```
 
-2.5.3  Downloading data collection forms
+2.5.3  **Downloading data collection forms**
 
 - Generally, the forms are downloaded for a user based on User access/role. You could use own APIs to fetch which forms to be downloaded for a user or you could use FirebaseRemoteConfig to get the name and ID of forms to be downloaded for a user.
 
@@ -271,7 +271,7 @@ public void formsDownloadingFailure() {
    }}
 ```
 
-2.5.4  Retreive Form IDs
+2.5.4  **Retreive Form IDs**
 
 You can fetch a form’s ID if you know the form name. This is useful in case you want to open a specific form.
 
@@ -280,7 +280,7 @@ getIFormManagementContract().fetchSpecificFormID(formIdentifier)
 // Form Identifier is the Form's name
 ```
 
-2.5.5  Pre-fill information in forms
+2.5.5  **Pre-fill information in forms**
 
 You can prefill certain details into a form if you know the tag to be prefilled and the form’s name, in the manner mentioned ahead.
 
@@ -289,7 +289,7 @@ getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 `String tag, String tagValue);
 ```
 
-2.5.6  Launch specific forms
+2.5.6  **Launching specific forms**
 
 You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
 
@@ -297,7 +297,7 @@ You can launch a specific form to edit and further send using the following invo
 getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
 ```
 
-2.5.7  View all downloaded forms
+2.5.7  **Viewing all downloaded forms**
 
 You can launch a view showing all the downloaded forms using the following invocation, where the user himself can select whichever form to fill and send.
 
