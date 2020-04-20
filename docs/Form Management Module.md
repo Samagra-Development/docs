@@ -4,19 +4,15 @@ title: Form Management Module
 sidebar_label: Form Management Module
 ---
 
-We at Samagra believe in empowering the governance via technology, with maximum emphasis on leveraging Open Source Technology, with an intent not to reinvent the wheel and also to provide a contribution in terms that other developers from the community can leverage our code for solving problems in same or different realms. While working in the Government frame, one of the most prominent use cases needed for various tech products is a better surveying technique that should be easily integrated, both at client and back end, in terms of retrieval and further processing of data. For that, we pinned to use [ODK Collect](https://docs.opendatakit.org/ 'https://docs.opendatakit.org/'). ODK Collect is an **open-source** Android app that replaces paper forms used in survey-based data gathering. It supports a wide range of question and answer types, and is designed to work well without **network connectivity**.
-
-One of the most prominent problems with respect to this though is scattered documentation in terms of integration of this functionality in your own app, rather than using ODK’s provided sample app, and just using it for the required purpose. Hence, we abstracted out the app provided and configured it to an Android Library format, which can be configured from your main app via a communicating Interface. This helps you to achieve a better level of abstraction, and also the helper methods provided help you achieve the maximum utilization of the Collect App features, in terms of form download, storage, management, and processing.
-
 ## 1. Overview
 
-The package and its features can be broken up into 2 main components:
+The form management module has two key features:
 
-1.1  Form Downloading
+### 1.1  Form Downloading
 
 This involves downloading the ODK Forms to be rendered to the user. This may depend on the User’s role and the level of access, varying from user to user. It also includes a basic level of configurations needed to get the ODK Collect Module to be preset.
 
-1.2  Form Rendering and Management
+### 1.2  Form Rendering & Management
 
 This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
 
@@ -26,9 +22,13 @@ This section lists down all the possible configuration related steps to integrat
 
 ### 2.1 Retrieving the Code
 
-2.1.1  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+#### 2.1.1  Setup Github project
 
-2.1.2  Launch Android Studio. Open the main project where you are to integrate these modules. 
+Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+
+#### 2.1.2  Launch Android Studio 
+
+Open the main project on Android Studio where you are to integrate these modules. 
 
 2.1.3 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
 
