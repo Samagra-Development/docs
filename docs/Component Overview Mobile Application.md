@@ -1,10 +1,12 @@
 ---
 id: COMobileApplication
-title: Mobile Application Component
+title: Mobile Application (Android)
 sidebar_label: Component Overview
 ---
 
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
+# Component Overview
+
 ## 1. Introduction
 
 On-ground data collection activities conducted by different departments of the state and central governments have been increasingly conducted using mobile devices or tablets. To facilitate this upward trend of digital first data collection methods in the government, we have envisioned a opensource based modular design for a mobile application that can be scaled and reused efficiently for different governance use cases. After working closely with different state governments we have identified and abstracted common governance use cases that are typically required for on-ground data collection activities. These use cases have informed our architectural design for creating mobile applications for data collection. 
