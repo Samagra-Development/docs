@@ -85,6 +85,7 @@ AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notificat
 ## 3. FAQs
 
 **3.1 How to test the FCM Notifications?**
+
 In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
 
 *Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.*
