@@ -31,7 +31,7 @@ The Pariksha product can be used for managing the following activities of the St
 
 Pariksha is being used by the State Education Departments Himachal Pradesh. Interestingly, the State Education Department of Himachal Pradesh has integrated the Pariksha features and Samwad features to have a single application that can collect student assessment results and also send SMS to parents.
 
-![](https://media.giphy.com/media/ZXkrpTYTDImobjnHTA/giphy.gif)
+![](https://media.giphy.com/media/h4wmbf6dPyPiTjFp6f/giphy.gif)
 
 Total usage of the Pariksha product as on 12 April 2020 is summarized below:
 
