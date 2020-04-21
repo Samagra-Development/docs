@@ -132,7 +132,7 @@ _To design configurable data collections forms yourself refer to the [4.1 Config
 
 ### 3.2 Configurable Mobile Application
 
-![](https://media.giphy.com/media/H1SXR8BXc5cj6XFsxZ/giphy.gif)
+![](https://media.giphy.com/media/cNZgpHMDwa3S5OlxNn/giphy.gif)
 
 **_3.2.1 Whitelabel UI_**
 
