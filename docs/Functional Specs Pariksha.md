@@ -44,47 +44,62 @@ Total usage of the Pariksha product as on 12 April 2020 is summarized below:
 
 We have observed the following key benefits that the states using Pariksha have experienced.
 
-**_2.3.1 to be updatede_**
+**_2.3.1 Reduction in time spent by department officials_**
 
-to be updated
+With the Pariksha application school leaders do not need to spend time to have the assessment data compiled, digitized, reviewed and the aggregated. Typically a process 
 
-**_2.3.2 to be updated_**
+**_2.3.2 Reduction in usage of paper and money spent_**
 
-to be updated
+With Pariksha, significant expenditure printing paper for recording the student assessments or class wise summary of assessment results and also for conducting data entry through data entry operators is avoided. 
 
-**_2.3.3 to be updated_**
+**_2.3.3 Higher probability of accurate information_**
 
-to be updated
+With the data entry for student assessment data being conducted at source by the teachers responsible for the assessments the accuracy of the assessment data increases. If there are any concerns the same can be immediately addressed by the concerned teachers.
 
-**_2.3.4 to be updated_**
+**_2.3.4 Ability to monitor data filled and drive timely compliance _**
 
-to be updated
+With student assessment data entry on Pariksha, the status of the assessment data uploada are available real-time for the state education department officials to understand the progress of the data entry exercise.
 
 ### 2.4 Typical Existing Alternatives
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
-**_2.4.1 to be updated_**
+**_2.4.1 Decentralized School Level Data Entry Managed By School Staff_**
 
-to be updated
+Data entry is often conducted by the teachers at the school level by entering data into a web portal through a computer available at the school premises. The key challenge of this process is the ability of different teachers to allocate time to access the computer within the school premises at a reasonable hour and without disrupting regular classes. Often, when teachers are not comfortable to use the computer, they allocate a teacher or hire a local data entry operator to conduct this data entry exericse. This leads to delay and decrease in the quality of the data updated.
 
-**_2.4.2 to be updated_**
+**_2.4.2 Data Entry By Private Data Entry Operators_**
 
-to be updated
+Data entry operators are often hired locally by the State Education Department at the block or district levels to enter the student assessment data. The key challenge of this process, in addition to the cost involved, is to manage the entry of all the student assessment data within the planned timelines. This process often gets delayed and thereby limits the usage of this information during department reviews.
+
+**_2.4.3 OMR Based Data Collection_**
+
+Some State Education Departments have also been using the OMR based data collection method to update the assessment data. This OMR data is updated by the school teachers and is then scanned at district, zonal or state level based on the availability of the OMR scanning machines. This method involves extensive logistics as these OMR sheets are designed, printed, updated, collected, transported, scanned and then used for verification before finally being archived. In addition to the logistics there is substantial expenditure on conducting this OMR based assessment data collection exercise.
 
 ### 2.5 Core Features
 
 **_2.5.1 For State Education Department Teachers_**
 
-- to be updated
+- Record student wise grades for different subjects across different assessments
+- Record class wise aggregate marks for different subjects across different assessments
+- Edit any previous student or class wise grades
+- View past assessments of students and classes
+- Manage student addressbook (with basic details of the students)
+- Ability to update their own profile information
 
 **_2.5.2 For State Department Reviewers_**
 
-- to be updated
+- Ability to view, in real time, status of student assessment data entry
+- Ability to view, in real time, complete details or summarized views of the student assessments
+- Ability to view, in real time, details of the student addressbook
 
 **_2.5.3 For Process Administrators_**
 
-- to be updated
+- Ability to create and manage student assessments
+- Ability to create and manage student profile variables
+- Ability to create and manage school teacher profiles
+- Ability to create visualizations of the visit submissions
+- Ability to view application performance statistics
 
 ### 2.6 Technical Architecture
 
@@ -97,7 +112,7 @@ Pariksha is wired together using the _[Mobile Application Component](www.google.
 
 ### 3.1 Configurable Assessments
 
-![](https://media.giphy.com/media/RlwAosXmZR77K8aKtC/giphy.gif)
+![](https://media.giphy.com/media/VHq4YVYLuBNXM9ReDX/giphy.gif)
 
 **_3.1.1 Design Assessments_**
 
