@@ -97,6 +97,7 @@ Often teachers may resort to visiting the parents of the children to provide fee
 **_2.5.3 For Process Administrators_**
 
 - Ability to create and manage SMS templates
+- Ability to create and manage student profile variables
 - Ability to create and manage school teacher profiles
 - Ability to create visualizations of the visit submissions
 - Ability to view application performance statistics
