@@ -8,11 +8,11 @@ sidebar_label: Pariksha
 
 ## 1. Introduction
 
-State Education Departments across India have been driving reforms in school monitoring processes. Over the years, the different State Education Departments have introduced technology to collect data from school visits and to visualize this data on real-time dashboards for conducting effective department reviews. The focus of these reforms has been to improve the quality of data collection exercises conducted by different levels of officials within the department and to enable precise decision making at the state level.
+Student assessments in government schools are primarily conducted using pen and paper, wherein students are expected to read questions from a paper and write their answers. Teachers are then expected to mark these answers and update the student register with the marks of the students. From the school register to the state level the data may travel through different modes of transport. The objective of this Pariksha product is to enable teachers to capture the detailed or summary results of the student assessments in a simple user friendly manner, in low or no connectivity networks with older android devices as well.
 
-The objective of Pariksha is to transform school monitoring by providing an application with a highly configurable set of features for data collection and visualization. Pariksha is designed for this specific governance use case and is built on OpenSource in a modular, reusable and scalable manner. The application design is created with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
+The objective of Pariksha is to transform the use of student assessment data to inform State Education Department strategies. Pariksha is designed for this specific governance use case and is built on OpenSource in a modular, reusable and scalable manner. The application design is created with the assumption that the engineering team of the State National Informatics Centre or from a private technology firm working with the State Education Departments will be able to deploy and maintain this product with the documentation provided.
 
-Through Pariksha the State Education Department can have a mobile application with configurable monitoring and mentoring forms. This application can be used by the department officials while conducting school visits. Management of users of this application, configuration of forms, visualization of the data collected and tracking of the application performance can all be managed within this application by non-technical functional owners within the State Education Department.
+Through Pariksha the State Education Department can have a mobile application with configurable student assessments. This application can be used by the government school teachers to update student assessment data. Management of users of this application, configuration of forms, visualization of the data collected and tracking of the application performance can all be managed within this application by non-technical functional owners within the State Education Department.
 
 ## 2. Pariksha Overview
 
@@ -20,85 +20,71 @@ Through Pariksha the State Education Department can have a mobile application wi
 
 The Pariksha product can be used for managing the following activities of the State Education Department:
 
-1. Record observations on monthly school visits
-2. Record feedback during classroom observations
-3. Report status of material delivery to the schools
-4. Monitor the usage of supplementary material provided to schools
-5. Monitor the implementation of interventions at the school level
-6. Record progress of civil work projects at the school-level
-7. Report fund utilization status of the schools
-8. Record meeting minutes after conducting review meetings every month
-9. Monitor training conducted at the district, block or cluster level
-10. Collect training/workshop feedback
+1. Record student wise grades for different subjects across different assessments
+2. Record class wise aggregate marks for different subjects across different assessments
+3. Edit any previous student or class wise grades
+4. View past assessments of students and classes
+5. Real time tracking of student assessment data update by teachers
+6. Monitor student assessments trends
 
 ### 2.2 Usage Status Across India
 
-Pariksha is being used by the State Education Departments of the following states:
-
-1. Himachal Pradesh
-2. Haryana
+Pariksha is being used by the State Education Departments Himachal Pradesh. Interestingly, the State Education Department of Himachal Pradesh has integrated the Pariksha features and Samwad features to have a single application that can collect student assessment results and also send SMS to parents.
 
 ![](https://media.giphy.com/media/ZXkrpTYTDImobjnHTA/giphy.gif)
 
 Total usage of the Pariksha product as on 12 April 2020 is summarized below:
 
-1. Total active users >35,000
-2. Total visit data submissions > 1,10,000
+1. Total active users >20,400
+2. Total visit data submissions > 1,25,000
+
+*Note: This usage is similar to the usage of the [Samwad](https://samagra-development.github.io/docs/docs/SamwadFuncSpecs) application as the functionality of this product has been integrated into the [Samwad](https://samagra-development.github.io/docs/docs/SamwadFuncSpecs)  application for a particular state*
 
 ### 2.3 Key Benefits
 
 We have observed the following key benefits that the states using Pariksha have experienced.
 
-**_2.3.1 Improved compliance_**
+**_2.3.1 to be updatede_**
 
-Compliance of school visits has increased significantly with structured processes for data collection, reporting and reviews.
+to be updated
 
-**_2.3.2 Structured reviews_**
+**_2.3.2 to be updated_**
 
-Problem solving and decision making in reviews conducted at a state, district and block levels have been increasingly supported by the timely and structured data collected through these monitoring and mentoring visits.
+to be updated
 
-**_2.3.3 Increased monitoring coverage_**
+**_2.3.3 to be updated_**
 
-In Haryana mentoring and monitoring exercises were limited to primary schools and after continued use of Pariksha for primary school monitoring, the State Education Department expanded these visits for secondary schools as well.
+to be updated
 
-**_2.3.4 Improved teacher feedback quality_**
+**_2.3.4 to be updated_**
 
-With consistent feedback being provided by mentors through the class observation visits teachers have been able to receive timely and regular feedback from mentors.
+to be updated
 
 ### 2.4 Typical Existing Alternatives
 
 There are existing alternative processes that can be used for conducting these monitoring visits. These have been summarized below:
 
-**_2.4.1 Pen & Paper based data collection_**
+**_2.4.1 to be updated_**
 
-Traditionally, information has always been captured by the visiting officials using pen and paper formats. This process requires significant time and cost investment as these pen and paper formats are printed, collected, compiled, aggregated and then used for reviews. Often triangulation of data, visit data incompleteness or inconsistencies and the delay in the data aggregation makes is inviable for department reviews.
+to be updated
 
-**_2.4.2 OMR based data collection_**
+**_2.4.2 to be updated_**
 
-Recently, different State Education Departments have pivoted towards an OMR based data collection method. In this method OMR sheets are designed at the state level and printed either at the state or in different districts, then used by the visiting officials, then compiled and finally scanned. This is once again a logistics heavy process. While the OMR brings in some improvement in the consistency of data collection, it still suffers from similar challenges as the pen & paper data collection process. In addition, a key aspect about OMR data collection is the limited flexibility in updating the forms once they have been designed and rolled out.
+to be updated
 
 ### 2.5 Core Features
 
-**_2.5.1 For State Department Monitoring & Mentoring Staff_**
+**_2.5.1 For State Education Department Teachers_**
 
-- Ability to view forms based on their designation
-- Ability to fill and submit school visit forms
-- Ability to view past school visit submission data
-- Ability to update profile information
+- to be updated
 
 **_2.5.2 For State Department Reviewers_**
 
-- Ability to view, in real time, complete details of the school visit submissions
-- Ability to view, in real time, summarized views of the school visit submissions
-- Ability to download dashboard views as PDFs
+- to be updated
 
 **_2.5.3 For Process Administrators_**
 
-- Ability to create and manage school visit forms
-- Ability to create and manage user profiles
-- Ability to update designation to form mapping (for designation based access to forms)
-- Ability to create visualizations of the visit submissions
-- Ability to view application performance statistics
+- to be updated
 
 ### 2.6 Technical Architecture
 
@@ -109,27 +95,26 @@ Pariksha is wired together using the _[Mobile Application Component](www.google.
 
 ## 3. High Level Specifications
 
-### 3.1 Configurable Data Collection Forms
+### 3.1 Configurable Assessments
 
 ![](https://media.giphy.com/media/RlwAosXmZR77K8aKtC/giphy.gif)
 
-**_3.1.1 Simple Configuration Interface_**
+**_3.1.1 Design Assessments_**
 
-Configure highly complex data collection forms in a few minutes though a simple Google Form like interface or by using an excel sheet. The forms have an extensive set of capabilities to enable different types of data points to be collected.
+Configure assessments to capture student wise grades or class wise learning outcome performance data. This structure provides the flexibility for state education departments to capture only the information that is required at a state level. For assessments designed by the state, question level data can be configured.
 
-**_3.1.2 Geo Location Capture_**
+**_3.1.2 Manage Submission Timelines_**
 
-Add custom pages within the application to share information with the users about the purpose of the application, tutorial videos, helpline numbers, and instructions
+Administrator of the application can define the deadline for the assessment collection exercise. This date and time is visible to all the users and the assessment editing facility is automatically locked once the deadline elapses.
 
 **_3.1.3 Offline Enabled_**
 
-Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately
+All the assessment data collection can be done offline. The data collection by teachers is expected to be completed over multiple sittings and therefore the teachers can add the data even if they are offline. Once the users come online the data will be logically synced online.
 
-**_3.1.4 Bilingual Forms_**
+**_3.1.4 Bilingual_**
 
-Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity
+All the information on the application can be viewed by the teacher in multiple languages based on the preference of the state education department. The user can change the language whenever required.
 
-_To design configurable data collections forms yourself refer to the [4.1 Configure School Visit Forms](#41-configure-school-visit-forms) section in this documentation._
 
 ### 3.2 Configurable Mobile Application
 
@@ -145,37 +130,36 @@ Add custom pages within the application to share information with the users abou
 
 **_3.2.3 Jurisdiction Data_**
 
-Update Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately.
+Update jurisdiction data consisting of districts, blocks, cluster, GPs, schools and more live from the backend. If a new school, GP or cluster is added it can be made live immediately.
 
 **_3.2.4 Notifications_**
 
-Define and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activityDefine and serve in-app trigger based notifications to users to guide them through the user flow of the monitoring or mentoring activity.
+Define and serve in-app trigger based notifications to users to guide them through the user flow of updating and viewing all, current and historic, assessments data.
 
 _A configurable mobile application can be setup by deploying the Pariksha application. Refer to this [Section](www.google.com) to deploy the application yourself. Once the applicaton is installed you can further read about how to customize [Ancillary Screens](www.google.com), update [Jurisdiction Data](www.google.com) and setup [Notifications](www.google.com)._
 
-### 3.3 User Authentication & Management
+### 3.3 Student Management & User Authentication
 
 _admin console images to be added as GIFs_
 
-**_3.3.1 User Mangement_**
+**_3.3.1 Student Management_**
 
-Create and manage users through a pre-designed admin panel and add variables for each user such as role (Teacher, BEO, DEO, Mentors), jurisdiction (District, Block, School)
+Student details can be added by the teachers. These details can be configured based on the requirements of the state education department such as student name, admission number, parent contact number, gender, category and so on.
 
-**_3.3.2 Role Based Form Access_**
+**_3.3.2 Historic Student Assessment Data_**
 
-Enable or disable access to data collection forms on the application based on the role of the application users
+Student assessment data is managed in such a manner that for any student who may migrate or leave a school in the middle of the year, the assessment data is always stored. If the student moves to another govt school in the state then the teachers can view the past assessment data of student, if required as well
 
-**_3.3.3 View Profile Details (in App)_**
+**_3.3.3 User Management_**
 
-Allow users to view or edit specific variables of their profile information through the mobile application itself
+Create and manage users through a pre-designed admin panel. Allow users to view or edit specific variables of their profile information through the mobile application itself. Often latest contact numbers for all teachers are not available and though this application teachers can update that information.
 
 **_3.3.4 OTP Based Password Reset_**
 
-Users can reset their passwords though an SMS based password reset functionality in the application
+Users can reset their passwords though an SMS based password reset functionality. If user credentials are created for a block office then if a BEO is transferred the new BEO can update his/her details and continue using the application seamlessly.
 
-_A details for setting up the User Authentication & Management Console are available [here](deploysamiksha.md)._
 
-### 3.4 Visualize Form Information
+### 3.4 Visualize Assessment Information
 
 ![](https://media.giphy.com/media/Wp0eqM753Js4OtcW6U/giphy.gif)
 
@@ -185,7 +169,7 @@ Create visualizations with a few clicks using Metabase, a configurable visualiza
 
 **_3.4.2 Filtered Views_**
 
-Add filters to graphs to show data grouped by any variable in your dataset. Typically used for grouping by school, cluster, block, district, academic year.
+Add filters to graphs to show data grouped by any variable in your dataset. Typically used for grouping data by class, school, cluster, block, district, or academic year.
 
 **_3.4.3 Add Images & Logos_**
 
