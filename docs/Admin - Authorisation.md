@@ -20,8 +20,6 @@ Each time react-admin needs to determine the user permissions, it calls the `aut
 
 Following is an example where the `authProvider` stores the user's permissions in `localStorage` upon authentication, and returns these permissions when called with `getPermissions`:
 
-{% raw %}
-
 ```jsx
 // in src/authProvider.js
 import decodeJwt from 'jwt-decode';
@@ -64,8 +62,6 @@ export default {
 };
 ```
 
-{% endraw %}
-
 ## 2.3 Restricting Access to Resources or Views
 
 Permissions can be useful to restrict access to resources or their views. To do so, you must use a function as the `<Admin>` only child. React-admin will call this function with the permissions returned by the `authProvider`.
@@ -103,8 +99,6 @@ You might want to display some fields or inputs only to users with specific perm
 
 Here is an example of a `Create` view with a conditional Input based on permissions:
 
-{% raw %}
-
 ```jsx
 export const UserCreate = ({permissions, ...props}) => (
   <Create {...props}>
@@ -118,11 +112,7 @@ export const UserCreate = ({permissions, ...props}) => (
 );
 ```
 
-{% endraw %}
-
 This also works inside an `Edition` view with a `TabbedForm`, and you can even hide a `FormTab` completely:
-
-{% raw %}
 
 ```jsx
 export const UserEdit = ({permissions, ...props}) => (
@@ -141,8 +131,6 @@ export const UserEdit = ({permissions, ...props}) => (
   </Edit>
 );
 ```
-
-{% endraw %}
 
 What about the `List` view, the `DataGrid`, `SimpleList` and `Filter` components? It works there, too. And in the next example, the `permissions` prop is passed down to a custom `filters` component.
 
