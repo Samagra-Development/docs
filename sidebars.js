@@ -28,7 +28,7 @@ module.exports = {
           'NotificationModule',
           'OfflineHandlingModule',
           'Grove',
-          'CommunicatingAmongModules'
+          'CommunicatingAmongModules',
         ],
       },
       {
@@ -48,6 +48,7 @@ module.exports = {
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
       {'Application Logging': ['COApplicationLogging']},
+      {'Database Management': [{Guides: ['PSQLReplication']}, 'PSQLStrategy']},
     ],
     Products: ['SamikshaFuncSpecs', 'SamwadFuncSpecs', 'ParikshaFuncSpecs'],
   },
