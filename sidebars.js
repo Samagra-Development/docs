@@ -36,10 +36,15 @@ module.exports = {
           'COAppMetadata',
           'AdminGettingStarted',
           'AdminAddingExternalData',
-          'AdminAddingCustomRoutes',
-          'AdminAuthenticationAndAuthorisation',
-          'AdminArchitectureAndDesign',
-          'AdminTheming',
+          'AdminAuthentication',
+          'AdminAuthorisation',
+          {
+            Guides: [
+              'AdminAddingCustomRoutes',
+              'AdminArchitectureAndDesign',
+              'AdminTheming',
+            ],
+          },
         ],
       },
       {

@@ -1,14 +1,10 @@
 ---
-id: AdminAuthenticationAndAuthorisation
-title: Authentication and Authorisation
-sidebar_label: Authentication and Authorisation
+id: AdminAuthentication
+title: Admin Authentication
+sidebar_label: Admin Authentication
 ---
 
-## Installation
-
-`npm install ra-auth-fusionauth`
-
-## Usage
+## 1. Overview
 
 Authentication is provided through FusionAuth and any user with the role of `Admin` is allowed to use the admin. For this purpose we have created and authprovider for Fusionauth.
 
@@ -19,6 +15,8 @@ For initialization you would need the following three things,
 3. Fusionauth applciation ID (The one the user is part of) - `appID`
 
 Only valid users who are registered to the application with appID and role `Admin` will be allowed to use admin
+
+## 2. Setup
 
 To configure the authprovider use the following,
 
@@ -48,3 +46,9 @@ const App = () => {
   );
 };
 ```
+
+## 3. FAQs
+
+## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.

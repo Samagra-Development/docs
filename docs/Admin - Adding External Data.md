@@ -1,14 +1,18 @@
 ---
 id: AdminAddingExternalData
-title: Adding Additional databases to Admin
-sidebar_label: Adding External Data
+title: Auto Database Integrations
+sidebar_label: Auto Database Integrations
 ---
+
+## 1. Overview
 
 Connecting to additonal databases can be done by creating an additional dataprovider for your database if it doesn't exist or using an existing one, example - Hasura can be connected to PSQL and has a dataprovider. Dataproviders can be built easily and for an example we have built one for FusionAuth which you can check out [here](https://github.com/ChakshuGautam/ra-data-fusionAuth).
 
 For a detailed view on how to build a dataprovider go to next section.
 
-## Data Providers
+## 2. Terminology and Setup
+
+### 2.1 Data Providers
 
 Whenever react-admin needs to communicate with the API, it calls methods on the Data Provider object.
 
@@ -53,7 +57,7 @@ You can find an example Data Provider implementation at the end of this chapter.
 
 **Tip**: In react-admin v2, Data Providers used to be functions, not objects. React-admin v3 can detect a legacy Data Provider and wrap an object around it. So Data Providers developed for react-admin v2 still work with react-admin v3.
 
-### Available Providers
+### 2.2 Available Providers
 
 The react-admin project includes 4 Data Providers:
 
@@ -99,7 +103,7 @@ If you've written a Data Provider for another backend, and open-sourced it, plea
 - **[Parse Server](https://github.com/ParsePlatform/parse-server)**: [leperone/aor-parseserver-client](https://github.com/leperone/aor-parseserver-client)
 - **[Xmysql](https://github.com/o1lab/xmysql)**: [soaserele/aor-xmysql](https://github.com/soaserele/aor-xmysql)
 
-### Usage
+### 2.3 Usage
 
 As an example, let's focus on the Simple REST data provider. It fits REST APIs using simple GET parameters for filters and sorting.
 
@@ -154,7 +158,7 @@ If your API is on another domain as the JS code, you'll need to whitelist this h
 Access-Control-Expose-Headers: Content-Range
 ```
 
-## Handling multiple databases
+### 2.4 Handling multiple databases
 
 A way of handling multiple dataproviders is to create a `master dataprovider` which would then call the individual dataproviders to get he the data for individual resources. A folder with the following structure should do
 
@@ -205,3 +209,9 @@ export default {
 ```
 
 After this all you need to do is import this `master dataprovider` to the app like this `import dataProvider from "./react-admin-base/dataProviders";`
+
+## 3. FAQs
+
+## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.

@@ -1,24 +1,24 @@
 ---
 id: AdminGettingStarted
-title: Getting started
-sidebar_label: Getting Started
+title: Admin Management Console
+sidebar_label: Admin Management Console
 ---
 
-# Getting Started
+## 1. Overview
 
 A frontend Framework for building admin applications running in the browser, on top of REST/GraphQL APIs, using ES6, [React](https://facebook.github.io/react/) and [Material Design](https://material.io/). This is built over [React-Admin](https://marmelab.com/react-admin/) built by marmelab.
 
-## Installation
+## 2. Setup Module
 
 Use the following starter project to build your first app. Since this is a sample opinionated configuration feel free to make any change to it.
 
 `git clone https://gitlab.com/ctt-samagra/opensource-packages/user-management-package/samagra-admin-module`
 
-## Basics of react-admin
+### 2.1 Basics of react-admin
 
 Read the [Tutorial](./Tutorial.md) for a 30 minutes introduction. After that, continue reading the [Documentation](./DataProviders.md), or checkout the [source code of the demo](https://github.com/marmelab/react-admin/tree/master/examples/demo) for an example usage.
 
-### At a Glance
+### 2.2 At a Glance
 
 ```jsx
 // in app.js
@@ -105,10 +105,16 @@ export const PostCreate = props => (
 );
 ```
 
-## Whats next?
+### 2.3 Whats next?
 
 Now that you have a basic understanding of how things work, let's start with adding more capabilities to it.
 
 - [Adding authentication and authorization](./AdminAuthenticationAndAuthorisation)
 - [Adding Custom Routes](./AdminAddingCustomRoutes)
 - [Adding multiple data providers](./AdminAddingExternalData)
+
+## 3. FAQs
+
+## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.

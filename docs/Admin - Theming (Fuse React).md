@@ -1,7 +1,7 @@
 ---
 id: AdminTheming
-title: Theme Configuration
-sidebar_label: Theme Configuration
+title: Config Management
+sidebar_label: Config Management
 ---
 
 ## Coming Soon
