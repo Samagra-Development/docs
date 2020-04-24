@@ -14,6 +14,8 @@ This involves downloading the ODK Forms to be rendered to the user. This may dep
 
 This involves the ability to pre-fill certain forms, based on some parameters if needed. User can fill, send forms via this functionality. If forms are filled when offline, you can also send those forms later.
 
+![](https://media.giphy.com/media/RlwAosXmZR77K8aKtC/giphy.gif)
+
 ## 2. Setup Module In Starter App
 
 This section lists down all the possible configuration related steps to integrate ODK, the core opensource library being used for data collection, into your starter application.
@@ -313,6 +315,8 @@ You can prefill certain details into a form if you know the tag to be prefilled 
 getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 `String tag, String tagValue);
 ```
+
+![](https://media.giphy.com/media/W6orr8XpO2S2rrr0st/giphy.gif)
 
 #### 2.5.6  Launch specific forms
 
