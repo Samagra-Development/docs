@@ -14,6 +14,8 @@ In order to remotely change this file, we have also included a provision via Fir
 
 We also have a module included in our commons module to unzip the mentioned file in local device storage which can be further read and filtered out as per the user's requirements. You can receive the results of the Cascading Module and then use further.
 
+![](https://media.giphy.com/media/Te0KtAVOXYoGxWvnin/giphy.gif)
+
 ## 2. Setup Module In Starter App
 
 ### 2.1 Integrate Module
