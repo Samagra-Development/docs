@@ -55,8 +55,21 @@ module.exports = {
       {'Application Logging': ['COApplicationLogging']},
       {
         'Database Management': [
-          {Guides: ['PSQLReplication']},
           'CODatabaseManagement',
+          {
+            PostgreSQL: [
+              'dSmall',
+              'dMedium',
+              'pSmall',
+              'pMedium',
+              'pLarge',
+              {Guides: ['PSQLReplication']},
+            ],
+          },
+          {MongoDB: []},
+          {Redis: []},
+          {Cassandra: []},
+          {Elasticsearch: []},
         ],
       },
     ],
