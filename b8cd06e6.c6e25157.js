@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[53],{190:function(o){o.exports=JSON.parse('{"allTagsPath":"/docs/blog/tags","slug":"for-govt-engineers","name":"for govt engineers","count":1,"permalink":"/docs/blog/tags/for-govt-engineers"}')}}]);
