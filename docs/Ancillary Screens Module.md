@@ -12,21 +12,31 @@ For any android app, it becomes imperative, as the usage increases and the featu
 
 User sees this activity in the fist time when app is launched.
 
+![](https://media.giphy.com/media/Y2i2NPuqPXVsraOT5r/giphy.gif)
+
 **1.2 Login Screen**
 
 User can login via user id and password, we are using FusionAuth for the management and authentication of users.
+
+![](https://media.giphy.com/media/KbS5UlifRktNSOwhY5/giphy.gif)
 
 **1.3 About Us Screen**
 
 Ability to confiure the title, icon and the description text of the About Us Screen
 
+![](https://media.giphy.com/media/dUC9M2a78pLyOx3boS/giphy.gif)
+
 **1.4 Reset Password**
 
 User can reset the app password from the Login screen via OTP sent to his registered Mobile number
 
+![](https://media.giphy.com/media/IczhDEFjoH9Bf3jbBL/giphy.gif)
+
 **1.5 Tutorials Screen**
 
 In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
+
+![](https://media.giphy.com/media/VJl5bEHCqoMZcsFnsS/giphy.gif)
 
 ## 2. Setup Module In Starter App
 
