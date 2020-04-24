@@ -48,7 +48,19 @@ module.exports = {
         ],
       },
       {
-        'PDF Generator': ['COPDFGenerator'],
+        'PDF Generator': [
+          'COPDFGenerator',
+          'GoogleDoc2PDF',
+          'FormResponses2PDF',
+          'HTML2PDF',
+          {
+            Guides: [
+              'BuildingGDocTemplate',
+              'BuildingFieldsMapping',
+              'ExtendingBase',
+            ],
+          },
+        ],
       },
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
