@@ -16,6 +16,8 @@ For any app, at a user’s level, it is essential to provide the user with an op
 
 4. Users can reset the password for the application via OTP that will be sent to the user’s registered number.
 
+![](https://media.giphy.com/media/Z9haa44Y6bhaPLAfbK/giphy.gif)
+
 ## 2. Setup Module In Starter App
 
 ### 2.1 Integrate Module
