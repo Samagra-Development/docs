@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/docs/styles.8135e7b8.css">
 
 
-<link rel="preload" href="/docs/styles.e0c41934.js" as="script">
+<link rel="preload" href="/docs/styles.1bf0bedc.js" as="script">
 
-<link rel="preload" href="/docs/runtime~main.3dde901d.js" as="script">
+<link rel="preload" href="/docs/runtime~main.9f8e1bbe.js" as="script">
 
-<link rel="preload" href="/docs/main.35c7950e.js" as="script">
+<link rel="preload" href="/docs/main.f602417e.js" as="script">
 
-<link rel="preload" href="/docs/1.e62bdd44.js" as="script">
+<link rel="preload" href="/docs/1.e478a00a.js" as="script">
 
-<link rel="preload" href="/docs/2.08132cf6.js" as="script">
+<link rel="preload" href="/docs/2.75927a34.js" as="script">
 
-<link rel="preload" href="/docs/3.5a6ea3d5.js" as="script">
+<link rel="preload" href="/docs/3.aed59999.js" as="script">
 
-<link rel="preload" href="/docs/1be78505.7351e926.js" as="script">
+<link rel="preload" href="/docs/1be78505.2d89caba.js" as="script">
 
-<link rel="preload" href="/docs/64f9f2ab.ff6865a1.js" as="script">
+<link rel="preload" href="/docs/64f9f2ab.29e6964e.js" as="script">
 
-<link rel="preload" href="/docs/17896441.ef12978e.js" as="script">
+<link rel="preload" href="/docs/17896441.0c68ec98.js" as="script">
 
-<link rel="preload" href="/docs/d59013e5.149d4615.js" as="script">
+<link rel="preload" href="/docs/d59013e5.3d5e2530.js" as="script">
 
 </head>
 <body>
@@ -46,25 +46,25 @@
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">            }</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        });</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        fileUnzipper.unzipFile();</span></div></div></div></div></div><p>2.2.4 In order to use this module, attact the module from the Main app module using the following code snippet</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">CascadingModuleDriver.init(getMainApplication(),FILE_PATH);</span></div></div></div></div></div><p>The method signature of the invocation is shown below:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">    /**</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * @param mainApplication - Instance of Main Application,</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * instance of Interface implemented by Application class to</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * communicate back with main app project.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * @param FILE_PATH - File path where you have unzipped your * file.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     */</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     void init( @NonNull MainApplication mainApplication, @NonNull String FILE_PATH);</span></div></div></div></div></div><p>2.2.5 You can launch the cascading view using the following method invocation.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"> CascadingModuleDriver.launchSearchView(activityContext, FILE_PATH);</span></div></div></div></div></div><p>The method signature of the invocation is shown below:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">    /**</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * @param activityContext - Instance of Context.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     * @param FILE_PATH - File path where you have unzipped your * file.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     */</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     void init( @NonNull Context activityContext, @NonNull String FILE_PATH);</span></div></div></div></div></div><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="23-receive-result-of-cascading-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#23-receive-result-of-cascading-module" title="Direct link to heading">#</a>2.3 Receive Result Of Cascading Module</h3><p>The result is sent back to the main app module by the CascadingModuleDriver, via the RxBus as follows:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"> ExchangeObject.DataExchangeObject dataExchangeObject = new ExchangeObject.DataExchangeObject(Modules.MAIN_APP, Modules.CASCADING_SEARCH,selectedHospitalData);</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        application.getEventBus().send(dataExchangeObject);</span></div></div></div></div></div><p>You can intercept the result of the event bus as follows:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">compositeDisposable.add(this.getEventBus()</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                .toObservable().subscribeOn(Schedulers.io())</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                .observeOn(AndroidSchedulers.mainThread())</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                .subscribe(new Consumer() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                    @Override</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                    public void accept(Object exchangeObject) throws Exception {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                        if (exchangeObject instanceof ExchangeObject) {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                                if (exchangeObject instanceof ExchangeObject.DataExchangeObject) {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                                Timber.d(&quot;Data Received&quot; + ((ExchangeObject.DataExchangeObject) exchangeObject).data.toString());</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                            } else {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                                Timber.e(&quot;Received but not intended&quot;);</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                            }</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                        }</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                    }</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                }, Timber::e));</span></div></div></div></div></div><p>The result object contains in form of DataExchangeObject, the values of all the levels from selected options in the module.</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/Samagra-Development/docs/edit/master/docs/Cascading Search Module.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/docs/AndroidProfileManagementModule"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Profile Screens Module</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/docs/NotificationModule"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Notifications Module »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#1-overview" class="contents__link">1. Overview</a></li><li><a href="#2-setup-module-in-starter-app" class="contents__link">2. Setup Module In Starter App</a><ul><li><a href="#21-integrate-module" class="contents__link">2.1 Integrate Module</a></li></ul></li><li><a href="#22-activate-module-functionalities" class="contents__link">2.2 Activate Module Functionalities</a><ul><li><a href="#23-receive-result-of-cascading-module" class="contents__link">2.3 Receive Result Of Cascading Module</a></li></ul></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/docs/doc1">Style Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/docs/doc2">Second Doc</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/docusaurus">Stack Overflow</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://discordapp.com/invite/docusaurus">Discord</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://Samagra-Development.github.io/docs">GitHub</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://Samagra-Development.github.io/docs">Twitter</a></li></ul></div></div><div class="text--center"><div class="margin-bottom--sm"><a href="https://opensource.facebook.com/" target="_blank" rel="noopener noreferrer" class="footerLogoLink_1Wg7"><img class="footer__logo" alt="Facebook Open Source Logo" src="/docs/img/oss_logo.png"></a></div><div>Copyright © 2020 Facebook, Inc. Built with Docusaurus.</div></div></div></footer>
 </div>
 
-<script src="/docs/styles.e0c41934.js"></script>
+<script src="/docs/styles.1bf0bedc.js"></script>
 
-<script src="/docs/runtime~main.3dde901d.js"></script>
+<script src="/docs/runtime~main.9f8e1bbe.js"></script>
 
-<script src="/docs/main.35c7950e.js"></script>
+<script src="/docs/main.f602417e.js"></script>
 
-<script src="/docs/1.e62bdd44.js"></script>
+<script src="/docs/1.e478a00a.js"></script>
 
-<script src="/docs/2.08132cf6.js"></script>
+<script src="/docs/2.75927a34.js"></script>
 
-<script src="/docs/3.5a6ea3d5.js"></script>
+<script src="/docs/3.aed59999.js"></script>
 
-<script src="/docs/1be78505.7351e926.js"></script>
+<script src="/docs/1be78505.2d89caba.js"></script>
 
-<script src="/docs/64f9f2ab.ff6865a1.js"></script>
+<script src="/docs/64f9f2ab.29e6964e.js"></script>
 
-<script src="/docs/17896441.ef12978e.js"></script>
+<script src="/docs/17896441.0c68ec98.js"></script>
 
-<script src="/docs/d59013e5.149d4615.js"></script>
+<script src="/docs/d59013e5.3d5e2530.js"></script>
 
 
 </body>
