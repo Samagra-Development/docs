@@ -53,7 +53,12 @@ module.exports = {
       {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
       {'Application Logging': ['COApplicationLogging']},
-      {'Database Management': [{Guides: ['PSQLReplication']}, 'PSQLStrategy']},
+      {
+        'Database Management': [
+          {Guides: ['PSQLReplication']},
+          'CODatabaseManagement',
+        ],
+      },
     ],
     Products: ['SamikshaFuncSpecs', 'SamwadFuncSpecs', 'ParikshaFuncSpecs'],
   },
