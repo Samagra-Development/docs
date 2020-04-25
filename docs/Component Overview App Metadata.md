@@ -1,6 +1,6 @@
 ---
-id: COAppMetadata
-title: App Metadata Management
+id: COAppControl
+title: Application Control
 sidebar_label: Component Overview
 ---
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
@@ -12,7 +12,7 @@ sidebar_label: Component Overview
 
 All applications used by different departments of the state and central governments are managed through an administration module. To facilitate seamless configuration of applications we envisioned an extensible administration console that can enable administrators of these applications to update metadata and configurations in the application. After working closely with different state governments we have identified and abstracted common governance use cases that are typically required for managing applications. These use cases have informed our architectural design for creating the application metadata management module.
 
-This documentation of the Application Metadata component will give you an overview of the different use cases that inform the design of the component, how you can get started to deploy this component, how you can setup different modules within this component and additional reference information in case you want to dive deeper into the implementation of this component.
+This documentation of the Application Control component will give you an overview of the different use cases that inform the design of the component, how you can get started to deploy this component, how you can setup different modules within this component and additional reference information in case you want to dive deeper into the implementation of this component.
 
 ## 2. Use Cases
 
