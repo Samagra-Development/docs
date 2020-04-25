@@ -32,8 +32,8 @@ module.exports = {
         ],
       },
       {
-        'App Metadata Management': [
-          'COAppMetadata',
+        'Application Control': [
+          'COAppControl',
           'AdminGettingStarted',
           'AdminAddingExternalData',
           'AdminAuthentication',
