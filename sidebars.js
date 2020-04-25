@@ -66,7 +66,6 @@ module.exports = {
           },
         ],
       },
-      {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
       {'Application Logging': ['COApplicationLogging']},
       {
