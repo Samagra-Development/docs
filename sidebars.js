@@ -39,14 +39,15 @@ module.exports = {
         'Application Control': [
           'COAppControl',
           'AppControlPanel',
-          'AdminAddingExternalData',
-          'AdminAuthentication',
-          'AdminAuthorisation',
+          'UserManagement',
+          'UserAuthentication',
+          'UserAuthorisation',
+          'AppDataManagement',
+          'AppConfig',
           {
             Guides: [
               'AdminAddingCustomRoutes',
               'AdminArchitectureAndDesign',
-              'AdminTheming',
             ],
           },
         ],
