@@ -1,5 +1,5 @@
 ---
-id: missioncontrol
+id: AppControlPanel
 title: Mission Control Console
 sidebar_label: Mission Control Console
 ---
