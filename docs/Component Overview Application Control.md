@@ -1,7 +1,7 @@
 ---
 id: COAppControl
 title: Application Control
-sidebar_label: Component Overview
+sidebar_label: Overview
 ---
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
 
