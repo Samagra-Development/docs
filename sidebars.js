@@ -28,7 +28,11 @@ module.exports = {
           'NotificationModule',
           'OfflineHandlingModule',
           'Grove',
-          'CommunicatingAmongModules',
+          {
+            Guides: [
+              'CommunicatingAmongModules',
+            ],
+          },
         ],
       },
       {
