@@ -1,7 +1,7 @@
 ---
-id: AdminAuthorisation
-title: Admin Authorisation
-sidebar_label: Admin Authorisation
+id: UserAuthorisation
+title: User Authorisation
+sidebar_label: User Authorisation
 ---
 
 ## 1. Overview
