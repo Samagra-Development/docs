@@ -1,7 +1,7 @@
 ---
-id: AdminAddingExternalData
-title: Auto Database Integrations
-sidebar_label: Auto Database Integrations
+id: AppDataManagement
+title: Application Data Management
+sidebar_label: Application Data Management
 ---
 
 ## 1. Overview
