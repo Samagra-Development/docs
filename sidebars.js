@@ -34,7 +34,7 @@ module.exports = {
       {
         'Application Control': [
           'COAppControl',
-          'AdminGettingStarted',
+          'AppControlPanel',
           'AdminAddingExternalData',
           'AdminAuthentication',
           'AdminAuthorisation',
