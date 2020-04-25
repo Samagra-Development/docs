@@ -1,7 +1,7 @@
 ---
 id: ComponentsOverview
-title: Components Overview
-sidebar_label: Components Overview
+title: Overview
+sidebar_label: Overview
 ---
 
 # Components Overview
