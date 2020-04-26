@@ -16,6 +16,12 @@ module.exports = {
   organizationName: 'Samagra-Development', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-129291740-2',
+    },
+    gtag: {
+      trackingID: 'UA-129291740-2',
+    },
     navbar: {
       title: 'Tech@Samagra',
       logo: {
