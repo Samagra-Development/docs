@@ -1,7 +1,7 @@
 ---
 id: COPDFGenerator
 title: PDF Generator
-sidebar_label: Component Overview
+sidebar_label: Overview
 ---
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
 

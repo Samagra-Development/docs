@@ -1,7 +1,7 @@
 ---
-id: AdminGettingStarted
-title: Admin Management Console
-sidebar_label: Admin Management Console
+id: AppControlPanel
+title: Mission Control Console
+sidebar_label: Mission Control Console
 ---
 
 ## 1. Overview

@@ -28,21 +28,26 @@ module.exports = {
           'NotificationModule',
           'OfflineHandlingModule',
           'Grove',
-          'CommunicatingAmongModules',
+          {
+            Guides: [
+              'CommunicatingAmongModules',
+            ],
+          },
         ],
       },
       {
-        'App Metadata Management': [
-          'COAppMetadata',
-          'AdminGettingStarted',
-          'AdminAddingExternalData',
-          'AdminAuthentication',
-          'AdminAuthorisation',
+        'Application Control': [
+          'COAppControl',
+          'AppControlPanel',
+          'UserManagement',
+          'UserAuthentication',
+          'UserAuthorisation',
+          'AppDataManagement',
+          'AppConfig',
           {
             Guides: [
               'AdminAddingCustomRoutes',
               'AdminArchitectureAndDesign',
-              'AdminTheming',
             ],
           },
         ],
@@ -62,7 +67,6 @@ module.exports = {
           },
         ],
       },
-      {'Communication & Alerts': ['COCommunication']},
       {'Data Analytics': ['CODataAnalytics']},
       {'Application Logging': ['COApplicationLogging']},
       {

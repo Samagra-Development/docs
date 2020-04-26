@@ -1,7 +1,7 @@
 ---
-id: AdminTheming
-title: Config Management
-sidebar_label: Config Management
+id: AppConfig
+title: Application Config Management
+sidebar_label: Application Config Management
 ---
 
 ## Coming Soon

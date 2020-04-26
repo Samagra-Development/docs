@@ -1,7 +1,7 @@
 ---
-id: AdminAuthentication
-title: Admin Authentication
-sidebar_label: Admin Authentication
+id: UserAuthentication
+title: User Authentication
+sidebar_label: User Authentication
 ---
 
 ## 1. Overview

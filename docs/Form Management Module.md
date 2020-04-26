@@ -129,7 +129,11 @@ public void requestStoragePermissions() {
 
 ### 2.4 Initiate Module Contract
 
-2.4.1  Setting File Import
+2.4.1 Iherit Application and Base Activity
+
+Please note that in order to make the modules work properly, please make Collect parent class to your application class and Collect Abstract Activity parent to the base activity of your app.
+
+2.4.2 Setting File Import
 
 Add settings.json, in the **res/raw** folder of your main app module. This file contains all the configurations wit reference to the integration of ODK features in your application. You will have to configure the ODK first by downloading ODK App from Play store and configuring as per the steps mentioned in this [link](https://docs.opendatakit.org/collect-import-export/ 'https://docs.opendatakit.org/collect-import-export/'). Please replace **server_url, username, password** fields in the settings.json file with your own credentials configured from the ODK app.
 
@@ -323,7 +327,7 @@ getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
 
 ```
-getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
+getIFormManagementContract().launchSpecificDataForm(Context context, String formIdentifier);
 ```
 
 #### 2.5.7  View all downloaded forms
