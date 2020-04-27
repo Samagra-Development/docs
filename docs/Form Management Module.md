@@ -44,8 +44,8 @@ Note: This is applicable for any android module, you want to import.
 2. Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
 3. Open the Dependencies tab.
 4. Click the (+) icon and select Module Dependency. Select the module and click Ok.
-5. Open your build.gradle file and check that the module is now listed under dependencies.(implementation project(path: ':ViewPagerIndicator')
--> Sync your gradle. Clean yout project.
+5. Open your build.gradle file and check that the module is now listed under dependencies.
+7. Sync your gradle. Clean your project.
 
 *In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.*
 
