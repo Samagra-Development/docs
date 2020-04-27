@@ -35,7 +35,7 @@ Download it as zip locally and then unzip the root directory. Launch Android Stu
 
 2.1.7 Sync your gradle. Clean your project.
 
-2.1.8 Please follow the same steps for the integration of notification_module module.
+2.1.8 Please follow the same steps for the integration of offline_module module.
 
 2.1.9 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
 
