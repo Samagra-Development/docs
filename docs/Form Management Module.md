@@ -18,6 +18,8 @@ This involves the ability to pre-fill certain forms, based on some parameters if
 
 ## 2. Setup Module In Starter App
 
+**Note**: Please note that,before you start integrating the module into your project, please do get a run thorugh the demo project downloaded from the github repository, to understand the user flow.
+
 This section lists down all the possible configuration related steps to integrate ODK, the core opensource library being used for data collection, into your starter application.
 
 ### 2.1 Retrieve ODK Code
