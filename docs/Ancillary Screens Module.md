@@ -93,15 +93,14 @@ The method signature of the initialisation invocation is as follows:
 * @param mainApplication - Instance of Application Class (Main Application, as you will see is an Interface implemented by
 Application class)
 * @param BASE_API_URL - String (Base API URL for the Fusion Auth, to be later used for user authentication and user data related tasks.)
-* @param SEND_OTP_API_ENDPOINT - String (API Endpoint to send OTP to the mobile number for resetting app password.)
+* @param SEND_OTP_URL - String (API Endpoint to send OTP to the mobile number for resetting app password.)
 * @param RESET_PASSWORD_API_ENDPOINT - String (API Endpoint to post user data to reset App Password.)
 * @param APPLICATION_ID - String (Application ID sent for this app in Fusion Auth Backend.)
 */
-public static void init(@NonNull MainApplication mainApplication, 
-@NonNull String BASE_API_URL, 
-@NonNull String SEND_OTP_API_ENDPOINT, 
-@NonNull String RESET_PASSWORD_API_ENDPOINT,
-@NonNull String APPLICATION_ID);
+ public static void init(@NonNull MainApplication mainApplication, @NonNull String BASE_URL, 
+                            @NonNull String SEND_OTP_URL,
+                            @NonNull String UPDATE_PASSWORD_URL, 
+                            @NonNull String APPLICATION_ID) 
 ```
 
 ### 2.3 Use Elements of The Module
