@@ -43,7 +43,12 @@ module.exports = {
           'AppDataManagement',
           'AppConfig',
           {
-            Guides: ['AdminAddingCustomRoutes', 'AdminArchitectureAndDesign'],
+            Guides: [
+              'AdminSidebarConfig',
+              'AdminAddingMultipleLanguages',
+              'AdminAddingCustomRoutes',
+              'AdminArchitectureAndDesign',
+            ],
           },
         ],
       },
