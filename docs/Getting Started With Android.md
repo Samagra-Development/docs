@@ -87,8 +87,7 @@ Please refer to this document to find basics for ODK, and how to set a form on O
 If you want the user at his own prerogative select which form to open, use the following invocation [UB - Add file which needs to be modified with line number]
 
 ```java
-HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true,
-R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
+HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true, R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
 getIFormManagementContract().launchFormChooserView(context, toolbarModificationObject);
 ```
 
