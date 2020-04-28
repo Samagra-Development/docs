@@ -29,9 +29,7 @@ module.exports = {
           'OfflineHandlingModule',
           'Grove',
           {
-            Guides: [
-              'CommunicatingAmongModules',
-            ],
+            Guides: ['CommunicatingAmongModules'],
           },
         ],
       },
@@ -45,10 +43,7 @@ module.exports = {
           'AppDataManagement',
           'AppConfig',
           {
-            Guides: [
-              'AdminAddingCustomRoutes',
-              'AdminArchitectureAndDesign',
-            ],
+            Guides: ['AdminAddingCustomRoutes', 'AdminArchitectureAndDesign'],
           },
         ],
       },
@@ -74,6 +69,7 @@ module.exports = {
           'CODatabaseManagement',
           {
             PostgreSQL: [
+              'PSQLOverview',
               'dSmall',
               'dMedium',
               'pSmall',
@@ -82,10 +78,18 @@ module.exports = {
               {Guides: ['PSQLReplication']},
             ],
           },
-          {MongoDB: []},
-          {Redis: []},
-          {Cassandra: []},
-          {Elasticsearch: []},
+          {
+            Redis: ['RedisOverview', {Guides: []}],
+          },
+          {
+            MongoDB: ['MongoDBOverview', {Guides: []}],
+          },
+          {
+            Cassandra: ['CassandraOverview', {Guides: []}],
+          },
+          {
+            Elasticsearch: ['ElasticSearchOverview', {Guides: []}],
+          },
         ],
       },
     ],
