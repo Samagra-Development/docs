@@ -14,19 +14,41 @@ The module that we have developed, contains a functionality to generate notifica
 
 ## 2. Setup Module In Starter App
 
-### 2.1 Download & Integrate Module
+Unzip the github project to a folder. You can find the github repository at this [link](https://github.com/Samagra-Development/mobile-push-notification). 
 
-2.1.1  Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+Download it as zip locally and then unzip the root directory. Launch Android Studio. Open the main project where you are to integrate these modules.
 
-2.1.2  Launch Android Studio. Open the main project where you are to integrate these modules. 
+**Note: Please note that,before you start integrating the module into your project, please do get a run thorugh the demo project downloaded from the github repository, to understand the user flow.**
 
-2.1.3  If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.
+### 2.1 Integrate Module
 
-2.1.4  Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
+**Note: This is applicable for any android module, you want to import.**
 
-2.1.5  Please follow the same steps for the integration of notifications_module.
+2.1.1 If you have not commons module in the project, you would need to integrate these first sequentially, to integrate the notification_module later, using the following steps.
 
-2.1.6 Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
+2.1.2 Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+
+2.1.3 Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+
+2.1.4 Open the Dependencies tab.
+
+2.1.5 Click the (+) icon and select Module Dependency. Select the module and click Ok.
+
+2.1.6 Open your build.gradle file and check that the module is now listed under dependencies.
+
+2.1.7 Sync your gradle. Clean your project.
+
+2.1.8 Please follow the same steps for the integration of notification_module module.
+
+2.1.9 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
+
+```
+dependencies { 
+    implementation project(':notification_module');
+    }
+```
+2.1.10 Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named ':notification_module'. This means for other modules included as well.<br/><br/>
+
 
 ### 2.2 Setup Firebase
 

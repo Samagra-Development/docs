@@ -18,13 +18,15 @@ This involves the ability to pre-fill certain forms, based on some parameters if
 
 ## 2. Setup Module In Starter App
 
+**Note**: Please note that,before you start integrating the module into your project, please do get a run thorugh the demo project downloaded from the github repository, to understand the user flow.
+
 This section lists down all the possible configuration related steps to integrate ODK, the core opensource library being used for data collection, into your starter application.
 
 ### 2.1 Retrieve ODK Code
 
 2.1.1  Setup Github project
 
-Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+Unzip the github project to a folder. You can find the github repository at this [link](https://github.com/Samagra-Development/mobile-forms). Download it as zip locally and then unzip the root directory.
 
 2.1.2  Integrating with Main App Project
 
@@ -34,34 +36,34 @@ Open the main project on Android Studio where you are to integrate these modules
 
 If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the samagra-form-management later, using the following steps.
 
-2.1.4  Adding samagra-form-management module (Applicable for any android module, you want to import)
+2.1.4  Adding samagra-form-management module (Applicable for any android module, including commons and customworkmanager, if you want to import)
 
 Note: This is applicable for any android module, you want to import.
 
--> Go to File -> New -> Import Module...
--> Select the source directory of the Module you want to import and click Finish.
--> Open Project Structure and open Module Settings for your project.
--> Open the Dependencies tab.
--> Click the (+) icon and select Module Dependency. Select the module and click Ok.
--> Open your build.gradle file and check that the module is now listed under dependencies.(implementation project(path: ':ViewPagerIndicator')
--> Sync your gradle. Clean yout project.
+1. Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+2. Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+3. Open the Dependencies tab.
+4. Click the (+) icon and select Module Dependency. Select the module and click Ok.
+5. Open your build.gradle file and check that the module is now listed under dependencies.
+7. Sync your gradle. Clean your project.
 
 *In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.*
 
 2.1.5  Integrating other required modules.
 
-Please follow the same steps for the integration of samagra-form-management.
+Please follow the same steps for the integration of samagra-form-management. Please checkout this [link](https://developer.android.com/studio/projects/android-library#AddDependency) to see a more ealborate process of including libraries to your android project.
 
 2.1.6  Syncing Gradle and Building Project.
 
-In the project's build.gradle, add Gradle dependency and It's Done!
-
+Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
 ```
-api project(':samagra-form-management');`
+dependencies {
+    implementation project(":samagra-form-management")
+}
 ```
 2.1.7  Modifying settings.gradle
 
-In the settings.gradle, add **':samagra-form-management'**, to the end of existing modules.Please do this if already not present.
+Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named **':samagra-form-management'**.
 
 2.1.8  Adding Configuraton data
 
@@ -81,7 +83,7 @@ With Aggregate, your team can:
 
 Aggregate can be hosted on cloud providers such as DigitalOcean, and Amazon Web Services, or your own local or cloud server. There's also a pre-configured virtual machine image that is ready to deploy on any computer.
 
-Please check this link to find [how to set up ODK Aggregate?](https://docs.getodk.org/aggregate-setup/
+Please check this link to find [how to set up ODK Aggregate?](https://docs.getodk.org/aggregate-setup/)
 
 Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-use/)
 

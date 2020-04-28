@@ -6,7 +6,7 @@ sidebar_label: App Logging
 
 ## 1. Overview
 
-For any app developer, being able to monitor the application statibility is of paramount importnace. There is nothing more important than keepng the app crash count to its bare minimum. As, Mobile developers we are usually familiar with tools such as Google Analytics or Fabric.io but they are analytics or crashlytics systems, and not full-fledged application logging solutions. To enable remote logging, we have built an application logging and crash reporting functionality using opensource tools and libraries, which can be easily integerated into your starter app. This will enable you to identify and respond to common crashes in a timely manner. 
+For any app developer, being able to monitor the application statibility is of paramount importance. There is nothing more important than keepng the app crash count to its bare minimum. As, Mobile developers we are usually familiar with tools such as Google Analytics or Fabric.io but they are analytics or crashlytics systems, and not full-fledged application logging solutions. To enable remote logging, we have built an application logging and crash reporting functionality using opensource tools and libraries, which can be easily integerated into your starter app. This will enable you to identify and respond to common crashes in a timely manner. 
 
 The module also would include the option to retrieve the app logs and also then further segregate them ad push them to back-end server. Also, included in this, are certain more modifications which are listed ahead in the document. Think of this tool as alert guard dog, always ready to let you know if something goes wrong so you can identify the culprit and contain it. It also offers critical data about the crashes, including which devices were affected most, the stack trace, ways to debug them and so on. The module has two key features:
 
@@ -20,19 +20,40 @@ This has been written on the top of **[Sentry]**(https://sentry.io/). Once the a
 
 ## 2. Setup Module In Starter App
 
-Download the latest version or grab via Gradle.
+Unzip the github project to a folder. You can find the github repository at this [link](https://github.com/Samagra-Development/mobile-logging). 
 
-The library is available on [`mavenCentral()`](https://dl.bintray.com/piyushgupta27/maven/com/hypertrack/hyperlog/) and [`jcenter()`](http://jcenter.bintray.com/com/hypertrack/hyperlog/). In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.
+Download it as zip locally and then unzip the root directory. Launch Android Studio. Open the main project where you are to integrate these modules.
+
+**Note: Please note that,before you start integrating the module into your project, please do get a run thorugh the demo project downloaded from the github repository, to understand the working.**
+
+### 2.1 Integrate Module
+
+**Note: This is applicable for any android module, you want to import.**
+
+2.1.1 Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+
+2.1.2 Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+
+2.1.3 Open the Dependencies tab.
+
+2.1.4 Click the (+) icon and select Module Dependency. Select the module and click Ok.
+
+2.1.5 Open your build.gradle file and check that the module is now listed under dependencies.
+
+2.1.6 Sync your gradle. Clean your project.
+
+2.1.7 Please follow the same steps for the integration of grove module.
+
+2.1.8 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
 
 ```
-dependencies {
-    ...
-    compile 'com.hypertrack:hyperlog:0.0.10'
-    ...
-}
+dependencies { 
+    implementation project(':grove');
+    }
 ```
+2.1.9 Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named ':grove'. This refers for other modules included as well.<br/><br/>
 
-### 2.1 Start Module
+### 2.2 Start Module
 
 Inside `onCreate` of Application class or Launcher Activity, in the manner as follows
 
@@ -77,7 +98,7 @@ Parameters:
 
 `isHyperlogEnabled` - Flag to control the initialisation of Hyperlog to store App logs in local device - [`Boolean`](https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true 'class or interface in java.lang') You can enable or disable it as per your wish. This flag will allow the user to store the app logs in the local database as a file, and also push them to remote server whenever triggered.
 
-### 2.2 Push App Logs to Remote Server
+### 2.3 Push App Logs to Remote Server
 
 As mentioned ahead, you would be able to do so, if you would have enabled that feature. If that is the case. Whenever you would want to push the logs to the server, invoke the following method in the way mentioned ahead.
 
@@ -90,7 +111,7 @@ if(initializer != null) {
 
 Set the API Endpoint URL in place of `API_ENDPOINT_URL` and send the API's authorisation token in place of `AUTHORIZATION_TOKEN`.
 
-### 2.3 Configure Remote Error/Crash Reporting
+### 2.4 Configure Remote Error/Crash Reporting
 
 Follow the steps mentioned ahead to configure the Error reporting within your app project.
 
