@@ -156,7 +156,7 @@ Note: For more clarity on files affected, please refer this [commit](https://git
   }
 ]
 ```
-8. You will have to add these forms to your ODK Aggreagte first, please use the link1 and link-2 to download these forms.
+8. You will have to add these forms to your ODK Aggreagte first, please use the [link1](![alt-text](../xml/Location Tracker.xml) and [link-2](../xml/All_widgets.xml) to download these forms.
 
 ### 2. Showing a List of forms to choose from
 
