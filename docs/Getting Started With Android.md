@@ -92,25 +92,38 @@ For any android app, it becomes imperative, as the usage increases and the featu
 
 ### 2. Integrating Module into your Project
 
-1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
-2. Launch Android Studio. Open the main project where you are to integrate these modules.
-3. If you do not have `customworkmanager` or `commons` module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
-4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing. Please follow the same steps for the integration of ancillaryscreens module.
-5. In the settings.gradle, Add `:ancillaryscreens` to the end of already added modules.
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/4f41e36c165897bdafae23f57922a287a3dff5c7).
+
+1. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
+2. Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+3. Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+4. Open your build.gradle file and check that the module is now listed under dependencies.
+5. Sync your gradle. Clean your project.
+6. Please follow the same steps for the integration of ancillaryscreens module.
+7. Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named ':ancillaryscreens'. This means for other modules included as well.
+8. Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
+
+```
+dependencies {
+    implementation project(":ancillaryscreens")
+}
+```
 
 ### 3. Initialization and Usage of Ancillary Screens Module
 
-Inside `onCreate` of Application class or Launcher Activity, in the manner as follows, [UB add concrete example for this and describe the params in English and not code]
-
+Inside `onCreate` of Application class or Launcher Activity (Please refer the **MyApplication**) for the same), in the manner as follows, 
 ```java
-AncillaryScreensDriver.init(this, BASE_API_URL, SEND_OTP_API_ENDPOINT, RESET_PASSWORD_API_ENDPOINT, APPLICATIO_ID);
+AncillaryScreensDriver.init(this, AppConstants.BASE_API_URL,
+                AppConstants.SEND_OTP_URL,
+                AppConstants.UPDATE_PASSWORD_URL,
+                getApplicationId());
 ```
 
 ### 4. Using this module
 
-We will just be showing how to add **Splash Screen** to the app. For more details on how to add other screen please go here [UB-Add this]
+We will just be showing how to add **Splash Screen** to the app. For more details on how to add other screen please go [here](https://samagra-development.github.io/docs/docs/AncillaryScreensModule).
 
-1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
+1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the **_AndroidManifest.xml_** file of this module, if not present
 
 ```xml
 <activity
@@ -123,7 +136,9 @@ We will just be showing how to add **Splash Screen** to the app. For more detail
 </activity>
 ```
 
-After you have integerated this module into your application, your application should look something like as follows: <a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
+After you have integerated this module into your application, your application should look something like as follows: 
+
+<a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
 
 
 ## Form Management Module
@@ -161,7 +176,7 @@ Note: For more clarity on files affected, please refer this [commit](https://git
 
 ### 2. Showing a List of forms to choose from
 
-If you want the user at his own prerogative select which form to open, use the following invocation [UB - Add file which needs to be modified with line number]
+If you want the user at his own prerogative select which form to open, use the following invocation.
 
 ```java
 HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true, R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
@@ -220,28 +235,46 @@ The module is developed to provide a basic profile screen to the user, though it
 
 ### 2. Integrating the module into the Mobile Application
 
-In your module's `build.gradle`, add the following code snippet and run the `gradle-sync`.
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/964d93fa79fcce697b2adb39b51cd3844fcc99e9).
 
-```gradle
+1. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the user-profile module later, using the following steps.
+2. Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+3. Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+4. Open your build.gradle file and check that the module is now listed under dependencies.
+5. Sync your gradle. Clean your project.
+6. Please follow the same steps for the integration of user-profile module.
+7. Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named ':user-profile'. This means for other modules included as well.
+8. Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
+
+```
 dependencies {
-	compile 'com.hypertrack:hyperlog:0.0.10'
+    implementation project(":user-profile")
 }
 ```
 
 ### 3. Initialization
 
-1. Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows [UB-mark a file here.]
+1. Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows. Please refer **_HomeActivity.java_** class to see invocation.
 
 ```java
-ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), this, AppConstants.BASE_API_URL, applicationID);
+  ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), ((MainApplication) (getApplicationContext())),
+                                AppConstants.BASE_API_URL,
+                                "4b49c1c8-f90e-41e9-99ab-16d4af9eb269",
+                                AppConstants.SEND_OTP_URL,
+                                AppConstants.UPDATE_PASSWORD_URL,
+                                getApplicationContext().getResources().getString(R.string.fusionauth_api_key),
+				homePresenter.fetchUserID());                        
 ```
 
-2. Wherever you want to launch the Profile Section, use the following code piece.
+2. Wherever you want to launch the Profile Section, use the following code piece. Please see **_HomeActivity_** for the usage.
 
 ```java
 IProfileContract initializer = ComponentManager.iProfileContract;
-if(initializer!=null){
-	initializer.launchProfileActivity(context,profileConfig,fusionauthAPIKey,sendOTPUrl,updateAppPasswordURL);
+ArrayList<UserProfileElement> profileElements = homePresenter.getProfileConfig();
+	if (initializer != null) {
+		initializer.launchProfileActivity(getActivityContext(), profileElements
+                 , getActivityContext().getResources().getString(R.string.fusionauth_api_key));
+        }
 }
 ```
 
@@ -251,8 +284,9 @@ if(initializer!=null){
 2. Configure Remote Config for your Android App after the above step is successfully completed, accessible via the link, [Getting started with Firebase Remote Config on Android](https://firebase.google.com/docs/remote-config/use-config-android).
 3. Go to [Google Firebase Console](https://www.console.firebase.google.com/), navigate to your project view. In your project view, launch the Remote Config View by clicking on the Remote Config tab.
 4. In the Remote Config window, Click on Add Parameter option. Add the profile config parameters as mentioned ahead.
-5. Add the key and value in the format mentioned below. `key : "profile_config"` `value :` [UB - Provide a static value and describe how to create one in a different section (Not int he scope of this one.]
-6. You can retrieve the above set values at the client end using the following code snippet. [UB - Add file link and line number]
+5. Add the key and value in the format mentioned ahead, with **key** : **"profile_config"** 
+**value** : **[see sample here]**(https://samagra-development.github.io/docs/docs/AndroidProfileManagementModule#23-setup-firebase-for-android-project--client-end-consumption)
+6. You can retrieve the above set values at the client end using the following code snippet. Please refer **_HomePresenter.java_** to see how the data is being received from FirebaseRemoteConfig and being handled at client-end.
 
 ```java
 public ArrayList<UserProfileElement> getProfileConfig() {
@@ -283,7 +317,6 @@ public ArrayList<UserProfileElement> getProfileConfig() {
 
 Try to edit the details of the user and if you want to remove/add a field, just update the firebase config. <a  href="https://imgflip.com/gif/3wx5vk"><img  src="https://i.imgflip.com/3wx5vk.gif"  title="made at imgflip.com"/></a>
 
-[UB add a section of rarely used modules] - Cascading, Cloud Notifications etc
 
 ## Cascading Search Module
 
@@ -299,159 +332,92 @@ We also have a module included in our commons module to unzip the mentioned file
 
 ### Setting up Module into your Project
 
-1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/6afc77951246a11ad3e730a6378e1be45b86ed2d).
 
-2. Launch Android Studio. Open the main project where you are to integrate these modules.
+1. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the cascading_module module later, using the following steps.
+2. Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+3. Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+4. Open your build.gradle file and check that the module is now listed under dependencies.
+5. Sync your gradle. Clean your project.
+6. Please follow the same steps for the integration of cascading_module module.
+7. Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named ':cascading_module'. This means for other modules included as well.
+8. Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
 
-3. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the cascading module later, using the following steps.
-
-4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
-
-5. Please follow the same steps for the integration of Cascading Module
+```
+dependencies {
+    implementation project(":cascading_module")
+}
+```
 
 ### Using the functionalities to run the Module
 
 1. You need to have Storage Permissions to unzip the file and store it in local storage. For this add to the AndroidManifest.xml
 
-```
-
-
-
+```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
 ```
 
 2. Add the following code snippet to get user's consent to storage permission
 
-```PermissionsHelper permissionUtils = new PermissionsHelper();
-
+```java
+PermissionsHelper permissionUtils = new PermissionsHelper();
 if (!PermissionsHelper.areStoragePermissionsGranted(activityContext)) {
+	permissionUtils.requestStoragePermissions(activityContext, new AppPermissionUserActionListener() {
+	   @Override
+	   public void granted() {
+		//User grants storage permissions.
+	   }
+	   
+	   @Override
+	   public void denied() {
+	   	//User grants denies permissions.
+		}
 
-permissionUtils.requestStoragePermissions(activityContext, new AppPermissionUserActionListener() {
+	});
 
-@Override
+	} else {
+		//User has already granted Storage permissions.
+		}
+```
+3. In order to unzip the locally stored file, we will use this following function. (Please refer **_SplashPresenter.java_** for the same)
 
-public void granted() {
+```java
+public void startUnzipTask() {
+FileUnzipper fileUnzipper = new FileUnzipper(getMvpView().getActivityContext(), ROOT + "/data2.json", R.raw.data2, new UnzipTaskListener() {
+            @Override
+            public void unZipSuccess() {
+	    	//Unzip successful
+            }
 
-//User grants storage permissions.
+            @Override
+            public void unZipFailure(Exception exception) {
+               //Unzip failure
+            }
+        });
+        fileUnzipper.unzipFile();
+    }
+```
 
-}
+4. In order to use this module, attact the module from the Main app module using the following code snippet. (Please check **_HomeActivity_** for the same)
 
-@Override
-
-public void denied() {
-
-//User grants denies permissions.
-
-}
-
-});
-
-} else {
-
-//User has already granted Storage permissions.
-
-}
+```java
+CascadingModuleDriver.init( (MainApplication)getApplicationContext(), AppConstants.FILE_PATH, AppConstants.ROOT);
 
 ```
 
-3. In order to unzip the locally stored file, we will use this following function:
-
-```FileUnzipper fileUnzipper = new FileUnzipper(getMvpView().getActivityContext(), pathJSONFile, Resource_ID_GZIP_FILE, new UnzipTaskListener() {
-
-@Override
-
-public void unZipSuccess() {
-
-//If Unzipping operation is successful
-
-}
-
-
-
-@Override
-
-public void unZipFailure(Exception exception) {
-
-//If Unzipping operation is failed, exception is returned.
-
-
-
-}
-
-});
-
-fileUnzipper.unzipFile();
+5. You can launch the cascading view using the following method invocation. (Please check **_HomeActivity_** for the same)
 
 ```
-
-4. In order to use this module, attact the module from the Main app module using the following code snippet.
-
-```
-
-CascadingModuleDriver.init(getMainApplication(),FILE_PATH);
+CascadingModuleDriver.launchSearchView(getActivityContext(), AppConstants.ROOT + "/data2.json", 100);
 
 ```
-
-The method signature of the invocation is shown below:
-
-```
-
-/**
-
-*
-
-* @param mainApplication - Instance of Main Application,
-
-* instance of Interface implemented by Application class to
-
-* communicate back with main app project.
-
-* @param FILE_PATH - File path where you have unzipped your * file.
-
-*/
-
-void init( @NonNull MainApplication mainApplication, @NonNull String FILE_PATH);
-
-```
-
-5. You can launch the cascading view using the following method invocation.
-
-```
-
-CascadingModuleDriver.launchSearchView(activityContext, FILE_PATH);
-
-```
-
-The method signature of the invocation is shown below:
-
-```
-
-/**
-
-*
-
-* @param activityContext - Instance of Context.
-
-* @param FILE_PATH - File path where you have unzipped your * file.
-
-*/
-
-void init( @NonNull Context activityContext, @NonNull String FILE_PATH);
-
-```
-
-Here FILE_PATH refers to the path where json file is to be stored.
-
 ### Receiving back the Result of the Cascading Module
 
 The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.
 
-The result object contains in form of object, the values of all the levels from selected options in the module.
+The result object contains in form of object, the values of all the levels from selected options in the module. Please refer the **_setDisposable()_** method of **_HomeActivity**, to see how result is received back from the Cascading module. Please check **_onFillFormsOptionClicked()_** method of **_HomePresenter_** class to launch of form view after receiving results from Cascading Search Module. 
 
 Please see the following clip to see how this module is expected to work.
 
