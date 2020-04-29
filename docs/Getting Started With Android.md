@@ -8,7 +8,7 @@ sidebar_label: Build Your App
 
 ## Overview
 
-[Can Reduce this a bit - UB, SS please help to reduce this to half] We at Samagra aim at solving complex governance problems leveraging the wide use of open source technologies. Among all our initiatives in different states, we have developed different mobile applications defined over various different problem statements spread across a number of domains - including Education, Agriculture, Digital Literacy. Our experiences have helped us to learn certain pointers which, we believe are useful for any developer, particularly trying to solve the complex governance problems.
+Our development experience has helped us to learn certain pointers which, we believe are useful for any developer, particularly trying to solve the complex governance problems.
 
 1. Open source technologies are usually the best approach for going around any problem, given the support you can achieve in terms of roadblocks you might encounter while development, augmented by the inputs that you could further disseminate from your app development journey. Hence, Collaborative Learning is a key to a better plan of software development.
 
@@ -37,7 +37,7 @@ If you will following along this thing ( and it could take some time), you would
 
 What we are providing in excess of the tutorial if you get stuck.
 
-1. Link to the code repository containing (codes for different modules, a coupled together app and a starter app).
+1. Link to the code repository containing (codes for different modules, a [coupled together app](https://github.com/Samagra-Development/demo_tutorial_app) and a [starter app](https://github.com/Samagra-Development/demo_tutorial_app/tree/7ccbf04461cbfb3d926bd5851c109ea15fd2fde4)).
 2. Link to executable file for the same.
 3. Attached video link for full-fledged application.
 
@@ -47,19 +47,28 @@ What we are providing in excess of the tutorial if you get stuck.
 2. In order to start up with the development, we would like to recommend giving a read through the basic tutorial on how to build and run a basic android app via this [link](https://developer.android.com/training/basics/firstapp).
 3. Note: In all the modules, you would come across a commons module. This module contains common functionalities that can be used by all the modules rather than duplicating the code along the modules.
 
-## Setting up _Samagra Android Starter App_
+## Setting up Samagra Android Starter App
 
 This is the base project that we use to start all our projects as it includes all the basic wiring among all the components and provides a speedy development process.
 
-1. Clone the github [project]([UB]-project-link) to a folder. If you use git, `git clone ... [UB]` should fast track things.
-2. Setup the project on Android Studio. [This](https://www.youtube.com/watch?v=wenTzCZpv90) is a good starting resouce on how to do this.
-3. Connect you phone or emulator and install the app. [UB - Add a good video source] If you have followed along with the above three steps you should see the following screen,
+1. Download and instal [Git](https://git-scm.com/downloads) and add it to your PATH
+2. Download and install [Android Studio](https://developer.android.com/studio/index.html)
+3. Fork the collect project [(why and how to fork)](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+4. Clone your fork of the project locally. At the command line:
+
+```bat
+https://github.com/Samagra-Development/demo_tutorial_app.git
+```
+
+5. Use Android Studio to import the project from its Gradle settings. To run the project, click on the green arrow at the top of the screen.
+6. Setup the project on Android Studio. [This](https://www.youtube.com/watch?v=wenTzCZpv90) is a good starting resouce on how to do this.
+7. Connect you phone or [emulator and install the app](https://developer.android.com/studio/run/emulator#runningemulator). If you have followed along with the above three steps you should see the following screen,
 
 ![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM)
 
 ## Configuring Home Screen
 
-As you will install and run the app, you will see that the home screen icons, when clicked just show a snackbar. This is intended to just show the functionality of [**_MVP design pattern_**](https://github.com/MindorksOpenSource/android-mvp-architecture), where click action is listened to by the [**_View_**]([UB]-AddLink) and then the action is handled by the [**_Presenter_**]([UB]-AddLink).
+As you will install and run the app, you will see that the home screen icons, when clicked just show a snackbar. This is intended to just show the functionality of [**_MVP design pattern_**](https://github.com/MindorksOpenSource/android-mvp-architecture), where click action is listened to by the [**_View_**](https://android.jlelse.eu/android-mvp-for-beginners-25889c500443) and then the action is handled by the [**_Presenter_**](https://android.jlelse.eu/android-mvp-for-beginners-25889c500443).
 
 You can configure the home screen to redirect the user to the modules which will be discussed ahead. This is where most of your time would be spend when building your own app.
 
@@ -68,76 +77,6 @@ You can configure the home screen to redirect the user to the modules which will
 [**_Event bus_** ](https://dzone.com/articles/design-patterns-event-bus) is a great solution that allows objects with different lifecycles and located in different layers of hierarchy to communicate. We suggest that if you have an event bus in your Android application, most likely you use libraries like [**Otto**](https://square.github.io/otto/) or [**EventBus**](https://github.com/greenrobot/EventBus).
 
 For more details on how to set up your own RxBus, and how to use it further, please refer to the [this doc](https://samagra-development.github.io/docs/docs/CommunicatingAmongModules).
-
-## Form Management Module
-
-[UB/SS Reduce this one line with just a link on overview section of module] While working in the Government frame, one of the most prominent use cases needed for various tech products is a better surveying technique that should be easily integrated, both at client and back end, in terms of retrieval and further processing of data. For that, we pinned to use ODK Collect. ODK Collect is an open-source Android app that replaces paper forms used in survey-based data gathering. It supports a wide range of question and answer types, and is designed to work well without network connectivity. If you are new to the ODK or not very sure how to use ODK, please refer the link mentioned below
-
-### What is ODK? How to use ODK? Creating a Form in ODK?
-
-Please refer to this document to find basics for ODK, and how to set a form on ODK Aggregate. [Documentation of ODK.](https://docs.google.com/document/d/12d6S12J3uTN9B3_WZQh3f9iXwOv1Yri106hXXfoMAg4/edit)
-
-### 1. Setting up Form Management Module
-
-1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementPackage#setting-up-odk) to set up ODK into your mobile Application.
-2. To configure which forms a user would be able to see, you need to provide them through a JSON object similar to this one. [UB - code here]
-
-### 2. Showing a List of forms to choose from
-
-If you want the user at his own prerogative select which form to open, use the following invocation [UB - Add file which needs to be modified with line number]
-
-```java
-HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true, R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
-getIFormManagementContract().launchFormChooserView(context, toolbarModificationObject);
-```
-
-Here, `getIFormManagementContract()` returns the value of the contract object for the Form Module. `context` is the Context object of the [**_View_**(]([UB-AddLinktoview])activity) from where you have triggered this click action.
-
-### 3. Filling up a particular form
-
-If you want to fill a particular form, out of the forms downloaded above, in the click action of the view, please invoke the following method of the module. [UB point to the file where this change needs to be made; Also need a concrete example, so don't put the method signature, show the invocation.]
-
-```java
-getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
-```
-
-Here, `getIFormManagementContract()` returns the value of the contract object for the Form Module. `formIdentifier` is to be replaced by the name of the specific form you want to be filled by the user.
-
-### 4. Submitting a form
-
-[UB - Add a section on how to submit a form, could be an ODK link]
-
-### 5. Seeing submission.
-
-If you want to view the forms that the user has submitted already, use the following method invocation: [UB - Add file which needs to be modified with line number]
-
-```java
-HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true,
-R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
-getIFormManagementContract().launchViewSubmittedFormsView(context,toolbarModificationObject)
-```
-
-### 6. Offline viewing of data and sending them again
-
-Since ODK provides a functionality to fill forms offline, you can sync these forms when online again. You can view all such forms via below method invocation.
-
-```java
-geIFormManagementContract().launchViewUnsubmittedFormView(context, className);
-```
-
-Here, getIFormManagementContract() returns the value of the contract object for the Form Module. context is the Context object of the view(activity) from where you have triggered this click action. className is the lexographic name of the given class, the name by which you have saved the class in the project.
-
-### 7. Prefilling form
-
-Sometimes you would like your forms to be prefilled with data. This is outside the scope of this tutorial but if you want to it, here is a look. [UB - Remove the section below and add a link here.] You can prefill certain details into a form if you know the tag to be prefilled and the form’s name, in the manner mentioned ahead.
-
-```java
-getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier, String tag, String tagValue);
-```
-
-Here, getIFormManagementContract() returns the value of the contract object for the Form Module. formIdentifier is to be replaced by the name of the specific form you want to be filled by the user. tag refers to the tag whose value you want to override/pre-fill and the tagValue is the desired value
-
-Once you have achieved this milestone, the UI should look like this. <a  href="https://imgflip.com/gif/3wwv9l"><img  src="https://i.imgflip.com/3wwv9l.gif"  title="made at imgflip.com"/></a>
 
 ## Ancillary Screen Module
 
@@ -185,6 +124,91 @@ We will just be showing how to add **Splash Screen** to the app. For more detail
 ```
 
 After you have integerated this module into your application, your application should look something like as follows: <a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
+
+
+## Form Management Module
+
+Form Managment Module is designed to handle data collection via forms, downloaidng and managing them, taking submissions even in offline environments. To check on the responsibilites and functions in detai, please refer this [section](https://samagra-development.github.io/docs/docs/FormManagementModule#1-overview).
+
+### What is ODK? How to use ODK? Creating a Form in ODK?
+
+This is a pre-requisite to send ODK Forms from your device, in terms of collecting submitted data on the backend. Please ensure you have set up the ODK Aggregate before proceeding with Form Module integration in your app. Please refer to this document to find basics for ODK, and how to set a form on ODK Aggregate. [Documentation of ODK.](https://docs.google.com/document/d/12d6S12J3uTN9B3_WZQh3f9iXwOv1Yri106hXXfoMAg4/edit). 
+
+### 1. Setting up Form Management Module
+
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/634c4066d3bcc553a95b960769e50fbf08513e24).
+1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementPackage#setting-up-odk) to set up ODK into your mobile Application. (For more details on what are the changes 
+2. Set up config folder, settings.json as mentioned in the link above.
+3. Add required permissions in your AndroidManifest.xml (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
+4. Please make the Collect as parent to your Application level class, and CollectAbstractActivity parent to your base activity class.
+5. Please add permissions reuqest as added in **SplashPresenter.java**, without these permissions, you won't be able to download the forms.
+6. Initialise the Form Module in your application level as follows: (Please refer **MyAppication** Class of the downloaded project).
+7. To download the form list and see which forms to download, please refer **HomePresenter** class, we are using Remote Config, in order to test, you can provide them through a JSON object similar to this one.
+```json
+[
+  {
+    "FormID": "all-widgets",
+    "FormName": "All Widgets"
+  },
+  {
+    "FormID": " location_tracker",
+    "FormName": "Location Tracker"
+  }
+]
+```
+8. You will have to add these forms to your ODK Aggreagte first, please use the <a href="../static/xml/All_widgets.xml"  download>link-1</a> and <a href="../static/xml/Location Tracker.xml" download>link-2</a> to download these forms.
+9. After these steps, when you run the app, you will be abe to download these forms.
+
+### 2. Showing a List of forms to choose from
+
+If you want the user at his own prerogative select which form to open, use the following invocation [UB - Add file which needs to be modified with line number]
+
+```java
+HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true, R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
+getIFormManagementContract().launchFormChooserView(context, toolbarModificationObject);
+```
+
+Here, `getIFormManagementContract()` returns the value of the contract object for the Form Module. `context` is the Context object of the **_View_**(Please refer the HomePresenter class to see functioning of this method), from where you have triggered this click action.
+
+### 3. Filling up a particular form
+
+If you want to fill a particular form, out of the forms downloaded above, in the click action of the view, please invoke the following method of the module. Please check **_onFillFormsOptionClicked()_** method in **HomePresenter.java** to see how we're opening a specific form based on its identifier.
+
+```java
+getIFormManagementContract().launchSpecificDataForm(String formIdentifier);
+```
+
+Here, `getIFormManagementContract()` returns the value of the contract object for the Form Module. `formIdentifier` is to be replaced by the name of the specific form you want to be filled by the user.
+
+### 4. Submitting a form
+
+Please follow the user flow of the form, as you move towards the end you will see a **Save Form and Exit** option, clicking on this CTA, will make a submission and you will be redirected back to home screen.
+
+### 5. Seeing submissions
+
+If you want to view the forms that the user has submitted already, use the following method invocation. You can also check **_onViewSubmittedFormsOptionsClicked()_** method in **HomePresenter.java** to see how we're opening a specific form based on its identifier.
+
+```java
+HashMap<String, Object> toolbarModificationObject = UtilityFunctions.generateToolbarModificationObject(true,
+R.drawable.ic_arrow_back_white_24dp, "View Submitted Forms", true);
+getIFormManagementContract().launchViewSubmittedFormsView(context,toolbarModificationObject)
+```
+
+### 6. Offline viewing of data and sending them again
+
+Since ODK provides a functionality to fill forms offline, you can sync these forms when online again. You can view all such forms via below method invocation. You can also check **_onSubmitFormsClicked()_** method in **HomePresenter.java** to see how we're opening a specific form based on its identifier.
+
+```java
+geIFormManagementContract().launchViewUnsubmittedFormView(context, className);
+```
+
+Here, getIFormManagementContract() returns the value of the contract object for the Form Module. context is the Context object of the view(activity) from where you have triggered this click action. className is the lexographic name of the given class, the name by which you have saved the class in the project.
+
+### 7. Prefilling form
+
+Sometimes you would like your forms to be prefilled with data. This is outside the scope of this tutorial but if you want to it, take a look [here](https://samagra-development.github.io/docs/docs/FormManagementModule#255--pre-fill-information-in-forms), on how you can achieve that.
+
+Once you have achieved this milestone, the UI should look like this. <a  href="https://imgflip.com/gif/3wwv9l"><img  src="https://i.imgflip.com/3wwv9l.gif"  title="made at imgflip.com"/></a>
 
 ## User Profile Package
 
@@ -437,103 +461,13 @@ Please see the following clip to see how this module is expected to work.
 
 ### Overview
 
-Push notifications are an important part of the mobile experience. Users have grown accustomed to having push notifications be a part of virtually every app that they use.
-
 For an app, the most effective way to receive push notifications is via Firebase Cloud Messaging Service. Firebase Cloud Messaging (FCM) is a cross-platform messaging solution that lets you reliably send messages at no cost. Using FCM, you can notify a client app that new email or other data is available to sync. You can send notification messages to drive user re-engagement and retention.
 
 The module that we have developed, contains a functionality to generate notifications received via FCM and also generate push notifications from within the app.
 
-### Setting up Module into your Project
+### Setting up and Using features of Notification Module
 
-1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
-
-2. Launch Android Studio. Open the main project where you are to integrate these modules.
-
-3. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the notifications_module later, using the following steps.
-
-4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
-
-5. Please follow the same steps for the integration of notifications_module.
-
-### Using the functionalities to run the Module
-
-1. You must have firebase set up for your project. Set up Firebase and the FCM SDK. If you haven't already, [add Firebase to your Android project](https://firebase.google.com/docs/android/setup).
-
-2. In your project-level build.gradle file, make sure to include Google's Maven repository in both your buildscript and allprojects sections.
-
-3. Add the dependency for the Cloud Messaging Android library to your module (app-level) Gradle file (usually app/build.gradle)
-
-```
-
-implementation 'com.google.firebase:firebase-messaging:20.1.5'
-
-```
-
-4. You need to have Internet Permissions to interact with the FCM Server.
-
-```
-
-android:name="android.permission.INTERNET"
-
-```
-
-5. Voila, the notification module has been integrated into your project. Please clean and rebuild your project.
-
-6. Register the notification channel in your Application level class as follows:
-
-```
-
-NotificationUtils.createNotificationChannel(this);
-
-//this is the instance of the Application level class of your project.
-
-```
-
-7.  **Access the device registration token** : On initial startup of your app, the FCM SDK generates a registration token for the client app instance. If you want to target single devices or create device groups, you'll need to access this token by extending [`FirebaseMessagingService`](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService) and overriding **onNewToken** . This has already been taken care of by the module you integrated. You will just have to invoke the FirebaseMessagingService child class.
-
-```
-
-new PushMessagingService().
-
-setContext(context, API_URL, API_KEY).
-
-getCurrentToken(context);
-
-//Base API Url and API Key are for Fusion Auth API Integration related,
-
-if in case you are using Fusion auth for managing and authenticating user data.
-
-```
-
-8. You are set to go, if you would send a notification from Firebase, you should receive a notification on your device.
-
-9. ** Sending the notification from within the app - **
-
-- Call the following method wherever you want to send the notification
-
-```
-
-Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);
-
-notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");
-
-notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_MESSAGE, "Test message");
-
-PendingIntent pendingNotify = PendingIntent.getActivity(getActivityContext(), REQUEST_CODE,
-
-notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-AppNotificationUtils.showNotification(pendingNotify, NOTIFICATION_ID, "Notification Title", "Test Notification");
-
-```
-
-After this integration, you should be able to receive FCM Notifications on your device, as well also generate notifications from within your app.
-
-**Note** - In order to test and see how the FCM Notification is sent to your android device, please refer this [tutorial](https://firebase.google.com/docs/cloud-messaging/android/first-message).
-
-Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.
+In order to integrate the module into your mobile ap project, please refer to [this](https://samagra-development.github.io/docs/docs/NotificationModule) detailed step-by-step tutorial on setting up push notification feature in your mobile app.
 
 ## App Logging Module
 
@@ -541,42 +475,13 @@ This module involves a supreme use case for the developers, as it includes the f
 
 ### Integration and Usage of the Logging Module
 
-In order to integrate the module into your mobile ap project, please refer to [this](https://samagra-development.github.io/docs/docs/Grove) detailed step-by-step tutorial on integratng crashlyitcs and error recording facility in your app.
+In order to integrate the module into your mobile ap project, please refer to [this](https://samagra-development.github.io/docs/docs/Grove) detailed step-by-step tutorial on integratng crashlytics and error recording facility in your app.
 
 ## Offline Loading Module
 
 In order to make app to mitigate various network related scenarios, it is always better to tackle with defence case scenarios. Hence, in order to provide the user with seamless app performance and avoid breakage of user data being sent to the backend, we developed a module leveraging the usage of Work Manager's Work Requests to tackle the user actions which couldn't be completed due to certain constraints.
 
-### Setting up Module into your Project
+### Integration and Usage of the Logging Module
 
-1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+The detailed integration of module and its uusage is elaborated in this [section](https://samagra-development.github.io/docs/docs/OfflineHandlingModule).
 
-2. Launch Android Studio. Open the main project where you are to integrate these modules.
-
-3. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the offline_module later, using the following steps.
-
-4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing.
-
-5. Please follow the same steps for the integration of offline_module.
-
-### Integrating Offline Module
-
-In the onCreate() of your Application Level class please add the following methos call.
-
-```
-
-Manager.init(this); //this is the Application class Instance
-
-
-
-```
-
-You can enqueue the tasks into the offline module's to be executed tasks list, using the following invocation.
-
-```
-
-ScheduledOneTimeWork.from(ApiWorker.class, new Data(hashMap)).enqueueTask(getMvpView().getActivityContext());
-
-//ApiWorker is the worker class to execute the task when the constraints are met. hashMap refers to the data to be sent wrt. //to the task enqueued.
-
-```
