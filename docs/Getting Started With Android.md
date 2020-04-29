@@ -92,25 +92,38 @@ For any android app, it becomes imperative, as the usage increases and the featu
 
 ### 2. Integrating Module into your Project
 
-1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
-2. Launch Android Studio. Open the main project where you are to integrate these modules.
-3. If you do not have `customworkmanager` or `commons` module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
-4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing. Please follow the same steps for the integration of ancillaryscreens module.
-5. In the settings.gradle, Add `:ancillaryscreens` to the end of already added modules.
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/4f41e36c165897bdafae23f57922a287a3dff5c7).
+
+1. If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
+2. Import the library module to your project (the library source becomes part of your project). Click File > New > Import Module
+3. Select the source directory of the Module you want to import and click Finish. The library module is copied to your project, so you can actually edit the library code.
+4. Open your build.gradle file and check that the module is now listed under dependencies.
+5. Sync your gradle. Clean your project.
+6. Please follow the same steps for the integration of ancillaryscreens module.
+7. Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named ':ancillaryscreens'. This means for other modules included as well.
+8. Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
+
+```
+dependencies {
+    implementation project(":ancillaryscreens")
+}
+```
 
 ### 3. Initialization and Usage of Ancillary Screens Module
 
-Inside `onCreate` of Application class or Launcher Activity, in the manner as follows, [UB add concrete example for this and describe the params in English and not code]
-
+Inside `onCreate` of Application class or Launcher Activity (Please refer the **MyApplication**) for the same), in the manner as follows, 
 ```java
-AncillaryScreensDriver.init(this, BASE_API_URL, SEND_OTP_API_ENDPOINT, RESET_PASSWORD_API_ENDPOINT, APPLICATIO_ID);
+AncillaryScreensDriver.init(this, AppConstants.BASE_API_URL,
+                AppConstants.SEND_OTP_URL,
+                AppConstants.UPDATE_PASSWORD_URL,
+                getApplicationId());
 ```
 
 ### 4. Using this module
 
-We will just be showing how to add **Splash Screen** to the app. For more details on how to add other screen please go here [UB-Add this]
+We will just be showing how to add **Splash Screen** to the app. For more details on how to add other screen please go [here](https://samagra-development.github.io/docs/docs/AncillaryScreensModule).
 
-1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
+1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the **_AndroidManifest.xml_** file of this module, if not present
 
 ```xml
 <activity
@@ -123,7 +136,9 @@ We will just be showing how to add **Splash Screen** to the app. For more detail
 </activity>
 ```
 
-After you have integerated this module into your application, your application should look something like as follows: <a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
+After you have integerated this module into your application, your application should look something like as follows: 
+
+<a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
 
 
 ## Form Management Module
