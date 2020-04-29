@@ -70,7 +70,7 @@ Make sure the library is listed at the top of your settings.gradle file, as show
 
 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
 
-```
+```java
 dependencies {
     implementation project(":ancillaryscreens")
 }
@@ -79,7 +79,7 @@ dependencies {
 ### 2.2 Start The Module
 
 Inside onCreate of Application class or Launcher Activity, in the manner as follows
-```
+```java
 AncillaryScreensDriver.init(this,
                 BASE_API_URL,
                 SEND_OTP_API_ENDPOINT,
@@ -87,7 +87,7 @@ AncillaryScreensDriver.init(this,
                 APPLICATIO_ID);
 ```
 The method signature of the initialisation invocation is as follows:
-```
+```java
 /**
 * 
 * @param mainApplication - Instance of Application Class (Main Application, as you will see is an Interface implemented by
@@ -107,7 +107,7 @@ Application class)
 
 2.3.1 In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
 
-```
+```xml
 <activity
 android:name="com.samagra.ancillaryscreens.screens.splash.SplashActivity"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -125,7 +125,7 @@ The module comes in such a way that you won't need to do any config changes with
 2.3.3 Use About Us Screen
 
 To launch the About Us Screen from the module, use the following code:
-```
+```java
 AncillaryScreensDriver.launchAboutActivity(context, aboutBundle);
 ```
 Here, context is the Context Instance used to launch the About Us screen, AboutBundle is bundle object containing the information transferred to the Activity to render the UI. 
@@ -133,7 +133,7 @@ Here, context is the Context Instance used to launch the About Us screen, AboutB
 2.3.4 Use Tutorials Screen<br/><br/>
 
 To launch the Tutorials Screen from the module, use the following code:
-```
+```java
 AncillaryScreensDriver.launchTutorialsActivity(context, tutorialBundle);
 ```
 Here, context is the Context Instance used to launch the Tutorials screen, tutorialBundle is bundle object containing the information transferred to the Activity to render the UI. It contains the video id and Youtube API Key 
