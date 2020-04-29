@@ -14,7 +14,7 @@ To get the context of the section, please refer [this section](https://samagra-d
 
 ## 2. Usage tips
 We recommend obtaining a single instance of bus through injection or another appropriate mechanism. Alternatively, you may get a singleton like the following:
-```
+```java
 Bus bus = BusProvider.getInstance();
 ```
 
@@ -25,7 +25,7 @@ By default, the Bus enforces that all interactions occur on the main thread.
 
 You can create RxBus like below.
 
-```
+```java
 public class RxBus {
 
     public RxBus() {
@@ -51,75 +51,47 @@ How to access the RxBus has been mentioned above already.
 
 You can subscribe for an event in any class like below:
 
-```
+```java
 compositeDisposable.add(this.getEventBus()
+        .toObservable().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(exchangeObject->{
+        if(exchangeObject instanceof ExchangeObject){
+            if(((ExchangeObject)exchangeObject).to==Modules.MAIN_APP
+                    &&((ExchangeObject)exchangeObject).from==Modules.ANCILLARY_SCREENS
+                    &&((ExchangeObject)exchangeObject).type==ExchangeObject.ExchangeObjectTypes.SIGNAL){
+                ExchangeObject.SignalExchangeObject signalExchangeObject=(ExchangeObject.SignalExchangeObject)exchangeObject;
 
-.toObservable().subscribeOn(Schedulers.io())
-
-.observeOn(AndroidSchedulers.mainThread())
-
-.subscribe(exchangeObject -> {
-
-if (exchangeObject instanceof ExchangeObject) {
-
-if (((ExchangeObject) exchangeObject).to == Modules.MAIN_APP
-
-&& ((ExchangeObject) exchangeObject).from == Modules.ANCILLARY_SCREENS
-
-&& ((ExchangeObject) exchangeObject).type == ExchangeObject.ExchangeObjectTypes.SIGNAL) {
-
-ExchangeObject.SignalExchangeObject signalExchangeObject = (ExchangeObject.SignalExchangeObject) exchangeObject;
-
-if (signalExchangeObject.shouldStartAsNewTask ){
-
-if(currentActivity != null){
-
-CommonUtilities.startActivityAsNewTask(signalExchangeObject.intentToLaunch, currentActivity);
-
-}}
-
-else
-
-startActivity(signalExchangeObject.intentToLaunch);
-
-} else if (exchangeObject instanceof ExchangeObject.EventExchangeObject) {  ExchangeObject.EventExchangeObject eventExchangeObject = (ExchangeObject.EventExchangeObject) exchangeObject;
-
-Timber.d("Event Received %s ", eventExchangeObject.customEvents);
-
-if (eventExchangeObject.to == Modules.MAIN_APP || eventExchangeObject.to == Modules.PROJECT) {
-
-Timber.d("Event Received %s ", eventExchangeObject.customEvents);
-
-}
-
-} else if(exchangeObject instanceof ExchangeObject.NotificationExchangeObject){
-
-PendingIntent pendingIntent = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getIntent();
-
-int notificationID = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getNotificationID();
-
-int title = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getTitle();
-
-String body = ((ExchangeObject.NotificationExchangeObject) exchangeObject).data.getBody();
-
-Timber.d("Event Received for Push Notification %s ", title);
-
-}else {
-
-Timber.d("Received but not intended");
-
-}
-
-}
-
-}, Timber::e));
+                if(signalExchangeObject.shouldStartAsNewTask){
+                    if(currentActivity!=null){
+                        CommonUtilities.startActivityAsNewTask(signalExchangeObject.intentToLaunch,currentActivity);
+                    }}
+                else
+                    startActivity(signalExchangeObject.intentToLaunch);
+            }else if(exchangeObject instanceof ExchangeObject.EventExchangeObject){
+                ExchangeObject.EventExchangeObject eventExchangeObject=(ExchangeObject.EventExchangeObject)exchangeObject;
+                Timber.d("Event Received %s ",eventExchangeObject.customEvents);
+                if(eventExchangeObject.to==Modules.MAIN_APP||eventExchangeObject.to==Modules.PROJECT){ 
+                    Timber.d("Event Received %s ",eventExchangeObject.customEvents);
+                }
+            }else if(exchangeObject instanceof ExchangeObject.NotificationExchangeObject){
+                PendingIntent pendingIntent=((ExchangeObject.NotificationExchangeObject)exchangeObject).data.getIntent();
+                int notificationID=((ExchangeObject.NotificationExchangeObject)exchangeObject).data.getNotificationID();
+                int title=((ExchangeObject.NotificationExchangeObject)exchangeObject).data.getTitle();
+                String body=((ExchangeObject.NotificationExchangeObject)exchangeObject).data.getBody();
+                Timber.d("Event Received for Push Notification %s ",title); 
+            }else{ 
+                Timber.d("Received but not intended");
+            }
+        }
+    },Timber::e));
 
 ```
 
 
 You can send an event from any other class or from the same class like below:
 
-```
+```java
 MyApplication.getInstance().component().rxBus().send(new EventTypeExhangeObject());
         
 ```
