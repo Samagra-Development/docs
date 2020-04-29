@@ -56,7 +56,7 @@ Please follow the same steps for the integration of samagra-form-management. Ple
 2.1.6  Syncing Gradle and Building Project.
 
 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
-```
+```java
 dependencies {
     implementation project(":samagra-form-management")
 }
@@ -93,16 +93,16 @@ Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-us
 
 Integrating the ODK Module in your app project, would reqire to add certain user permissions. Add the following snippet in your AndroidManifest.xml
 
-    ```
-    `<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    ```
+```xml
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
 
 2.3.2	Storage Permission Request
 
 In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
 
-```
+```java
 /** Request the storage permissions which is
 * necessary for ODK to read write data related to forms */
 
@@ -139,7 +139,7 @@ Please note that in order to make the modules work properly, please make Collect
 
 Add settings.json, in the **res/raw** folder of your main app module. This file contains all the configurations wit reference to the integration of ODK features in your application. You will have to configure the ODK first by downloading ODK App from Play store and configuring as per the steps mentioned in this [link](https://docs.opendatakit.org/collect-import-export/ 'https://docs.opendatakit.org/collect-import-export/'). Please replace **server_url, username, password** fields in the settings.json file with your own credentials configured from the ODK app.
 
-    ```
+ ```json
     {
     	"admin": {
     		"admin_password": false,
@@ -191,19 +191,19 @@ Add settings.json, in the **res/raw** folder of your main app module. This file 
     		"instance_sync": true
     	}
     }
-    ```
+```
 
 2.4.2  Invoke the Initialiser
 
 In the onCreate() of your Application-level class, please add the following method invocation
 
-```
+```java
 ComponentManager.registerFormManagementPackage(this, AppConstants.BASE_API_URL, new FormManagementSectionInteractor()); FormManagementCommunicator.setContract(ComponentManager.iFormManagementContract); ComponentManager.iFormManagementContract.setODKModuleStyle(this, R.drawable.login_bg, R.style.BaseAppTheme, R.style.FormEntryActivityTheme, R.style.BaseAppTheme_SettingsTheme_Dark, Long.MAX_VALUE);`
 ```
 
 The method signature of registerFormManagementPackage() is as follows:
 
-```
+```java
 /**
 *
 * @param application - Application Class Instance
@@ -214,7 +214,7 @@ public static void registerFormManagementPackage(MainApplication application, St
 
 The method signature of setODKModuleStyle() is mentioned below
 
-```
+```java
 /**
 *  @param mainApplication - Application Class Instance
 * @param splashScreenDrawableID - Drawable Resource for the Splash Screen of ODK Module, if needed to be shown.
@@ -229,7 +229,7 @@ void setODKModuleStyle(MainApplication mainApplication, int splashScreenDrawable
 
 Apply the settings file configured above using the following snippet
 
-```
+```java
 getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
  //R.raw.settings is the resource ID for the Settings file and context is an instance of Context //class
 ```
@@ -242,7 +242,7 @@ Please refer the sub-sections to find out the various functionalities, this modu
 
 getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
 
-```
+```java
 getIFormManagementContract().resetEverythingODK();
 ```
 
@@ -250,7 +250,7 @@ getIFormManagementContract().resetEverythingODK();
 
 If in case if you just want to delete already filled/submitted forms for the user, use the following method
 
-```
+```java
 getIFormManagementContract().resetODKForms(context);
 ```
 
@@ -260,13 +260,13 @@ getIFormManagementContract().resetODKForms(context);
 
 - First, the method which can be used to fetch the list of forms available at your ODK aggregate is ahead.
 
-```
+```java
 getIFormManagementContract().startDownloadODKFormListTask(new FormListDownloadListener())
 ```
 
 FormListDownloadListener is a listener to listen to the response of the download task, with callbacks mentioned ahead.
 
-```
+```java
 class FormListDownloadListener implements FormListDownloadResultCallback {
 @Override
  public void onSuccessfulFormListDownload(HashMap<String,
@@ -287,7 +287,7 @@ class FormListDownloadListener implements FormListDownloadResultCallback {
 
 FormDownloadListener is a listener to listen to the response of the download task, with callbacks mentioned ahead.
 
-```
+```java
 class FormDownloadListener implements DataFormDownloadResultCallback {
 @Override
 public void formsDownloadingSuccessful(HashMap<FormDetails, String> result) {
@@ -307,8 +307,8 @@ public void formsDownloadingFailure() {
 #### 2.5.4  Retreive Form IDs
 
 You can fetch a form’s ID if you know the form name. This is useful in case you want to open a specific form.
-
-```
+java
+```java
 getIFormManagementContract().fetchSpecificFormID(formIdentifier)
 // Form Identifier is the Form's name
 ```
@@ -317,7 +317,7 @@ getIFormManagementContract().fetchSpecificFormID(formIdentifier)
 
 You can prefill certain details into a form if you know the tag to be prefilled and the form’s name, in the manner mentioned ahead.
 
-```
+```java
 getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 `String tag, String tagValue);
 ```
@@ -328,7 +328,7 @@ getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier,
 
 You can launch a specific form to edit and further send using the following invocation, given you know the name of the form.
 
-```
+```java
 getIFormManagementContract().launchSpecificDataForm(Context context, String formIdentifier);
 ```
 
@@ -336,7 +336,7 @@ getIFormManagementContract().launchSpecificDataForm(Context context, String form
 
 You can launch a view showing all the downloaded forms using the following invocation, where the user himself can select whichever form to fill and send.
 
-```
+```java
 getIFormManagementContract().launchFormChooserView(context, toolbarModificationObject);
 //context - Instance of Context class,
 /** toolbarModificationObject - HashMap<String, Object> The contents of Hash Map are as follows * and are used to modify the UI of toolbar of this View.
