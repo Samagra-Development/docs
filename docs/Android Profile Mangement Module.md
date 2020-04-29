@@ -48,7 +48,7 @@ Download it as zip locally and then unzip the root directory. Launch Android Stu
 
 2.1.9 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
 
-```
+```java
 dependencies { 
     implementation project(':user_profile');
     }
@@ -59,14 +59,14 @@ dependencies {
 
 2.2.1 Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows
 
-```
+```java
 ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), this, AppConstants.BASE_API_URL, applicationID);
 
 ```
 
 The method signature of this Module Contract Initialisation is as follows:
 
-```
+```java
 /**
      * @param profileContractImpl - {IProfileContract} Implementation Class of the Interface which will be further used to launch the Profile Section further.
      * @param application         - {Application} Instance of the Application class, which will be used to validate for IllegalState checks.
@@ -91,7 +91,7 @@ This method invocation will also initialize the ProfileScreenDriver class, which
 
 2.2.2 Wherever you want to launch the Profile Section, use the following code piece.
 
-```
+```java
  IProfileContract initializer = ComponentManager.iProfileContract;
 
 if(initializer!=null){
@@ -104,7 +104,7 @@ if(initializer!=null){
 
 The method signature of the above method is mentioned below.
 
-```
+```java
 /**
      * *@param context-{Context}Context Instance used to further launch Profile Screen.
      *
@@ -133,7 +133,7 @@ The method signature of the above method is mentioned below.
 
 2.3.5 Add the key and value in the format mentioned below.
 
-```
+```json
 key : "profile_config"
 
 default value :
@@ -142,17 +142,17 @@ default value :
 
 {
 
-"base64Icon": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gLS0", // String - Base64 String of the Label Icon
+"base64Icon": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gLS0", 
 
-"title": "Contact Number - Please note this number will be used for sending OTP for password reset.", // String - Title for the Profile Screen Item
+"title": "Contact Number - 
 
-"content": "user.mobilePhone", // String - Type of the Profile Item. (Possible types could be mobilePhone, email, username, Date Of Joining or Date of Birth)
+"content": "user.mobilePhone", 
 
-"isEditable": true, //Boolean - determines if the value of this Profile Item could be edited by user or not.
+"isEditable": true,
 
-"section": 0, //Integer - This identifier is section out the Profile Items while displaying.
+"section": 0, 
 
-"type": "PHONE_NUMBER", // String - Type of the Profile Item, based on which different type of Layout will be inflated, types yet configured are TEXT/PHONE_NUMBER/DATE/SPINNER
+"type": "PHONE_NUMBER", 
 
 "spinnerExtra": null
 
@@ -194,14 +194,27 @@ default value :
 
 }
 
-},.......
+}
 
 ]
 ```
 
+```java
+//"base64Icon"  String - Base64 String of the Label Icon
+
+// "title" String - Title for the Profile Screen Item
+
+// "content" String - Type of the Profile Item. (Possible types could be mobilePhone, email, username, Date Of Joining or Date of Birth)
+
+//"isEditable" Boolean - determines if the value of this Profile Item could be edited by user or not.
+
+//"section" Integer - This identifier is section out the Profile Items while displaying.
+
+// "type" String - Type of the Profile Item, based on which different type of Layout will be inflated, types yet configured are TEXT/PHONE_NUMBER/DATE/SPINNER
+```
 2.3.6 You can retrieve the above set values at the client end using the following code snippet.
 
-```
+```java
 public ArrayList<UserProfileElement> getProfileConfig() {
 
 String configString = mFirebaseRemoteConfig.getString("profile_config"); // mFirebaseRemoteConfig is an instance of FirebaseRemoteConfig initialised in the Application level class of the Application.
