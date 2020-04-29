@@ -10,7 +10,7 @@ Not all databases are meant to serve millions of customers. Some are for testing
 
 ### 1.1 Architecture
 
-![enter image description here](https://i.ibb.co/JBLBJhh/PSQL-Type0-1.jpg)
+![enter image description here](https://i.ibb.co/Jjjzz2d/PSQL-Type0-2.jpg)
 
 ### 1.2 Assumptions
 
