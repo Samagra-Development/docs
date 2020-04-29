@@ -27,7 +27,7 @@ Not all databases are meant to serve millions of customers. Some are for testing
 
 ### 2.2 Deploying
 
-`curl` and then `docker-compose up -d`
+Just download the file `curl -LJO https://https://raw.githubusercontent.com/Samagra-Development/psql-deployment/master/docker/docker-compose.pMedium.yml` and then `docker-compose up -d`
 
 ### 2.3 Testing the database
 
