@@ -70,32 +70,47 @@ All this can be done using the `docker-compose.yml` file which can be found [her
 
 ### 1. Adding the form management module and configuring forms
 
-1. Setting form list button
-2. Setting up the submission screen button
+This module will allow us to download and show the forms configured in the Firebase above.
 
-### 2. Setting up the cascading dropdown
+1. [Setting form list button](/docs/FormManagementModule)
+2. [Setting up the submission screen](/docs/FormManagementModule)
 
-1. Adding the gzip file of locations to raw files directory
-2. Linking the gzip file to cascading dropdown module
-3. Testing the cascading dropdown
+### 2. Setting up the student list download module
 
-### 3. Setting up the student list download module
+Downloads the list of students for a particular school. Please use th following [doc]() to set this up.
 
-### 4. Setting up the Track SMS module.
+### 3. Setting up the cascading dropdown module
 
-### 5. Setting up autofill
+This will allow the app to render the cascading dropdown and fill the details automatically to the form.
+
+1. [Adding the gzip file]() of locations to raw files directory
+2. [Linking]() the gzip file to cascading dropdown module
+
+### 4. Setting up autofill
+
+### 5. Setting up the Track SMS module.
+
+All SMSes that are sent through the backend have one of the following responses
+
+1. Pending
+2. Failed to send
+3. Failed to deliver to user
+4. Still under processing
+5. Delivered These responses are then shown in the tracking module to see which parent got the message and if not, which stage it is in. To configure the track SMS module please use this [doc]()
 
 ### 6. Adding the login screen
 
-1. Setting up login screen
-2. Connecting FusionAuth to the server
+1. [Setting up login screen]()
+2. [Connecting FusionAuth to the server]()
 
 ### 7. Setting up profile screen
 
-1. Setting up the backend server
+1. [Setting up the backend server]()
 2. Testing the OTP and reset password.
 
 ### 8. Setting up the about us screen
+
+The about us screen is a part of the ancillaryscreens module. Please see this [doc]() to get started.
 
 ## 4. Need more help??
 
