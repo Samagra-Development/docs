@@ -8,7 +8,7 @@ sidebar_label: Build Your App
 
 ## Overview
 
-[Can Reduce this a bit - UB, SS please help to reduce this to half] We at Samagra aim at solving complex governance problems leveraging the wide use of open source technologies. Among all our initiatives in different states, we have developed different mobile applications defined over various different problem statements spread across a number of domains - including Education, Agriculture, Digital Literacy. Our experiences have helped us to learn certain pointers which, we believe are useful for any developer, particularly trying to solve the complex governance problems.
+Our development experience has helped us to learn certain pointers which, we believe are useful for any developer, particularly trying to solve the complex governance problems.
 
 1. Open source technologies are usually the best approach for going around any problem, given the support you can achieve in terms of roadblocks you might encounter while development, augmented by the inputs that you could further disseminate from your app development journey. Hence, Collaborative Learning is a key to a better plan of software development.
 
@@ -37,7 +37,7 @@ If you will following along this thing ( and it could take some time), you would
 
 What we are providing in excess of the tutorial if you get stuck.
 
-1. Link to the code repository containing (codes for different modules, a coupled together app and a starter app).
+1. Link to the code repository containing (codes for different modules, a [coupled together app](https://github.com/Samagra-Development/demo_tutorial_app) and a [starter app](https://github.com/Samagra-Development/demo_tutorial_app/tree/7ccbf04461cbfb3d926bd5851c109ea15fd2fde4)).
 2. Link to executable file for the same.
 3. Attached video link for full-fledged application.
 
@@ -51,15 +51,24 @@ What we are providing in excess of the tutorial if you get stuck.
 
 This is the base project that we use to start all our projects as it includes all the basic wiring among all the components and provides a speedy development process.
 
-1. Clone the github [project]([UB]-project-link) to a folder. If you use git, `git clone ... [UB]` should fast track things.
-2. Setup the project on Android Studio. [This](https://www.youtube.com/watch?v=wenTzCZpv90) is a good starting resouce on how to do this.
-3. Connect you phone or emulator and install the app. [UB - Add a good video source] If you have followed along with the above three steps you should see the following screen,
+1. Download and instal [Git](https://git-scm.com/downloads) and add it to your PATH
+2. Download and install [Android Studio](https://developer.android.com/studio/index.html)
+3. Fork the collect project [(why and how to fork)](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+4. Clone your fork of the project locally. At the command line:
+
+```bat
+https://github.com/Samagra-Development/demo_tutorial_app.git
+```
+
+5. Use Android Studio to import the project from its Gradle settings. To run the project, click on the green arrow at the top of the screen.
+6. Setup the project on Android Studio. [This](https://www.youtube.com/watch?v=wenTzCZpv90) is a good starting resouce on how to do this.
+7. Connect you phone or [emulator and install the app](https://developer.android.com/studio/run/emulator#runningemulator). If you have followed along with the above three steps you should see the following screen,
 
 ![](https://lh3.googleusercontent.com/xOtDvkRhN5DlhkBK8lW8QkIk5mc0vMMtcBCcre7as6pLhO8Af2mZFqf2UKH-plbCjUp-yU5YDRPCuinuZi8Oj8wrAoypMrIdSc6S4LPN9jPAu8KbI1fKdSoBqCsp_6yiijcMKaQM)
 
 ## Configuring Home Screen
 
-As you will install and run the app, you will see that the home screen icons, when clicked just show a snackbar. This is intended to just show the functionality of [**_MVP design pattern_**](https://github.com/MindorksOpenSource/android-mvp-architecture), where click action is listened to by the [**_View_**]([UB]-AddLink) and then the action is handled by the [**_Presenter_**]([UB]-AddLink).
+As you will install and run the app, you will see that the home screen icons, when clicked just show a snackbar. This is intended to just show the functionality of [**_MVP design pattern_**](https://github.com/MindorksOpenSource/android-mvp-architecture), where click action is listened to by the [**_View_**](https://android.jlelse.eu/android-mvp-for-beginners-25889c500443) and then the action is handled by the [**_Presenter_**](https://android.jlelse.eu/android-mvp-for-beginners-25889c500443).
 
 You can configure the home screen to redirect the user to the modules which will be discussed ahead. This is where most of your time would be spend when building your own app.
 
@@ -69,18 +78,85 @@ You can configure the home screen to redirect the user to the modules which will
 
 For more details on how to set up your own RxBus, and how to use it further, please refer to the [this doc](https://samagra-development.github.io/docs/docs/CommunicatingAmongModules).
 
+## Ancillary Screen Module
+
+For any android app, it becomes imperative, as the usage increases and the features enhance, it is needed to provide an access control to the app. Hence, we developed a module, with certain UI modules which can be easily integrated with your app, to provide basic features which are to be generally present in almost every android application, which are Splash scree, Login Screen, Forgot Password and Reset password via OTP.
+
+### 1. Screens Included in the Ancillary Screens Module
+
+1. **Splash Screen** - User sees this activity in the fist time when app is launched.
+2. **Login Screen** - User can login via user id and password, we are using FusionAuth for the management and authentication of users.
+3. **About Us Screen** - Ability to confiure the title, icon and the description text of the About Us Screen
+4. **Reset Password** - User can reset the app password from the Login screen via OTP sent to his registered Mobile number
+5. **Tutorials Screen** - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
+
+### 2. Integrating Module into your Project
+
+1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
+2. Launch Android Studio. Open the main project where you are to integrate these modules.
+3. If you do not have `customworkmanager` or `commons` module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
+4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing. Please follow the same steps for the integration of ancillaryscreens module.
+5. In the settings.gradle, Add `:ancillaryscreens` to the end of already added modules.
+
+### 3. Initialization and Usage of Ancillary Screens Module
+
+Inside `onCreate` of Application class or Launcher Activity, in the manner as follows, [UB add concrete example for this and describe the params in English and not code]
+
+```java
+AncillaryScreensDriver.init(this, BASE_API_URL, SEND_OTP_API_ENDPOINT, RESET_PASSWORD_API_ENDPOINT, APPLICATIO_ID);
+```
+
+### 4. Using this module
+
+We will just be showing how to add **Splash Screen** to the app. For more details on how to add other screen please go here [UB-Add this]
+
+1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
+
+```xml
+<activity
+	android:name="com.samagra.ancillaryscreens.screens.splash.SplashActivity"
+	android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+	<intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+		<category android:name="android.intent.category.LAUNCHER" />
+	</intent-filter>
+</activity>
+```
+
+After you have integerated this module into your application, your application should look something like as follows: <a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
+
+
 ## Form Management Module
 
-[UB/SS Reduce this one line with just a link on overview section of module] While working in the Government frame, one of the most prominent use cases needed for various tech products is a better surveying technique that should be easily integrated, both at client and back end, in terms of retrieval and further processing of data. For that, we pinned to use ODK Collect. ODK Collect is an open-source Android app that replaces paper forms used in survey-based data gathering. It supports a wide range of question and answer types, and is designed to work well without network connectivity. If you are new to the ODK or not very sure how to use ODK, please refer the link mentioned below
+Form Managment Module is designed to handle data collection via forms, downloaidng and managing them, taking submissions even in offline environments. To check on the responsibilites and functions in detai, please refer this [section](https://samagra-development.github.io/docs/docs/FormManagementModule#1-overview).
 
 ### What is ODK? How to use ODK? Creating a Form in ODK?
 
-Please refer to this document to find basics for ODK, and how to set a form on ODK Aggregate. [Documentation of ODK.](https://docs.google.com/document/d/12d6S12J3uTN9B3_WZQh3f9iXwOv1Yri106hXXfoMAg4/edit)
+This is a pre-requisite to send ODK Forms from your device, in terms of collecting submitted data on the backend. Please ensure you have set up the ODK Aggregate before proceeding with Form Module integration in your app. Please refer to this document to find basics for ODK, and how to set a form on ODK Aggregate. [Documentation of ODK.](https://docs.google.com/document/d/12d6S12J3uTN9B3_WZQh3f9iXwOv1Yri106hXXfoMAg4/edit). 
 
 ### 1. Setting up Form Management Module
 
-1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementPackage#setting-up-odk) to set up ODK into your mobile Application.
-2. To configure which forms a user would be able to see, you need to provide them through a JSON object similar to this one. [UB - code here]
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/634c4066d3bcc553a95b960769e50fbf08513e24).
+1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementPackage#setting-up-odk) to set up ODK into your mobile Application. (For more details on what are the changes 
+2. Set up config folder, settings.json as mentioned in the link above.
+3. Add required permissions in your AndroidManifest.xml (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
+4. Please make the Collect as parent to your Application level class, and CollectAbstractActivity parent to your base activity class.
+5. Please add permissions reuqest as added in **SplashPresenter.java**, without these permissions, you won't be able to download the forms.
+6. Initialise the Form Module in your application level as follows: (Please refer **MyAppication** Class of the downloaded project).
+7. To download the form list and see which forms to download, please refer **HomePresenter** class, we are using Remote Config, in order to test, you can provide them through a JSON object similar to this one.
+```json
+[
+  {
+    "FormID": "all-widgets",
+    "FormName": "All Widgets"
+  },
+  {
+    "FormID": " location_tracker",
+    "FormName": "Location Tracker"
+  }
+]
+```
+8. You will have to add these forms to your ODK Aggreagte first, please use the link1 and link-2 to download these forms.
 
 ### 2. Showing a List of forms to choose from
 
@@ -138,53 +214,6 @@ getIFormManagementContract().updateFormBasedOnIdentifier(String formIdentifier, 
 Here, getIFormManagementContract() returns the value of the contract object for the Form Module. formIdentifier is to be replaced by the name of the specific form you want to be filled by the user. tag refers to the tag whose value you want to override/pre-fill and the tagValue is the desired value
 
 Once you have achieved this milestone, the UI should look like this. <a  href="https://imgflip.com/gif/3wwv9l"><img  src="https://i.imgflip.com/3wwv9l.gif"  title="made at imgflip.com"/></a>
-
-## Ancillary Screen Module
-
-For any android app, it becomes imperative, as the usage increases and the features enhance, it is needed to provide an access control to the app. Hence, we developed a module, with certain UI modules which can be easily integrated with your app, to provide basic features which are to be generally present in almost every android application, which are Splash scree, Login Screen, Forgot Password and Reset password via OTP.
-
-### 1. Screens Included in the Ancillary Screens Module
-
-1. **Splash Screen** - User sees this activity in the fist time when app is launched.
-2. **Login Screen** - User can login via user id and password, we are using FusionAuth for the management and authentication of users.
-3. **About Us Screen** - Ability to confiure the title, icon and the description text of the About Us Screen
-4. **Reset Password** - User can reset the app password from the Login screen via OTP sent to his registered Mobile number
-5. **Tutorials Screen** - In order to guide the app user about the flow of app via Youtube video, you can configure those videos inside these screens by passing in your Youtube API Key and Video ID. You can also remotely configure the video IDs.
-
-### 2. Integrating Module into your Project
-
-1. Unzip the github project to a folder. You can find the github repository at this link. (Insert repo. link here). Download it as zip locally and then unzip the root directory.
-2. Launch Android Studio. Open the main project where you are to integrate these modules.
-3. If you do not have `customworkmanager` or `commons` module in the project, you would need to integrate these first sequentially, to integrate the ancillaryscreens module later, using the following steps.
-4. Click on your app module. Select New Module Option -> Select Import Gradle Project -> Go to the downloaded project directory -> Select the module, sync your gradle. In case you face dependency resolution errors, please see the downloaded project's main app and project gradle to see what dependencies you are missing. Please follow the same steps for the integration of ancillaryscreens module.
-5. In the settings.gradle, Add `:ancillaryscreens` to the end of already added modules.
-
-### 3. Initialization and Usage of Ancillary Screens Module
-
-Inside `onCreate` of Application class or Launcher Activity, in the manner as follows, [UB add concrete example for this and describe the params in English and not code]
-
-```java
-AncillaryScreensDriver.init(this, BASE_API_URL, SEND_OTP_API_ENDPOINT, RESET_PASSWORD_API_ENDPOINT, APPLICATIO_ID);
-```
-
-### 4. Using this module
-
-We will just be showing how to add **Splash Screen** to the app. For more details on how to add other screen please go here [UB-Add this]
-
-1. In order to make Splash Screen the launcher activity for your application, please add the following statement in the AndroidManifest.xml file of this module, if not present
-
-```xml
-<activity
-	android:name="com.samagra.ancillaryscreens.screens.splash.SplashActivity"
-	android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-	<intent-filter>
-		<action android:name="android.intent.action.MAIN" />
-		<category android:name="android.intent.category.LAUNCHER" />
-	</intent-filter>
-</activity>
-```
-
-After you have integerated this module into your application, your application should look something like as follows: <a  href="https://imgflip.com/gif/3wwonh"><img  src="https://i.imgflip.com/3wwonh.gif"  title="made at imgflip.com"/></a>
 
 ## User Profile Package
 
