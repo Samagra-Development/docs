@@ -46,7 +46,7 @@ Download it as zip locally and then unzip the root directory. Launch Android Stu
 
 2.1.8 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
 
-```
+```java
 dependencies { 
     implementation project(':grove');
     }
@@ -57,7 +57,7 @@ dependencies {
 
 Inside `onCreate` of Application class or Launcher Activity, in the manner as follows
 
-```
+```java
 IGroveLoggingComponent initializer = ComponentManager.iGroveLoggingComponent;
 if(initializer != null) {
     initializer.initializeLoggingComponent(this, this, getApplicationContext(), (context, s, s1, s2, s3) -> {
@@ -67,7 +67,7 @@ if(initializer != null) {
 
 The method signature of the initialisation invocation is as follows:
 
-```
+```java
 public void initializeLoggingComponent(
         Application application,
         LoggableApplication applicationInstance, Context context,
@@ -102,7 +102,7 @@ Parameters:
 
 As mentioned ahead, you would be able to do so, if you would have enabled that feature. If that is the case. Whenever you would want to push the logs to the server, invoke the following method in the way mentioned ahead.
 
-```
+```java
 IGroveLoggingComponent initializer = ComponentManager.iGroveLoggingComponent;
 if(initializer != null) {
     initializer.uploadLogFile("API_ENDPOINT_URL", this, "AUTHORIZATION_TOKEN");
@@ -121,7 +121,7 @@ Follow the steps mentioned ahead to configure the Error reporting within your ap
 
 3. Update your build.gradle files as below
 
-```
+```java
 // ADD JCENTER REPOSITORY
 repositories {
     jcenter()
@@ -143,10 +143,10 @@ dependencies {
 
 4.  After this step, Go to your User Profile on Sentry, using this [link](https://sentry.io/organizations). Within the profile section, Search for Client Keys(DSN) in the Search tab or Directl go to Client Keys(DSN) Section ([https://sentry.io/settings/[PROJECT_NAME]/projects/[PROJECT_NAME]/keys/](https://sentry.io/settings/nbujnn/projects/nbujnn/keys/). Copy the DSN value from there. Include this in your build.gradle
 
-```
+```java
 android {
 
-...
+
 buildTypes {
     release {
     ...
@@ -156,22 +156,21 @@ buildTypes {
         buildConfigField 'String', "dsn", "\"DSN_VALUE\""
   }
 }
-...
-...
+
 ```
 
 5. **_Integrating Proguard_**: To use ProGuard with Sentry, please follow the following steps:
 
 - **_Gradle Integration_**: Using Gradle (Android Studio) in your `app/build.gradle` add:
 
-```
+```java
 apply plugin: 'io.sentry.android.gradle'
 
 ```
 
 - And declare a dependency in your top-level `build.gradle`:
 
-```
+```java
 buildscript {
     repositories {
         mavenCentral()
@@ -186,7 +185,7 @@ buildscript {
 
 - In the root level of your project, add a file **_Sentry.properties_** with contents as follows:
 
-```
+```java
 defaults.project=your-project
 defaults.org=your-org
 auth.token=YOUR_AUTH_TOKEN
@@ -197,7 +196,7 @@ You can find your authentication token [on the Sentry API page](https://sentry.i
 
 - **_Gradle Configuration_**: Additionally, you can expose a few configuration values directly in Gradle:
 
-```
+```java
 sentry {
     // Disable or enable the automatic configuration of ProGuard
     // for Sentry.  This injects a default config for ProGuard so
@@ -228,7 +227,7 @@ sentry {
 
 6.  Add file **_logging.properties_** in the root level of your project.
 
-```
+```java
 #Enable the Console and Sentry handlers
 handlers=java.util.logging.ConsoleHandler,io.sentry.jul.SentryHandler
 
