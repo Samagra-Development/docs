@@ -29,11 +29,11 @@ Setup an application control management console to manage application metadata w
 
 ![](https://samagra-development.github.io/docs/img/appmetadata.png)
 
-## [PDF Generator](https://samagra-development.github.io/docs/docs/COPDFGenerator)
+## [Database Management](https://samagra-development.github.io/docs/docs/CODatabaseManagement)
 
-Setup a mechanism to generate PDFs using a configurable Google doc design with input parameters from any linked database using an API based method.
+Setup your database management to monitor database clusters, send alerts to DevOps, change database configs on the fly and manage a highly scalable database.
 
-![](https://samagra-development.github.io/docs/img/pdfgenerator.png)
+![](https://samagra-development.github.io/docs/img/dbmanagement.png)
 
 ## [Data Analytics](https://samagra-development.github.io/docs/docs/CODataAnalytics)
 
@@ -41,14 +41,8 @@ Setup a communication engine that enable you to create business rules based on i
 
 ![](https://samagra-development.github.io/docs/img/datanalytics.png)
 
-## [Application Logging](https://samagra-development.github.io/docs/docs/COApplicationLogging)
+## [PDF Generator](https://samagra-development.github.io/docs/docs/COPDFGenerator)
 
-Setup a logging mechanism to track the health of your application understand application performance and crash events to make informed improvements in your product.
+Setup a mechanism to generate PDFs using a configurable Google doc design with input parameters from any linked database using an API based method.
 
-![](https://samagra-development.github.io/docs/img/applogging.png)
-
-## [Database Management](https://samagra-development.github.io/docs/docs/CODatabaseManagement)
-
-Setup your database management to monitor database clusters, send alerts to DevOps, change database configs on the fly and manage a highly scalable database.
-
-![](https://samagra-development.github.io/docs/img/dbmanagement.png)
+![](https://samagra-development.github.io/docs/img/pdfgenerator.png)
