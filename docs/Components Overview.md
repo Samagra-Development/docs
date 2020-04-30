@@ -21,34 +21,34 @@ As a starting point, while working with different state governments, we abstract
 
 Setup a mobile application with governance specific feature set such as data collection forms, externally linked metadata, in-app notifications, offline handling and more.
 
-![alt-text](../img/component1v2.png)
+![](https://samagra-development.github.io/docs/img/component1v2.png)
 
 ## [Application Control](https://samagra-development.github.io/docs/docs/COAppControl)
 
 Setup an application control management console to manage application metadata with the ability to manage application user authentication and in-app metadata configurations.
 
-![alt-text](../img/appmetada.png)
+![](https://samagra-development.github.io/docs/img/appmetada.png)
 
 ## [PDF Generator](https://samagra-development.github.io/docs/docs/COPDFGenerator)
 
 Setup a mechanism to generate PDFs using a configurable Google doc design with input parameters from any linked database using an API based method.
 
-![alt-text](../img/pdfgenerator.png)
+![](https://samagra-development.github.io/docs/img/pdfgenerator.png)
 
 ## [Data Analytics](https://samagra-development.github.io/docs/docs/CODataAnalytics)
 
 Setup a communication engine that enable you to create business rules based on incoming data and trigger notifications to the end users of your applications.
 
-![alt-text](../img/datanalytics.png)
+![](https://samagra-development.github.io/docs/img/datanalytics.png)
 
 ## [Application Logging](https://samagra-development.github.io/docs/docs/COApplicationLogging)
 
 Setup a logging mechanism to track the health of your application understand application performance and crash events to make informed improvements in your product.
 
-![alt-text](../img/applogging.png)
+![](https://samagra-development.github.io/docs/img/applogging.png)
 
 ## [Database Management](https://samagra-development.github.io/docs/docs/CODatabaseManagement)
 
 Setup your database management to monitor database clusters, send alerts to DevOps, change database configs on the fly and manage a highly scalable database.
 
-![alt-text](../img/applogging.png)
+![](https://samagra-development.github.io/docs/img/dbmanagement.png)
