@@ -22,9 +22,6 @@ function DocTOC({ headings }) {
   return (
     <div className={styles.tableOfContents}>
       <div className="contents contents__left-border">
-        <h4 className="title">
-          Contents
-        </h4>
         <Headings headings={headings} />
       </div>
     </div>
@@ -58,20 +55,23 @@ function BlogPostPage(props) {
   return (
     <Layout title={metadata.title} description={metadata.description}>
       {BlogPostContents && (
-        <div className="Blog container margin-vert--xl">
-          <div className="row">
-            <div className="col col--8 col--offset-1">
-              <BlogPostItem frontMatter={frontMatter} metadata={metadata} isBlogPostPage>
-                <BlogPostContents />
-              </BlogPostItem>
-              {(metadata.nextItem || metadata.prevItem) && (
-                <div className="margin-vert--xl">
-                  <BlogPostPaginator nextItem={metadata.nextItem} prevItem={metadata.prevItem} />
-                </div>
-              )}
-            </div>
-            <div className="col col--3">
-              <DocTOC headings={BlogPostContents.rightToc} />
+        <div className='blog-main-wrapper'>
+          <div className='fake-sidebar'/>
+          <div className="Blog container margin-vert--lg">
+            <div className="row">
+              <div className="col col--9">
+                <BlogPostItem frontMatter={frontMatter} metadata={metadata} isBlogPostPage>
+                  <BlogPostContents />
+                </BlogPostItem>
+                {(metadata.nextItem || metadata.prevItem) && (
+                  <div className="margin-vert--xl">
+                    <BlogPostPaginator nextItem={metadata.nextItem} prevItem={metadata.prevItem} />
+                  </div>
+                )}
+              </div>
+              <div className="col col--3">
+                <DocTOC headings={BlogPostContents.rightToc} />
+              </div>
             </div>
           </div>
         </div>
