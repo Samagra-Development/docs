@@ -27,7 +27,7 @@ Setup a mobile application with governance specific feature set such as data col
 
 Setup an application control management console to manage application metadata with the ability to manage application user authentication and in-app metadata configurations.
 
-![](https://samagra-development.github.io/docs/img/appmetada.png)
+![](https://samagra-development.github.io/docs/img/appmetadata.png)
 
 ## [PDF Generator](https://samagra-development.github.io/docs/docs/COPDFGenerator)
 
