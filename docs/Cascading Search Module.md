@@ -46,7 +46,7 @@ Download it as zip locally and then unzip the root directory. Launch Android Stu
 
 2.1.9 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
 
-```
+```java
 dependencies { 
     implementation project(':cascading_module');
     }
@@ -57,7 +57,7 @@ dependencies {
 ## 2.2 Activate Module Functionalities
 
 2.2.1 You need to have Storage Permissions to unzip the file and store it in local storage. For this add to the AndroidManifest.xml
-```
+```xml
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -65,7 +65,7 @@ dependencies {
 ```
 
 2.2.2 Add the following code snippet to get user's consent to storage permission
-```
+```java
 PermissionsHelper permissionUtils = new PermissionsHelper();
         if (!PermissionsHelper.areStoragePermissionsGranted(activityContext)) {
             permissionUtils.requestStoragePermissions(activityContext, new AppPermissionUserActionListener() {
@@ -85,7 +85,7 @@ PermissionsHelper permissionUtils = new PermissionsHelper();
 
 2.2.3  In order to unzip the locally stored file, we will use this following function
 
-```
+```java
  FileUnzipper fileUnzipper = new FileUnzipper(getMvpView().getActivityContext(), pathJSONFile, Resource_ID_GZIP_FILE, new UnzipTaskListener() {
                         @Override
             public void unZipSuccess() {
@@ -102,13 +102,13 @@ PermissionsHelper permissionUtils = new PermissionsHelper();
 ```
 2.2.4 In order to use this module, attact the module from the Main app module using the following code snippet
 
-```
+```java
 CascadingModuleDriver.init(getMainApplication(),FILE_PATH);
 ```
 
 The method signature of the invocation is shown below:
 
-```
+```java
     /**
      * 
      * @param mainApplication - Instance of Main Application,
@@ -121,13 +121,13 @@ The method signature of the invocation is shown below:
  
 2.2.5 You can launch the cascading view using the following method invocation.
 
-```
+```java
  CascadingModuleDriver.launchSearchView(activityContext, FILE_PATH);
  ```
  
 The method signature of the invocation is shown below:
 
-```
+```java
     /**
      * 
      * @param activityContext - Instance of Context.
@@ -139,14 +139,14 @@ The method signature of the invocation is shown below:
 
 The result is sent back to the main app module by the CascadingModuleDriver, via the RxBus as follows:
 
-```
+```java
  ExchangeObject.DataExchangeObject dataExchangeObject = new ExchangeObject.DataExchangeObject(Modules.MAIN_APP, Modules.CASCADING_SEARCH,selectedHospitalData);
         application.getEventBus().send(dataExchangeObject);
 ```
 
 You can intercept the result of the event bus as follows:
 
-```
+```java
 compositeDisposable.add(this.getEventBus()
                 .toObservable().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

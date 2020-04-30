@@ -144,7 +144,7 @@ default value :
 
 "base64Icon": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gLS0", 
 
-"title": "Contact Number - 
+"title": "Contact Number",
 
 "content": "user.mobilePhone", 
 
@@ -190,9 +190,7 @@ default value :
 
 "type": "SPINNER",
 
-"spinnerExtra": [{"Andhra Pradesh", "Delhi", "Punjab", "Odisha", "Haryana", "Himachal Pradesh",......}] //ArrayList<String> - Possible values of the Spinner Items.
-
-}
+"spinnerExtra": ["Andhra Pradesh", "Delhi", "Punjab", "Odisha", "Haryana", "Himachal Pradesh"] 
 
 }
 
@@ -211,6 +209,8 @@ default value :
 //"section" Integer - This identifier is section out the Profile Items while displaying.
 
 // "type" String - Type of the Profile Item, based on which different type of Layout will be inflated, types yet configured are TEXT/PHONE_NUMBER/DATE/SPINNER
+
+//"spinnerExtra" ArrayList<String> - Possible values of the Spinner Items.
 ```
 2.3.6 You can retrieve the above set values at the client end using the following code snippet.
 

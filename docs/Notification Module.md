@@ -42,7 +42,7 @@ Download it as zip locally and then unzip the root directory. Launch Android Stu
 
 2.1.9 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet and then run the `gradle-sync`.
 
-```
+```java
 dependencies { 
     implementation project(':notification_module');
     }
@@ -58,13 +58,13 @@ dependencies {
 
 2.2.3  Add the dependency for the Cloud Messaging Android library to your module (app-level) Gradle file (usually app/build.gradle)
 
-```
+```java
 implementation 'com.google.firebase:firebase-messaging:20.1.5'
 ```
 
 2.2.4  You need to have Internet Permissions to interact with the FCM Server.
  
-```
+```xml
  <uses-permission android:name="android.permission.INTERNET" />
 ```
 
@@ -74,12 +74,12 @@ implementation 'com.google.firebase:firebase-messaging:20.1.5'
 ### 2.3 Use The Module
 
 2.3.1  Register the notification channel in your Application level class as follows:
-```
+```java
   NotificationUtils.createNotificationChannel(this);
   //this is the instance of the Application level class of your project.
 ```
 2.3.2 Access the device registration token: On initial startup of your app, the FCM SDK generates a registration token for the client app instance. If you want to target single devices or create device groups, you'll need to access this token by extending  [`FirebaseMessagingService`](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)  and overriding  `onNewToken`. This has already been taken care of by the module you integrated. You will just have to invoke the FirebaseMessagingService child class.
-``` 
+```java
 new PushMessagingService().
 		setContext(context, API_URL, API_KEY).	
 							getCurrentToken(context);
@@ -91,7 +91,7 @@ new PushMessagingService().
 
 2.3.4  Sending the notification from within the app - Call the following method wherever you want to send the notification
 
-```
+```java
 Intent notifyIntent = new Intent(getActivityContext(), NotificationRenderingActivity.class);  
 notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
 notifyIntent.putExtra(NotificationRenderingActivity.NOTIFICATION_TITLE,"Notification Title");  

@@ -1,7 +1,7 @@
 ---
 id: ParikshaFuncSpecs
 title: Pariksha - Functional Specifications
-sidebar_label: Pariksha
+sidebar_label: Pariksha FuncSpecs
 ---
 
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)

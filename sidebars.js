@@ -9,12 +9,26 @@
 
 module.exports = {
   someSidebar: {
-    Guides: [
-      'deploysamiksha',
-      'deploysamwad',
-      'deploypariksha',
-      'GettingStarted',
-    ],
+    Products: [
+      {
+      'Samiksha': [
+          'SamikshaFuncSpecs',
+          'deploysamiksha',
+        ],
+      },
+      {
+       'Samwad': [
+          'SamwadFuncSpecs',
+          'deploysamwad',
+        ],
+       },
+      {
+       'Pariksha': [
+          'ParikshaFuncSpecs',
+          'deploypariksha',
+        ],
+       },
+      ],
     Components: [
       'ComponentsOverview',
       {
@@ -53,23 +67,6 @@ module.exports = {
         ],
       },
       {
-        'PDF Generator': [
-          'COPDFGenerator',
-          'GoogleDoc2PDF',
-          'FormResponses2PDF',
-          'HTML2PDF',
-          {
-            Guides: [
-              'BuildingGDocTemplate',
-              'BuildingFieldsMapping',
-              'ExtendingBase',
-            ],
-          },
-        ],
-      },
-      {'Data Analytics': ['CODataAnalytics']},
-      {'Application Logging': ['COApplicationLogging']},
-      {
         'Database Management': [
           'CODatabaseManagement',
           {
@@ -86,18 +83,24 @@ module.exports = {
           {
             Redis: ['RedisOverview', {Guides: []}],
           },
+        ],
+      },
+      {'Data Analytics': ['CODataAnalytics']},
+      {
+        'PDF Generator': [
+          'COPDFGenerator',
+          'GoogleDoc2PDF',
+          'FormResponses2PDF',
+          'HTML2PDF',
           {
-            MongoDB: ['MongoDBOverview', {Guides: []}],
-          },
-          {
-            Cassandra: ['CassandraOverview', {Guides: []}],
-          },
-          {
-            Elasticsearch: ['ElasticSearchOverview', {Guides: []}],
+            Guides: [
+              'BuildingGDocTemplate',
+              'BuildingFieldsMapping',
+              'ExtendingBase',
+            ],
           },
         ],
       },
     ],
-    Products: ['SamikshaFuncSpecs', 'SamwadFuncSpecs', 'ParikshaFuncSpecs'],
   },
 };
