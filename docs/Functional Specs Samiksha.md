@@ -154,7 +154,7 @@ _A configurable mobile application can be setup by deploying the Samiksha applic
 
 ### 3.3 User Authentication & Management
 
-![](https://media.giphy.com/media/KAqEiF2AFp7IgETbTU/giphy.gif)
+![](https://media.giphy.com/media/lr6x1twVSymGML2ngu/giphy.gif)
 
 **_3.3.1 User Mangement_**
 
