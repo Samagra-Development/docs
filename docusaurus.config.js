@@ -108,6 +108,10 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/Samagra-Development/docs/edit/master',
         },
+        blogs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/Samagra-Development/docs/edit/master',
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
