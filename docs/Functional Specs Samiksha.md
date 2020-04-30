@@ -103,8 +103,7 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 Samiksha is wired together using the _[Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com) & [Application Logging Component](www.google.com)_. The following diagram illustrates the technical architecture of the Samiksha product.
 
-![alt-text](../img/SamikshaArchitecture.png)
-
+![](https://samagra-development.github.io/docs/img/SamikshaArchitecture.png)
 
 ## 3. High Level Specifications
 
