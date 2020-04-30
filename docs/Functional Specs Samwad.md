@@ -104,7 +104,7 @@ Often teachers may resort to visiting the parents of the children to provide fee
 
 Samwad is wired together using the _[Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com), [Application Logging Component](www.google.com) & [Communication & Alerts Component](www.google.com)_. The following diagram illustrates the technical architecture of the Samwad product.
 
-![alt-text](../img/SamwadArchitecture.png)
+![](https://samagra-development.github.io/docs/img/SamwadArchitecture.png)
 
 ## 3. High Level Specifications
 
