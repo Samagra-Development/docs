@@ -31,3 +31,18 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+.avatar__intro {
+  margin-left: 16px !important;
+}
+
+.blog-main-wrapper {
+
+  display: flex;
+  flex-direction: row;
+}
+
+.blog-main-wrapper > .fake-sidebar {
+  flex: 1;
+  max-width: 300px;
+}

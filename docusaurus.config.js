@@ -23,12 +23,13 @@ module.exports = {
       trackingID: 'UA-129291740-2',
     },
     navbar: {
-      title: 'Tech@Samagra',
-      logo: {
-        alt: 'Tech@Samagra',
-        src: 'img/logo.png',
-      },
       links: [
+        {
+          href: 'https://tech.samagragovernance.in/',
+          label: 'Tech@Samagra',
+          target: '_self',
+          position: 'left',
+        },
         {
           to: 'docs/ComponentsOverview',
           activeBasePath: 'docs',
