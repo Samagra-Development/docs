@@ -1,7 +1,7 @@
 ---
 id: SamwadFuncSpecs
 title: Samwad - Functional Specifications
-sidebar_label: Samwad
+sidebar_label: Samwad FuncSpecs
 ---
 
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
