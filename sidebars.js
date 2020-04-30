@@ -29,7 +29,6 @@ module.exports = {
         ],
        },
       ],
-    'GettingStarted',
     Components: [
       'ComponentsOverview',
       {
