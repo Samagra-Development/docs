@@ -1,6 +1,6 @@
 ---
 id: GettingStarted
-title: Build Your Own App Using Samagra Components
+title: Build Your Own App Using OpenSource Components
 sidebar_label: Build Your App
 ---
 
