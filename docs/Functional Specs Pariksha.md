@@ -155,7 +155,7 @@ _A configurable mobile application can be setup by deploying the Pariksha applic
 
 ### 3.3 Student Management & User Authentication
 
-_admin console images to be added as GIFs_
+![](https://media.giphy.com/media/KAqEiF2AFp7IgETbTU/giphy.gif)
 
 **_3.3.1 Student Management_**
 
