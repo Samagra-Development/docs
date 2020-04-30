@@ -3,9 +3,7 @@ id: SamwadFuncSpecs
 title: Samwad - Functional Specifications
 sidebar_label: Samwad FuncSpecs
 ---
-
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
-
 ## 1. Introduction
 
 Improving the quality and timeliness of engagement between teachers and parents of students has been a priority for school management systems across the globe. While private schools continue to invest capital into this process by creating school focussed mobile and web applications, there remains a large scope of improving this within the government ecosystem. However, given the economic background of parents of majority of the government school children, who have older versions of Android mobile phones with limited connectivity and therefore have limited engagement with their mobile devices.
@@ -153,7 +151,7 @@ _A configurable mobile application can be setup by deploying the Samwad applicat
 
 ### 3.3 User Authentication & Management
 
-_admin console images to be added as GIFs_
+![](https://media.giphy.com/media/KAqEiF2AFp7IgETbTU/giphy.gif)
 
 **_3.3.1 User Management_**
 
