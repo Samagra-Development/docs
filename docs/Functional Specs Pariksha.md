@@ -155,7 +155,7 @@ _A configurable mobile application can be setup by deploying the Pariksha applic
 
 ### 3.3 Student Management & User Authentication
 
-![](https://media.giphy.com/media/KAqEiF2AFp7IgETbTU/giphy.gif)
+![](https://media.giphy.com/media/lr6x1twVSymGML2ngu/giphy.gif)
 
 **_3.3.1 Student Management_**
 
