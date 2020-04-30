@@ -23,12 +23,13 @@ module.exports = {
         ],
        },
       {
-       'Samwad': [
+       'Pariksha': [
           'ParikshaFuncSpecs',
           'deploypariksha',
         ],
        },
       ],
+    'GettingStarted',
     Components: [
       'ComponentsOverview',
       {
