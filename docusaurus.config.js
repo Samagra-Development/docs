@@ -48,7 +48,8 @@ module.exports = {
     footer: {
       style: 'dark',
       // Please do not remove the credits, help to publicize Docusaurus :)
-      copyright: 'Samagra Development Associates Pvt. Ltd | 2020 | Built with Docusaurus`
+      copyright:
+        'Samagra Development Associates Pvt. Ltd | 2020 | Built with Docusaurus',
     },
   },
   presets: [

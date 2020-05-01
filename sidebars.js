@@ -76,7 +76,7 @@ module.exports = {
           // },
         ],
       },
-      {'Data Analytics': ['CODataAnalytics']},
+      {'Data Analytics': ['CODataAnalytics', 'DataVisualization']},
       {
         'PDF Generator': [
           'COPDFGenerator',
