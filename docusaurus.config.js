@@ -52,12 +52,12 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
+              label: 'Products',
+              to: 'SamikshaFuncSpecs',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'Components',
+              to: 'ComponentsOverview',
             },
           ],
         },
@@ -68,35 +68,22 @@ module.exports = {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
             },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
           ],
         },
         {
           title: 'Social',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://Samagra-Development.github.io/docs',
+              href: 'https://github.com/Samagra-Development',
             },
             {
-              label: 'Twitter',
-              href: 'https://Samagra-Development.github.io/docs',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/samagra-transforming-governance/',
             },
           ],
         },
       ],
-      logo: {
-        alt: 'Facebook Open Source Logo',
-        src: 'img/oss_logo.png',
-        href: 'https://opensource.facebook.com/',
-      },
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
     },
