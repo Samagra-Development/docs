@@ -3,7 +3,9 @@ id: CODatabaseManagement
 title: Database Management
 sidebar_label: Overview
 ---
+
 ![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
+
 # Component Overview
 
 ## 1. Introduction
@@ -147,20 +149,6 @@ It may seem strange to include search engines in an article about database types
 
 - Improving user experience with faster search results
 - Logging
-
-
-
-### 2.4 Wide-column store store - Cassandra
-
-#### 2.4.1 Self hosted Cassandra
-
-#### 2.4.2 Managed Cassandra
-
-### 2.5 Search engine -Elasticsearch
-
-#### 2.5.1 Self hosted Elasticsearch
-
-#### 2.5.2 Managed Elasticsearch
 
 ## 3. FAQs
 
