@@ -63,3 +63,11 @@ From the root folder run the following command to start converting data to PDF. 
 4.  The **intermediate google docs are created** in the same location as that of template doc.
 5.  If app script failed due to any runtime error then a **junk google doc is still created**.
 6.  Google App script usage limitations (url fetching) ([https://developers.google.com/apps-script/guides/services/quotas#current_limitations](https://developers.google.com/apps-script/guides/services/quotas#current_limitations))
+
+## 4. FAQs
+
+To be added based on incoming feedback
+
+## 5. Coming Soon
+
+Please review the following section to get information about planned updates to this module.

@@ -52,7 +52,6 @@ module.exports = {
               'AdminSidebarConfig',
               'AdminAddingMultipleLanguages',
               'AdminAddingCustomRoutes',
-              'AdminArchitectureAndDesign',
             ],
           },
         ],

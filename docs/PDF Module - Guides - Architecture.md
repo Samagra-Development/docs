@@ -34,4 +34,8 @@ A brief description of the function of each element of the architecture is provi
 
 ## 3. FAQs
 
+To be added based on incoming feedback
+
 ## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.

@@ -26,7 +26,11 @@ To download the PDF for a specific URL open your browser and use the query param
 - This speed of the PDF generation is directly proportional to the infra that you set thing and the speed of the site. So sometimes it may take more than 30 seconds to build a PDF.
 - There is no queue management on the system. So a lot of requests in a quick succession will lead to a consumption of a lot of memory and can lead to crashes.
 
-## 4. Coming Soon
+## 4. FAQs
 
-- [ ] Queue to manage multiple requests
-- [ ] Async API to and webhook implementation
+To be added based on incoming feedback
+
+## 5. Coming Soon
+
+- Queue to manage multiple requests
+- Async API to and webhook implementation
