@@ -6,13 +6,7 @@ sidebar_label: Google Docs to PDF
 
 ## 1. Overview
 
-Over the past few years, various day to day functions of governments in India are being rapidly digitized. Information generated from these functions is stored online and made available through dashboards to enable data backed decision making within the government. However, traditionally, reviews within the government heavily relied on printed sheets of data rigorously arranged and distributed to every participant.
-
-It is against this backdrop of an evolving ecosystem of data representation for governance decision making that there was a need to bridge the traditional practice of decision making through paper based reviews to a completely online, dashboard driven reviews.
-
-#### TLDR
-
-This will Convert Google Forms to PDF
+This plugin is used to convert templated google docs to PDF.
 
 ## 2. Getting started
 
