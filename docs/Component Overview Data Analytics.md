@@ -24,7 +24,7 @@ The following list includes a set of use cases abstracted from different state d
 
 ## 3. Component Design
 
-![alt-text](../img/datanalytics.png)
+![](https://samagra-development.github.io/docs/img/datanalytics.png)
 
 The following table provides an overview of the different modules within the Data Analytics component, the opensource libraries used for each and the additions we have done to the opensource libraries to have them architecturally and functionally aligned to our component design. 
 
