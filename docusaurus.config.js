@@ -47,43 +47,6 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Products',
-              to: 'SamikshaFuncSpecs',
-            },
-            {
-              label: 'Components',
-              to: 'ComponentsOverview',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'Social',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/Samagra-Development',
-            },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/samagra-transforming-governance/',
-            },
-          ],
-        },
-      ],
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
     },
