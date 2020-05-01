@@ -23,4 +23,8 @@ This is the next thing that you would be doing. Managing datbases in the admin p
 
 ## 3. FAQs
 
+To be added based on incoming feedback
+
 ## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.
