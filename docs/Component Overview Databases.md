@@ -1,8 +1,10 @@
 ---
 id: CODatabaseManagement
-title: Component Overview (Databases)
-sidebar_label: Component Overview
+title: Database Management
+sidebar_label: Overview
 ---
+![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)
+# Component Overview
 
 ## 1. Introduction
 
