@@ -247,7 +247,11 @@ By managing the configuration of the access control for forms you can give diffe
 
 **_4.1.4 Configure Assessments_**
 
-to be added
+Assessments can be configured based on the use case. 
+
+**1. Student Assessment - Student or Invigilator driven** - If this is an invigilator driven assessment then forms can be configured by designing data collection forms. This can be reviewed by visiting the [How-To-Configure forms](https://samagra-development.github.io/docs/docs/SamikshaFuncSpecs#41-configure-school-visit-forms) section on the Samiksha page.
+
+**2. Student Assessment compilation by teachers** - For compilation of student assessment data, the same can be designed using the [How-To-Configure forms](https://samagra-development.github.io/docs/docs/SamikshaFuncSpecs#41-configure-school-visit-forms) section on the Samiksha page or further custom assessments can be designed by making changes to the backend. To understand how to make these changes refer to the Deploy Pariksha documentation [section 2.4](https://samagra-development.github.io/docs/docs/deploypariksha#4-setting-up-backend-connectors-and-servers). 
 
 ### 4.3 Create Visualizations of Submission Data
 
