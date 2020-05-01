@@ -138,14 +138,14 @@ It may seem strange to include search engines in an article about database types
 - It features flexible schema and fast retrieval of records, with advanced search options including full text search, suggestions, and complex search expressions.
 - One of the most interesting search features is **stemming**. Stemming analyzes the root form of a word to find relevant records even when another form is used. For example, a user searching an employment database for “paying jobs” would also find positions tagged as “paid” and “pay.”
 
-#### Weaknesses
+#### 1.5.2. Weaknesses
 
 - Elastisearch is used more as an intermediary or supplementary store than a primary database.
 - It has low durability and poor security.
 - There’s no innate authentication or access control.
 - Also, Elastisearch doesn’t support transactions.
 
-#### Use a search engine like Elastisearch for:
+#### 1.5.3. Use a search engine like Elastisearch for:
 
 - Improving user experience with faster search results
 - Logging

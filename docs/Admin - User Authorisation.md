@@ -12,7 +12,9 @@ Some applications may require fine grained permissions to enable or disable acce
 
 ## 2.1 Setting up ACL Backend
 
-Coming Soon...
+Access control is setup along with FusionAuth, this allows us to manage roles effectively for each application the user is assigned a role. This refers to the backend setup that needs to be done to show them on Admin.
+
+Insatallation and docs coming soon.
 
 ## 2.2 Configuring the Auth Provider
 
