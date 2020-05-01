@@ -162,9 +162,13 @@ It may seem strange to include search engines in an article about database types
 
 #### 2.5.2 Managed Elasticsearch
 
-## 3. FAQ
+## 3. FAQs
+
+To be added based on incoming feedback
 
 ## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.
 
 ## 5. References
 
