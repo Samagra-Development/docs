@@ -11,24 +11,15 @@ module.exports = {
   someSidebar: {
     Products: [
       {
-      'Samiksha': [
-          'SamikshaFuncSpecs',
-          'deploysamiksha',
-        ],
+        Samiksha: ['SamikshaFuncSpecs', 'deploysamiksha'],
       },
       {
-       'Samwad': [
-          'SamwadFuncSpecs',
-          'deploysamwad',
-        ],
-       },
+        Samwad: ['SamwadFuncSpecs', 'deploysamwad'],
+      },
       {
-       'Pariksha': [
-          'ParikshaFuncSpecs',
-          'deploypariksha',
-        ],
-       },
-      ],
+        Pariksha: ['ParikshaFuncSpecs', 'deploypariksha'],
+      },
+    ],
     Components: [
       'ComponentsOverview',
       {
@@ -80,9 +71,9 @@ module.exports = {
               {Guides: ['PSQLReplication']},
             ],
           },
-          {
-            Redis: ['RedisOverview', {Guides: []}],
-          },
+          // {
+          //   Redis: ['RedisOverview', {Guides: []}],
+          // },
         ],
       },
       {'Data Analytics': ['CODataAnalytics']},
@@ -93,11 +84,7 @@ module.exports = {
           'FormResponses2PDF',
           'HTML2PDF',
           {
-            Guides: [
-              'BuildingGDocTemplate',
-              'BuildingFieldsMapping',
-              'ExtendingBase',
-            ],
+            Guides: ['PDFBuildAPlugin', 'PDFModuleArchitecture'],
           },
         ],
       },
