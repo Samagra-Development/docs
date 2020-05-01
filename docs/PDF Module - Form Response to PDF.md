@@ -77,8 +77,12 @@ You should start seeing the PDFs in the `upload` folder.
 5.  If app script failed due to any runtime error then a **junk google doc is still created**.
 6.  Google App script usage limitations (url fetching) ([https://developers.google.com/apps-script/guides/services/quotas#current_limitations](https://developers.google.com/apps-script/guides/services/quotas#current_limitations))
 
-## 4. Coming Soon
+## 4. FAQs
 
-- [ ] Monitoring setup
-- [ ] Single click setup except for the base project
-- [ ] FusionAuth integration
+To be added based on incoming feedback
+
+## 5. Coming Soon
+
+- Monitoring setup
+- Single click setup except for the base project
+- FusionAuth integration
