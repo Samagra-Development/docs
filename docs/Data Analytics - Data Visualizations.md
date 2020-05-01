@@ -46,4 +46,8 @@ To view existing Metabase dashboards being used by different State Education Dep
 
 ## 3. FAQs
 
+To be added based on incoming feedback
+
 ## 4. Coming Soon
+
+Please review the following section to get information about planned updates to this module.
