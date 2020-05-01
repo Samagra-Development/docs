@@ -26,11 +26,12 @@ The following list includes a set of use cases abstracted from different state d
 
 The PDF Generator component consists of two independently functioning modules.
 
-![alt-text](../img/pdfgenerator.png)
+![](https://samagra-development.github.io/docs/img/pdfgenerator.png)
 
 The following table provides an overview of the different modules within the PDF Generator component.
 
 | Module Name                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Form Output to PDF Module**            | User can view and download PDFs of their form submission data                                                                                                                                                                            |
-| **HTML Printer Module**          | User can view the download their html web page views (typically used for dashboard views) as PDF files   
+| **Google Docs to PDF**            | User can view and download PDFs from pre-designed auto populating Google Docs                                                                                                                                                                            |
+| **Form Response to PDF**          | User can view the download data from any data table (use case focussed on responses from data collection applications) |
+| **HTML pages to PDF**            | User can view the download their html web page views (typically used for dashboard views) as PDF files                                                                                                                                                                           |
