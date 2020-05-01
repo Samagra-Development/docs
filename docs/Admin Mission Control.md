@@ -1,7 +1,7 @@
 ---
 id: AppControlPanel
-title: Mission Control Console
-sidebar_label: Mission Control Console
+title: Application Control Console
+sidebar_label: Application Control Console
 ---
 
 ## 1. Overview

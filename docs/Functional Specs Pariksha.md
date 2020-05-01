@@ -105,8 +105,7 @@ Some State Education Departments have also been using the OMR based data collect
 
 Pariksha is wired together using the _[Mobile Application Component](www.google.com), [App Metadata Management Component](www.google.com), [Database Management Component](www.google.com), [Data Analytics Component](www.google.com) & [Application Logging Component](www.google.com)_. The following diagram illustrates the technical architecture of the Pariksha product.
 
-![alt-text](../img/parikshaarchitecture.png)
-
+![](https://samagra-development.github.io/docs/img/parikshaarchitecture.png)
 
 ## 3. High Level Specifications
 
@@ -155,7 +154,7 @@ _A configurable mobile application can be setup by deploying the Pariksha applic
 
 ### 3.3 Student Management & User Authentication
 
-_admin console images to be added as GIFs_
+![](https://media.giphy.com/media/lr6x1twVSymGML2ngu/giphy.gif)
 
 **_3.3.1 Student Management_**
 
