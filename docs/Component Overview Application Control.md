@@ -27,7 +27,7 @@ The following list includes a set of use cases abstracted from different on-grou
 
 ## 3. Component Design
 
-![alt-text](../img/appmetada.png)
+![](https://samagra-development.github.io/docs/img/appmetadata.png)
 
 The following table provides an overview of the different modules within the mobile applicaton component, the opensource libraries used for each and the additions we have done to the opensource libraries to have them architecturally and functionally aligned to our component design. 
 
