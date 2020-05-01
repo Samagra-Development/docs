@@ -6,7 +6,25 @@ sidebar_label: Deploy Samwad
 
 ## 1. Overview
 
-### Overall Architecture
+This doc helps you to setup a Samiksha app on your own.
+
+The Samwad product can be used for sharing the following updates by the State Education Department to the parents of the children enrolled in government schools:
+
+1. Send daily attendance information
+2. Send upcoming school holiday start and end date notification
+3. Send upcoming parent teacher meeting
+4. Send homework completion status about a child
+5. Send notification of an upcoming School Management Committee meeting
+6. Send assessment information of any summative or formative assessments
+7. Send subjectwise and gradewise practice questions daily or weekly to parents
+8. Send guidance or alerts during natural disasters (floods, cyclones, medical emergency such as Covid-19)
+9. Send school infrastructure upgrade updates
+10. Share mid-day meal information
+
+### 1.1 Disclaimer
+
+- _Note that this project in alpha and the APIs can change without notice. Please use it at your discretion. Though we use it in production, but the we are yet to close the API specification_
+- _Note that some of the links may become live in the coming days. Please contact us in case of any queries or if you need to set this up up urgently._
 
 ## 2. Setting up the backend
 
@@ -87,6 +105,8 @@ This will allow the app to render the cascading dropdown and fill the details au
 2. [Linking]() the gzip file to cascading dropdown module
 
 ### 4. Setting up autofill
+
+If you have setup the forms correctly, this should happen automatically without any changes.
 
 ### 5. Setting up the Track SMS module.
 

@@ -6,7 +6,21 @@ sidebar_label: Deploy Pariksha
 
 ## 1. Overview
 
-### Overall Architecture
+This doc helps you to setup a Samiksha app on your own.
+
+The Pariksha product can be used for managing the following activities of the State Education Department:
+
+1. Record student wise grades for different subjects across different assessments
+2. Record class wise aggregate marks for different subjects across different assessments
+3. Edit any previous student or class wise grades
+4. View past assessments of students and classes
+5. Real time tracking of student assessment data update by teachers
+6. Monitor student assessments trends
+
+### 1.1 Disclaimer
+
+- _Note that this project in alpha and the APIs can change without notice. Please use it at your discretion. Though we use it in production, but the we are yet to close the API specification_
+- _Note that some of the links may become live in the coming days. Please contact us in case of any queries or if you need to set this up up urgently._
 
 ## 2. Setting up the backend
 
@@ -29,42 +43,34 @@ The next step is setting up which forms the users will see when they open the ap
 ```json
 [
   {
-    "FormID": "esamwad_meeting",
-    "FormName": "मीटिंग (Meetings)"
+    "FormID": "MasterPrerna",
+    "FormName": "MasterPrerna"
   },
   {
-    "FormID": "esamwad_holiday",
-    "FormName": "छुट्टियां (Holiday)"
+    "FormID": "Class1v2",
+    "FormName": "Class 1"
   },
   {
-    "FormID": "esamwad_homework",
-    "FormName": "गृहकार्य  (Homework)"
+    "FormID": "Class2v2",
+    "FormName": "Class 2"
   },
   {
-    "FormID": "esamwad_exam",
-    "FormName": "आकलन की घोषणा (Assessment Announcement)"
-  },
-  {
-    "FormID": "esamwad_attendance",
-    "FormName": "उपस्थिति (Attendance)"
+    "FormID": "Class3v1",
+    "FormName": "Class 3"
   }
 ]
 ```
 
 ### 4. Setting up backend connectors and servers.
 
-All this can be done using the `docker-compose.yml` file which can be found [here](https://github.com/Samagra-Development/Samwad-backend). What it essentially does is installs the following things. _[Note: You are free to change the docker file here to increase the capacity of the servers or choose a different deployment strategy depending on the scale.]_
+All this can be done using the `docker-compose.yml` file which can be found [here](https://github.com/ChakshuGautam/Pariksha-backend). What it essentially does is installs the following things. _[Note: You are free to change the docker file here to increase the capacity of the servers or choose a different deployment strategy depending on the scale.]_
 
 1.  Setting up production PSQL database
 2.  Setting up production Redis cache
 3.  Setting up the Memcached server
 4.  [Setting up the OTP server](https://github.com/Samagra-Development/MS-OTP)
 5.  Setting up the relay server
-6.  Setting up the StudentList service
-    1. Setting up Google Cloud Storage
-    2. Installing the StudentList service
-7.  Setting up the ODK ETL Connector
-8.  Settting up the SMS Manager
+6.  Setting up the ODK ETL Connector
 
 ## 3. Setting up the Mobile App
 
@@ -86,9 +92,7 @@ This will allow the app to render the cascading dropdown and fill the details au
 1. [Adding the gzip file]() of locations to raw files directory
 2. [Linking]() the gzip file to cascading dropdown module
 
-### 4. Setting up autofill
-
-### 5. Setting up the Track SMS module.
+### 4. Setting up the Track SMS module.
 
 All SMSes that are sent through the backend have one of the following responses
 
@@ -98,17 +102,17 @@ All SMSes that are sent through the backend have one of the following responses
 4. Still under processing
 5. Delivered These responses are then shown in the tracking module to see which parent got the message and if not, which stage it is in. To configure the track SMS module please use this [doc]()
 
-### 6. Adding the login screen
+### 5. Adding the login screen
 
 1. [Setting up login screen]()
 2. [Connecting FusionAuth to the server]()
 
-### 7. Setting up profile screen
+### 6. Setting up profile screen
 
 1. [Setting up the backend server]()
 2. Testing the OTP and reset password.
 
-### 8. Setting up the about us screen
+### 7. Setting up the about us screen
 
 The about us screen is a part of the ancillaryscreens module. Please see this [doc]() to get started.
 
