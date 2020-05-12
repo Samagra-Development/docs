@@ -239,7 +239,7 @@ Add settings.json, in the **res/raw** folder of your main app module. This file 
     }
 ```
 
-2.53.  Invoke the Initialiser for the Contract 
+2.5.3  Invoke the Initialiser for the Contract 
 
 In the onCreate() of your Application-level class, after you have successfully initialised the module,please add the following method invocation.**This will initialise the contract through whch you will interact with all the helper methods of the Form Module**. The contract is always a work in progress, we keep adding more cases as we come across.
 
@@ -416,6 +416,105 @@ getIFormManagementContract().launchFormChooserView(context, toolbarModificationO
 *  title - String (Title of toolbar) goBackOnNavIconPress - * Boolean (enables or disables back icon)
 */
 ```
+
+### 2.7 Dynamic Cascading Dropdowns in ODK Forms
+
+You can add cascaded dropdowns dynamically in ODK Forms, for which you can generate data dynamically, during run time. But you need to keep certain points in mind, while configuring the form and development.
+
+1. Keep in mind the name of the media file, .csv file you have stored in the forms, while configuring forms.  You need to edit the same file at run time.
+2. The format of the .csv file is similar to this
+
+| list_name | student_name | student_label | class_key | class | section_key | section |
+|-----------|--------------|---------------|-----------|--------|-------------|---------|
+| students | Saif_Khan | Saif Khan | class6 | class6 | C | C |
+| students | Ram_Gautam | Ram Gautam | class1 | class1 | B | B |
+
+3. The dropdowns work only until 3 levels of hierarchy, ie.  A>B>C, here Class>Section>Student
+
+4. You need to know the keys for which you need to fill the data, Here they are student, class and section. This is so because your form is coupled with these keys
+
+5. Names can't contain spaces. List_name would be same for all the rows.
+
+#### Using this
+
+1. First fetch all the forms, which have media folders with the file with the name you want to replace after editing. Use the following method. Please invoke this method only after forms have been downloaded, else,you won't get correct output.
+
+```java
+ getIFormManagementContract().fetchMediaDirs(referenceFileName);
+```
+referenceFileName is the name of the .csv file you want to find and then edit, eg. student_list.csv
+
+2. If the value(ArrayList) returned by the above method call, has size > 0, which means some of the forms have this same media file attached with them. The following method will edit this file and then save later.
+
+```java
+ArrayList<String> mediaDirectoriesNames =  getIFormManagementContract().fetchMediaDirs(referenceFileName);
+        if (mediaDirectoriesNames.size() > 0) {
+ getIFormManagementContract().buildCSV(new CSVBuildStatusListener() {
+                @Override
+                public void onSuccess() {
+                    //CSVs have been built and saved successfully.
+                }
+                @Override
+
+                public void onFailure(Exception exception, CSVHelper.BuildFailureType buildFailureType) {
+		//There has been a failure. You will receive the type of failure in the method args.
+                }
+            }, mediaDirectoriesNames,jsonArray, referenceFileName);
+}
+```
+Here, **Important thing to note is that the JSON Array should have keys in format as the .csv file**. Refer the following as sample resource:
+
+```json
+[{
+	"student": "Sukhpr",
+	"section": "C",
+	"class": "class2"
+}, {
+	"student": "new tool",
+	"section": "B",
+	"class": "class4"
+}, {
+	"student": "Kranti ",
+	"section": "A",
+	"class": "class5"
+}, {
+	"student": "testing",
+	"section": "A",
+	"class": "class3"
+}, {
+	"student": "Saurav Kaul",
+	"section": "A",
+	"class": "class1"
+}, {
+	"student": "Shashikala",
+	"section": "A",
+	"class": "class1"
+}, {
+	"student": "Vidhi Kapoor",
+	"section": "A",
+	"class": "class1"
+}, {
+	"student": "Ramkrishan Galgotia",
+	"section": "A",
+	"class": "class1"
+}, {
+	"student": "Gaurav Sood",
+	"section": "A",
+	"class": "class1"
+}, {
+	"student": "Amitabh Ghose",
+	"section": "A",
+	"class": "class1"
+}]
+```
+Here, section, student,class match with the keys as from the .csv file.
+
+Please note that, what we essentially do is:
+
+1.  Check if media files exist in those folders, if not, create a copy and replace that in actual folder.
+2. Check validity of keys
+3. Create a final list of elements, parse that to create a CSV
+4. Save the CSV in that format in the destination folder
 
 ## 3. FAQs
 
