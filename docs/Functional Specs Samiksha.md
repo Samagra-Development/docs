@@ -78,26 +78,26 @@ Recently, different State Education Departments have pivoted towards an OMR base
 
 ### 2.5 Core Features
 
-**_2.5.1 For State Department Monitoring & Mentoring Staff_**
-
-- Ability to view forms based on their designation
-- Ability to fill and submit school visit forms
-- Ability to view past school visit submission data
-- Ability to update profile information
-
-**_2.5.2 For State Department Reviewers_**
-
-- Ability to view, in real time, complete details of the school visit submissions
-- Ability to view, in real time, summarized views of the school visit submissions
-- Ability to download dashboard views as PDFs
-
-**_2.5.3 For Process Administrators_**
+**_2.5.1 For State Process Administrators_**
 
 - Ability to create and manage school visit forms
 - Ability to create and manage user profiles
 - Ability to update designation to form mapping (for designation based access to forms)
 - Ability to create visualizations of the visit submissions
 - Ability to view application performance statistics
+
+**_2.5.2 For State Department Monitoring & Mentoring Staff_**
+
+- Ability to view forms based on their designation
+- Ability to fill and submit school visit forms
+- Ability to view past school visit submission data
+- Ability to update profile information
+
+**_2.5.3 For State Department Reviewers_**
+
+- Ability to view, in real time, complete details of the school visit submissions
+- Ability to view, in real time, summarized views of the school visit submissions
+- Ability to download dashboard views as PDFs
 
 ### 2.6 Technical Architecture
 
