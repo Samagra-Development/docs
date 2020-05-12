@@ -67,7 +67,7 @@ Make sure the library is listed at the top of your settings.gradle file, as show
 
 2.1.8  Adding Configuraton data
 
-Copy the config folder from the downloaded project and add to the root of your to be implemented project.
+**This is really important, otherwise your project won't be synced properly.** Copy the config folder from the downloaded project and add to the root of your to be implemented project.
 
 
 ### 2.2 Setup ODK Aggregate
@@ -87,9 +87,40 @@ Please check this link to find [how to set up ODK Aggregate?](https://docs.getod
 
 Refer this link to find steps to [use ODK.](https://docs.getodk.org/aggregate-use/)
 
-### 2.3 Give Storage Permissions
+### 2.3 Setup ODK Central
 
-2.3.1	Modifying AndroidManifest.xml
+[ODK Aggregate](https://docs.getodk.org/central-intro/) is an ODK server alternative. Like ODK Aggregate, it manages user accounts and permissions, stores form definitions, and allows data collection clients like ODK Collect to connect to it for form download and submission upload.
+
+ODK Central is easier to install, easier to use, and more extensible with new features and functionality both directly in the software and with the use of our REST, OpenRosa, and OData programmatic APIs.
+
+ODK Central Features:
+
+- User accounts and management
+- Role-based user permissioning
+- Projects to organize users, permissions, and forms
+- Form and submission upload and management
+	- With support for form version updates
+	- With drafts and testing on initial creation, and on version updates
+	- With form and submission multimedia or data attachments
+	- With a table preview of submission data
+- Encrypted forms (self-supplied or project managed keys)
+- OData live data feed for analysis with tools like Excel and Power BI
+- Integrated checklist-based help system
+- Automatic, encrypted off-site data backups to Google Drive
+- Clean and modern REST API for integration and extensibility
+- High performance on low-cost hardware or cloud providers
+- ODK Briefcase-compatible data output
+- ODK Briefcase push/pull support
+
+Central can be hosted on cloud providers such as DigitalOcean, and Amazon Web Services, or your own local or cloud server. There's also a pre-configured virtual machine image that is ready to deploy on any computer.
+
+Please check this link to find [how to set up ODK Central?](https://docs.getodk.org/central-setup/)
+
+Refer this link to find steps to [use ODK.](https://docs.getodk.org/central-using/)
+
+### 2.4 Give Storage Permissions
+
+2.4.1	Modifying AndroidManifest.xml
 
 Integrating the ODK Module in your app project, would reqire to add certain user permissions. Add the following snippet in your AndroidManifest.xml
 
@@ -98,7 +129,7 @@ Integrating the ODK Module in your app project, would reqire to add certain user
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-2.3.2	Storage Permission Request
+2.4.2	Storage Permission Request
 
 In order to set up ODK, in your app, you will have to give Storage permissions. If not already incorporated you can incorporate this code in your main app module.
 
@@ -129,13 +160,28 @@ public void requestStoragePermissions() {
 	 // Permissions have already been granted.  } }
 ```
 
-### 2.4 Initiate Module Contract
+### 2.5 Initiate Module Contract
 
-2.4.1 Iherit Application and Base Activity
+2.5.1 Initialise Collect Module From your Application Class
 
-Please note that in order to make the modules work properly, please make Collect parent class to your application class and Collect Abstract Activity parent to the base activity of your app.
+Please note that in order to make the modules work properly, please call this method in your Application class's _onCreate()_ method. Please refer MyApplication.java for the same.
 
-2.4.2 Setting File Import
+```java
+ Collect.getInstance().init(this, getApplicationContext(), new FormManagmentModuleInitialisationListener() {
+            @Override
+            public void onSuccess() {
+               Timber.d("Form Module has been initialised correctly");
+            }
+
+            @Override
+            public void onFailure(String message) {
+                Timber.d("Form Module could not be initialised correctly");
+                AlertDialogUtils.createErrorDialog(getApplicationContext(), "Could not start app as Form Module couldn't be initialised properly.", true);
+            }
+        });
+```
+
+2.5.2 Setting File Import
 
 Add settings.json, in the **res/raw** folder of your main app module. This file contains all the configurations wit reference to the integration of ODK features in your application. You will have to configure the ODK first by downloading ODK App from Play store and configuring as per the steps mentioned in this [link](https://docs.opendatakit.org/collect-import-export/ 'https://docs.opendatakit.org/collect-import-export/'). Please replace **server_url, username, password** fields in the settings.json file with your own credentials configured from the ODK app.
 
@@ -193,9 +239,9 @@ Add settings.json, in the **res/raw** folder of your main app module. This file 
     }
 ```
 
-2.4.2  Invoke the Initialiser
+2.53.  Invoke the Initialiser for the Contract 
 
-In the onCreate() of your Application-level class, please add the following method invocation
+In the onCreate() of your Application-level class, after you have successfully initialised the module,please add the following method invocation.**This will initialise the contract through whch you will interact with all the helper methods of the Form Module**. The contract is always a work in progress, we keep adding more cases as we come across.
 
 ```java
 ComponentManager.registerFormManagementPackage(this, AppConstants.BASE_API_URL, new FormManagementSectionInteractor()); FormManagementCommunicator.setContract(ComponentManager.iFormManagementContract); ComponentManager.iFormManagementContract.setODKModuleStyle(this, R.drawable.login_bg, R.style.BaseAppTheme, R.style.FormEntryActivityTheme, R.style.BaseAppTheme_SettingsTheme_Dark, Long.MAX_VALUE);`
@@ -225,36 +271,61 @@ The method signature of setODKModuleStyle() is mentioned below
 void setODKModuleStyle(MainApplication mainApplication, int splashScreenDrawableID, int baseAppThemeStyleID, int formActivityThemeID, int customThemeId_Settings, long toolbarIconResId);`
 ```
 
-2.4.3  Aplying Setting file integrated in main app project
+2.5.4 Creating Storage Directories
 
-Apply the settings file configured above using the following snippet
+Please refer to 2.4.2 to see, that once you have gained storage permission access, please create storage drectories to store the media/forms/form entries in the device storage.
+
+2.5.5  Aplying Setting file integrated in main app project
+
+Apply the settings file configured above using the following snippet. Please do it as soon as you launch your app, preferably in your Splash Activity.
 
 ```java
 getIFormManagementContract().applyODKCollectSettings(context, R.raw.settings);
  //R.raw.settings is the resource ID for the Settings file and context is an instance of Context //class
 ```
+2.5.6 Resetting the forms/Data
 
-### 2.5 Use Module Helper Methods
-
-Please refer the sub-sections to find out the various functionalities, this module wrapper provides.
-
-#### 2.5.1  Delete all the previous ODK related data
-
-getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
+If you are downloading the ODK Forms everytime with your session, we recommend to invoke this method when you launch your app, after settings have been applied. Use the following method:
 
 ```java
-getIFormManagementContract().resetEverythingODK();
+getIFormManagementContract().resetPreviousODKForms();
 ```
 
-#### 2.5.2 Delete current users' form submissions
+This will delete a) Saved forms (instances folder, instances database); b) Blank forms (forms folder, forms database, itemsets database); c) Form load cache (.cache folder)
 
-If in case if you just want to delete already filled/submitted forms for the user, use the following method
+In case you just want the blank forms to be removed, use the following method invocation.
 
 ```java
 getIFormManagementContract().resetODKForms(context);
 ```
 
-#### 2.5.3  Download data collection forms
+In case, a new user logs in and you want to ODK Preference data to be removed as well, use this method invocation:
+
+```java
+getIFormManagementContract().resetEverythingODK();
+```
+
+### 2.6 Use Module Helper Methods
+
+Please refer the sub-sections to find out the various functionalities, this module wrapper provides.
+
+#### 2.6.1  Delete all the previous ODK related data
+
+Refer 2.5.6. getIFormManagementContract() is the object of IFormManagementContract registered in the Application class above. You can pass it to the various Activities via Dagger (dependency injection), or via a helper class.
+
+```java
+getIFormManagementContract().resetEverythingODK();
+```
+
+#### 2.6.2 Delete current users' form submissions
+
+Refer 2.5.6. If in case if you just want to delete already filled/submitted forms for the user, use the following method
+
+```java
+getIFormManagementContract().resetPreviousODKForms();
+```
+
+#### 2.6.3  Download data collection forms
 
 - Generally, the forms are downloaded for a user based on User access/role. You could use own APIs to fetch which forms to be downloaded for a user or you could use FirebaseRemoteConfig to get the name and ID of forms to be downloaded for a user.
 
@@ -282,7 +353,7 @@ class FormListDownloadListener implements FormListDownloadResultCallback {
 
   ```
   getIFormManagementContract().downloadODKForms(new FormDownloadListener(), formsToBeDownloaded);
-  //formsTobeDownloaded is a HashMap<String, String> with Key = Form ID for the form to be downloaded and Value = Form Name of the form to be downloaded
+  //formsTobeDownloaded is a HashMap<String, FormDetails> with Key = Form ID for the form to be downloaded and Value = Form Details of the form to be downloaded, you will receive it from the List of forms downloaded
   ```
 
 FormDownloadListener is a listener to listen to the response of the download task, with callbacks mentioned ahead.
@@ -352,11 +423,15 @@ getIFormManagementContract().launchFormChooserView(context, toolbarModificationO
 
 We are using v1.26.1.
 
-**3.2  How can I upgrade the ODK Collect verion?**
+**3.2  What target version of Android we are using?**
+
+API 28. Please build your app for that version only. We will upgrade it to API 29 soon.
+
+**3.3  How can I upgrade the ODK Collect verion?**
 
 Please check this [link.](https://github.com/getodk/collect/releases). Download the latest version. Check the changes made in the latest release. Override the changes made in the latest versions.
 
-**3.3  My application crashes due to permission exceptions. What can I do?**
+**3.4  My application crashes due to permission exceptions. What can I do?**
 
 Please note that, storage permissions though have been asked from user at the launch of app, but when launching the form view, you will have to provide, microphone/location permissions, if your forms contain questions containing media/geo-location. 
 
@@ -371,18 +446,18 @@ Please refer the table below.
 | Microphone | required by audio and video questions to capture new media                                                      |
 | Phone      | optional on form send to include deviceID in the submission and required for forms that capture device metadata |
 
-**3.4  My build is failing. What should I do to debug?**
+**3.5  My build is failing. What should I do to debug?**
 
 Here are the approaches you could follow;
 a) Please sync your gradle and clean your project.
 b) Check for dependency resolution errors, check the downloaded roject to see the type and version of libraries imported.
 c) Check your google-services.jsn, it should be compatible with the applicationId mentioned in your project build.gradle
 
-**3.5  My forms don't seem to behave in the way they are supposed to be. What should I do?**
+**3.6  My forms don't seem to behave in the way they are supposed to be. What should I do?**
 
 Please check the same forms that you have configured on XLS, on the ODK Collect app, if the form doesn't work there, please check your form structure, you will have to debug to check as this means there has been some issue with your form.
 
-**3.6  How can I configure auto-sending the forms on internet connectivity issue?**
+**3.7  How can I configure auto-sending the forms on internet connectivity issue?**
 
 ODK is a robust tool developed to handle offline scenarios. Auto send When enabled in setings.json (Add "autosend": "on"), forms are sent immediately when they are finalized, if the device can connect to the internet. If an internet connection is not available at the time of finalization, your finalized forms will be queued to send as soon as connectivity
 is established. You can specify whether to send over WiFi, cellular data, or both.
