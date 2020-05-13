@@ -243,7 +243,7 @@ Sometimes you would like your forms to be prefilled with data. This is outside t
 
 Once you have achieved this milestone, the UI should look like this. <a  href="https://imgflip.com/gif/3wwv9l"><img  src="https://i.imgflip.com/3wwv9l.gif"  title="made at imgflip.com"/></a>
 
-### 8. esetting the forms/Data
+### 8. Resetting the forms/Data
 
 If you are downloading the ODK Forms everytime with your session, we recommend to invoke this method when you launch your app, after settings have been applied. Use the following method:
 
@@ -485,5 +485,5 @@ In order to make app to mitigate various network related scenarios, it is always
 
 ### Integration and Usage of the Logging Module
 
-The detailed integration of module and its uusage is elaborated in this [section](https://samagra-development.github.io/docs/docs/OfflineHandlingModule).
+The detailed integration of module and its usage is elaborated in this [section](https://samagra-development.github.io/docs/docs/OfflineHandlingModule).
 
