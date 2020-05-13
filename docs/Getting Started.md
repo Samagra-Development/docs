@@ -4,7 +4,6 @@ title: Getting Started
 sidebar_label: Build Your App
 ---
 
-# Intro into the Samagra Android App
 
 ## Overview
 
@@ -16,7 +15,7 @@ Our development experience has helped us to learn certain pointers which, we bel
 
 3. This brings to one of the most crucial conclusions, it is always pragmatic to develop the app, as a conglomerate of different separate and independent modules, pointing to different features, which can be attached together with the main app module to develop a modular app with the least amount of effort. These modules are developed to be completely independent functionality packages.
 
-### Tip
+## Tip
 
 This document is based on the summation of these learnings. We have developed this documentation with a desired objective to help any fellow developer with/without sufficient Android App development knowledge, to couple together these smaller together these packages to develop a full fledged deployable app, particularly pertaining to governance related domains. Though we have tried to remain as generic as possible to give support for any developer to follow these mini tutorials to develop a runnable app.
 
@@ -147,17 +146,36 @@ Form Managment Module is designed to handle data collection via forms, downloaid
 
 ### What is ODK? How to use ODK? Creating a Form in ODK?
 
-This is a pre-requisite to send ODK Forms from your device, in terms of collecting submitted data on the backend. Please ensure you have set up the ODK Aggregate before proceeding with Form Module integration in your app. Please refer to this document to find basics for ODK, and how to set a form on ODK Aggregate. [Documentation of ODK.](https://docs.google.com/document/d/12d6S12J3uTN9B3_WZQh3f9iXwOv1Yri106hXXfoMAg4/edit). 
+This is a pre-requisite to send ODK Forms from your device, in terms of collecting submitted data on the backend. Please ensure you have set up the ODK Aggregate before proceeding with Form Module integration in your app. Please refer to this document to find basics for ODK, and how to set a form on ODK Central. [Documentation of ODK.](https://docs.google.com/document/d/12d6S12J3uTN9B3_WZQh3f9iXwOv1Yri106hXXfoMAg4/edit). 
 
 ### 1. Setting up Form Management Module
 
-Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/demo_tutorial_app/commit/634c4066d3bcc553a95b960769e50fbf08513e24).
-1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementPackage#setting-up-odk) to set up ODK into your mobile Application. (For more details on what are the changes 
+Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/mobile-forms). This is link to the module code.
+1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementModule/#21-retrieve-odk-code) to set up ODK into your mobile Application. (For more details on what are the changes 
 2. Set up config folder, settings.json as mentioned in the link above.
 3. Add required permissions in your AndroidManifest.xml (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
-4. Please make the Collect as parent to your Application level class, and CollectAbstractActivity parent to your base activity class.
-5. Please add permissions reuqest as added in **SplashPresenter.java**, without these permissions, you won't be able to download the forms.
+4. Initialise Collect Module From your Application Class. Please note that in order to make the modules work properly, please call this method in your Application class's onCreate() method. Please refer MyApplication.java for the same.
+```java
+Collect.getInstance().init(this, getApplicationContext(), new FormManagmentModuleInitialisationListener() {
+            @Override
+            public void onSuccess() {
+               Timber.d("Form Module has been initialised correctly");
+            }
+
+            @Override
+            public void onFailure(String message) {
+                Timber.d("Form Module could not be initialised correctly");
+                AlertDialogUtils.createErrorDialog(getApplicationContext(), "Could not start app as Form Module couldn't be initialised properly.", true);
+            }
+        });
+```
+5. Please add permissions request as added in **SplashPresenter.java**, without these permissions, you won't be able to download the forms.
 6. Initialise the Form Module in your application level as follows: (Please refer **MyAppication** Class of the downloaded project).
+
+```java
+ComponentManager.registerFormManagementPackage(new FormManagementSectionInteractor());
+FormManagementCommunicator.setContract(ComponentManager.iFormManagementContract); ComponentManager.iFormManagementContract.setODKModuleStyle(this, R.drawable.login_bg, R.style.BaseAppTheme, R.style.FormEntryActivityTheme, R.style.BaseAppTheme_SettingsTheme_Dark, Long.MAX_VALUE);`
+```
 7. To download the form list and see which forms to download, please refer **HomePresenter** class, we are using Remote Config, in order to test, you can provide them through a JSON object similar to this one.
 ```json
 [
@@ -171,7 +189,7 @@ Note: For more clarity on files affected, please refer this [commit](https://git
   }
 ]
 ```
-8. You will have to add these forms to your ODK Aggreagte first, please use the <a href="../static/xml/All_widgets.xml"  download>link-1</a> and <a href="../static/xml/Location Tracker.xml" download>link-2</a> to download these forms.
+8. You will have to add these forms to your ODK Central first, please use the <a href="../static/xml/All_widgets.xml"  download>link-1</a> and <a href="../static/xml/Location Tracker.xml" download>link-2</a> to download these forms.
 9. After these steps, when you run the app, you will be abe to download these forms.
 
 ### 2. Showing a List of forms to choose from
@@ -225,7 +243,31 @@ Sometimes you would like your forms to be prefilled with data. This is outside t
 
 Once you have achieved this milestone, the UI should look like this. <a  href="https://imgflip.com/gif/3wwv9l"><img  src="https://i.imgflip.com/3wwv9l.gif"  title="made at imgflip.com"/></a>
 
-## User Profile Package
+### 8. esetting the forms/Data
+
+If you are downloading the ODK Forms everytime with your session, we recommend to invoke this method when you launch your app, after settings have been applied. Use the following method:
+
+```java
+getIFormManagementContract().resetPreviousODKForms();
+```
+
+This will delete a) Saved forms (instances folder, instances database); b) Blank forms (forms folder, forms database, itemsets database); c) Form load cache (.cache folder)
+
+In case you just want the blank forms to be removed, use the following method invocation.
+
+```java
+getIFormManagementContract().resetODKForms(context);
+```
+
+In case, a new user logs in and you want to ODK Preference data to be removed as well, use this method invocation:
+
+```java
+getIFormManagementContract().resetEverythingODK();
+```
+
+For more details, please refer this [link](https://samagra-development.github.io/docs/docs/FormManagementModule)
+
+## User Profile Module
 
 For any app, at a user’s level, it is essential to provide the user with an option to control the user’s profiles in terms of editing his/her basic contact details (Contact and email). These details can be leveraged by the back-end to send personalized messages/emails/notifications. At a user’s level, the contact number can be used by the user to reset his/her password.
 
