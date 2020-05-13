@@ -299,13 +299,7 @@ dependencies {
 1. Inside `onCreate` of Application class or Launcher Activity, in the manner, as follows. Please refer **_HomeActivity.java_** class to see invocation.
 
 ```java
-  ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), ((MainApplication) (getApplicationContext())),
-                                AppConstants.BASE_API_URL,
-                                "4b49c1c8-f90e-41e9-99ab-16d4af9eb269",
-                                AppConstants.SEND_OTP_URL,
-                                AppConstants.UPDATE_PASSWORD_URL,
-                                getApplicationContext().getResources().getString(R.string.fusionauth_api_key),
-				homePresenter.fetchUserID());                        
+  ComponentManager.registerProfilePackage(new ProfileSectionInteractor(), this, AppConstants.BASE_API_URL, applicationID);            
 ```
 
 2. Wherever you want to launch the Profile Section, use the following code piece. Please see **_HomeActivity_** for the usage.
