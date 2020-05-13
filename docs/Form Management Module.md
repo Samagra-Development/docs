@@ -244,7 +244,8 @@ Add settings.json, in the **res/raw** folder of your main app module. This file 
 In the onCreate() of your Application-level class, after you have successfully initialised the module,please add the following method invocation.**This will initialise the contract through whch you will interact with all the helper methods of the Form Module**. The contract is always a work in progress, we keep adding more cases as we come across.
 
 ```java
-ComponentManager.registerFormManagementPackage(this, AppConstants.BASE_API_URL, new FormManagementSectionInteractor()); FormManagementCommunicator.setContract(ComponentManager.iFormManagementContract); ComponentManager.iFormManagementContract.setODKModuleStyle(this, R.drawable.login_bg, R.style.BaseAppTheme, R.style.FormEntryActivityTheme, R.style.BaseAppTheme_SettingsTheme_Dark, Long.MAX_VALUE);`
+ComponentManager.registerFormManagementPackage(new FormManagementSectionInteractor());
+FormManagementCommunicator.setContract(ComponentManager.iFormManagementContract); ComponentManager.iFormManagementContract.setODKModuleStyle(this, R.drawable.login_bg, R.style.BaseAppTheme, R.style.FormEntryActivityTheme, R.style.BaseAppTheme_SettingsTheme_Dark, Long.MAX_VALUE);`
 ```
 
 The method signature of registerFormManagementPackage() is as follows:
@@ -252,10 +253,8 @@ The method signature of registerFormManagementPackage() is as follows:
 ```java
 /**
 *
-* @param application - Application Class Instance
-* @param baseAPIUrl - Base API Url, which will be later used to make API calls.
 * @param formManagmentClassImpl - Instance of the Implementing class implementing the contract, which will further call the helper methods. */
-public static void registerFormManagementPackage(MainApplication application, String baseAPIUrl, IFormManagementContract formManagmentClassImpl);
+public static void registerFormManagementPackage(IFormManagementContract formManagmentClassImpl);
 ```
 
 The method signature of setODKModuleStyle() is mentioned below
