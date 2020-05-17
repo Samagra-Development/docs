@@ -151,10 +151,10 @@ This is a pre-requisite to send ODK Forms from your device, in terms of collecti
 ### 1. Setting up Form Management Module
 
 Note: For more clarity on files affected, please refer this [commit](https://github.com/Samagra-Development/mobile-forms). This is link to the module code.
-1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementModule/#21-retrieve-odk-code) to set up ODK into your mobile Application. (For more details on what are the changes 
-2. Set up config folder, settings.json as mentioned in the link above.
-3. Add required permissions in your AndroidManifest.xml (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
-4. Initialise Collect Module From your Application Class. Please note that in order to make the modules work properly, please call this method in your Application class's onCreate() method. Please refer MyApplication.java for the same.
+1. Please refer to the [link](https://samagra-development.github.io/docs/docs/FormManagementModule/#21-retrieve-odk-code) to set up ODK into your mobile Application. (For more details on what are the changes) <br/>
+2. Set up config folder, settings.json as mentioned in the link above. <br/>
+3. Add required permissions in your AndroidManifest.xml (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE) <br/>
+4. Initialise Collect Module From your Application Class. Please note that in order to make the modules work properly. <br/> please call this method in your Application class's onCreate() method. Please refer MyApplication.java for the same. <br/>
 ```java
 Collect.getInstance().init(this, getApplicationContext(), new FormManagmentModuleInitialisationListener() {
             @Override
