@@ -34,9 +34,9 @@ Open the main project on Android Studio where you are to integrate these modules
 
 2.1.3 Adding commons/customworkmanager modules
 
-If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the samagra-form-management later, using the following steps.
+If you have not customworkmanager/commons module in the project, you would need to integrate these first sequentially, to integrate the collect_app later, using the following steps.
 
-2.1.4  Adding samagra-form-management module (Applicable for any android module, including commons and customworkmanager, if you want to import)
+2.1.4  Adding collect_app module (Applicable for any android module, including commons and customworkmanager, if you want to import)
 
 Note: This is applicable for any android module, you want to import.
 
@@ -51,19 +51,19 @@ Note: This is applicable for any android module, you want to import.
 
 2.1.5  Integrating other required modules.
 
-Please follow the same steps for the integration of samagra-form-management. Please checkout this [link](https://developer.android.com/studio/projects/android-library#AddDependency) to see a more ealborate process of including libraries to your android project.
+Please follow the same steps for the integration of collect_app. Please checkout this [link](https://developer.android.com/studio/projects/android-library#AddDependency) to see a more ealborate process of including libraries to your android project.
 
 2.1.6  Syncing Gradle and Building Project.
 
 Open the app module's build.gradle file and add a new line to the dependencies block as shown in the following snippet:
 ```java
 dependencies {
-    implementation project(":samagra-form-management")
+    implementation project(":collect_app")
 }
 ```
 2.1.7  Modifying settings.gradle
 
-Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named **':samagra-form-management'**.
+Make sure the library is listed at the top of your settings.gradle file, as shown here for a library named **':collect_app'**.
 
 2.1.8  Adding Configuraton data
 
