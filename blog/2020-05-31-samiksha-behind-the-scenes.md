@@ -58,7 +58,7 @@ Selecting Open Source projects is a science in its own right. With so many choic
 
 _What it is like when you are selecting an Openource project_
 
-If you just go by the number of Openource solutions you can build, it would be 20^4 (assuming 20 legit candidates for each). So how do you choose one out of 1.6 lakh choices that you have? How do you narrow down choices?
+If you just go by the number of Open Source solutions you can build, it would be 20^4 (assuming 20 legit candidates for each). So how do you choose one out of 1.6 lakh choices that you have? How do you narrow down choices?
 
 ### Defining the criteria
 
@@ -66,7 +66,7 @@ If you just go by the number of Openource solutions you can build, it would be 2
 
 _Why create a new new standard than using something already there?_
 
-Even before setting out to select the project, having a concrete idea of what we were looking for in the first place was essential. We listed down the requirements that were essential for each of the components and started mapping them to Openource projects. But this was not enough, since a lot of projects were having similar features, so evolved the criteria to include some other parameters to make it more robust so that even a Github bot could check this. Since we were all willing to learn something new (even a new language), the criteria (in priority) apart from the core features that we were looking for was as follows
+Even before setting out to select the project, having a concrete idea of what we were looking for in the first place was essential. We listed down the requirements that were essential for each of the components and started mapping them to Open Source projects. But this was not enough, since a lot of projects were having similar features, so evolved the criteria to include some other parameters to make it more robust so that even a Github bot could check this. Since we were all willing to learn something new (even a new language), the criteria (in priority) apart from the core features that we were looking for was as follows
 
 #### Must have
 
@@ -84,7 +84,7 @@ Even before setting out to select the project, having a concrete idea of what we
 
 - Issues and PRs raised - PRs and issues getting closed at a fast rate, was a metric that becomes a proxy of how fast our own issues will be resolved.
 
-- Continuous integration status - CI/CD enables more frequent code deployments and helps check for bad code commits. All pushes to master should go through a pipeline. An Openource project without one feels unsafe.
+- Continuous integration status - CI/CD enables more frequent code deployments and helps check for bad code commits. All pushes to master should go through a pipeline. An Open Source project without one feels unsafe.
 
 - A CONTRIBUTING doc - Since we would be modifying a lot of what was already built, it was necessary to have a starting doc that would enable newcomers like us to ramp up faster.
 
@@ -94,7 +94,7 @@ Even before setting out to select the project, having a concrete idea of what we
 
 - Code styling - This causes troubles for the contributors, 'cause one prefers spaces and another prefers tabs'
 
-Though _stargazers_ is something that people generally look for as a proxy for all of the above, we went a step ahead since we won'tuld be able to switch to anything else and w be using them for a long time. We would also be modifying some of the features heavily so all of the above things were essential for us.
+Though _stargazers_ is something that people generally look for as a proxy for all of the above, we went a step ahead since we won't be able to switch to anything else for a long time. We would also be modifying some of the features heavily so all of the above things were essential for us.
 
 ### The result?
 
@@ -107,7 +107,7 @@ When we were done evaluating everything, we were left with these four choices.
 | 3 | [Application Console](https://samagra-development.github.io/docs/docs/COAppControl) | ReactAdmin |  |  |
 | 4 | [Analytics and Visualization](https://samagra-development.github.io/docs/docs/CODataAnalytics) | Metabase | Superset |  |
 
-Now since we had just 6 choices, we narrowed down to one based on the stack that we felt most comfortable with. React being one of them, Java being the other. So the final choices were, **FusionAuth** for _ItentityServer_ and **Metabase** for _Visualization_.
+Now since we had just 6 choices, we narrowed down to one based on the stack that we felt most comfortable with. React being one of them, Java being the other. So the final choices were, **FusionAuth** for _Itentity Server_ and **Metabase** for _Visualization_.
 
 Now that we had made a bet on the above platforms, the next step was to figure out how to seamlessly integrate all these technologies such that everything is secure and ready to go. But we will take this up in the next post.
 
