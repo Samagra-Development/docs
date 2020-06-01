@@ -56,7 +56,7 @@ Selecting Open Source projects is a science in its own right. With so many choic
 
 ![Chosing an open source project](https://blog.vantagecircle.com/content/images/size/w860/2019/07/decision-fatigue.png)
 
-_What it is like when you are selecting an Openource project_
+_What it is like when you are selecting an Open Source project_
 
 If you just go by the number of Open Source solutions you can build, it would be 20^4 (assuming 20 legit candidates for each). So how do you choose one out of 1.6 lakh choices that you have? How do you narrow down choices?
 
@@ -107,7 +107,7 @@ When we were done evaluating everything, we were left with these four choices.
 | 3 | [Application Console](https://samagra-development.github.io/docs/docs/COAppControl) | ReactAdmin |  |  |
 | 4 | [Analytics and Visualization](https://samagra-development.github.io/docs/docs/CODataAnalytics) | Metabase | Superset |  |
 
-Now since we had just 6 choices, we narrowed down to one based on the stack that we felt most comfortable with. React being one of them, Java being the other. So the final choices were, **FusionAuth** for _Itentity Server_ and **Metabase** for _Visualization_.
+Now since we had just 6 choices, we narrowed down to one based on the stack that we felt most comfortable with. React being one of them, Java being the other. So the final choices were, **FusionAuth** for _Identity Server_ and **Metabase** for _Visualization_.
 
 Now that we had made a bet on the above platforms, the next step was to figure out how to seamlessly integrate all these technologies such that everything is secure and ready to go. But we will take this up in the next post.
 
