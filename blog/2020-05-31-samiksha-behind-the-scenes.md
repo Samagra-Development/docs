@@ -8,13 +8,13 @@ author_image_url: https://media-exp1.licdn.com/dms/image/C5603AQFqf5zRVhvlnA/pro
 tags: [bureaucrats, govt engineers, govOS]
 ---
 
-This is a multipart behind-the-scenes series on how we built [Samiksha](https://tech.samagragovernance.in/index.php/home/ed-samiksha/) and how this led to abstracted reusable technology [components](https://samagra-development.github.io/docs/docs/ComponentsOverview) that we have today.
+This is a multipart behind-the-scenes series on how we built [Samiksha](https://tech.samagragovernance.in/index.php/home/ed-samiksha/) and how this led to the creation of abstracted reusable technology [components](https://samagra-development.github.io/docs/docs/ComponentsOverview) that we have today.
 
 <!--truncate-->
 
 ## 1. Problem Statement
 
-[Samiksha](https://tech.samagragovernance.in/index.php/home/ed-samiksha/) is an OpenSource product [designed](https://samagra-development.github.io/docs/blog/evolutionsamiksha) to improve school quality control activities conducted by state education department officials in government schools. This typically includes mentoring to support teachers based on observations of their in-class teaching practices, and monitoring to inspect the status of infrastructure and quality of school processes such as classroom teaching, availability of teaching learning materials, functional toilets, completion of civil works projects in the school and so on.
+[Samiksha](https://tech.samagragovernance.in/index.php/home/ed-samiksha/) is an Open Source product [designed](https://samagra-development.github.io/docs/blog/evolutionsamiksha) to improve school quality control activities conducted by state education department officials in government schools. This typically includes mentoring to support teachers based on observations of their in-class teaching practices, and monitoring to inspect the status of infrastructure and quality of school processes such as classroom teaching, availability of teaching learning materials, functional toilets, completion of civil works projects in the school and so on.
 
 Translating this to tech, it is essentially an ecosystem that gives
 
@@ -26,15 +26,15 @@ Translating this to tech, it is essentially an ecosystem that gives
 
 ## 2. Design Principles
 
-Our approach to building software is heavily influenced by the need to empower government engineering teams with technology products built using OpenSource tools that they could independently manage in the long term thereby reducing public expenditure, having confident deployments at scale, with any technology, infrastructure or vendor lock-ins. This is why
+Our approach to building software is heavily influenced by the need to empower government engineering teams with technology products built using Open Source tools that they could independently manage in the long term thereby reducing public expenditure, having confident deployments at scale, with any technology, infrastructure or vendor lock-ins. This is why
 
-- Principle #1 - Build reusable, scalable, extensible & deployable technology products using OpenSource tools
+- Principle #1 - Build reusable, scalable, extensible & deployable technology products using Open Source tools
 - Principle #2 - Work with existing government systems, don’t replace them
 - Principle #3 - Strengthen government technology capability, don’t replace it
 
-I will be focussing on Principle #1 here. More importantly, how we chose the exact same OpenSource projects to power our program.
+I will be focussing on Principle #1 here. More importantly, how we chose the exact same Open Source projects to power our program.
 
-## 3. Navigating in the OpenSource World
+## 3. Navigating in the Open Source World
 
 ### Exploring what is already there
 
@@ -50,7 +50,7 @@ When we set out to build an open source application, we knew that there are four
 
 ![Architecture](https://samagra-development.github.io/docs/img/SamikshaArchitecture.png) _This is how they connect in the overall structure._
 
-The challenge with a lot of OpenSourceSS projects is not the quality, but interoperatability. Even when you are able to find something that is in a language that you know, you are not able to figure out how to make customizations to the code due to bad (and mostly no) documentation on the code. Often it is more a reflection on what killset and frameworkis your team knows and how cutting edge you want (can afford) to be.
+The challenge with a lot of Open Source projects is not the quality, but interoperatability. Even when you are able to find something that is in a language that you know, you are not able to figure out how to make customizations to the code due to bad (and mostly no) documentation on the code. Often it is more a reflection on what skillset and frameworks your team knows and how cutting edge you want (can afford) to be.
 
 Selecting O projects is a science in its own right. With so many choices, it is inevitable that you would end up with decision fatigue.
 
