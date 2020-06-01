@@ -52,7 +52,7 @@ When we set out to build an open source application, we knew that there are four
 
 The challenge with a lot of Open Source projects is not the quality, but interoperatability. Even when you are able to find something that is in a language that you know, you are not able to figure out how to make customizations to the code due to bad (and mostly no) documentation on the code. Often it is more a reflection on what skillset and frameworks your team knows and how cutting edge you want (can afford) to be.
 
-Selecting O projects is a science in its own right. With so many choices, it is inevitable that you would end up with decision fatigue.
+Selecting Open Source projects is a science in its own right. With so many choices, it is inevitable that you would end up with decision fatigue.
 
 ![Chosing an open source project](https://blog.vantagecircle.com/content/images/size/w860/2019/07/decision-fatigue.png)
 
