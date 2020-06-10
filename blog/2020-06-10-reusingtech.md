@@ -1,6 +1,6 @@
 ---
 id: reusingtech
-title: Reusing Governance Technology Products
+title: Reusing Governance Technology Components
 author: Sukhpreet Sekhon
 author_title: Technology @Samagra
 author_url: https://www.linkedin.com/in/sukhpreetsekhon/
