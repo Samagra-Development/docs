@@ -57,6 +57,6 @@ The following diagram illustrates how E-Samwad was constructed by incorporating 
 
 ![](https://samagra-development.github.io/docs/img/esamwadarchitecture.png)
 
-These are examples of how we follow our [Principle #1](https://samagra-development.github.io/docs/blog/ourjourney#principle-1---build-reusable-scalable-extensible--deployable-technology-products-using-opensource-tools) (To build reusable, scalable, extensible and& deployable technology products using OpenSource tools) in practice to build technology products for governments.
+These are examples of how we follow our [Principle #1](https://samagra-development.github.io/docs/blog/ourjourney#principle-1---build-reusable-scalable-extensible--deployable-technology-products-using-opensource-tools) (To build reusable, scalable, extensible and deployable technology products using OpenSource tools) in practice to build technology products for governments.
 
 Can you think of any governance use cases that can be enabled using these [technology components](https://samagra-development.github.io/docs/docs/ComponentsOverview)? If yes, please use the documentation of the technology components on our technology documentation section and set up your own products. If you need any additional support, write to us at tech@samagragovernance.in.
