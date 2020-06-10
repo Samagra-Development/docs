@@ -12,7 +12,7 @@ In the past few blogs we shared how we are [Democratizing Technology Product Dev
 This blog post is about how we are reusing [technology components](https://samagra-development.github.io/docs/docs/ComponentsOverview/) to deploy multiple technology products. We will highlight how the technology architecture behind [Samiksha](https://samagra-development.github.io/docs/docs/SamikshaFuncSpecs) has been reused for creating a variety of products for the Department of Agriculture and Farmers’ Welfare (DA&FE), Odisha and the Department of Basic Shiksha, in Uttar Pradesh and Department of Education, Himachal Pradesh. Reusing technology for governments avoids wasteful public expenditure and decreases the go-to-market time.
 <!--truncate-->
 
-## Getting the Basics Right for Samiksha
+## Getting the Basics Right
 
 The following diagram provides an overview of the architecture of Samiksha. Samiksha has been put together by using five technology components:
 
