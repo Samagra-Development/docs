@@ -7,7 +7,7 @@ author_url: https://www.linkedin.com/in/sukhpreetsekhon/
 author_image_url: https://samagra-development.github.io/docs/img/blogss.jpg
 tags: [communication, bureaucrats, govt engineers, govOS]
 ---
-As bureaucrats and politicians manage the fallout of Covid-19 and its resultant restrictions, , a question different governments are grappling with is - how can communication channels such as WhatsApp be leveraged to reach out to citizens and field officials. This post is a 101 for understanding how WhatsApp, SMS, IVRS, direct calls and emails can be used to streamline governance as we move towards a new normal where proactive and personalized communication will be a basic expectation from governments.
+As bureaucrats and politicians manage the fallout of Covid-19 and its resultant restrictions, a question different governments are grappling with is - how can communication channels such as WhatsApp be leveraged to reach out to citizens and field officials. This post is a 101 for understanding how WhatsApp, SMS, IVRS, direct calls and emails can be used to streamline governance as we move towards a new normal where proactive and personalized communication will be a basic expectation from governments.
 
 The assumption in this post is that all users (citizens or government officials) to whom the communication is intended have mobile phones with limited network connectivity. The content in this post is structured based on Samagra’s technology principles that guide the design of our governance communication management strategy.
 <!--truncate-->
