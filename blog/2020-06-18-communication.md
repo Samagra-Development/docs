@@ -1,6 +1,6 @@
 ---
 id: communication
-title: Using WhatsApp, SMS, IVRS, direct calls, emails for communication by Governments
+title: Whatsapp to IVRS: The Tools Governments Can Use To Communicate With Citizens
 author: Sukhpreet Sekhon
 author_title: Technology @Samagra
 author_url: https://www.linkedin.com/in/sukhpreetsekhon/
