@@ -16,7 +16,7 @@ The assumption in this post is that all users (citizens or government officials)
 1. Information outreach must be maximized based on communication channels that users prefer
 2. Open source technology must be used to avoid technology / vendor lock-ins
 
-## Information outreach must be maximized based on communication channels that users prefer. 
+## Information outreach must be maximized based on communication channels that users prefer 
 
 Typically, governments send one-way notifications to users through a single communication channel such as SMS, IVRS, or now WhatsApp. However, this approach has two challenges.
 - Users who are sent a WhatsApp  or email may not have access to the internet at all times
