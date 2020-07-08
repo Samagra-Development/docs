@@ -1,5 +1,5 @@
 ---
-id: COMConversations
+id: COConversations
 title: Conversations & Alerts
 sidebar_label: Overview
 ---
