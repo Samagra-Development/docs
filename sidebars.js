@@ -87,6 +87,14 @@ module.exports = {
           },
         ],
       },
+      {
+        'Conversations & Alerts': [
+          'COConversations',
+          {
+            Guides: [],
+          },
+        ],
+      },
     ],
   },
 };
