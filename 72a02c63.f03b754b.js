@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[50],{190:function(a){a.exports=JSON.parse('{"allTagsPath":"/docs/blog/tags","slug":"bureaucrats","name":"bureaucrats","count":5,"permalink":"/docs/blog/tags/bureaucrats"}')}}]);
