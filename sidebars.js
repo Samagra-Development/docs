@@ -90,6 +90,9 @@ module.exports = {
       {
         'Conversations & Alerts': [
           'COConversations',
+          'CommunicationAdapter',
+          'CommunicationTransformer',
+          'CommunicationOrchestrator',
           {
             Guides: [],
           },
