@@ -1,7 +1,7 @@
 ---
 id: CommunicationAdapter
 title: Conversation Channel Adapters
-sidebar_label: Communicating Among Modules
+sidebar_label: Conversation Channel Adapters
 ---
 
 ## 1. Conversation Channel Adapters

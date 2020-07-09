@@ -14,7 +14,7 @@ It redistributes/relays the input messages based on the type of action that need
 
 A sample list of rules is shown below.
 
-![](https://samagra-development.github.io/docs/img/drools.png)
+![](https://samagra-development.github.io/docs/img/rules-1.png)
 
 ## 4. FAQs
 
