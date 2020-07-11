@@ -94,7 +94,7 @@ module.exports = {
           'CommunicationTransformer',
           'CommunicationOrchestrator',
           {
-            Guides: [],
+            Guides: ['XMessageSpec'],
           },
         ],
       },
