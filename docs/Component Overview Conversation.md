@@ -17,7 +17,7 @@ This documentation of the Conversations & Alerts component will give you an over
 
 The following list includes a set of use cases abstracted from different on-ground state department functions.
 
-1. User can create and launch logic based conversations such as a helpline, for grievance management, for taking student assessment, share updates
+1. User can create and launch logic based conversations such as a helpline, for grievance management, for taking student assessment, share updates with your stakeholders
 2. User can send conversations using multiple channels such as WhatsApp, SMS, Email, IVRS (more can be added by the user such as Telegram, Slack etc)
 3. User can setup additional computations on these conversations such as auto generation of PDFs, email with data summaries (more can be added by the user)
 4. User can auto send conversations using pre-configured triggers on databases
