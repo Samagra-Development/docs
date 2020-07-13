@@ -11,7 +11,7 @@ Adapters convert information provided by channels (SMS, Whatsapp) for each speci
 - Convert API/webhook data from channel (and provider) to xMessages
 - Convert xMessages back to API/webhook data format for the specific channel(and provider)
 
-A simplified diagram of what adapters do is shown below. ![](https://samagra-development.github.io/docs/img/Adapter.png)
+A simplified diagram of what adapters do is shown below. ![](https://samagra-development.github.io/docs/img/adapter.png)
 
 ## 2. Creating your own Adapters
 
@@ -36,11 +36,13 @@ All adapters with the above implementation will be valid. An example adapter can
 
 - Gupshup-Whatsapp
 - Gupshup-SMS
-- Gmail-Mail (Mailtrain)
-- AmazonSES-Mail (Mailtrain)
 
 ## 4. FAQs
+
+To be added based on incoming feedback
 
 ## Coming Soom
 
 - CDAC-SMS Adapter
+- Gmail-Mail (Mailtrain)
+- AmazonSES-Mail (Mailtrain)

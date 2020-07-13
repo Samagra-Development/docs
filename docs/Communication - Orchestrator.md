@@ -30,6 +30,12 @@ A sample list of rules is shown below.
 
 ![](https://samagra-development.github.io/docs/img/rules-1.png)
 
+In the above pic the class used for the rules is XMessage. You can look at it [here](https://github.com/Samagra-Development/message-rosa/blob/master/src/main/java/messagerosa/core/model/XMessage.java) and check the available methods. All getter and setters are public so any field can be an `action` or a `condition`.
+
 ## 4. FAQs
 
+To be added based on incoming feedback
+
 ## Coming Soon
+
+Please review the following section to get information about planned updates to this module.

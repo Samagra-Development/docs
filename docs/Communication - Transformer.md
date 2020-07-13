@@ -43,6 +43,8 @@ All transformers with the above implementation will be valid. An example adapter
 
 ## 4. FAQs
 
+To be added based on incoming feedback
+
 ## Coming Soon
 
 - RASA based transformer.
