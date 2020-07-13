@@ -34,7 +34,7 @@ In the above pic the class used for the rules is XMessage. You can look at it [h
 
 ## 4. FAQs
 
-To be added based on incoming feedback
+To be updated based on incoming feedback. Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
 
 ## Coming Soon
 
