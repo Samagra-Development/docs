@@ -361,3 +361,6 @@ It is RECOMMENDED that styling directives be displayed and formatted in the same
 This specification does not provide a mechanism for removing styling from individual spans or blocks within a styled message. Implementations are free to implement their own workarounds, for example by inserting Unicode non-printable characters to invalidate styling directives, but no specific technique is known to be widely supported.
 
 ## 4. FAQs
+
+To be updated based on incoming feedback. Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
+
