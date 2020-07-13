@@ -11,7 +11,7 @@ Adapters convert information provided by channels (SMS, Whatsapp) for each speci
 - Convert API/webhook data from channel (and provider) to xMessages
 - Convert xMessages back to API/webhook data format for the specific channel(and provider)
 
-A simplified diagram of what adapters do is shown below. ![](https://samagra-development.github.io/docs/img/adapter.png)
+A simplified diagram of what adapters do is shown below. ![](https://samagra-development.github.io/docs/img/adapter.jpg)
 
 ## 2. Creating your own Adapters
 
