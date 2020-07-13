@@ -112,6 +112,8 @@ In order to test and see how the FCM Notification is sent to your android device
 
 *Please note that this module is in continuous development phase, as soon as we push out new functionalities related to Push Notifications, we would keep adding the features here.*
 
+Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
+
 **3.2 How to manage the FCM Token?**
 
 FCM token is user specific, hence we suggest to store the FCM token for the user in the preferences, and we prefer to update the fcm token whenever the user log-in into the application, by checking if the new user logging in is different from the last user using the app.
