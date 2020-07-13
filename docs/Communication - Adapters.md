@@ -11,7 +11,13 @@ Adapters convert information provided by channels (SMS, Whatsapp) for each speci
 - Convert API/webhook data from channel (and provider) to xMessages
 - Convert xMessages back to API/webhook data format for the specific channel(and provider)
 
+A simplified diagram of what adapters do is shown below. ![](https://samagra-development.github.io/docs/img/Adapter.png)
+
 ## 2. Creating your own Adapters
+
+The adapter and the inbound service are linked together as shown in the figure below. ![](https://samagra-development.github.io/docs/img/adapter-internal.png)
+
+Similarly the adapter and the outbound service are linked it the following fashion. ![](https://samagra-development.github.io/docs/img/outbound.png)
 
 All adapters are named as `<ProviderName><ChannelName>Adapter`; for example GupshupWhatsappAdapter. Adapters should extend `AbstractProvider` and implement `IProvider`. Thus, it needs to implement the following methods:
 
@@ -21,6 +27,8 @@ All adapters are named as `<ProviderName><ChannelName>Adapter`; for example Gups
 - ```java
     public void processInBoundMessage(XMessage nextMsg) //Converts XMessage object to API response and call it.
   ```
+
+These methods are called by `inbound` and `outbound` services internally to process the incoming and outgoing messages.
 
 All adapters with the above implementation will be valid. An example adapter can be found [here]().
 
