@@ -43,7 +43,7 @@ All transformers with the above implementation will be valid. An example adapter
 
 ## 4. FAQs
 
-To be added based on incoming feedback
+To be updated based on incoming feedback. Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
 
 ## Coming Soon
 

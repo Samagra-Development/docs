@@ -302,3 +302,5 @@ return userProfileElements;
 **3.1. How to set remotely configured data?**
 
 We generally use Firebase Remote Config for controlling remote data, but you can are free to use your own custom APIs to get the remote data.
+
+Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!

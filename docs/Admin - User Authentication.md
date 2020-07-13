@@ -49,7 +49,7 @@ const App = () => {
 
 ## 3. FAQs
 
-To be added based on incoming feedback
+Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
 
 ## 4. Coming Soon
 

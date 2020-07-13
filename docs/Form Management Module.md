@@ -560,6 +560,8 @@ Please check the same forms that you have configured on XLS, on the ODK Collect 
 ODK is a robust tool developed to handle offline scenarios. Auto send When enabled in setings.json (Add "autosend": "on"), forms are sent immediately when they are finalized, if the device can connect to the internet. If an internet connection is not available at the time of finalization, your finalized forms will be queued to send as soon as connectivity
 is established. You can specify whether to send over WiFi, cellular data, or both.
 
+Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
+
 ## 4. Coming Soon
 
 Please review the following section to get information about planned updates to this module.
