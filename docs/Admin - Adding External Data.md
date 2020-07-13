@@ -212,7 +212,7 @@ After this all you need to do is import this `master dataprovider` to the app li
 
 ## 3. FAQs
 
-To be added based on incoming feedback
+Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
 
 ## 4. Coming Soon
 
