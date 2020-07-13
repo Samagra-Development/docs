@@ -79,7 +79,7 @@ You should start seeing the PDFs in the `upload` folder.
 
 ## 4. FAQs
 
-To be added based on incoming feedback
+Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!
 
 ## 5. Coming Soon
 
