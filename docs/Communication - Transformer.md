@@ -10,7 +10,7 @@ Transformers transforms the previous xMessage from the user to one that needs to
 
 All inbound messages pass through a transformer. If a transformer is not assigned, then a null transformer is assigned to the xMessage. Since the current implementation of MessageRosa is only in Java, currently there is a limitation on the number of languages you can build the transformer on which right now is just Java.
 
-Simply put a transformer looks something like this ![](https://samagra-development.github.io/docs/img/transformer.png)
+Simply put a transformer looks something like this ![](https://samagra-development.github.io/docs/img/transformer.jpg)
 
 ### 1.1 Responsibilities
 
@@ -43,6 +43,6 @@ All transformers with the above implementation will be valid. An example adapter
 
 ## 4. FAQs
 
-## Coming Soom
+## Coming Soon
 
 - RASA based transformer.

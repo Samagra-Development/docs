@@ -15,9 +15,9 @@ A simplified diagram of what adapters do is shown below. ![](https://samagra-dev
 
 ## 2. Creating your own Adapters
 
-The adapter and the inbound service are linked together as shown in the figure below. ![](https://samagra-development.github.io/docs/img/adapter-internal.png)
+The adapter and the inbound service are linked together as shown in the figure below. ![](https://samagra-development.github.io/docs/img/adapter-internal.jpg)
 
-Similarly the adapter and the outbound service are linked it the following fashion. ![](https://samagra-development.github.io/docs/img/outbound.png)
+Similarly the adapter and the outbound service are linked it the following fashion. ![](https://samagra-development.github.io/docs/img/outbound.jpeg)
 
 All adapters are named as `<ProviderName><ChannelName>Adapter`; for example GupshupWhatsappAdapter. Adapters should extend `AbstractProvider` and implement `IProvider`. Thus, it needs to implement the following methods:
 
