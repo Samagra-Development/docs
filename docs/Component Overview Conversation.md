@@ -40,12 +40,32 @@ The conversaton component is developed using **multi-modular architecture** with
 
 ![](https://samagra-development.github.io/docs/img/communications.png)
 
+## 3.1 Architecture
+
+A simplified architecture of the communication package is shown below.
+
+![](https://samagra-development.github.io/docs/img/comm_arch.jpg)
+
+## 3.2 Components
+
 The following table provides an overview of the different modules within the Conversations & Alerts component, the opensource libraries used for each.
 
 | Module Name |  |
 | --- | --- |
 | **Channel Adapters** | 1. Integrate conversation channels such as WhatsApp, SMS, Email with existing adapter <br/>2. Create your own adapter to integrate with other chat services. |
-| **Orchestrator (Router)** | 1. Create a logic based data collection form <br/>2. Create a logic based chat-bot <br/>3. Create logic based triggers to initiate conversations. |
+| **Orchestrator (Router)** | 1. Move routing logic outside of code and make it more accessible to everyone. <br/>2. Manage multi-channel communication <br/>3. Manage logic for moving a user from one channel to another |
 | **Transformer** | 1. Create and integrate utility services using the open source transformer desgin such as <br/> - PDF creator, <br/> - Profanity checker <br/> - Language translator <br/> - Conversation voice analyser |
-| **Event Bus** | 1. Create and integrate utility services using the open source transformer desgin such as <br/> - PDF creator, <br/> - Profanity checker <br/> - Language translator <br/> - Conversation voice analyser |
-| **Managing User Conversations** | 1. Manage data of ongoing conversations <br/>2. Manage data for completed conversations <br/>3. Manage data from utility services enabled within the conversations |
+| **Event Bus** | 1. Building a near real time broker <br/> 2. Adding services outside of the system to the internals <br/> 3. Providing streams on which the orchestrator can run efficiently. |
+| **Managing User Conversations** | 1. Manage data of ongoing conversations <br/>2. Manage data for completed conversations <br/>3. Manage data from utility services enabled within the conversations <br/> This is built in the Application Console. |
+
+## 3.3 Why these design choices?
+
+| Use Cases | Design Design |
+| --- | --- |
+| Provider Agnostic | Adapters |
+| Multi Channel Communication <br/> (Escalation, IVRS + Chat + SMS) | Adapters |
+| Computations <br/> (PDF/Word doc generator) | Transformers |
+| Scale <br/> (Citizens/Students/Unemployed/Govt officials/Teachers) | Kafka, PSQL |
+| Real time <br/>(Time-bound Assessments) | Event Bus (Async, Real time) |
+| Triggered Actions <br/>(Dashboards, timeouts) | Orchestrator (Rule Engine) |
+| Simultaneous multiple conversations | Orchestrator (Rule Engine) |
