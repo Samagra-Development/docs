@@ -8,6 +8,9 @@
  */
 
 module.exports = {
+  uciSidebar: {
+    'UCI API': ['APIAdapter', 'APITransformer', 'APIBot', 'APIUserSegment', 'APIConversationLogic' ],
+  },
   someSidebar: {
     Products: [
       {
@@ -19,7 +22,7 @@ module.exports = {
       {
         Pariksha: ['ParikshaFuncSpecs', 'deploypariksha'],
       },
-    ],
+    ],      
     Components: [
       'ComponentsOverview',
       {
