@@ -9,7 +9,11 @@
 
 module.exports = {
   uciSidebar: {
-    'UCI Overview': ['UCIGlossary'],
+    'UCI Overview': ['UCIGlossary',
+    {
+      Core: ['UCIFeatures', 'UCIConcepts', 'UCIArchitecture']
+    }
+  ],
     'UCI API': ['APIAdapter', 'APITransformer', 'APIBot', 'APIUserSegment', 'APIConversationLogic' ],
     'UCI Schema': ['SchemaAdapter','SchemaTransformer','SchemaBot','SchemaUserSegment','SchemaConversationLogic',]
   },
