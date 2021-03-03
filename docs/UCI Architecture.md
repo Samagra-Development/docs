@@ -10,7 +10,7 @@ sidebar_label: Architecture
 
 ## Technology Architecture
 
-![Technology Architecture Diagram](https://samagra-development.github.io/docs/img/UCITechnologyArchitecture.png)
+![Technology Architecture Diagram](https://samagra-development.github.io/docs/img/UCITechnologyArchitecture.jpeg)
 
 
 
