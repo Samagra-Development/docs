@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/docs/styles.dd38a814.css">
 
 
-<link rel="preload" href="/docs/styles.b3d61cd2.js" as="script">
+<link rel="preload" href="/docs/styles.7d3190f3.js" as="script">
 
-<link rel="preload" href="/docs/runtime~main.1b754bda.js" as="script">
+<link rel="preload" href="/docs/runtime~main.4e435bd7.js" as="script">
 
-<link rel="preload" href="/docs/main.9fb7c1d9.js" as="script">
+<link rel="preload" href="/docs/main.03804e61.js" as="script">
 
-<link rel="preload" href="/docs/1.7d6a113f.js" as="script">
+<link rel="preload" href="/docs/1.c60f3970.js" as="script">
 
-<link rel="preload" href="/docs/2.3e0471eb.js" as="script">
+<link rel="preload" href="/docs/2.92cf629c.js" as="script">
 
-<link rel="preload" href="/docs/3.375db484.js" as="script">
+<link rel="preload" href="/docs/3.bf17cf00.js" as="script">
 
-<link rel="preload" href="/docs/1be78505.f2cea57e.js" as="script">
+<link rel="preload" href="/docs/1be78505.59fa894b.js" as="script">
 
-<link rel="preload" href="/docs/64f9f2ab.8f74f3a2.js" as="script">
+<link rel="preload" href="/docs/64f9f2ab.59d96bc1.js" as="script">
 
-<link rel="preload" href="/docs/17896441.7fb042c3.js" as="script">
+<link rel="preload" href="/docs/17896441.c045d3bb.js" as="script">
 
-<link rel="preload" href="/docs/5398286e.33f4b70a.js" as="script">
+<link rel="preload" href="/docs/5398286e.339ed043.js" as="script">
 
 </head>
 <body>
@@ -118,25 +118,25 @@
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span></div></div></div></div></div><p>2.3.7 Map the values corresponding to these content fields, as per your app’s scenario. You could fetch and store these values in the SharedPreerences or in local DB, after receiving User Info from App Login Response or from particular User Data API.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="24-ui-capabilities-for-application-administrators"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#24-ui-capabilities-for-application-administrators" title="Direct link to heading">#</a>2.4 UI Capabilities For Application Administrators</h3><p>2.4.1  Render the User Profile Screen based on Firebase Remote Config’s returned User Profile Configurations and its values correspondingly received from User Data stored locally.</p><p>2.4.2  On the Profile Screen, the user has 2 actions available to him/her,</p><ul><li><p>Ability to reset App Password.</p></li><li><p>Edit the user Profile, available only for the editable fields in the user profile.</p></li></ul><p>2.4.3  Reset Password</p><ul><li><p>The user must have a mobile number registered in the profile section, to be able to receive the OTP. In this case, edit the profile prior to resetting the password.</p></li><li><p>The user will be redirected to Reset Password Screen, only if API to trigger OTP (whose endpoint has been sent while initialization of module, as discussed above), returns a successful response. In the other scenario, the user will be shown a Snakbar notifying of the type of Exception message returned by the API.</p></li><li><p>In the Reset Password Screen, user has to enter the OTP, new password, confirm the same password. And then trigger the submit button. On successful update of password (API endpoint has been sent while initialization of module, as discussed above), the user will be shown a message and then redirected to the Profile Screen. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.</p></li></ul><p>2.4.4  Edit Profile</p><ul><li><p>The user is only able to edit the editable fields.</p></li><li><p>Click on Edit icon on top of the profile screen, will make the editable fields open to be edited. The user can then update those fields, after editing, click on the save icon. If successfully updated, the user will see a message notifying of the same. In the other scenario (Failure/Error), the user will be shown a Snackbar with the error received from the API.</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="3-faqs"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#3-faqs" title="Direct link to heading">#</a>3. FAQs</h2><p><strong>3.1. How to set remotely configured data?</strong></p><p>We generally use Firebase Remote Config for controlling remote data, but you can are free to use your own custom APIs to get the remote data.</p><p>Feel free to write into tech@samagragovernance.in in case you have questions, feedback or want to know more!</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/Samagra-Development/docs/edit/master/docs/Android Profile Mangement Module.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/docs/AncillaryScreensModule"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Ancillary Screens Module</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/docs/CascadingSearchModule"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Cascading Dropdowns Module »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#1-overview" class="contents__link">1. Overview</a></li><li><a href="#2-setup-module-in-starter-app" class="contents__link">2. Setup Module In Starter App</a><ul><li><a href="#21-integrate-module" class="contents__link">2.1 Integrate Module</a></li><li><a href="#22-start-the-module" class="contents__link">2.2 Start The Module</a></li><li><a href="#23-setup-firebase-for-android-project--client-end-consumption" class="contents__link">2.3 Setup Firebase (for Android Project &amp; Client End Consumption)</a></li><li><a href="#24-ui-capabilities-for-application-administrators" class="contents__link">2.4 UI Capabilities For Application Administrators</a></li></ul></li><li><a href="#3-faqs" class="contents__link">3. FAQs</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Samagra Development Associates Pvt. Ltd | 2020 | Built with Docusaurus</div></div></div></footer>
 </div>
 
-<script src="/docs/styles.b3d61cd2.js"></script>
+<script src="/docs/styles.7d3190f3.js"></script>
 
-<script src="/docs/runtime~main.1b754bda.js"></script>
+<script src="/docs/runtime~main.4e435bd7.js"></script>
 
-<script src="/docs/main.9fb7c1d9.js"></script>
+<script src="/docs/main.03804e61.js"></script>
 
-<script src="/docs/1.7d6a113f.js"></script>
+<script src="/docs/1.c60f3970.js"></script>
 
-<script src="/docs/2.3e0471eb.js"></script>
+<script src="/docs/2.92cf629c.js"></script>
 
-<script src="/docs/3.375db484.js"></script>
+<script src="/docs/3.bf17cf00.js"></script>
 
-<script src="/docs/1be78505.f2cea57e.js"></script>
+<script src="/docs/1be78505.59fa894b.js"></script>
 
-<script src="/docs/64f9f2ab.8f74f3a2.js"></script>
+<script src="/docs/64f9f2ab.59d96bc1.js"></script>
 
-<script src="/docs/17896441.7fb042c3.js"></script>
+<script src="/docs/17896441.c045d3bb.js"></script>
 
-<script src="/docs/5398286e.33f4b70a.js"></script>
+<script src="/docs/5398286e.339ed043.js"></script>
 
 
 </body>

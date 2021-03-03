@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[101],{241:function(n){n.exports=JSON.parse('{"allTagsPath":"/docs/blog/tags","slug":"government","name":"government","count":1,"permalink":"/docs/blog/tags/government"}')}}]);
