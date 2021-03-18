@@ -41,8 +41,8 @@ Samiksha is being used by the State Education Departments of the following state
 
 Total usage of the Samiksha product as on 12 April 2020 is summarized below:
 
-1. Total active users >35,000
-2. Total visit data submissions > 1,10,000
+1. Total active users >105,000
+2. Total visit data submissions > 150,000
 
 ### 2.3 Key Benefits
 
