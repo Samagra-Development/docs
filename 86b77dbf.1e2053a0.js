@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[69],{209:function(o){o.exports=JSON.parse('{"allTagsPath":"/docs/blog/tags","slug":"gov-os","name":"govos","count":7,"permalink":"/docs/blog/tags/gov-os"}')}}]);
