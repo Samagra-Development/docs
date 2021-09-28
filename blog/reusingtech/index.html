@@ -22,21 +22,21 @@
 <link rel="stylesheet" href="/docs/styles.dd38a814.css">
 
 
-<link rel="preload" href="/docs/styles.a6aa7e2f.js" as="script">
+<link rel="preload" href="/docs/styles.b3b3c317.js" as="script">
 
-<link rel="preload" href="/docs/runtime~main.e865ef11.js" as="script">
+<link rel="preload" href="/docs/runtime~main.ae18a6f3.js" as="script">
 
-<link rel="preload" href="/docs/main.36b53971.js" as="script">
+<link rel="preload" href="/docs/main.f17d20eb.js" as="script">
 
-<link rel="preload" href="/docs/1.1d177bd7.js" as="script">
+<link rel="preload" href="/docs/1.86186ca2.js" as="script">
 
-<link rel="preload" href="/docs/2.6d06dac8.js" as="script">
+<link rel="preload" href="/docs/2.42799b1e.js" as="script">
 
-<link rel="preload" href="/docs/3.52aa1643.js" as="script">
+<link rel="preload" href="/docs/3.c96812f9.js" as="script">
 
-<link rel="preload" href="/docs/ccc49370.595119a7.js" as="script">
+<link rel="preload" href="/docs/ccc49370.c92f121a.js" as="script">
 
-<link rel="preload" href="/docs/53c8c35f.87fe6ad3.js" as="script">
+<link rel="preload" href="/docs/53c8c35f.b4528822.js" as="script">
 
 </head>
 <body>
@@ -46,21 +46,21 @@
 Now this architecture can be reused to create three types of product. </p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="product-type-1---with-existing-open-source-technology-components-and-existing-wiring"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#product-type-1---with-existing-open-source-technology-components-and-existing-wiring" title="Direct link to heading">#</a>Product Type 1 - With existing Open Source technology components and existing wiring</h2><p>The Agriculture Development Associates application was launched for DA&amp;FE,  Odisha in August 2019 to capture information from field assessments conducted by Agriculture Development Associates. These field assessments were conducted to primarily identify on-ground issues related pest incidence and input quality (seeds, fertilizers, pesticides) at local distribution centres. It was used by more than 450 department Agriculture Development Associates who captured more than 90,000 field assessments through this application.</p><p><img src="https://samagra-development.github.io/docs/img/associatesprogram.png"></p><p>The following diagram illustrates how the Agriculture Development Associates application was launched with the same technology components as Samiksha and the existing wiring. There were minimal changes in the application UI screens followed by changes in the metadata. Data collection forms were configured based on the use cases of the department.</p><p><img src="https://samagra-development.github.io/docs/img/aparchitecture.png"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="product-type-2---with-existing-open-source-technology-components-and-updated-wiring"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#product-type-2---with-existing-open-source-technology-components-and-updated-wiring" title="Direct link to heading">#</a>Product Type 2 - With existing Open Source technology components and updated wiring</h2><p>The Prerna Ghoshna Assessment application will be launched for the Department of Basic Shiksha, Uttar Pradesh later this year to conduct verbal and non-verbal assessments of children in grades 1-5 across government schools, as part of the Prerna Ghoshna programme. The application is likely to be used for an estimated 10,00,000 student assessments annually. </p><p><img src="https://samagra-development.github.io/docs/img/prernaghoshna.png"></p><p>The following diagram illustrates how the Prerna Ghoshna Assessment application was constructed with the same technology components as Samiksha but with a slight enhancement to the wiring of the Mobile Application component. In the Mobile Application component, while non-verbal students assessments are seamlessly managed by ODK, for verbal assessments we partnered with Google to allow seamless transition between the Prerna Ghoshna Assessment application and Google Bolo to conduct the verbal student assessments. The modular architecture of the Mobile Application component enables such seamless transitions for adding other functionalities with third-party apps.</p><p><img src="https://samagra-development.github.io/docs/img/prernaarchitecture.png"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="product-type-3---with-existing-and-new-open-source-components-and-updated-wiring"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#product-type-3---with-existing-and-new-open-source-components-and-updated-wiring" title="Direct link to heading">#</a>Product Type 3 - With existing and new Open Source components and updated wiring</h2><p>E-Samwad was launched for the State Education Department in Himachal Pradesh to facilitate personalized SMS-based communication between parents and teachers. These SMS <a href="https://www.linkedin.com/posts/samagra-transforming-governance_himachalpradesh-workstreaminfographics-samarth-activity-6669224579640258560-COhj">can be sent</a> in a decentralized manner by government school teachers for sharing daily attendance, homework status, exam results, notifications for holidays with the parents. <a href="https://samagra-development.github.io/docs/docs/SamwadFuncSpecs">e-Samwad</a> has been used by 7,828 schools in the state to reach out to 80,636 parents, sending out 1.3 lakh messages. Once schools reopen, all 15,000+ schools in HP are expected to start using e-Samwad.</p><p><img src="https://samagra-development.github.io/docs/img/esamwad.png"></p><p>The following diagram illustrates how E-Samwad was constructed by incorporating an additional technology component - Communication. The Communication component enables the management of the SMS pipeline and can be configured to send SMS through any public or private SMS gateway. The Communication component will also be available for review and reuse on our technology component documentation <a href="https://samagra-development.github.io/docs/docs/ComponentsOverview/">page</a> later this June.</p><p><img src="https://samagra-development.github.io/docs/img/esamwadarchitecture.png"></p><p>These are examples of how we follow our <a href="https://samagra-development.github.io/docs/blog/ourjourney#principle-1---build-reusable-scalable-extensible--deployable-technology-products-using-opensource-tools">Principle #1</a> (To build reusable, scalable, extensible and deployable technology products using OpenSource tools) in practice to build technology products for governments.</p><p>Can you think of any governance use cases that can be enabled using these <a href="https://samagra-development.github.io/docs/docs/ComponentsOverview">technology components</a>? If yes, please use the documentation of the technology components on our technology documentation section and set up your own products. If you need any additional support, write to us at tech@samagragovernance.in.</p></section><footer class="row margin-vert--lg"><div class="col"><strong>Tags:</strong><a class="margin-horiz--sm" href="/docs/blog/tags/bureaucrats">bureaucrats</a><a class="margin-horiz--sm" href="/docs/blog/tags/govt-engineers">govt engineers</a><a class="margin-horiz--sm" href="/docs/blog/tags/gov-os">govOS</a></div></footer></article><div class="margin-vert--xl"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/blog/communication"><div class="pagination-nav__link--sublabel">Previous Post</div><div class="pagination-nav__link--label">« WhatsApp to IVRS - The Tools Governments Can Use To Communicate With Citizens</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/blog/samikhaBehindTheScenes"><div class="pagination-nav__link--sublabel">Next Post</div><div class="pagination-nav__link--label">Samiksha - Behind the Scenes »</div></a></div></nav></div></div><div class="col col--3"><div class="tableOfContents_S4Hd"><div class="contents contents__left-border"><ul><li><a href="#getting-the-basics-right" class="contents__link">Getting the Basics Right</a></li><li><a href="#product-type-1---with-existing-open-source-technology-components-and-existing-wiring" class="contents__link">Product Type 1 - With existing Open Source technology components and existing wiring</a></li><li><a href="#product-type-2---with-existing-open-source-technology-components-and-updated-wiring" class="contents__link">Product Type 2 - With existing Open Source technology components and updated wiring</a></li><li><a href="#product-type-3---with-existing-and-new-open-source-components-and-updated-wiring" class="contents__link">Product Type 3 - With existing and new Open Source components and updated wiring</a></li></ul></div></div></div></div></div></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Samagra Development Associates Pvt. Ltd | 2020 | Built with Docusaurus</div></div></div></footer>
 </div>
 
-<script src="/docs/styles.a6aa7e2f.js"></script>
+<script src="/docs/styles.b3b3c317.js"></script>
 
-<script src="/docs/runtime~main.e865ef11.js"></script>
+<script src="/docs/runtime~main.ae18a6f3.js"></script>
 
-<script src="/docs/main.36b53971.js"></script>
+<script src="/docs/main.f17d20eb.js"></script>
 
-<script src="/docs/1.1d177bd7.js"></script>
+<script src="/docs/1.86186ca2.js"></script>
 
-<script src="/docs/2.6d06dac8.js"></script>
+<script src="/docs/2.42799b1e.js"></script>
 
-<script src="/docs/3.52aa1643.js"></script>
+<script src="/docs/3.c96812f9.js"></script>
 
-<script src="/docs/ccc49370.595119a7.js"></script>
+<script src="/docs/ccc49370.c92f121a.js"></script>
 
-<script src="/docs/53c8c35f.87fe6ad3.js"></script>
+<script src="/docs/53c8c35f.b4528822.js"></script>
 
 
 </body>

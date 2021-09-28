@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/docs/styles.dd38a814.css">
 
 
-<link rel="preload" href="/docs/styles.a6aa7e2f.js" as="script">
+<link rel="preload" href="/docs/styles.b3b3c317.js" as="script">
 
-<link rel="preload" href="/docs/runtime~main.e865ef11.js" as="script">
+<link rel="preload" href="/docs/runtime~main.ae18a6f3.js" as="script">
 
-<link rel="preload" href="/docs/main.36b53971.js" as="script">
+<link rel="preload" href="/docs/main.f17d20eb.js" as="script">
 
-<link rel="preload" href="/docs/1.1d177bd7.js" as="script">
+<link rel="preload" href="/docs/1.86186ca2.js" as="script">
 
-<link rel="preload" href="/docs/2.6d06dac8.js" as="script">
+<link rel="preload" href="/docs/2.42799b1e.js" as="script">
 
-<link rel="preload" href="/docs/3.52aa1643.js" as="script">
+<link rel="preload" href="/docs/3.c96812f9.js" as="script">
 
-<link rel="preload" href="/docs/1be78505.8c815337.js" as="script">
+<link rel="preload" href="/docs/1be78505.0cc16844.js" as="script">
 
-<link rel="preload" href="/docs/64f9f2ab.a3824a0c.js" as="script">
+<link rel="preload" href="/docs/64f9f2ab.c0217370.js" as="script">
 
-<link rel="preload" href="/docs/17896441.e03312d2.js" as="script">
+<link rel="preload" href="/docs/17896441.5433d25d.js" as="script">
 
-<link rel="preload" href="/docs/e4b9287f.4ce22051.js" as="script">
+<link rel="preload" href="/docs/e4b9287f.f6cc0488.js" as="script">
 
 </head>
 <body>
@@ -59,25 +59,25 @@
 </span></div></div></div></div></div><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="receiving-back-the-result-of-the-cascading-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#receiving-back-the-result-of-the-cascading-module" title="Direct link to heading">#</a>Receiving back the Result of the Cascading Module</h3><p>The result is send back to the main app module by the CascadingModuleDriver, via the RxBus.</p><p>The result object contains in form of object, the values of all the levels from selected options in the module. Please refer the <strong><em>setDisposable()</em></strong> method of <strong>_HomeActivity</strong>, to see how result is received back from the Cascading module. Please check <strong><em>onFillFormsOptionClicked()</em></strong> method of <strong><em>HomePresenter</em></strong> class to launch of form view after receiving results from Cascading Search Module. </p><p>Please see the following clip to see how this module is expected to work.</p><a href="https://imgflip.com/gif/3wx8c3"><img src="https://i.imgflip.com/3wx8c3.gif" title="made at imgflip.com"></a><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="push-notifications-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#push-notifications-module" title="Direct link to heading">#</a>Push Notifications Module</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="overview-1"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#overview-1" title="Direct link to heading">#</a>Overview</h3><p>For an app, the most effective way to receive push notifications is via Firebase Cloud Messaging Service. Firebase Cloud Messaging (FCM) is a cross-platform messaging solution that lets you reliably send messages at no cost. Using FCM, you can notify a client app that new email or other data is available to sync. You can send notification messages to drive user re-engagement and retention.</p><p>The module that we have developed, contains a functionality to generate notifications received via FCM and also generate push notifications from within the app.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="setting-up-and-using-features-of-notification-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#setting-up-and-using-features-of-notification-module" title="Direct link to heading">#</a>Setting up and Using features of Notification Module</h3><p>In order to integrate the module into your mobile ap project, please refer to <a href="https://samagra-development.github.io/docs/docs/NotificationModule">this</a> detailed step-by-step tutorial on setting up push notification feature in your mobile app.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="app-logging-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#app-logging-module" title="Direct link to heading">#</a>App Logging Module</h2><p>This module involves a supreme use case for the developers, as it includes the facility to send app loga remotely to server, include crashlytics into your app and receive email updates for the same.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="integration-and-usage-of-the-logging-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#integration-and-usage-of-the-logging-module" title="Direct link to heading">#</a>Integration and Usage of the Logging Module</h3><p>In order to integrate the module into your mobile ap project, please refer to <a href="https://samagra-development.github.io/docs/docs/Grove">this</a> detailed step-by-step tutorial on integratng crashlytics and error recording facility in your app.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="offline-loading-module"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#offline-loading-module" title="Direct link to heading">#</a>Offline Loading Module</h2><p>In order to make app to mitigate various network related scenarios, it is always better to tackle with defence case scenarios. Hence, in order to provide the user with seamless app performance and avoid breakage of user data being sent to the backend, we developed a module leveraging the usage of Work Manager&#x27;s Work Requests to tackle the user actions which couldn&#x27;t be completed due to certain constraints.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="integration-and-usage-of-the-logging-module-1"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#integration-and-usage-of-the-logging-module-1" title="Direct link to heading">#</a>Integration and Usage of the Logging Module</h3><p>The detailed integration of module and its usage is elaborated in this <a href="https://samagra-development.github.io/docs/docs/OfflineHandlingModule">section</a>.</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/Samagra-Development/docs/edit/master/docs/Getting Started.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/docs/COMobileApplication"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Mobile Application (Android)</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/docs/FormManagementModule"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Form Management Module »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#overview" class="contents__link">Overview</a></li><li><a href="#tip" class="contents__link">Tip</a></li><li><a href="#prerequisites" class="contents__link">Prerequisites</a></li><li><a href="#what-to-expect-from-the-tutorial" class="contents__link">What to expect from the tutorial</a></li><li><a href="#getting-familiar-with-the-basics" class="contents__link">Getting familiar with the basics</a></li><li><a href="#setting-up-samagra-android-starter-app" class="contents__link">Setting up Samagra Android Starter App</a></li><li><a href="#configuring-home-screen" class="contents__link">Configuring Home Screen</a></li><li><a href="#ancillary-screen-module" class="contents__link">Ancillary Screen Module</a><ul><li><a href="#1-screens-included-in-the-ancillary-screens-module" class="contents__link">1. Screens Included in the Ancillary Screens Module</a></li><li><a href="#2-integrating-module-into-your-project" class="contents__link">2. Integrating Module into your Project</a></li><li><a href="#3-initialization-and-usage-of-ancillary-screens-module" class="contents__link">3. Initialization and Usage of Ancillary Screens Module</a></li><li><a href="#4-using-this-module" class="contents__link">4. Using this module</a></li></ul></li><li><a href="#form-management-module" class="contents__link">Form Management Module</a><ul><li><a href="#what-is-odk-how-to-use-odk-creating-a-form-in-odk" class="contents__link">What is ODK? How to use ODK? Creating a Form in ODK?</a></li><li><a href="#1-setting-up-form-management-module" class="contents__link">1. Setting up Form Management Module</a></li><li><a href="#2-showing-a-list-of-forms-to-choose-from" class="contents__link">2. Showing a List of forms to choose from</a></li><li><a href="#3-filling-up-a-particular-form" class="contents__link">3. Filling up a particular form</a></li><li><a href="#4-submitting-a-form" class="contents__link">4. Submitting a form</a></li><li><a href="#5-seeing-submissions" class="contents__link">5. Seeing submissions</a></li><li><a href="#6-offline-viewing-of-data-and-sending-them-again" class="contents__link">6. Offline viewing of data and sending them again</a></li><li><a href="#7-prefilling-form" class="contents__link">7. Prefilling form</a></li><li><a href="#8-resetting-the-formsdata" class="contents__link">8. Resetting the forms/Data</a></li></ul></li><li><a href="#user-profile-module" class="contents__link">User Profile Module</a><ul><li><a href="#1-overview" class="contents__link">1. Overview</a></li><li><a href="#2-integrating-the-module-into-the-mobile-application" class="contents__link">2. Integrating the module into the Mobile Application</a></li><li><a href="#3-initialization" class="contents__link">3. Initialization</a></li><li><a href="#4-setting-up-firebase-for-android-project-and-consuming-it-on-client-end" class="contents__link">4. Setting Up Firebase for Android Project and Consuming it on Client End</a></li><li><a href="#5-your-profile-screen-is-ready" class="contents__link">5. Your Profile screen is ready</a></li></ul></li><li><a href="#cascading-search-module" class="contents__link">Cascading Search Module</a><ul><li><a href="#1-overview-1" class="contents__link">1. Overview</a></li><li><a href="#setting-up-module-into-your-project" class="contents__link">Setting up Module into your Project</a></li><li><a href="#using-the-functionalities-to-run-the-module" class="contents__link">Using the functionalities to run the Module</a></li><li><a href="#receiving-back-the-result-of-the-cascading-module" class="contents__link">Receiving back the Result of the Cascading Module</a></li></ul></li><li><a href="#push-notifications-module" class="contents__link">Push Notifications Module</a><ul><li><a href="#overview-1" class="contents__link">Overview</a></li><li><a href="#setting-up-and-using-features-of-notification-module" class="contents__link">Setting up and Using features of Notification Module</a></li></ul></li><li><a href="#app-logging-module" class="contents__link">App Logging Module</a><ul><li><a href="#integration-and-usage-of-the-logging-module" class="contents__link">Integration and Usage of the Logging Module</a></li></ul></li><li><a href="#offline-loading-module" class="contents__link">Offline Loading Module</a><ul><li><a href="#integration-and-usage-of-the-logging-module-1" class="contents__link">Integration and Usage of the Logging Module</a></li></ul></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Samagra Development Associates Pvt. Ltd | 2020 | Built with Docusaurus</div></div></div></footer>
 </div>
 
-<script src="/docs/styles.a6aa7e2f.js"></script>
+<script src="/docs/styles.b3b3c317.js"></script>
 
-<script src="/docs/runtime~main.e865ef11.js"></script>
+<script src="/docs/runtime~main.ae18a6f3.js"></script>
 
-<script src="/docs/main.36b53971.js"></script>
+<script src="/docs/main.f17d20eb.js"></script>
 
-<script src="/docs/1.1d177bd7.js"></script>
+<script src="/docs/1.86186ca2.js"></script>
 
-<script src="/docs/2.6d06dac8.js"></script>
+<script src="/docs/2.42799b1e.js"></script>
 
-<script src="/docs/3.52aa1643.js"></script>
+<script src="/docs/3.c96812f9.js"></script>
 
-<script src="/docs/1be78505.8c815337.js"></script>
+<script src="/docs/1be78505.0cc16844.js"></script>
 
-<script src="/docs/64f9f2ab.a3824a0c.js"></script>
+<script src="/docs/64f9f2ab.c0217370.js"></script>
 
-<script src="/docs/17896441.e03312d2.js"></script>
+<script src="/docs/17896441.5433d25d.js"></script>
 
-<script src="/docs/e4b9287f.4ce22051.js"></script>
+<script src="/docs/e4b9287f.f6cc0488.js"></script>
 
 
 </body>

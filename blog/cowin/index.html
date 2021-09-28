@@ -22,21 +22,21 @@
 <link rel="stylesheet" href="/docs/styles.dd38a814.css">
 
 
-<link rel="preload" href="/docs/styles.a6aa7e2f.js" as="script">
+<link rel="preload" href="/docs/styles.b3b3c317.js" as="script">
 
-<link rel="preload" href="/docs/runtime~main.e865ef11.js" as="script">
+<link rel="preload" href="/docs/runtime~main.ae18a6f3.js" as="script">
 
-<link rel="preload" href="/docs/main.36b53971.js" as="script">
+<link rel="preload" href="/docs/main.f17d20eb.js" as="script">
 
-<link rel="preload" href="/docs/1.1d177bd7.js" as="script">
+<link rel="preload" href="/docs/1.86186ca2.js" as="script">
 
-<link rel="preload" href="/docs/2.6d06dac8.js" as="script">
+<link rel="preload" href="/docs/2.42799b1e.js" as="script">
 
-<link rel="preload" href="/docs/3.52aa1643.js" as="script">
+<link rel="preload" href="/docs/3.c96812f9.js" as="script">
 
-<link rel="preload" href="/docs/ccc49370.595119a7.js" as="script">
+<link rel="preload" href="/docs/ccc49370.c92f121a.js" as="script">
 
-<link rel="preload" href="/docs/4429a042.59036051.js" as="script">
+<link rel="preload" href="/docs/4429a042.3ca3fb40.js" as="script">
 
 </head>
 <body>
@@ -48,21 +48,21 @@ the MIT Technology Review <sup id="fnref-2"><a aria-current="page" class="footno
 As XKCD wryly depicts here, almost all of modern digital infrastructure is supported by </p><div style="text-align:center;margin-top:10px;margin-bottom:10px"><img src="https://imgs.xkcd.com/comics/dependency.png"></div> open-source software, maintained by communities of contributors. It is perhaps the most under-appreciated success of the internet: how so many people collaborate remotely to craft software for little monetary gain. For government technology, leveraging this aspect of open-source culture remains the most elusive. Countries like Singapore have taken strong strides to engage the community with their &quot;GovTech&quot; setup. <p></p></li></ul><p>A beginning was made by India&#x27;s National eGovernance Division recently by launching its own version of GitHub called &quot;OpenForge&quot;, but it remains far from being a vibrant repository of government software that it was envisaged to be.</p><p>A nascent GovTech ecosystem has emerged in India in the recent past: eGovernments, EkStep and  — my own organisation — <a href="https://tech.samagragovernance.in/">Samagra</a>, have made rapid strides in building open-source software rapidly deployable to state and national scale. Projects like <a href="https://sunbird.org/">Sunbird</a> are notable examples. </p><p>To engage the community is to be able to build features fast, and crucially, fix issues faster. Issues like an incorrect age being printed on millions of vaccination certificates. </p><div style="margin-top:20px;margin-bottom:10px;text-align:center"><img src="https://lh3.googleusercontent.com/LsI_bpWuzBWnH-OEAsu0kPLkKG2960eMNLu0WT5D2dS3lGJfLWVe4EJNIwJYggqdRbPWwM5k3cLuMVKuSqmGsKBr0-1TwNonGR1weOYSx1ACrpn-6ygx-LCm3Oa53GRato4Dq9cm"></div><p></p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="not-just-a-number"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#not-just-a-number" title="Direct link to heading">#</a>Not just a number</h3><p>Days after the appointment, I stumbled upon DIVOC&#x27;s issue board to find an issue titled &quot;Age is reflecting incorrect<sup id="fnref-4"><a aria-current="page" class="footnote-ref active" href="/docs/blog/cowin#fn-4">4</a></sup>&quot;. As you&#x27;d expect, it rang a bell.A discussion was already underway; a few hours of looking into the code and some help from friends later, I was able to identify a solution. It was simply the matter of taking one&#x27;s birth month into account, which the existing code had missed. A single-line fix.</p><p>I proposed it to the maintainers of the project, not entirely sure if a response would be received.</p><p>Within two days, additional members of the community chimed in to suggest alternate implementations, different potential sources of error. It was pointed out that this fix would work only for a certain proportion of users; nevertheless, it would be an improvement. A final fix was agreed upon, and the submission — the single-line fix — was merged into the main codebase. The next day, it was released. </p><div style="margin-top:20px;margin-bottom:10px;text-align:center"> <img src="https://lh6.googleusercontent.com/36tnsDJtcFQAvVbAr8UeRM69gdXi7vkJzHD3_2Oup2hR5oxmxKKd6Q7JMEiItJt2wssxouP6LxjgylwAkJg1o7IDjCsQMOF3FqBUONchsv-mnDD5yd_3KoRNXxpjMpI6xrzEjbVn"></div><p></p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-foss-way-forward"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-foss-way-forward" title="Direct link to heading">#</a>The FOSS way forward</h3><p>Software written for population scale in India is rapidly following this lead: the best traditions of free and open-source software (FOSS) are being leveraged to create software robust enough to withstand scrutiny and gracious enough to accept contributions that can improve efficiency, and solve issues of any scale. From critical bugs that affect performance and optimise efficiency to relatively minor ones that result in millions of incorrect certificates. </p><p>Not anymore, hopefully. </p><div class="footnotes"><hr><ol><li id="fn-1">Dr. Pramod Varma is a Ph.D in Computer Science, CTO of EkStep Foundation, former Chief Architect at UIDAI, and also — fun-fact — a descendant of Raja Ravi Varma. <a href="https://youtu.be/Jf__XxfjAjI?t=759">Here</a> he is presenting DIVOC and its system design.<a aria-current="page" class="footnote-backref active" href="/docs/blog/cowin#fnref-1">↩</a></li><li id="fn-6"><a href="https://divoc.egov.org.in/">Digital Infrastructure for Vaccination Open Credentialing</a> <a aria-current="page" class="footnote-backref active" href="/docs/blog/cowin#fnref-6">↩</a></li><li id="fn-2"><a href="https://www.technologyreview.com/2021/03/17/1020811/better-tech-government-pandemic-united-states/"><em>Why is it so hard to build government technology?</em></a> (March 2021)<a aria-current="page" class="footnote-backref active" href="/docs/blog/cowin#fnref-2">↩</a></li><li id="fn-3"><a href="https://www.technologyreview.com/2021/01/30/1017086/cdc-44-million-vaccine-data-vams-problems/"><em>What went wrong with America&#x27;s $44 million vaccine data system?</em></a>(Jan 2021)<a aria-current="page" class="footnote-backref active" href="/docs/blog/cowin#fnref-3">↩</a></li><li id="fn-4"><a href="https://github.com/egovernments/DIVOC/issues/546"><em>Age is reflecting incorrect</em></a>&quot;, GitHub Issue #546, DIVOC<a aria-current="page" class="footnote-backref active" href="/docs/blog/cowin#fnref-4">↩</a></li></ol></div></section><footer class="row margin-vert--lg"><div class="col"><strong>Tags:</strong><a class="margin-horiz--sm" href="/docs/blog/tags/cowin">cowin</a><a class="margin-horiz--sm" href="/docs/blog/tags/vaccine">vaccine</a><a class="margin-horiz--sm" href="/docs/blog/tags/certificate">certificate</a><a class="margin-horiz--sm" href="/docs/blog/tags/engineering">engineering</a><a class="margin-horiz--sm" href="/docs/blog/tags/government">government</a><a class="margin-horiz--sm" href="/docs/blog/tags/open-source">open source</a><a class="margin-horiz--sm" href="/docs/blog/tags/govt-engineers">govt engineers</a><a class="margin-horiz--sm" href="/docs/blog/tags/gov-os">govOS</a></div></footer></article><div class="margin-vert--xl"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/blog/auth"><div class="pagination-nav__link--sublabel">Next Post</div><div class="pagination-nav__link--label">Authentication vs Authorisation - Access Management in Software Systems »</div></a></div></nav></div></div><div class="col col--3"><div class="tableOfContents_S4Hd"><div class="contents contents__left-border"><ul><li><a href="#open-source-govtech" class="contents__link">Open-source GovTech</a></li><li><a href="#not-just-a-number" class="contents__link">Not just a number</a></li><li><a href="#the-foss-way-forward" class="contents__link">The FOSS way forward</a></li></ul></div></div></div></div></div></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Samagra Development Associates Pvt. Ltd | 2020 | Built with Docusaurus</div></div></div></footer>
 </div>
 
-<script src="/docs/styles.a6aa7e2f.js"></script>
+<script src="/docs/styles.b3b3c317.js"></script>
 
-<script src="/docs/runtime~main.e865ef11.js"></script>
+<script src="/docs/runtime~main.ae18a6f3.js"></script>
 
-<script src="/docs/main.36b53971.js"></script>
+<script src="/docs/main.f17d20eb.js"></script>
 
-<script src="/docs/1.1d177bd7.js"></script>
+<script src="/docs/1.86186ca2.js"></script>
 
-<script src="/docs/2.6d06dac8.js"></script>
+<script src="/docs/2.42799b1e.js"></script>
 
-<script src="/docs/3.52aa1643.js"></script>
+<script src="/docs/3.c96812f9.js"></script>
 
-<script src="/docs/ccc49370.595119a7.js"></script>
+<script src="/docs/ccc49370.c92f121a.js"></script>
 
-<script src="/docs/4429a042.59036051.js"></script>
+<script src="/docs/4429a042.3ca3fb40.js"></script>
 
 
 </body>
