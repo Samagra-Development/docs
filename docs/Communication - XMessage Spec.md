@@ -94,18 +94,8 @@ Let's dive deeper into all of these, but before that, this is the complete xml s
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="gender">
-        <xs:complexType>
-            <xs:choice>
-                <xs:element name="male" type="xs:string"/>
-                <xs:element name="female" type="xs:string"/>
-            </xs:choice>
-        </xs:complexType>
-    </xs:element>
-
     <xs:complexType name="contactCard">
         <xs:sequence>
-            <xs:element name="gender" type="sam:gender"/>
             <xs:element name="address" type="sam:address"/>
             <xs:element name="name" type="xs:string"/>
         </xs:sequence>
@@ -126,12 +116,26 @@ Let's dive deeper into all of these, but before that, this is the complete xml s
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="buttonChoice">
+        <xs:sequence>
+            <xs:element name="key" type="xs:string"/>
+            <xs:element name="text" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="buttonChoices">
+        <xs:sequence>
+            <xs:element name="buttonChoice" type="sam:buttonChoice" minOccurs="0" maxOccurs="10"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="xMessagePayload">
         <xs:sequence>
             <xs:element name="text" type="xs:string"/>
             <xs:element name="media" type="sam:messageMedia"/>
             <xs:element name="location" type="sam:locationParams"/>
             <xs:element name="contactCard" type="sam:contactCard"/>
+            <xs:element name="buttonChoices" type="sam:buttonChoices"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -244,21 +248,12 @@ This section describes the
 
 ### 2.5 Message body
 
-Message body referes to the actual message body. The current list of message types includes plain text, xHTML, location, media, or a contactCard.
+Message body referes to the actual message body. The current list of message types includes plain text, xHTML, location, media, button choices, or a contactCard.
 
 ```xml
-<xs:element name="gender">
-    <xs:complexType>
-        <xs:choice>
-            <xs:element name="male" type="xs:string"/>
-            <xs:element name="female" type="xs:string"/>
-        </xs:choice>
-    </xs:complexType>
-</xs:element>
 
 <xs:complexType name="contactCard">
     <xs:sequence>
-        <xs:element name="gender" type="sam:gender"/>
         <xs:element name="address" type="sam:address"/>
         <xs:element name="name" type="xs:string"/>
     </xs:sequence>
@@ -279,17 +274,68 @@ Message body referes to the actual message body. The current list of message typ
     </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="buttonChoice">
+    <xs:sequence>
+        <xs:element name="key" type="xs:string"/>
+        <xs:element name="text" type="xs:string"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buttonChoices">
+    <xs:sequence>
+        <xs:element name="buttonChoice" type="sam:buttonChoice" minOccurs="0" maxOccurs="10"/>
+    </xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="xMessagePayload">
     <xs:sequence>
         <xs:element name="text" type="xs:string"/>
         <xs:element name="media" type="sam:messageMedia"/>
         <xs:element name="location" type="sam:locationParams"/>
         <xs:element name="contactCard" type="sam:contactCard"/>
+        <xs:element name="buttonChoices" type="sam:buttonChoices"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:element name="payload" type="sam:xMessagePayload"/>
 ```
+
+## 2.6 ButtonChoice
+
+It describes the button choices to be included in payload.
+
+```xml
+<xs:complexType name="buttonChoice">
+    <xs:sequence>
+        <xs:element name="key" type="xs:string"/>
+        <xs:element name="text" type="xs:string"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buttonChoices">
+    <xs:sequence>
+        <xs:element name="buttonChoice" type="sam:buttonChoice" minOccurs="0" maxOccurs="10"/>
+    </xs:sequence>
+</xs:complexType>
+```
+
+An example of a list of button choices under payload are given below.
+
+```xml
+<payload>
+    <buttonChoices>
+        <key>b1</key>
+        <text>text1</text>
+    </buttonChoices>
+    <buttonChoices>
+        <key>b2</key>
+        <text>text2</text>
+    </buttonChoices>
+    <text>Text</text>
+</payload>
+```
+
+
 
 ## 3. Styling
 
